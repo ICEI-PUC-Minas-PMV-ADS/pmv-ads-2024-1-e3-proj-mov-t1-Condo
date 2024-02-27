@@ -79,8 +79,14 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| Permitir que o usuário cadastre tarefas | ALTA | 
-|RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
+|RF-001| O aplicativo deve ter uma página inicial de apresentação | ALTA | 
+|RF-002| Os dados dos usuários (incluindo informações pessoais e senhas) devem ser armazenados de forma segura e criptografada   | ALTA |
+|RF-003| O aplicativo deve ser responsivo, com tempos de carregamento curtos para evitar frustração do usuário. | ALTA | 
+|RF-004| O aplicativo deve ser capaz de lidar com um aumento no número de usuários. | MÉDIA | 
+|RF-005| Deve haver medidas de backup e recuperação em caso de falha do aplicativo. | ALTA | 
+|RF-006| A interface do usuário deve ser intuitiva e de fácil utilização, mesmo para usuários não familiarizados com aplicativos similares. | ALTA | 
+|RF-007| O aplicativo deve ser compatível com o sistema android. | ALTA | 
+|RF-008| O aplicativo deve ser bem estruturado e modular, facilitando a manutenção e adição de novos recursos no futuro. | MÉDIA | 
 
 ### Requisitos não Funcionais
 
@@ -110,14 +116,12 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 |ID| Restrição                                             |
 |--|-------------------------------------------------------|
-|01| O projeto deverá ser entregue até o final do semestre |
-|02| Não pode ser desenvolvido um módulo de backend        |
+|01| O projeto deverá ser entregue até o final do semestre. |
+|02|O projeto deverá seguir o cronograma dos entregáveis de cada etapa, caso contrário pode haver atrasos significativos. |
+|03|O projeto deve ser planejado e executado dentro dos recursos financeiros disponíveis, incluindo custos associados a hardware, software, ferramentas de desenvolvimento e quaisquer outros gastos relacionados ao projeto. |
+|04|A equipe deverá desenvolver o projeto com base no aprendizado obtido na universidade, não podendo terceirizar o desenvolvimento no trabalho. |
 
-Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
 
-> **Links Úteis**:
-> - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-> - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
 
 ## Diagrama de Casos de Uso
 
