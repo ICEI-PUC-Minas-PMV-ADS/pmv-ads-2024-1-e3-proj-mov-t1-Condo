@@ -8,7 +8,122 @@ Apresente uma visão geral do que será abordado nesta parte do documento, enume
 
 ## Personas
 
-Pedro Paulo tem 26 anos, é arquiteto recém-formado e autônomo. Pensa em se desenvolver profissionalmente através de um mestrado fora do país, pois adora viajar, é solteiro e sempre quis fazer um intercâmbio. Está buscando uma agência que o ajude a encontrar universidades na Europa que aceitem alunos estrangeiros.
+<TABLE>
+	<TR>
+		<TD rowspan='2'><img src='/docs/img/02-advogada.jpg' style='height: 150px'></TD>
+		<TD colspan='2'>Ana Silva</TD>
+	</TR>
+	<TR>
+		<TD>Idade: 32<BR><BR>
+    Ocupação: Advogada.
+  <TD><BR>
+<BR>
+  Dados Principais: Mãe solteira, mora com seu filho de 6 anos.
+</TR>
+<TD>Objetivos:<BR>
+Encontrar atividades para seu filho e ela mesma, busca interação social no condomínio.
+</TD>
+<TD>Frustrações:<BR>
+  Dificuldade em manter a agenda organizada durante horários de pico, levando a atrasos e insatisfação dos clientes.
+Falta de uma ferramenta eficaz para gerenciar o estoque de produtos de barbearia.
+</TR>  
+<TD>Hábitos:<BR>
+Trabalha em horários flexíveis, gosta de praticar esportes ao ar livre nos fins de semana.
+</TD>
+</TABLE>
+
+<TABLE>
+	<TR>
+		<TD rowspan='2'><img src='/docs/img/02-empresario.jpg' style='height: 150px'></TD>
+		<TD colspan='2'>Carlos Oliveira</TD>
+	</TR>
+	<TR>
+		<TD>Idade: 32<BR><BR>
+    Ocupação: Empresário.
+  <TD><BR>
+<BR>
+Dados Principais: Morador recente no condomínio, casado e sem filhos.
+</TR>
+<TD>Objetivos:<BR>
+Conhecer seus vizinhos, participar de eventos sociais no condomínio.
+</TD>
+<TD>Frustrações:<BR>
+Pouco conhecimento sobre as atividades no condomínio, deseja se integrar à comunidade.
+</TR>  
+<TD>Hábitos:<BR>
+Trabalha longas horas, gosta de relaxar em casa nos fins de semana, aprecia eventos sociais.
+</TD>
+</TABLE>
+
+<TABLE>
+	<TR>
+		<TD rowspan='2'><img src='/docs/img/02-profissionalMarketing.jpg' style='height: 150px'></TD>
+		<TD colspan='2'>Lucas Oliveira</TD>
+	</TR>
+	<TR>
+		<TD>Idade: 28<BR><BR>
+    Ocupação: Profissional de Marketing.
+  <TD><BR>
+<BR>
+Solteiro, gosta de organizar eventos sociais no condomínio.
+</TR>
+<TD>Objetivos:<BR>
+Criar uma atmosfera social no condomínio, promovendo eventos e atividades para os moradores.
+</TD>
+<TD>Frustrações:<BR>
+Poucas oportunidades para interação social, deseja criar uma comunidade mais unida..
+</TR>  
+<TD>Hábitos:<BR>
+Trabalha em home office, entusiasta de esportes e jogos, sempre disposto a socializar.</TD>
+</TABLE>
+
+<TABLE>
+	<TR>
+		<TD rowspan='2'><img src='/docs/img/02-familiaMedica.jpg' style='height: 150px'></TD>
+		<TD colspan='2'>Larissa Souza</TD>
+	</TR>
+	<TR>
+		<TD>Idade: 38<BR><BR>
+    Ocupação: Médica.
+  <TD><BR>
+<BR>
+  Dados Principais: Mãe de dois filhos, casada com outro profissional de saúde.
+</TR>
+<TD>Objetivos:<BR>
+Encontrar espaços seguros para as crianças, participar de atividades em família no condomínio.
+</TD>
+<TD>Frustrações:<BR>
+Dificuldade em conciliar horários familiares, falta de espaços adequados para crianças.
+</TR>  
+<TD>Hábitos:<BR>
+Horários irregulares de trabalho, busca atividades em família nos fins de semana.
+</TD>
+</TABLE>
+
+<TABLE>
+	<TR>
+		<TD rowspan='2'><img src='/docs/img/02-aposentado.jpg' style='height: 150px'></TD>
+		<TD colspan='2'>Ricardo Santos</TD>
+	</TR>
+	<TR>
+		<TD>Idade: 60<BR><BR>
+    Ocupação: Aposentado.
+  <TD><BR>
+<BR>
+  Dados Principais: Viúvo, vive sozinho no condomínio.
+</TR>
+<TD>Objetivos:<BR>
+Deseja encontrar companhia, participar de atividades culturais no condomínio.
+</TD>
+<TD>Frustrações:<BR>
+Solidão, falta de atividades culturais e sociais direcionadas para sua faixa etária.
+</TR>  
+<TD>Hábitos:<BR>
+Participa de grupos de leitura, gosta de jardinagem, tem interesse em atividades culturais.</TD>
+</TABLE>
+
+
+<!--Pedro Paulo tem 26 anos, é arquiteto recém-formado e autônomo. Pensa em se desenvolver profissionalmente através de um mestrado fora do país, pois adora viajar, é solteiro e sempre quis fazer um intercâmbio. Está buscando uma agência que o ajude a encontrar universidades na Europa que aceitem alunos estrangeiros.
 
 Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
 
@@ -20,16 +135,16 @@ Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos 
 > - [Mapa de Empatia](https://resultadosdigitais.com.br/blog/mapa-da-empatia/)
 > - [Mapa de Stalkeholders](https://www.racecomunicacao.com.br/blog/como-fazer-o-mapeamento-de-stakeholders/)
 >
-Lembre-se que você deve ser enumerar e descrever precisamente e personalizada todos os clientes ideais que sua solução almeja.
+Lembre-se que você deve ser enumerar e descrever precisamente e personalizada todos os clientes ideais que sua solução almeja.-->
 
 ## Histórias de Usuários
 
 Com base na análise das personas forma identificadas as seguintes histórias de usuários:
 
-|EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
-|--------------------|------------------------------------|----------------------------------------|
-|Usuário do sistema  | Registrar minhas tarefas           | Não esquecer de fazê-las               |
-|Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
+| EU COMO... `PERSONA` | QUERO/PRECISO ... `FUNCIONALIDADE` | PARA ... `MOTIVO/VALOR`                |
+| -------------------- | ---------------------------------- | -------------------------------------- |
+| Usuário do sistema   | Registrar minhas tarefas           | Não esquecer de fazê-las               |
+| Administrador        | Alterar permissões                 | Permitir que possam administrar contas |
 
 Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
 
@@ -77,17 +192,17 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 ### Requisitos Funcionais
 
-|ID    | Descrição do Requisito  | Prioridade |
-|------|-----------------------------------------|----|
-|RF-001| Permitir que o usuário cadastre tarefas | ALTA | 
-|RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
+| ID     | Descrição do Requisito                  | Prioridade |
+| ------ | --------------------------------------- | ---------- |
+| RF-001 | Permitir que o usuário cadastre tarefas | ALTA       |
+| RF-002 | Emitir um relatório de tarefas no mês   | MÉDIA      |
 
 ### Requisitos não Funcionais
 
-|ID     | Descrição do Requisito  |Prioridade |
-|-------|-------------------------|----|
-|RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
-|RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
+| ID      | Descrição do Requisito                                            | Prioridade |
+| ------- | ----------------------------------------------------------------- | ---------- |
+| RNF-001 | O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA      |
+| RNF-002 | Deve processar requisições do usuário em no máximo 3s             | BAIXA      |
 
 Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
 
@@ -108,10 +223,10 @@ todos os aspectos capturados nas Histórias de Usuário foram cobertos.
 
 O projeto está restrito pelos itens apresentados na tabela a seguir.
 
-|ID| Restrição                                             |
-|--|-------------------------------------------------------|
-|01| O projeto deverá ser entregue até o final do semestre |
-|02| Não pode ser desenvolvido um módulo de backend        |
+| ID  | Restrição                                             |
+| --- | ----------------------------------------------------- |
+| 01  | O projeto deverá ser entregue até o final do semestre |
+| 02  | Não pode ser desenvolvido um módulo de backend        |
 
 Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
 
