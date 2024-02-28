@@ -6,7 +6,7 @@
 
 `Terceiro Semestre - Turma 01 - 2024/1`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+O projeto em desenvolvimento visa abordar a falta de controle e gerenciamento dos espaços de lazer em condomínios residenciais. Diante da superlotação e subutilização desses espaços, propomos a criação de um software intuitivo que permitirá aos moradores reservar os espaços de forma simples e eficiente, garantindo uma distribuição equitativa dos recursos comuns. Com isso, buscamos promover uma convivência mais harmoniosa e satisfatória para todos os envolvidos, atendendo às necessidades tanto dos moradores quanto dos gestores/administradores do condomínio
 
 ## Integrantes
 
