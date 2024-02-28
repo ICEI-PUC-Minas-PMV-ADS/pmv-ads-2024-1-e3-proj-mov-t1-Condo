@@ -26,10 +26,10 @@ Encontrar atividades para seu filho e ela mesma, busca interação social no con
 <TD>Frustrações:<BR>
   Dificuldade em manter a agenda organizada durante horários de pico, levando a atrasos e insatisfação dos clientes.
 Falta de uma ferramenta eficaz para gerenciar o estoque de produtos de barbearia.
-</TR>  
 <TD>Hábitos:<BR>
 Trabalha em horários flexíveis, gosta de praticar esportes ao ar livre nos fins de semana.
 </TD>
+</TR>  
 </TABLE>
 
 <TABLE>
@@ -49,10 +49,10 @@ Conhecer seus vizinhos, participar de eventos sociais no condomínio.
 </TD>
 <TD>Frustrações:<BR>
 Pouco conhecimento sobre as atividades no condomínio, deseja se integrar à comunidade.
-</TR>  
 <TD>Hábitos:<BR>
 Trabalha longas horas, gosta de relaxar em casa nos fins de semana, aprecia eventos sociais.
 </TD>
+</TR>  
 </TABLE>
 
 <TABLE>
@@ -72,9 +72,9 @@ Criar uma atmosfera social no condomínio, promovendo eventos e atividades para 
 </TD>
 <TD>Frustrações:<BR>
 Poucas oportunidades para interação social, deseja criar uma comunidade mais unida..
-</TR>  
 <TD>Hábitos:<BR>
 Trabalha em home office, entusiasta de esportes e jogos, sempre disposto a socializar.</TD>
+</TR>  
 </TABLE>
 
 <TABLE>
@@ -94,10 +94,10 @@ Encontrar espaços seguros para as crianças, participar de atividades em famíl
 </TD>
 <TD>Frustrações:<BR>
 Dificuldade em conciliar horários familiares, falta de espaços adequados para crianças.
-</TR>  
 <TD>Hábitos:<BR>
 Horários irregulares de trabalho, busca atividades em família nos fins de semana.
 </TD>
+</TR>  
 </TABLE>
 
 <TABLE>
@@ -117,25 +117,10 @@ Deseja encontrar companhia, participar de atividades culturais no condomínio.
 </TD>
 <TD>Frustrações:<BR>
 Solidão, falta de atividades culturais e sociais direcionadas para sua faixa etária.
-</TR>  
 <TD>Hábitos:<BR>
 Participa de grupos de leitura, gosta de jardinagem, tem interesse em atividades culturais.</TD>
+</TR>  
 </TABLE>
-
-
-<!--Pedro Paulo tem 26 anos, é arquiteto recém-formado e autônomo. Pensa em se desenvolver profissionalmente através de um mestrado fora do país, pois adora viajar, é solteiro e sempre quis fazer um intercâmbio. Está buscando uma agência que o ajude a encontrar universidades na Europa que aceitem alunos estrangeiros.
-
-Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
-
-> **Links Úteis**:
-> - [Rock Content](https://rockcontent.com/blog/personas/)
-> - [Hotmart](https://blog.hotmart.com/pt-br/como-criar-persona-negocio/)
-> - [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
-> - [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
-> - [Mapa de Empatia](https://resultadosdigitais.com.br/blog/mapa-da-empatia/)
-> - [Mapa de Stalkeholders](https://www.racecomunicacao.com.br/blog/como-fazer-o-mapeamento-de-stakeholders/)
->
-Lembre-se que você deve ser enumerar e descrever precisamente e personalizada todos os clientes ideais que sua solução almeja.-->
 
 ## Histórias de Usuários
 
