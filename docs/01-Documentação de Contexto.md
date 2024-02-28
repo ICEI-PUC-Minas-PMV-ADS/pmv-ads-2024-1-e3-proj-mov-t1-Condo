@@ -7,16 +7,10 @@ Diante desse contexto, torna-se evidente a necessidade de desenvolver e implemen
 
 
 ## Problema
-Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
 
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de  fato existir, pois ainda não é a hora de apresentar requisitos  detalhados ou projetos.
+A falta de controle e gerenciamento de acesso aos espaços de lazer nos condomínios tem causado situações problemáticas, com alguns locais superlotados enquanto outros permanecem subutilizados. Esse desequilíbrio pode gerar conflitos entre os moradores e comprometer a experiência coletiva no condomínio.
+Uma solução crucial para esse impasse seria a implementação de um sistema de reservas eficiente para os espaços de lazer. Tal sistema não apenas ajudaria a equilibrar o uso dessas áreas, mas também promoveria uma distribuição mais justa e organizada do acesso, garantindo uma experiência mais satisfatória para todos os residentes. Com isso, os moradores poderiam desfrutar dos espaços de lazer de forma mais harmoniosa e sem os inconvenientes causados pela superlotação ou subutilização.
 
-Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
-
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
 
 ## Objetivos
 
