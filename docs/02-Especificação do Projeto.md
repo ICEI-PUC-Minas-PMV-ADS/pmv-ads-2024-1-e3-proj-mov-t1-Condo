@@ -126,10 +126,14 @@ Participa de grupos de leitura, gosta de jardinagem, tem interesse em atividades
 
 Com base na análise das personas forma identificadas as seguintes histórias de usuários:
 
-| EU COMO... `PERSONA` | QUERO/PRECISO ... `FUNCIONALIDADE` | PARA ... `MOTIVO/VALOR`                |
-| -------------------- | ---------------------------------- | -------------------------------------- |
-| Usuário do sistema   | Registrar minhas tarefas           | Não esquecer de fazê-las               |
-| Administrador        | Alterar permissões                 | Permitir que possam administrar contas |
+|EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
+|--------------------|------------------------------------|----------------------------------------|
+|Ana Silva           | Encontrar atividades para mim e meu filho, buscar interação social no condomínio | Para que possamos nos divertir e interagir socialmente, valorizando o tempo juntos e promovendo nosso bem-estar. |
+|Carlos Oliveira     | Conhecer vizinhos e participar de eventos sociais no condomínio | Para me sentir parte da comunidade e construir relacionamentos significativos. |
+|Isabel Mendes       | Criar uma atmosfera social no condomínio, promovendo eventos e atividades para os moradores | Para fortalecer os laços comunitários, fomentar a interação e promover o senso de pertencimento. |
+|Ricardo Santos      | Encontrar companhia e participar de atividades culturais no condomínio | Para combater a solidão, enriquecer minha vida e melhorar minha qualidade de vida. |
+|Larissa Souza       | Encontrar espaços seguros para as crianças e participar de atividades em família no condomínio | Para fortalecer os laços familiares, garantir o bem-estar e a diversão da minha família. |
+
 
 Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
 
