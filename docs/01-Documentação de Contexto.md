@@ -1,6 +1,10 @@
 # Introdução
 
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
+Atualmente, os condomínios residenciais enfrentam desafios significativos no que diz respeito ao gerenciamento e controle de acesso aos seus espaços de lazer. A pandemia da covid-19 trouxe à tona a necessidade de encontrar soluções inovadoras para lidar com essa questão, e uma das práticas emergentes é a implementação de reservas por aplicativo. Embora tenha surgido como uma resposta à crise sanitária, essa abordagem tem se mostrado uma opção eficaz e conveniente para gerenciar o acesso aos espaços de lazer dos condomínios.
+A ideia de incorporar esse sistema de reservas para gerenciar áreas comuns de lazer de condomínios surgiu como uma possibilidade após a observação de práticas adotadas durante a pandemia.  A matéria do G1 CE (2020), destaca como diversos condomínios em Fortaleza adaptaram o funcionamento de suas áreas comuns para atender às novas regras de segurança, incluindo a reserva de espaços de lazer por aplicativos e o reforço na higienização dos locais após o uso de cada morador.
+Além disso, a prevenção de conflitos nas áreas de lazer do condomínio é uma preocupação constante para síndicos e moradores. A matéria do Síndico Garcia (2018), ressalta a importância do diálogo e da definição de regras claras para a organização do cotidiano do condomínio, demonstrando a necessidade de adotar práticas que promovam a convivência harmoniosa entre os condôminos.
+Diante desse contexto, torna-se evidente a necessidade de desenvolver e implementar soluções que atendam às demandas dos moradores e dos administradores de condomínios, proporcionando uma gestão eficiente e segura dos espaços de lazer. Este projeto visa contribuir para essa causa, fornecendo uma solução abrangente e eficaz que possa ser adaptada às necessidades específicas de cada condomínio.
+
 
 ## Problema
 Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
