@@ -1,10 +1,5 @@
 # MeuCondomínio
 
-<div align="center">
-    <img src="" width="300" height="300">
-</div>
-<div align="center">
-
 `Análise e Desenvolvimento de Sistemas`
 
 `Desenvolvimento de uma Aplicação Móvel em um Ambiente de Negócio`
