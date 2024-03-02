@@ -1,5 +1,10 @@
 # MeuCondomínio
 
+<div align="center">
+    <img src="![meu__3_-removebg-preview](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-meucondominio/assets/127361540/90bee2a4-37d5-487a-9686-7e2cd70cd6a8)" width="300" height="300">
+</div>
+<div align="center">
+
 `Análise e Desenvolvimento de Sistemas`
 
 `Desenvolvimento de uma Aplicação Móvel em um Ambiente de Negócio`
