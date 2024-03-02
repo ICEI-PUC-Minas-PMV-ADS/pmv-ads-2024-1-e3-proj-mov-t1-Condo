@@ -173,15 +173,31 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 | ID     | Descrição do Requisito                  | Prioridade |
 | ------ | --------------------------------------- | ---------- |
-| RF-001 | Permitir que o usuário cadastre tarefas | ALTA       |
-| RF-002 | Emitir um relatório de tarefas no mês   | MÉDIA      |
+| RF-001 | O aplicativo deve permitir CRUD da administração do condomínio*| ALTA       |
+| RF-002 | O aplicativo deve ser protegido por autenticação de login e senha. | MÉDIA      |
+| RF-003 | O aplicativo deve permitir o CRUD dos condôminos. | ALTA |
+| RF-004 | O aplicativo deve permitir a administração optar por qual serviços serão oferecidos aos condôminos. | ALTA |
+| RF-005 | O aplicativo deve disponibilizar uma página* para CRUD de agendamento de piscina aos condôminos* | ALTA |
+| RF-006 | O aplicativo deve disponibilizar uma página* para CRUD de agendamento de salão de festas aos condôminos | ALTA |
+| RF-007 | O aplicativo deve disponibilizar uma página para CRUD de agendamento da academia aos condôminos* | ALTA |
+| RF-008 | O aplicativo deve disponibilizar uma página para CRUD de agendamento da churrasqueira aos condôminos* | ALTA |
+| RF-009 | O aplicativo deve permitir ao condômino realizar o agendamento dos serviços disponibilizados pelo condomínio. | ALTA |
+| RF-010 | O aplicativo deve permitir ao condômino realizar o CRUD de um agendamento dos serviços disponibilizados pelo condomínio. | ALTA |
+| RF-011 ref: RF-004 | O aplicativo deve permitir à administração do condomínio realizar o CRUD dos espaços oferecidos. | ALTA |
+| RF-012 ref: RF-001 | O aplicativo deve oferecer funcionalidades de manutenção, gerência de disponibilidade dos espaços e limitações de capacidade de acesso, garantindo que não fiquem superlotados e cumprindo regulamentos de segurança. | ALTA |
 
 ### Requisitos não Funcionais
 
 | ID      | Descrição do Requisito                                            | Prioridade |
 | ------- | ----------------------------------------------------------------- | ---------- |
-| RNF-001 | O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA      |
-| RNF-002 | Deve processar requisições do usuário em no máximo 3s             | BAIXA      |
+| RNF-001 | O aplicativo deve incluir uma página inicial de apresentação.| MÉDIA |
+| RNF-002 | Os dados dos usuários, incluindo informações pessoais e senhas, devem ser armazenados de forma segura e criptografada, garantindo a proteção contra acesso não autorizado. | ALTA |
+| RNF-003 | O aplicativo deve ser responsivo, garantindo tempos de resposta curtos para evitar a frustração do usuário. | ALTA |
+| RNF-004 | O aplicativo deve ser escalável para suportar um aumento significativo no número de usuários. | ALTA |
+| RNF-005 | O aplicativo deve possuir um medidas de backup e recuperação para garantir a disponibilidade contínua dos dados e funcionalidades em caso de falha do sistema. | ALTA |
+| RNF-006 | A interface do usuário deve ser intuitiva e fácil de usar, inclusive para usuários sem experiência prévia em aplicativos similares. | ALTA |
+| RNF-007 | O aplicativo deve ser desenvolvido de forma a ser compatível com o sistema operacional Android. | ALTA |
+| RNF-008 | O aplicativo deve ser desenvolvido com uma estrutura bem organizada e modular, a fim de facilitar a manutenção e a adição de novos recursos no futuro. | ALTA |
 
 Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
 
@@ -204,8 +220,10 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 | ID  | Restrição                                             |
 | --- | ----------------------------------------------------- |
-| 01  | O projeto deverá ser entregue até o final do semestre |
-| 02  | Não pode ser desenvolvido um módulo de backend        |
+| 01  | O projeto deverá ser entregue até o final do semestre letivo, com data limite estabelecida em 23/06/2024 para garantir o cumprimento do prazo. |
+| 02  | O projeto deverá aderir ao cronograma estabelecido para cada etapa de entrega, a fim de evitar a possibilidade de atrasos significativos. |
+| 03  | O projeto deve ser planejado e executado dentro dos recursos financeiros disponíveis, incluindo custos relacionados a hardware, software, ferramentas de desenvolvimento e quaisquer outros gastos associados ao projeto. |
+| 04  | A equipe deverá desenvolver o projeto com base no aprendizado obtido na universidade, sendo proibida a terceirização do desenvolvimento do trabalho. |
 
 Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
 
