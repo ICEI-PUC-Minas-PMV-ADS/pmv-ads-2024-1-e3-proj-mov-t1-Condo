@@ -23,12 +23,7 @@ Apresente também alguns (pelo menos 2) objetivos específicos dependendo de ond
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
-
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
-
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+Desenvolver um software de gerenciamento e controle de acesso aos espaços de lazer em condomínios é essencial para lidar com os desafios de superlotação, subutilização e conflitos entre moradores. Optamos por concentrar nossos esforços na transparência da disponibilidade dos espaços, na facilidade de uso das reservas e no monitoramento do uso, pois são áreas críticas destacadas pelos usuários. Nosso objetivo é oferecer uma solução abrangente que simplifique a experiência dos usuários no condomínio, promovendo uma convivência mais harmoniosa e satisfatória para todos os envolvidos.
 
 ## Público-Alvo
 
