@@ -14,12 +14,7 @@ Uma solução crucial para esse impasse seria a implementação de um sistema de
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
-
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+Nosso software visa fornecer uma solução abrangente para o gerenciamento eficiente dos espaços de lazer em condomínios residenciais. Ele permitirá aos moradores verificar a disponibilidade dos espaços, fazer reservas de forma simples e garantir que não haja superlotação. Para os gestores e administradores, o software oferecerá ferramentas para monitorar o uso dos espaços, colaborar na gestão do acesso e promover uma distribuição equitativa dos recursos comuns. Em resumo, buscamos melhorar a experiência dos moradores e promover uma convivência mais harmoniosa no condomínio através desse sistema.
 
 ## Justificativa
 
