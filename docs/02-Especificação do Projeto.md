@@ -128,11 +128,12 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-|Ana Silva           | Encontrar atividades para mim e meu filho, buscar interação social no condomínio | Para que possamos nos divertir e interagir socialmente, valorizando o tempo juntos e promovendo nosso bem-estar. |
-|Carlos Oliveira     | Conhecer vizinhos e participar de eventos sociais no condomínio | Para me sentir parte da comunidade e construir relacionamentos significativos. |
-|Isabel Mendes       | Criar uma atmosfera social no condomínio, promovendo eventos e atividades para os moradores | Para fortalecer os laços comunitários, fomentar a interação e promover o senso de pertencimento. |
-|Ricardo Santos      | Encontrar companhia e participar de atividades culturais no condomínio | Para combater a solidão, enriquecer minha vida e melhorar minha qualidade de vida. |
-|Larissa Souza       | Encontrar espaços seguros para as crianças e participar de atividades em família no condomínio | Para fortalecer os laços familiares, garantir o bem-estar e a diversão da minha família. |
+|Ana Silva           | Encontrar atividades para mim e meu filho, buscar interação social no condomínio | Como uma advogada e mãe solteira, quero encontrar atividades recreativas para mim e meu filho de 6 anos, possibilitando a interação social no condomínio. Desejo poder reservar espaços de lazer, como a piscina, considerando a segurança das crianças e a disponibilidade de horários familiares.|
+|Carlos Oliveira     | Conhecer vizinhos e participar de eventos sociais no condomínio | Como um empresário recém-mudado para o condomínio, quero conhecer meus vizinhos e participar de eventos sociais. Gostaria de utilizar o aplicativo para descobrir e reservar espaços de lazer, como o salão de festas, facilitando a integração com a comunidade. |
+|Lucas Oliveira       | Criar uma atmosfera social no condomínio, promovendo eventos e atividades para os moradores | Como profissional de marketing e entusiasta de eventos, desejo criar uma atmosfera social no condomínio. Utilizarei o aplicativo para organizar eventos e reservar espaços, como a academia, promovendo a interação e fortalecendo os laços comunitários.|
+|Larissa Souza       | Encontrar espaços seguros para as crianças e participar de atividades em família no condomínio | Como médica e mãe de dois filhos, busco espaços seguros para as crianças e atividades em família no condomínio. Utilizarei o aplicativo para reservar espaços adequados, como a piscina, garantindo o bem-estar e a diversão da minha família.|
+|Ricardo Santos      | Encontrar companhia e participar de atividades culturais no condomínio | Como aposentado e viúvo, desejo encontrar companhia e participar de atividades culturais no condomínio. Utilizarei o aplicativo para reservar espaços como a churrasqueira e receber notificações sobre eventos culturais, combatendo a solidão e enriquecendo minha vida.|
+
 
 ## Modelagem do Processo de Negócio 
 
