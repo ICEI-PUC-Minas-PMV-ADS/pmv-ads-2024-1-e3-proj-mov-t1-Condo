@@ -257,13 +257,16 @@ De acordo com o PMBoK v6 as dez áreas que constituem os pilares para gerenciar 
 
 ## Gerenciamento de Tempo
 
-Com diagramas bem organizados que permitem gerenciar o tempo nos projetos, o gerente de projetos agenda e coordena tarefas dentro de um projeto para estimar o tempo necessário de conclusão.
+Gráfico de Grant do projeto Meu Condominio organizado para gerenciar as tarefas dentro do projeto e estimar o tempo necessário para conclusão.
 
-![Diagrama de rede simplificado notação francesa (método francês)](img/02-diagrama-rede-simplificado.png)
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-meucondominio/assets/130249437/abc06550-ce52-47f5-84c2-70d3a4a4efa6) 
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-meucondominio/assets/130249437/4432f430-e5a3-4b77-b46c-c2cdc089feb0)
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-meucondominio/assets/130249437/4d2e078e-fe71-42a7-9af2-71679b763bdc)
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-meucondominio/assets/130249437/0c773417-e9f5-476e-bc48-b0da3932f8b6)
 
-O gráfico de Gantt ou diagrama de Gantt também é uma ferramenta visual utilizada para controlar e gerenciar o cronograma de atividades de um projeto. Com ele, é possível listar tudo que precisa ser feito para colocar o projeto em prática, dividir em atividades e estimar o tempo necessário para executá-las.
 
-![Gráfico de Gantt](img/02-grafico-gantt.png)
+O Project com o cronograma completo está disponível no link a seguir: [Cronograma Meu Condomínio](https://drive.google.com/drive/folders/1uam2S1hAt20Tv7w0WMAYofgmHaNS_jjJ?usp=drive_link)
+
 
 ## Gerenciamento de Equipe
 
