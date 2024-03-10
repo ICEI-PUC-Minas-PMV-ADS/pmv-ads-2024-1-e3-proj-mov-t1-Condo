@@ -175,13 +175,13 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 | ID     | Descrição do Requisito                  | Prioridade |
 | ------ | --------------------------------------- | ---------- |
 | RF-001 | O aplicativo deve permitir CRUD do condomínio| ALTA       |
-| RF-002 | O aplicativo deve ser protegido por autenticação de login e senha. | MÉDIA      |
+| RF-002 | O aplicativo deve ser protegido por autenticação de login e senha. | ALTA      |
 | RF-003 | O aplicativo deve permitir o CRUD dos condôminos. | ALTA |
 | RF-004 | O aplicativo deve permitir a administração optar por quais espaços serão exibidos aos condôminos. | ALTA |
 | RF-005 | O aplicativo deve disponibilizar CRUD de reserva de piscina aos condôminos | BAIXA |
-| RF-006 | O aplicativo deve disponibilizar CRUD de reserva de salão de festas aos condôminos | MÉDIA |
+| RF-006 | O aplicativo deve disponibilizar CRUD de reserva de salão de festas aos condôminos | BAIXA |
 | RF-007 | O aplicativo deve disponibilizar CRUD de reserva da academia aos condôminos | BAIXA |
-| RF-008 | O aplicativo deve disponibilizar CRUD de reserva da churrasqueira aos condôminos | ALTA |
+| RF-008 | O aplicativo deve disponibilizar CRUD de reserva da churrasqueira aos condôminos | BAIXA |
 | RF-009 | O aplicativo deve permitir ao condômino realizar o CRUD de reservas dos espaços de lazer disponibilizados pelo condomínio. | ALTA |
 | RF-010 | O aplicativo deve permitir à administração do condomínio realizar o CRUD dos espaços oferecidos. | ALTA |
 | RF-011 | O aplicativo deve oferecer funcionalidades de manutenção, gerência de disponibilidade dos espaços e limitações de capacidade de acesso, garantindo que não fiquem superlotados, cumprindo regulamentos de segurança e aplicando as regras de negócio. | ALTA |
