@@ -272,7 +272,8 @@ O Project com o cronograma completo está disponível no link a seguir: [Cronogr
 
 A gestão de equipe se dará pelo Github, conforme tela apresentada abaixo:
 
-![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-meucondominio/assets/130249437/8d62b7e1-bf83-42fd-b1ed-eda465954d1a)
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-meucondominio/assets/130249437/be2ad15c-056a-4720-9608-9275534f806d)
+
 
 O gerenciamento com mais detalhes se encontra disponível no link a seguir: [Meu Condominio](https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/814/views/1)
 
