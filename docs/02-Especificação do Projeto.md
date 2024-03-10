@@ -281,4 +281,14 @@ O gerenciamento com mais detalhes se encontra disponível no link a seguir: [Meu
 
 O processo de determinar o orçamento do projeto é uma tarefa que depende, além dos produtos (saídas) dos processos anteriores do gerenciamento de custos, também de produtos oferecidos por outros processos de gerenciamento, como o escopo e o tempo.
 
-![Orçamento](img/02-orcamento.png)
+A divisão orçamentária do projeto ficou determinada da seguinte forma:
+- Custo Cliente: R$189.000,00
+- Custo Empresta: R$130.340,00
+- Lucro Empresa: R$58.660,00
+- Tempo de execução: 5 meses, 840 horas aproximadamente.
+
+Abaixo o detalhamento dos valores:
+
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-meucondominio/assets/130249437/d46c64e5-e6f3-4afd-98b9-833a690cef86)
+
+Planilha disponível no link a seguir: [Meu Condominio - Orçamento](https://docs.google.com/spreadsheets/d/1itAQYCJMgxQk3AZ7dOz3hDPnDEInjPtk/edit?usp=sharing&ouid=117819638626584138761&rtpof=true&sd=true)
