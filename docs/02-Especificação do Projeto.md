@@ -239,7 +239,7 @@ Enumere as restrições à sua solução. Lembre-se de que as restrições geral
 
 # Matriz de Rastreabilidade
 
-A matriz de rastreabilidade é uma ferramenta usada para facilitar a visualização dos relacionamento entre requisitos e outros artefatos ou objetos, permitindo a rastreabilidade entre os requisitos e os objetivos de negócio. 
+A matriz de rastreabilidade é uma ferramenta usada para facilitar a visualização dos relacionamento entre requisitos e outros artefatos ou objetos, permitindo a rastreabilidade entre os requisitos e os objetivos de negócio. [Acesse a Matriz Aqui](https://docs.google.com/spreadsheets/d/1k2EgexrNYk0RnOKNNShHfIKMUCSfDb2Oha73zHA1ILM/edit?usp=sharing)
 
 
 
