@@ -289,6 +289,6 @@ A divisão orçamentária do projeto ficou determinada da seguinte forma:
 
 Abaixo o detalhamento dos valores:
 
-![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-meucondominio/assets/130249437/d46c64e5-e6f3-4afd-98b9-833a690cef86)
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-meucondominio/assets/130249437/c0d5892a-9082-4047-8ed3-166105913c0b)
 
 Planilha disponível no link a seguir: [Meu Condominio - Orçamento](https://docs.google.com/spreadsheets/d/1itAQYCJMgxQk3AZ7dOz3hDPnDEInjPtk/edit?usp=sharing&ouid=117819638626584138761&rtpof=true&sd=true)
