@@ -270,9 +270,11 @@ O Project com o cronograma completo está disponível no link a seguir: [Cronogr
 
 ## Gerenciamento de Equipe
 
-O gerenciamento adequado de tarefas contribuirá para que o projeto alcance altos níveis de produtividade. Por isso, é fundamental que ocorra a gestão de tarefas e de pessoas, de modo que os times envolvidos no projeto possam ser facilmente gerenciados. 
+A gestão de equipe se dará pelo Github, conforme tela apresentada abaixo:
 
-![Simple Project Timeline](img/02-project-timeline.png)
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-meucondominio/assets/130249437/8d62b7e1-bf83-42fd-b1ed-eda465954d1a)
+
+O gerenciamento com mais detalhes se encontra disponível no link a seguir: [Meu Condominio](https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/814/views/1)
 
 ## Gestão de Orçamento
 
