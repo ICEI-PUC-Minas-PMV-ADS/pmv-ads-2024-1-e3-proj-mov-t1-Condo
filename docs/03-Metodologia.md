@@ -1,14 +1,17 @@
-
 # Metodologia
 
-<span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Documentação de Especificação</a></span>
+A metodologia contempla as definições de ferramental utilizado pela equipe tanto para a manutenção dos códigos e demais artefatos quanto para a organização do time na execução das tarefas do projeto.
 
-Descreva aqui a metodologia de trabalho do grupo para atacar o problema. Definições sobre os ambiente de trabalho utilizados pela  equipe para desenvolver o projeto. Abrange a relação de ambientes utilizados, a estrutura para gestão do código fonte, além da definição do processo e ferramenta através dos quais a equipe se organiza (Gestão de Times).
+# Relação de Ambientes de Trabalho
 
-## Relação de Ambientes de Trabalho
+Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a relação dos ambientes com seu respectivo propósito é apresentada na tabela que se segue.
 
-Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a relação dos ambientes com seu respectivo propósito deverá ser apresentada em uma tabela que especifica que detalha Ambiente, Plataforma e Link de Acesso. 
-Nota: Vide documento modelo do estudo de caso "Portal de Notícias" e defina também os ambientes e frameworks que serão utilizados no desenvolvimento de aplicações móveis.
+| Ambiente                          | Plataforma   | Link de Acesso                                                                                                                                                                                                          |
+| --------------------------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Repositório de Código fonte       | GitHub       | [Link-Repositório](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-meucondominio)                                                                                                                                                                                                    |
+| Documentos do projeto             | Google Drive | [DocsAgendaHub](https://docs.google.com/document/d/1dpWH7d2QIZyCtB89hAwlDlvLdq1clH3Y/edit?rtpof=true&sd=true)                                                                                                                   |
+| Projeto de interface e Wireframes | Figma        | [Protótipo-Figma](https://www.figma.com/proto/bIBuBaH5RDg0poKqXl92Ox/meuCondominio?type=design&node-id=3-248&t=DGf1cAu7oKrCU7HB-0&scaling=scale-down&page-id=0%3A1) |
+| Gerenciamento do projeto          | GitHub       | [Quadro-Kanban](https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/814)                                                                                                                                            |
 
 ## Controle de Versão
 
@@ -16,72 +19,72 @@ A ferramenta de controle de versão adotada no projeto foi o
 [Git](https://git-scm.com/), sendo que o [Github](https://github.com)
 foi utilizado para hospedagem do repositório.
 
-O projeto segue a seguinte convenção para o nome de branches:
+O projeto segue a seguinte convenção para o nom e de branches:
 
 - `main`: versão estável já testada do software
-- `unstable`: versão já testada do software, porém instável
-- `testing`: versão em testes do software
-- `dev`: versão de desenvolvimento do software
+- `Develop`: Linha do tempo de desenvolvimento do próximo deploy, contendo funcionalidades não publicadas que serão posteriormente mescladas na branch "Main"
+- `feature`: Uma nova funcionalidade precisa ser introduzida
+- `Release`: Versão já testada do software, porém instável
+- `Hotfix`: Uma funcionalidade encontra-se com problemas
+- `Release`: Ambiente de homologação para mesclar as alterações da "Develop" na "Main"
 
-Quanto à gerência de issues, o projeto adota a seguinte convenção para
-etiquetas:
+As Branches mecionadas são ilustradas na figura a seguir
 
-- `documentation`: melhorias ou acréscimos à documentação
-- `bug`: uma funcionalidade encontra-se com problemas
-- `enhancement`: uma funcionalidade precisa ser melhorada
-- `feature`: uma nova funcionalidade precisa ser introduzida
+![Fluxo de controle do código fonte no repositório git](/pmv-ads-2024-1-e3-proj-mov-t1-meucondominio/docs/img/branches.png)
 
-Discuta como a configuração do projeto foi feita na ferramenta de versionamento escolhida. Exponha como a gerência de tags, merges, commits e branchs é realizada. Discuta como a gerência de issues foi realizada.
-
-> **Links Úteis**:
-> - [Microfundamento: Gerência de Configuração](https://pucminas.instructure.com/courses/87878/)
-> - [Tutorial GitHub](https://guides.github.com/activities/hello-world/)
-> - [Git e Github](https://www.youtube.com/playlist?list=PLHz_AreHm4dm7ZULPAmadvNhH6vk9oNZA)
->  - [Comparando fluxos de trabalho](https://www.atlassian.com/br/git/tutorials/comparing-workflows)
-> - [Understanding the GitHub flow](https://guides.github.com/introduction/flow/)
-> - [The gitflow workflow - in less than 5 mins](https://www.youtube.com/watch?v=1SXpE08hvGs)
+Fluxo de controle do código fonte no repositório git
 
 ## Gerenciamento de Projeto
 
+A equipe utiliza metodologias ágeis, tendo escolhido o Scrum como base para definição do processo de desenvolvimento.
+
 ### Divisão de Papéis
 
-Apresente a divisão de papéis entre os membros do grupo.
+- Scrum Master: Mariane de Oliveira Duarte
+- Product Owner: Josué Batista de Almeida
+- Equipe de Desenvolvimento
+  - Álvaro Gonçalves Rodrigues
+  - Gabriel de Costa Souza
+  - Leonardo Guerra Melgaço
+  - Evellyn Andrade Alves da Silva
+- Equipe de Design
+  - Davi Haniel Reis Silva
 
-Exemplificação: A equipe utiliza metodologias ágeis, tendo escolhido o Scrum como base para definição do processo de desenvolvimento. A equipe está organizada da seguinte maneira:
-- Scrum Master: Felipe Domingos;
-- Product Owner: Rommel Carneiro;
-- Equipe de Desenvolvimento: Pedro Penna, Pedro Ivo, Rodrigo Richard;
-- Equipe de Design: Simone Nogueira.
+### Gerenciamento do Product Backlog
 
-> **Links Úteis**:
-> - [11 Passos Essenciais para Implantar Scrum no seu Projeto](https://mindmaster.com.br/scrum-11-passos/)
-> - [Scrum em 9 minutos](https://www.youtube.com/watch?v=XfvQWnRgxG0)
-> - [Os papéis do Scrum e a verdade sobre cargos nessa técnica](https://www.atlassian.com/br/agile/scrum/roles)
+- Backlog: Recebe as tarefas a serem trabalhadas e representa o Product Backlog. Todas as atividades identificadas no decorrer do projeto estão incorporadas a esta lista.
+- To Do: Esta lista representa o Sprint Backlog. Este é o Sprint atual que estamos trabalhando.
+- In Progress: Quando uma tarefa tiver sido iniciada, ela é movida para cá para ser desenvolvida ativamente.
+- Test: Checagem de Qualidade. Quando as tarefas são concluídas, eles são movidas para o “CQ”. No final da semana, eu revejo essa lista para garantir que tudo saiu como planejado.
+- Done: Nesta lista são colocadas as tarefas que passaram pelos testes e controle de qualidade e estão prontos para ser entregues ao usuário. Não há mais edições ou revisões necessárias.
+- Locked: Quando alguma coisa impede a conclusão da tarefa, ela é movida para esta lista juntamente com um comentário sobre o que está travando a tarefa.
 
-### Processo
+O quadro kanban do grupo desenvolvido na ferramenta de gerenciamento de projetos é apresentado, no estado atual, na figura 3 e está disponível através da URL: [Quadro-Kanban](https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/814/views/1)
 
-Coloque  informações sobre detalhes da implementação do Scrum seguido pelo grupo. O grupo deverá fazer uso do recurso de gerenciamento de projeto oferecido pelo GitHub, que permite acompanhar o andamento do projeto, a execução das tarefas e o status de desenvolvimento da solução.
- 
-> **Links Úteis**:
-> - [Planejamento e Gestáo Ágil de Projetos](https://pucminas.instructure.com/courses/87878/pages/unidade-2-tema-2-utilizacao-de-ferramentas-para-controle-de-versoes-de-software)
-> - [Sobre quadros de projeto](https://docs.github.com/pt/issues/organizing-your-work-with-project-boards/managing-project-boards/about-project-boards)
-> - [Project management, made simple](https://github.com/features/project-management/)
-> - [Sobre quadros de projeto](https://docs.github.com/pt/github/managing-your-work-on-github/about-project-boards)
-> - [Como criar Backlogs no Github](https://www.youtube.com/watch?v=RXEy6CFu9Hk)
-> - [Tutorial Slack](https://slack.com/intl/en-br/)
+![image](/pmv-ads-2024-1-e3-proj-mov-t1-meucondominio/docs/img/back.png)
+Figura 3 - Tela do kanban utilizada pelo grupo
 
 ### Ferramentas
 
 As ferramentas empregadas no projeto são:
 
-- Editor de código.
-- Ferramentas de comunicação
-- Ferramentas de desenho de tela (_wireframing_)
+- Visual Studio Code.
+- Microsoft Teams
+- Figma
+- GitHub
+- Git
 
-O editor de código foi escolhido porque ele possui uma integração com o sistema de versão. As ferramentas de comunicação utilizadas possuem integração semelhante e por isso foram selecionadas. Por fim, para criar diagramas utilizamos essa ferramenta por melhor captar as necessidades da nossa solução.
+- Visual Studio Code:
+O Visual Studio Code foi escolhido como nosso editor de código principal devido à sua robustez, flexibilidade e ampla gama de extensões disponíveis. Além disso, sua integração perfeita com sistemas de controle de versão, como o Git, simplifica o fluxo de trabalho colaborativo e o gerenciamento de código-fonte.
 
-Liste quais ferramentas foram empregadas no desenvolvimento do projeto, justificando a escolha delas, sempre que possível.
- 
-> **Possíveis Ferramentas que auxiliarão no gerenciamento**: 
-> - [Slack](https://slack.com/)
-> - [Github](https://github.com/)
+- Microsoft Teams:
+Optamos pelo Microsoft Teams como nossa plataforma de comunicação e colaboração devido à sua integração nativa com outras ferramentas da Microsoft, como o Office 365. Isso facilita a organização de reuniões, compartilhamento de documentos e comunicação em equipe em um único ambiente, aumentando a eficiência e a produtividade.
+
+- Figma:
+Escolhemos o Figma como nossa ferramenta de design e prototipagem devido à sua natureza baseada na nuvem, que permite a colaboração em tempo real entre os membros da equipe, independentemente da localização geográfica. Além disso, sua interface intuitiva e recursos avançados de prototipagem nos ajudam a captar e visualizar com precisão as necessidades e fluxos de trabalho da nossa solução.
+
+- GitHub:
+Utilizamos o GitHub como nossa plataforma de hospedagem e gerenciamento de código-fonte devido à sua popularidade, robustez e recursos avançados de controle de versão. Através do GitHub, podemos colaborar de forma eficiente, rastrear alterações, revisar código e gerenciar problemas, garantindo a qualidade e a integridade do nosso código durante todo o ciclo de desenvolvimento.
+
+- Git:
+O Git é o sistema de controle de versão distribuído que utilizamos em conjunto com o GitHub. Sua flexibilidade, velocidade e capacidade de lidar com projetos de qualquer tamanho o tornam uma escolha ideal para o desenvolvimento de software colaborativo. Com o Git, podemos rastrear todas as alterações no código-fonte, criar branches para desenvolvimento paralelo e mesclar facilmente as alterações de volta ao branch principal, mantendo assim um histórico claro e organizado do nosso trabalho.
