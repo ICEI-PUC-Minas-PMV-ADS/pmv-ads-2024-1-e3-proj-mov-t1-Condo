@@ -9,7 +9,7 @@ Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a 
 | Ambiente                          | Plataforma   | Link de Acesso                                                                                                                                                                                                          |
 | --------------------------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Repositório de Código fonte       | GitHub       | [Link-Repositório](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-meucondominio)                                                                                                                                                                                                    |
-| Documentos do projeto             | Google Drive | [DocsMeuCondomínio(https://docs.google.com/document/d/1dpWH7d2QIZyCtB89hAwlDlvLdq1clH3Y/edit)                                                                                                                   |
+| Documentos do projeto             | Google Drive | [DocsMeuCondomínio](https://docs.google.com/document/d/1dpWH7d2QIZyCtB89hAwlDlvLdq1clH3Y/edit)                                                                                                                   |
 | Projeto de interface e Wireframes | Figma        | [Protótipo-Figma](https://www.figma.com/proto/bIBuBaH5RDg0poKqXl92Ox/meuCondominio?type=design&node-id=3-248&t=DGf1cAu7oKrCU7HB-0&scaling=scale-down&page-id=0%3A1) |
 | Gerenciamento do projeto          | GitHub       | [Quadro-Kanban](https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/814)                                                                                                                                            |
 
@@ -61,7 +61,7 @@ A equipe utiliza metodologias ágeis, tendo escolhido o Scrum como base para def
 
 O quadro kanban do grupo desenvolvido na ferramenta de gerenciamento de projetos é apresentado, no estado atual, na figura 3 e está disponível através da URL: [Quadro-Kanban](https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/814/views/1)
 
-![image](/pmv-ads-2024-1-e3-proj-mov-t1-meucondominio/docs/img/back.png)
+![image]([/pmv-ads-2024-1-e3-proj-mov-t1-meucondominio/docs/img/back.png](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-meucondominio/blob/main/docs/img/back.png))
 Figura 3 - Tela do kanban utilizada pelo grupo
 
 ### Ferramentas
