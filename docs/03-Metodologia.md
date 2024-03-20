@@ -30,7 +30,7 @@ O projeto segue a seguinte convenção para o nom e de branches:
 
 As Branches mecionadas são ilustradas na figura a seguir
 
-![Fluxo de controle do código fonte no repositório git](/pmv-ads-2024-1-e3-proj-mov-t1-meucondominio/docs/img/branches.png)
+![Fluxo de controle do código fonte no repositório git](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-meucondominio/blob/main/docs/img/branches.png)
 
 Fluxo de controle do código fonte no repositório git
 
@@ -61,7 +61,7 @@ A equipe utiliza metodologias ágeis, tendo escolhido o Scrum como base para def
 
 O quadro kanban do grupo desenvolvido na ferramenta de gerenciamento de projetos é apresentado, no estado atual, na figura 3 e está disponível através da URL: [Quadro-Kanban](https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/814/views/1)
 
-![image]([/pmv-ads-2024-1-e3-proj-mov-t1-meucondominio/docs/img/back.png](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-meucondominio/blob/main/docs/img/back.png))
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-meucondominio/blob/main/docs/img/back.png)
 Figura 3 - Tela do kanban utilizada pelo grupo
 
 ### Ferramentas
