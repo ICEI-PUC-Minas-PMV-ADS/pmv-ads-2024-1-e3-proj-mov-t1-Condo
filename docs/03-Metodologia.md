@@ -50,19 +50,19 @@ A equipe utiliza metodologias ágeis, tendo escolhido o Scrum como base para def
 - Equipe de Design
   - Davi Haniel Reis Silva
 
-### Gerenciamento do Product Backlog
+### Processo
 
-- Backlog: Recebe as tarefas a serem trabalhadas e representa o Product Backlog. Todas as atividades identificadas no decorrer do projeto estão incorporadas a esta lista.
-- To Do: Esta lista representa o Sprint Backlog. Este é o Sprint atual que estamos trabalhando.
-- In Progress: Quando uma tarefa tiver sido iniciada, ela é movida para cá para ser desenvolvida ativamente.
-- Test: Checagem de Qualidade. Quando as tarefas são concluídas, eles são movidas para o “CQ”. No final da semana, eu revejo essa lista para garantir que tudo saiu como planejado.
-- Done: Nesta lista são colocadas as tarefas que passaram pelos testes e controle de qualidade e estão prontos para ser entregues ao usuário. Não há mais edições ou revisões necessárias.
-- Locked: Quando alguma coisa impede a conclusão da tarefa, ela é movida para esta lista juntamente com um comentário sobre o que está travando a tarefa.
+Para gerenciar e distribuir as tarefas do projeto, a equipe está utilizando um quadro de tarefas no GitHub com o modelo KANBAN, que está organizado nas seguintes colunas:
+
+- `Backlog`: Recebe as tarefas a serem trabalhadas e representa o Product Backlog. Todas as atividades identificadas no decorrer do projeto também devem ser incorporadas a esta lista.
+- `To do`: Esta lista representa o Sprint Backlog. Este é o Sprint atual que estamos trabalhando.
+- `In Progress`: Quando uma tarefa tiver sido iniciada, ela é movida para cá para ser desenvolvida ativamente.
+- `Done`: Nesta lista são colocadas as tarefas que passaram pelos testes e controle de qualidade e estão prontos para serem entregues ao usuário. Não há mais edições ou revisões necessárias, ele está agendado e pronto para a ação.
+
 
 O quadro kanban do grupo desenvolvido na ferramenta de gerenciamento de projetos é apresentado, no estado atual, na figura 3 e está disponível através da URL: [Quadro-Kanban](https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/814/views/1)
 
-![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-meucondominio/blob/main/docs/img/back.png)
-Figura 3 - Tela do kanban utilizada pelo grupo
+![meu condominio](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-meucondominio/assets/130505215/8dd69925-548c-4f1b-96cc-6f6acf6bc862)
 
 ### Ferramentas
 
