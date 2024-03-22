@@ -19,9 +19,11 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Diagrama de
 
 O projeto da base de dados corresponde à representação das entidades e relacionamentos identificadas no Modelo ER, no formato de tabelas, com colunas e chaves primárias/estrangeiras necessárias para representar corretamente as restrições de integridade.
 
-![Diagrama_ER_MeuCondominio_BD](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-meucondominio/assets/130249437/3b12316e-f361-414d-b190-2c1aaba3f72d)
 
-Para uma melhor visualização do Modelo, disponibilizamos o PDF: [Diagrama_ER_MeuCondominio_BD.pdf](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-meucondominio/files/14728892/Diagrama_ER_MeuCondominio_BD.pdf)
+![Diagrama_ER_MeuCondominio_BD](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-meucondominio/assets/130249437/37f1748c-8aac-4de0-b8fb-519caed2d49c)
+
+
+Para uma melhor visualização do Modelo, disponibilizamos o PDF: [Diagrama_ER_MeuCondominio_BD.pdf](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-meucondominio/files/14728935/Diagrama_ER_MeuCondominio_BD.pdf)
 
 
 
