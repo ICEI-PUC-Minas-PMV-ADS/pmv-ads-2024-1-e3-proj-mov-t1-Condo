@@ -175,13 +175,13 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 | ID     | Descrição do Requisito                  | Prioridade |
 | ------ | --------------------------------------- | ---------- |
 | RF-001 | O aplicativo deve permitir CRUD do condomínio| ALTA       |
-| RF-002 | O aplicativo deve ser protegido por autenticação de login e senha. | MÉDIA      |
+| RF-002 | O aplicativo deve ser protegido por autenticação de login e senha. | ALTA      |
 | RF-003 | O aplicativo deve permitir o CRUD dos condôminos. | ALTA |
 | RF-004 | O aplicativo deve permitir a administração optar por quais espaços serão exibidos aos condôminos. | ALTA |
 | RF-005 | O aplicativo deve disponibilizar CRUD de reserva de piscina aos condôminos | BAIXA |
-| RF-006 | O aplicativo deve disponibilizar CRUD de reserva de salão de festas aos condôminos | MÉDIA |
+| RF-006 | O aplicativo deve disponibilizar CRUD de reserva de salão de festas aos condôminos | BAIXA |
 | RF-007 | O aplicativo deve disponibilizar CRUD de reserva da academia aos condôminos | BAIXA |
-| RF-008 | O aplicativo deve disponibilizar CRUD de reserva da churrasqueira aos condôminos | ALTA |
+| RF-008 | O aplicativo deve disponibilizar CRUD de reserva da churrasqueira aos condôminos | BAIXA |
 | RF-009 | O aplicativo deve permitir ao condômino realizar o CRUD de reservas dos espaços de lazer disponibilizados pelo condomínio. | ALTA |
 | RF-010 | O aplicativo deve permitir à administração do condomínio realizar o CRUD dos espaços oferecidos. | ALTA |
 | RF-011 | O aplicativo deve oferecer funcionalidades de manutenção, gerência de disponibilidade dos espaços e limitações de capacidade de acesso, garantindo que não fiquem superlotados, cumprindo regulamentos de segurança e aplicando as regras de negócio. | ALTA |
@@ -239,11 +239,11 @@ Enumere as restrições à sua solução. Lembre-se de que as restrições geral
 
 # Matriz de Rastreabilidade
 
-A matriz de rastreabilidade é uma ferramenta usada para facilitar a visualização dos relacionamento entre requisitos e outros artefatos ou objetos, permitindo a rastreabilidade entre os requisitos e os objetivos de negócio. 
+A matriz de rastreabilidade é uma ferramenta usada para facilitar a visualização dos relacionamento entre requisitos e outros artefatos ou objetos, permitindo a rastreabilidade entre os requisitos e os objetivos de negócio. [Acesse a Matriz Aqui](https://docs.google.com/spreadsheets/d/1k2EgexrNYk0RnOKNNShHfIKMUCSfDb2Oha73zHA1ILM/edit?usp=sharing)
 
-A matriz deve contemplar todos os elementos relevantes que fazem parte do sistema, conforme a figura meramente ilustrativa apresentada a seguir.
 
-![Exemplo de matriz de rastreabilidade](img/02-matriz-rastreabilidade.png)
+
+<img src='img/MatrizRatreabilidade.png'>
 
 > **Links Úteis**:
 > - [Artigo Engenharia de Software 13 - Rastreabilidade](https://www.devmedia.com.br/artigo-engenharia-de-software-13-rastreabilidade/12822/)
