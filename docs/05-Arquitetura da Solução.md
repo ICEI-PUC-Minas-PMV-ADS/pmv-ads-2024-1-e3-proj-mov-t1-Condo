@@ -55,6 +55,9 @@ Explique como a hospedagem e o lançamento da plataforma foi feita.
 ## Qualidade de Software
 A qualidade de um aplicativo móvel de gerenciamento e controle de acesso aos espaços de lazer em condomínios depende de vários fatores, incluindo funcionalidade, confiabilidade, usabilidade, eficiência, manutenibilidade e portabilidade. Aqui estão algumas considerações importantes para avaliar a qualidade do software do aplicativo condô:
 
+### Funcionalidade
+- O Aplicativo para gestão de espaços de lazer em condomínios residenciais deve fornecer todas as funcionalidades necessárias para gerenciar os espaços de lazer, como ver as instruções, cadastrar espaço/apartamento/dependentes e reservar espaços.
+
 ### Confiabilidade
 - O aplicativo para gestão de espaços de lazer em condomínios deve ser altamente confiável e estável para os usuários, protegendo os dados com autenticação criptografada e garantindo disponibilidade contínua das funcionalidades. 
   Isso implica em minimizar falhas, lidar com adversidades do sistema e manter a integridade dos dados ao longo do tempo, assegurando uma experiência positiva para os usuários.
@@ -62,3 +65,5 @@ A qualidade de um aplicativo móvel de gerenciamento e controle de acesso aos es
 ### Usabilidade
 - O aplicativo deve ser fácil de usar e intuitivo, permitindo uma navegação eficiente e rápida para os usuários, enquanto a resposta ágil do sistema durante as interações é essencial para uma experiência fluida de reserva de espaços.
 
+### Portabilidade
+- O Aplicativo deve garantir a compatibilidade com uma variedade de dispositivos móveis, garantindo uma experiência uniforme em várias plataformas, sem comprometer a funcionalidade ou usabilidade do aplicativo em diferentes ambientes e tamanhos de tela.
