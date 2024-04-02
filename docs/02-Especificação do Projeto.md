@@ -8,19 +8,119 @@ Apresente uma visão geral do que será abordado nesta parte do documento, enume
 
 ## Personas
 
-Pedro Paulo tem 26 anos, é arquiteto recém-formado e autônomo. Pensa em se desenvolver profissionalmente através de um mestrado fora do país, pois adora viajar, é solteiro e sempre quis fazer um intercâmbio. Está buscando uma agência que o ajude a encontrar universidades na Europa que aceitem alunos estrangeiros.
+<TABLE>
+	<TR>
+		<TD rowspan='2'><img src='/docs/img/02-advogada.jpg' style='height: 150px'></TD>
+		<TD colspan='2'>Ana Silva</TD>
+	</TR>
+	<TR>
+		<TD>Idade: 32<BR><BR>
+    Ocupação: Advogada.
+  <TD><BR>
+<BR>
+  Dados Principais: Mãe solteira, mora com seu filho de 6 anos.
+</TR>
+<TD>Objetivos:<BR>
+Encontrar atividades para seu filho e ela mesma, busca interação social no condomínio.
+</TD>
+<TD>Frustrações:<BR>
+  Dificuldade em manter a agenda organizada durante horários de pico, levando a atrasos e insatisfação dos clientes.
+Falta de uma ferramenta eficaz para gerenciar o estoque de produtos de barbearia.
+<TD>Hábitos:<BR>
+Trabalha em horários flexíveis, gosta de praticar esportes ao ar livre nos fins de semana.
+</TD>
+</TR>  
+</TABLE>
 
-Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
+<TABLE>
+	<TR>
+		<TD rowspan='2'><img src='/docs/img/02-empresario.jpg' style='height: 150px'></TD>
+		<TD colspan='2'>Carlos Oliveira</TD>
+	</TR>
+	<TR>
+		<TD>Idade: 32<BR><BR>
+    Ocupação: Empresário.
+  <TD><BR>
+<BR>
+Dados Principais: Morador recente no condomínio, casado e sem filhos.
+</TR>
+<TD>Objetivos:<BR>
+Conhecer seus vizinhos, participar de eventos sociais no condomínio.
+</TD>
+<TD>Frustrações:<BR>
+Pouco conhecimento sobre as atividades no condomínio, deseja se integrar à comunidade.
+<TD>Hábitos:<BR>
+Trabalha longas horas, gosta de relaxar em casa nos fins de semana, aprecia eventos sociais.
+</TD>
+</TR>  
+</TABLE>
 
-> **Links Úteis**:
-> - [Rock Content](https://rockcontent.com/blog/personas/)
-> - [Hotmart](https://blog.hotmart.com/pt-br/como-criar-persona-negocio/)
-> - [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
-> - [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
-> - [Mapa de Empatia](https://resultadosdigitais.com.br/blog/mapa-da-empatia/)
-> - [Mapa de Stalkeholders](https://www.racecomunicacao.com.br/blog/como-fazer-o-mapeamento-de-stakeholders/)
->
-Lembre-se que você deve ser enumerar e descrever precisamente e personalizada todos os clientes ideais que sua solução almeja.
+<TABLE>
+	<TR>
+		<TD rowspan='2'><img src='/docs/img/02-profissionalMarketing.jpg' style='height: 150px'></TD>
+		<TD colspan='2'>Lucas Oliveira</TD>
+	</TR>
+	<TR>
+		<TD>Idade: 28<BR><BR>
+    Ocupação: Profissional de Marketing.
+  <TD><BR>
+<BR>
+Solteiro, gosta de organizar eventos sociais no condomínio.
+</TR>
+<TD>Objetivos:<BR>
+Criar uma atmosfera social no condomínio, promovendo eventos e atividades para os moradores.
+</TD>
+<TD>Frustrações:<BR>
+Poucas oportunidades para interação social, deseja criar uma comunidade mais unida..
+<TD>Hábitos:<BR>
+Trabalha em home office, entusiasta de esportes e jogos, sempre disposto a socializar.</TD>
+</TR>  
+</TABLE>
+
+<TABLE>
+	<TR>
+		<TD rowspan='2'><img src='/docs/img/02-familiaMedica.jpg' style='height: 150px'></TD>
+		<TD colspan='2'>Larissa Souza</TD>
+	</TR>
+	<TR>
+		<TD>Idade: 38<BR><BR>
+    Ocupação: Médica.
+  <TD><BR>
+<BR>
+  Dados Principais: Mãe de dois filhos, casada com outro profissional de saúde.
+</TR>
+<TD>Objetivos:<BR>
+Encontrar espaços seguros para as crianças, participar de atividades em família no condomínio.
+</TD>
+<TD>Frustrações:<BR>
+Dificuldade em conciliar horários familiares, falta de espaços adequados para crianças.
+<TD>Hábitos:<BR>
+Horários irregulares de trabalho, busca atividades em família nos fins de semana.
+</TD>
+</TR>  
+</TABLE>
+
+<TABLE>
+	<TR>
+		<TD rowspan='2'><img src='/docs/img/02-aposentado.jpg' style='height: 150px'></TD>
+		<TD colspan='2'>Ricardo Santos</TD>
+	</TR>
+	<TR>
+		<TD>Idade: 60<BR><BR>
+    Ocupação: Aposentado.
+  <TD><BR>
+<BR>
+  Dados Principais: Viúvo, vive sozinho no condomínio.
+</TR>
+<TD>Objetivos:<BR>
+Deseja encontrar companhia, participar de atividades culturais no condomínio.
+</TD>
+<TD>Frustrações:<BR>
+Solidão, falta de atividades culturais e sociais direcionadas para sua faixa etária.
+<TD>Hábitos:<BR>
+Participa de grupos de leitura, gosta de jardinagem, tem interesse em atividades culturais.</TD>
+</TR>  
+</TABLE>
 
 ## Histórias de Usuários
 
@@ -28,17 +128,12 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-|Usuário do sistema  | Registrar minhas tarefas           | Não esquecer de fazê-las               |
-|Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
+|Ana Silva           | Encontrar atividades para mim e meu filho, buscar interação social no condomínio | Como uma advogada e mãe solteira, quero encontrar atividades recreativas para mim e meu filho de 6 anos, possibilitando a interação social no condomínio. Desejo poder reservar espaços de lazer, como a piscina, considerando a segurança das crianças e a disponibilidade de horários familiares.|
+|Carlos Oliveira     | Conhecer vizinhos e participar de eventos sociais no condomínio | Como um empresário recém-mudado para o condomínio, quero conhecer meus vizinhos e participar de eventos sociais. Gostaria de utilizar o aplicativo para descobrir e reservar espaços de lazer, como o salão de festas, facilitando a integração com a comunidade. |
+|Lucas Oliveira       | Criar uma atmosfera social no condomínio, promovendo eventos e atividades para os moradores | Como profissional de marketing e entusiasta de eventos, desejo criar uma atmosfera social no condomínio. Utilizarei o aplicativo para organizar eventos e reservar espaços, como a academia, promovendo a interação e fortalecendo os laços comunitários.|
+|Larissa Souza       | Encontrar espaços seguros para as crianças e participar de atividades em família no condomínio | Como médica e mãe de dois filhos, busco espaços seguros para as crianças e atividades em família no condomínio. Utilizarei o aplicativo para reservar espaços adequados, como a piscina, garantindo o bem-estar e a diversão da minha família.|
+|Ricardo Santos      | Encontrar companhia e participar de atividades culturais no condomínio | Como aposentado e viúvo, desejo encontrar companhia e participar de atividades culturais no condomínio. Utilizarei o aplicativo para reservar espaços como a churrasqueira e receber notificações sobre eventos culturais, combatendo a solidão e enriquecendo minha vida.|
 
-Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
-
-> **Links Úteis**:
-> - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
-> - [Como escrever boas histórias de usuário (User Stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
-> - [User Stories: requisitos que humanos entendem](https://www.luiztools.com.br/post/user-stories-descricao-de-requisitos-que-humanos-entendem/)
-> - [Histórias de Usuários: mais exemplos](https://www.reqview.com/doc/user-stories-example.html)
-> - [9 Common User Story Mistakes](https://airfocus.com/blog/user-story-mistakes/)
 
 ## Modelagem do Processo de Negócio 
 
@@ -77,17 +172,33 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 ### Requisitos Funcionais
 
-|ID    | Descrição do Requisito  | Prioridade |
-|------|-----------------------------------------|----|
-|RF-001| Permitir que o usuário cadastre tarefas | ALTA | 
-|RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
+| ID     | Descrição do Requisito                  | Prioridade |
+| ------ | --------------------------------------- | ---------- |
+| RF-001 | O aplicativo deve permitir CRUD do condomínio| ALTA       |
+| RF-002 | O aplicativo deve ser protegido por autenticação de login e senha. | ALTA      |
+| RF-003 | O aplicativo deve permitir o CRUD dos condôminos. | ALTA |
+| RF-004 | O aplicativo deve permitir a administração optar por quais espaços serão exibidos aos condôminos. | ALTA |
+| RF-005 | O aplicativo deve disponibilizar CRUD de reserva de piscina aos condôminos | BAIXA |
+| RF-006 | O aplicativo deve disponibilizar CRUD de reserva de salão de festas aos condôminos | BAIXA |
+| RF-007 | O aplicativo deve disponibilizar CRUD de reserva da academia aos condôminos | BAIXA |
+| RF-008 | O aplicativo deve disponibilizar CRUD de reserva da churrasqueira aos condôminos | BAIXA |
+| RF-009 | O aplicativo deve permitir ao condômino realizar o CRUD de reservas dos espaços de lazer disponibilizados pelo condomínio. | ALTA |
+| RF-010 | O aplicativo deve permitir à administração do condomínio realizar o CRUD dos espaços oferecidos. | ALTA |
+| RF-011 | O aplicativo deve oferecer funcionalidades de manutenção, gerência de disponibilidade dos espaços e limitações de capacidade de acesso, garantindo que não fiquem superlotados, cumprindo regulamentos de segurança e aplicando as regras de negócio. | ALTA |
+| RF-012 | O aplicativo deve enviar notificação ao condôminio sobre sua reserva estar próxima. | BAIXA |
 
 ### Requisitos não Funcionais
 
-|ID     | Descrição do Requisito  |Prioridade |
-|-------|-------------------------|----|
-|RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
-|RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
+| ID      | Descrição do Requisito                                            | Prioridade |
+| ------- | ----------------------------------------------------------------- | ---------- |
+| RNF-001 | O aplicativo deve incluir uma página inicial de apresentação.| MÉDIA |
+| RNF-002 | Os dados dos usuários, incluindo informações pessoais e senhas, devem ser armazenados de forma segura e criptografada, garantindo a proteção contra acesso não autorizado. | ALTA |
+| RNF-003 | O aplicativo deve ser responsivo, garantindo tempos de resposta curtos para evitar a frustração do usuário. | ALTA |
+| RNF-004 | O aplicativo deve ser escalável para suportar um aumento significativo no número de usuários. | ALTA |
+| RNF-005 | O aplicativo deve possuir um medidas de backup e recuperação para garantir a disponibilidade contínua dos dados e funcionalidades em caso de falha do sistema. | ALTA |
+| RNF-006 | A interface do usuário deve ser intuitiva e fácil de usar, inclusive para usuários sem experiência prévia em aplicativos similares. | ALTA |
+| RNF-007 | O aplicativo deve ser desenvolvido de forma a ser compatível com o sistema operacional Android. | ALTA |
+| RNF-008 | O aplicativo deve ser desenvolvido com uma estrutura bem organizada e modular, a fim de facilitar a manutenção e a adição de novos recursos no futuro. | ALTA |
 
 Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
 
@@ -108,10 +219,12 @@ todos os aspectos capturados nas Histórias de Usuário foram cobertos.
 
 O projeto está restrito pelos itens apresentados na tabela a seguir.
 
-|ID| Restrição                                             |
-|--|-------------------------------------------------------|
-|01| O projeto deverá ser entregue até o final do semestre |
-|02| Não pode ser desenvolvido um módulo de backend        |
+| ID  | Restrição                                             |
+| --- | ----------------------------------------------------- |
+| 01  | O projeto deverá ser entregue até o final do semestre letivo, com data limite estabelecida em 23/06/2024 para garantir o cumprimento do prazo. |
+| 02  | O projeto deverá aderir ao cronograma estabelecido para cada etapa de entrega, a fim de evitar a possibilidade de atrasos significativos. |
+| 03  | O projeto deve ser planejado e executado dentro dos recursos financeiros disponíveis, incluindo custos relacionados a hardware, software, ferramentas de desenvolvimento e quaisquer outros gastos associados ao projeto. |
+| 04  | A equipe deverá desenvolver o projeto com base no aprendizado obtido na universidade, sendo proibida a terceirização do desenvolvimento do trabalho. |
 
 Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
 
@@ -121,24 +234,16 @@ Enumere as restrições à sua solução. Lembre-se de que as restrições geral
 
 ## Diagrama de Casos de Uso
 
-O diagrama de casos de uso é o próximo passo após a elicitação de requisitos, que utiliza um modelo gráfico e uma tabela com as descrições sucintas dos casos de uso e dos atores. Ele contempla a fronteira do sistema e o detalhamento dos requisitos funcionais com a indicação dos atores, casos de uso e seus relacionamentos. 
+<img src='./img/diagramaCasoDeUso.png'>
 
-As referências abaixo irão auxiliá-lo na geração do artefato “Diagrama de Casos de Uso”.
-
-> **Links Úteis**:
-> - [Criando Casos de Uso](https://www.ibm.com/docs/pt-br/elm/6.0?topic=requirements-creating-use-cases)
-> - [Como Criar Diagrama de Caso de Uso: Tutorial Passo a Passo](https://gitmind.com/pt/fazer-diagrama-de-caso-uso.html/)
-> - [Lucidchart](https://www.lucidchart.com/)
-> - [Astah](https://astah.net/)
-> - [Diagrams](https://app.diagrams.net/)
 
 # Matriz de Rastreabilidade
 
-A matriz de rastreabilidade é uma ferramenta usada para facilitar a visualização dos relacionamento entre requisitos e outros artefatos ou objetos, permitindo a rastreabilidade entre os requisitos e os objetivos de negócio. 
+A matriz de rastreabilidade é uma ferramenta usada para facilitar a visualização dos relacionamento entre requisitos e outros artefatos ou objetos, permitindo a rastreabilidade entre os requisitos e os objetivos de negócio. [Acesse a Matriz Aqui](https://docs.google.com/spreadsheets/d/1k2EgexrNYk0RnOKNNShHfIKMUCSfDb2Oha73zHA1ILM/edit?usp=sharing)
 
-A matriz deve contemplar todos os elementos relevantes que fazem parte do sistema, conforme a figura meramente ilustrativa apresentada a seguir.
 
-![Exemplo de matriz de rastreabilidade](img/02-matriz-rastreabilidade.png)
+
+<img src='img/MatrizRatreabilidade.png'>
 
 > **Links Úteis**:
 > - [Artigo Engenharia de Software 13 - Rastreabilidade](https://www.devmedia.com.br/artigo-engenharia-de-software-13-rastreabilidade/12822/)
@@ -152,22 +257,38 @@ De acordo com o PMBoK v6 as dez áreas que constituem os pilares para gerenciar 
 
 ## Gerenciamento de Tempo
 
-Com diagramas bem organizados que permitem gerenciar o tempo nos projetos, o gerente de projetos agenda e coordena tarefas dentro de um projeto para estimar o tempo necessário de conclusão.
+Gráfico de Grant do projeto Meu Condominio organizado para gerenciar as tarefas dentro do projeto e estimar o tempo necessário para conclusão.
 
-![Diagrama de rede simplificado notação francesa (método francês)](img/02-diagrama-rede-simplificado.png)
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-meucondominio/assets/130249437/abc06550-ce52-47f5-84c2-70d3a4a4efa6) 
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-meucondominio/assets/130249437/4432f430-e5a3-4b77-b46c-c2cdc089feb0)
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-meucondominio/assets/130249437/4d2e078e-fe71-42a7-9af2-71679b763bdc)
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-meucondominio/assets/130249437/0c773417-e9f5-476e-bc48-b0da3932f8b6)
 
-O gráfico de Gantt ou diagrama de Gantt também é uma ferramenta visual utilizada para controlar e gerenciar o cronograma de atividades de um projeto. Com ele, é possível listar tudo que precisa ser feito para colocar o projeto em prática, dividir em atividades e estimar o tempo necessário para executá-las.
 
-![Gráfico de Gantt](img/02-grafico-gantt.png)
+O Project com o cronograma completo está disponível no link a seguir: [Cronograma Meu Condomínio](https://drive.google.com/drive/folders/1uam2S1hAt20Tv7w0WMAYofgmHaNS_jjJ?usp=drive_link)
+
 
 ## Gerenciamento de Equipe
 
-O gerenciamento adequado de tarefas contribuirá para que o projeto alcance altos níveis de produtividade. Por isso, é fundamental que ocorra a gestão de tarefas e de pessoas, de modo que os times envolvidos no projeto possam ser facilmente gerenciados. 
+A gestão de equipe se dará pelo Github, conforme tela apresentada abaixo:
 
-![Simple Project Timeline](img/02-project-timeline.png)
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-meucondominio/assets/130249437/be2ad15c-056a-4720-9608-9275534f806d)
+
+
+O gerenciamento com mais detalhes se encontra disponível no link a seguir: [Meu Condominio](https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/814/views/1)
 
 ## Gestão de Orçamento
 
 O processo de determinar o orçamento do projeto é uma tarefa que depende, além dos produtos (saídas) dos processos anteriores do gerenciamento de custos, também de produtos oferecidos por outros processos de gerenciamento, como o escopo e o tempo.
 
-![Orçamento](img/02-orcamento.png)
+A divisão orçamentária do projeto ficou determinada da seguinte forma:
+- Custo Cliente: R$189.000,00
+- Custo Empresta: R$130.340,00
+- Lucro Empresa: R$58.660,00
+- Tempo de execução: 5 meses, 840 horas aproximadamente.
+
+Abaixo o detalhamento dos valores:
+
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-meucondominio/assets/130249437/c0d5892a-9082-4047-8ed3-166105913c0b)
+
+Planilha disponível no link a seguir: [Meu Condominio - Orçamento](https://docs.google.com/spreadsheets/d/1itAQYCJMgxQk3AZ7dOz3hDPnDEInjPtk/edit?usp=sharing&ouid=117819638626584138761&rtpof=true&sd=true)

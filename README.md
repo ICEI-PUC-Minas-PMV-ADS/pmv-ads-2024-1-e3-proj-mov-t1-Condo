@@ -1,4 +1,8 @@
-# MeuCondomínio
+
+
+<p align="center">
+  <img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-meucondominio/blob/main/docs/img/Group 237483.png" alt="Logo" style="width: 40%";>
+</p>
 
 `Análise e Desenvolvimento de Sistemas`
 
@@ -6,7 +10,7 @@
 
 `Terceiro Semestre - Turma 01 - 2024/1`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+O projeto em desenvolvimento visa abordar a falta de controle e gerenciamento dos espaços de lazer em condomínios residenciais. Diante da superlotação e subutilização desses espaços, propomos a criação de um software intuitivo que permitirá aos moradores reservar os espaços de forma simples e eficiente, garantindo uma distribuição equitativa dos recursos comuns. Com isso, buscamos promover uma convivência mais harmoniosa e satisfatória para todos os envolvidos, atendendo às necessidades tanto dos moradores quanto dos gestores/administradores do condomínio
 
 ## Integrantes
 
