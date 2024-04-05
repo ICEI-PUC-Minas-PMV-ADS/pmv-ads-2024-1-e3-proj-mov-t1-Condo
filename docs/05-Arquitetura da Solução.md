@@ -16,8 +16,11 @@ O diagrama de classes ilustra graficamente como será a estrutura do software, e
 Para uma melhor visualização do Diagrama, disponibilizamos o PDF: [Diagrama_Classe_MeuCondominio.pdf](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/files/14829455/Diagrama_Classe_MeuCondominio.pdf)
 
 
-## Modelo ER
+## Modelo ER (Conceitual)
 
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/2737eb68-b991-4bd0-9f98-a12c0d035eb9)
+
+Para uma melhor visualização do Modelo, disponibilizamos o PDF: [Modelo_ER_MeuCondominio.pdf](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/files/14891496/Modelo_ER_MeuCondominio.pdf)
 
 
 ## Esquema Relacional
