@@ -66,25 +66,32 @@ O quadro kanban do grupo desenvolvido na ferramenta de gerenciamento de projetos
 
 ### Ferramentas
 
-As ferramentas empregadas no projeto são:
+A seguir, destacamos as principais ferramentas essenciais para facilitar nossa comunicação, organização e colaboração durante o desenvolvimento do projeto.
 
-- Visual Studio Code.
-- Microsoft Teams
-- Figma
-- GitHub
-- Git
+**Editores de Código:**
 
-- Visual Studio Code:
-O Visual Studio Code foi escolhido como nosso editor de código principal devido à sua robustez, flexibilidade e ampla gama de extensões disponíveis. Além disso, sua integração perfeita com sistemas de controle de versão, como o Git, simplifica o fluxo de trabalho colaborativo e o gerenciamento de código-fonte.
+> - [Visual Studio Code](https://code.visualstudio.com/) Optamos pelo Visual Studio Code como nosso editor principal devido à sua confiabilidade, adaptabilidade e integração perfeita com o Git, simplificando nosso trabalho em equipe e a administração do código-fonte. Sua interface intuitiva e conjunto robusto de recursos o tornam a escolha mais adequada para atender às demandas de nossa equipe.
+> - [Github](https://github.com/): Utilizado como repositório central para o código-fonte do projeto. Ele facilita o versionamento e controle de alterações e permite colaboração síncrona e assíncrona entre os membros da equipe.
 
-- Microsoft Teams:
-Optamos pelo Microsoft Teams como nossa plataforma de comunicação e colaboração devido à sua integração nativa com outras ferramentas da Microsoft, como o Office 365. Isso facilita a organização de reuniões, compartilhamento de documentos e comunicação em equipe em um único ambiente, aumentando a eficiência e a produtividade.
+**Ferramentas de Comunicação:**
 
-- Figma:
-Escolhemos o Figma como nossa ferramenta de design e prototipagem devido à sua natureza baseada na nuvem, que permite a colaboração em tempo real entre os membros da equipe, independentemente da localização geográfica. Além disso, sua interface intuitiva e recursos avançados de prototipagem nos ajudam a captar e visualizar com precisão as necessidades e fluxos de trabalho da nossa solução.
+>- [WhatsApp]( https://web.whatsapp.com/): Utilizado como forma principal de comunicação da equipe para mensagens rápidas e comunicação informal. Ideal para comunicação imediata e troca de informações urgentes. 
+> - [Microsoft Teams](https://www.microsoft.com/pt-br/microsoft-teams/group-chat-software): Utilizado para reuniões de equipe e reuniões semanais com o coordenador do projeto. 
 
-- GitHub:
-Utilizamos o GitHub como nossa plataforma de hospedagem e gerenciamento de código-fonte devido à sua popularidade, robustez e recursos avançados de controle de versão. Através do GitHub, podemos colaborar de forma eficiente, rastrear alterações, revisar código e gerenciar problemas, garantindo a qualidade e a integridade do nosso código durante todo o ciclo de desenvolvimento.
+**Ferramentas de Organização:**
 
-- Git:
-O Git é o sistema de controle de versão distribuído que utilizamos em conjunto com o GitHub. Sua flexibilidade, velocidade e capacidade de lidar com projetos de qualquer tamanho o tornam uma escolha ideal para o desenvolvimento de software colaborativo. Com o Git, podemos rastrear todas as alterações no código-fonte, criar branches para desenvolvimento paralelo e mesclar facilmente as alterações de volta ao branch principal, mantendo assim um histórico claro e organizado do nosso trabalho.
+> - [Microsoft Office](https://www.office.com/):  Utilizado para criar e editar documentos de texto, planilhas e gráficos. Ideal para documentação de requisitos, especificações técnicas e relatórios de progresso.
+> - [GitHub Projects](https://docs.github.com/pt/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects): Utilizado para organizar e separar tarefas do projeto. Permitindo atribuir responsáveis, definir prazos e acompanhar o progresso das tarefas.
+
+**Ferramentas de Desenho de Tela (_wireframing_):**
+
+> - [Figma]( https://www.figma.com/): Utilizado para desenvolvimento do layout das telas da aplicação. Permite criação de wireframes, protótipos interativos e colaboração em tempo real.
+
+
+**Ferramenta de diagramação:**
+> - [Lucidchart]( https://lucid.co/pt):  É uma ferramenta de diagramação online que permite colaboração visual na criação, revisão e compartilhamento de gráficos e diagramas. Foi usado pelo grupo para desenvolvimento do Diagrama de Classes, modelo ER e diagramas de processo.
+
+**Ferramenta visual de design de banco de dados:**
+> -  [MySQL Workbench]( https://www.mysql.com/products/workbench/): O grupo optou pelo MySQL Workbench devido à sua capacidade abrangente de design de banco de dados, que integra todas as etapas do processo de desenvolvimento, desde o design até a implementação e manutenção do banco de dados MySQL. Sua interface visual intuitiva simplifica a modelagem de dados, permitindo uma colaboração eficiente e facilitando a comunicação dentro da equipe.
+
+Integrando essas ferramentas aos processos definidos, garantimos uma abordagem eficiente e colaborativa para o desenvolvimento do projeto arquitetural. A comunicação e organização são essenciais para o sucesso do projeto, e as ferramentas escolhidas fornecem os recursos necessários para alcançar esses objetivos.
