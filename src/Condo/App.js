@@ -1,19 +1,7 @@
 // App.js
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import Home from './pages/Home';
-import Dependentes from './pages/Dependentes';
-
-const Stack = createStackNavigator();
+import Navigation from './navigation/Navigation'; // Importe o componente Navigation
 
 export default function App() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Dependentes" component={Dependentes} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-};
+  return <Navigation />;
+}

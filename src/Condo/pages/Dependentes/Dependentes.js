@@ -5,7 +5,6 @@ const Dependentes = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Tela de Dependentes</Text>
-      {/* Adicione aqui os componentes e funcionalidades da tela de dependentes */}
     </View>
   );
 };
