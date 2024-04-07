@@ -139,11 +139,24 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 ### Análise da Situação Atual
 
-Apresente aqui os problemas existentes que viabilizam sua proposta. Apresente o modelo do sistema como ele funciona hoje. Caso sua proposta seja inovadora e não existam processos claramente definidos, apresente como as tarefas que o seu sistema pretende implementar são executadas atualmente, mesmo que não se utilize tecnologia computacional. 
+Atualmente, nos condomínios residenciais, o gerenciamento dos espaços de lazer é realizado de forma manual, com reservas feitas por meio de agendas físicas ou comunicação verbal com a administração. Isso leva a uma série de problemas, como a falta de visibilidade sobre a disponibilidade dos espaços, a dificuldade em realizar reservas e a ocorrência frequente de conflitos entre os moradores.
+
+Limitações do Processo Atual:
+- Falta de transparência na disponibilidade dos espaços.
+- Dificuldade em garantir uma distribuição equitativa e justa do acesso aos espaços.
+- Ausência de um sistema formal para monitorar e gerenciar as reservas.
+ 
 
 ### Descrição Geral da Proposta
 
-Apresente aqui uma descrição da sua proposta abordando seus limites e suas ligações com as estratégias e objetivos do negócio. Apresente aqui as oportunidades de melhorias.
+A proposta visa abordar os problemas identificados na situação atual, fornecendo uma solução tecnológica que facilite o gerenciamento eficiente dos espaços de lazer nos condomínios residenciais. A solução proposta consiste na criação de um aplicativo móvel intuitivo, denominado "Meu Condomínio", que permitirá aos moradores verificar a disponibilidade dos espaços, fazer reservas de forma simples e garantir uma distribuição equitativa do acesso.
+
+Objetivos da Proposta:
+- Facilitar o acesso aos espaços de lazer para os moradores.
+- Promover uma distribuição justa e organizada do acesso aos espaços comuns.
+- Facilitar a gestão e administração dos espaços de lazer para os gestores (síndicos).
+- Melhorar a experiência dos moradores nos condomínios residenciais.
+
 
 ### Processo 1 – NOME DO PROCESSO
 
