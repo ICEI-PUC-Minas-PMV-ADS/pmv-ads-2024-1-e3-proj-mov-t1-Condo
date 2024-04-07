@@ -5,7 +5,7 @@ const CadastroEspacos = () => {
 
 	return (
 		<view>
-			<text> Cadastro de Espaços</text>
+			<text> Cadastro de EspaÃ§os</text>
 		</view>
 	)
 }
