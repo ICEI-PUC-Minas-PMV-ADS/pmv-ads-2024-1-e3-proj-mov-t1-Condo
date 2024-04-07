@@ -158,17 +158,35 @@ Objetivos da Proposta:
 - Melhorar a experiência dos moradores nos condomínios residenciais.
 
 
-### Processo 1 – NOME DO PROCESSO
+### Processo 1 – Login Condômino (Morador).
 
-Apresente aqui o nome e as oportunidades de melhorias para o processo 1. Em seguida, apresente o modelo do processo 1, descrito no padrão BPMN. 
 
-![Processo 1](img/02-bpmn-proc1.png)
+![Processo 1](img/bpmn-processo1.png)
 
-### Processo 2 – NOME DO PROCESSO
+### Processo 2 – Login & Cadastro dos Administradores (Síndicos).
 
-Apresente aqui o nome e as oportunidades de melhorias para o processo 2. Em seguida, apresente o modelo do processo 2, descrito no padrão BPMN.
 
-![Processo 2](img/02-bpmn-proc2.png)
+![Processo 2](img/bpmn-processo2.png)
+
+### Processo 3 – Cadastro e manutenção de espaços (Realizado pela administração)
+
+
+![Processo 3](img/bpmn-processo3.png)
+
+### Processo 4 – Cadastro dos usuários (Realizado pela administração)
+
+![Processo 4](img/bpmn-processo4.png)
+
+### Processo 5 – Reservas realizadas na plataforma pelos moradores
+
+
+![Processo 5](img/bpmn-processo5.png)
+
+### Processo 6 – Cadastro e manutenção de dependentes realizadas na plataforma pelos moradores
+
+
+![Processo 6](img/bpmn-processo6.png)
+
 
 ## Indicadores de Desempenho
 
