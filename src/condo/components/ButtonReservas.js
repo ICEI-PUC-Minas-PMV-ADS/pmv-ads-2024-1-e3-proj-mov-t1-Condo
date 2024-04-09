@@ -1,9 +1,12 @@
 import React from 'react';
 import { TouchableOpacity, Image, StyleSheet } from 'react-native';
-import VectorIcon from '../assets/Vector.png';
+import CalendarIcon from '../assets/calendario.svg';
 import EllipseIcon from '../assets/Ellipse 4.png';
 
-export default function ButtonDependente({ onPress }) {
+
+
+
+export default function ButtonReservas({ onPress }) {
   return (
     <TouchableOpacity
       onPress={onPress}
@@ -15,16 +18,17 @@ export default function ButtonDependente({ onPress }) {
       />
 
       <Image
-        source={VectorIcon}
+        source={CalendarIcon}
         style={styles.icon}
       />
     </TouchableOpacity>
   );
 }
 
-
-
 const styles = StyleSheet.create({
+
+
+
   button: {
     width: 90,
     height: 90,
@@ -34,7 +38,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 100,
     left: 160,
-    
+    marginHorizontal: -100,
   },
   background: {
     width: '100%',
