@@ -1,7 +1,7 @@
 import React from 'react';
 import { TouchableOpacity, Image, StyleSheet } from 'react-native';
 import VectorIcon from '../assets/Vector.png';
-import EllipseIcon from '../assets/Ellipse 4.png';
+import EllipseIcon from '../assets/Ellipse4.png';
 
 export default function ButtonDependente({ onPress }) {
   return (

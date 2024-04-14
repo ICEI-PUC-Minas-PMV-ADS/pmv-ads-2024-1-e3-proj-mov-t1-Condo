@@ -1,7 +1,7 @@
 import React from 'react';
 import { TouchableOpacity, Image, StyleSheet } from 'react-native';
 import CalendarIcon from '../assets/calendario.svg';
-import EllipseIcon from '../assets/Ellipse 4.png';
+import EllipseIcon from '../assets/Ellipse4.png';
 
 
 

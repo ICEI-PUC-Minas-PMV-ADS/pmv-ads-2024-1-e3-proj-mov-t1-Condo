@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
 import CustomButton from '../../components/CustomButton';
 import { Divider, Button } from 'react-native-paper';
 import { Appbar } from 'react-native-paper';
@@ -8,6 +8,7 @@ import { Appbar } from 'react-native-paper';
 const NavigationToDo = () => {
 
     return (
+      <ScrollView>
      <View style={{ flex: 1, justifyContent: 'initial' }}>
 
 
@@ -32,7 +33,7 @@ const NavigationToDo = () => {
 
 <Text style={{ textAlign: 'center' }}>--------------- Reservas ---------------</Text>
 <CustomButton title="Reservas" screen="Reservas" />
-<CustomButton title="Reservar Espaço" screen="" />
+<CustomButton title="Reservar Espaço" screen="ReservarEspaco" />
 <CustomButton title="Minhas Reservas" screen="" />
 
 <Text style={{ textAlign: 'center' }}>--------------- Dependentes ---------------</Text>
@@ -54,6 +55,7 @@ const NavigationToDo = () => {
 
 <CustomButton title="Instrucoes" screen="Instrucoes" />
         </View>
+        </ScrollView>
     );
 
 }

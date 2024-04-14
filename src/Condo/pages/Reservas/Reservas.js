@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-
+import CustomButton from '../../components/CustomButton';
 import { Divider, Button } from 'react-native-paper';
 import { Appbar } from 'react-native-paper';
 
@@ -13,9 +13,7 @@ const Reservas = () => {
 
        
 
-            <Button mode="Text" onPress={() => console.log('Pressed')}>
-                Reservar
-            </Button>
+           <CustomButton title="Reservar Espaço" screen="ReservarEspaco" />
             <Divider />
             <Button mode="Text" onPress={() => console.log('Pressed')}>
                 Minhas Reservas
