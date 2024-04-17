@@ -1,18 +1,25 @@
 import React, { useState } from 'react';
-import { View, StyleSheet } from 'react-native';
-import { Text, Divider, TextInput, Button } from 'react-native-paper';
+import { View, StyleSheet, Image, TouchableOpacity } from 'react-native'; // Importa TouchableOpacity
+import { Text, TextInput, Button } from 'react-native-paper'; // Importa Button de react-native-paper
+import { useNavigation } from '@react-navigation/native'; // Importa o hook useNavigation
+import { Ionicons } from '@expo/vector-icons'; // Importa Ionicons de @expo/vector-icons
+import ScreenNavigation from '../ScreenNavigation/ScreenNavigation'; // Importa a página de navegação desejada
+
 
 const CadastroEspacos = () => {
     const [nomeEspaco, setNomeEspaco] = useState("");
     const [capacidadeMaxima, setCapacidadeMaxima] = useState("");
-    const [tempoMaximo, setTempoMaximo] = useState("");
+    const [tempoMaximo, setTempoMaximo] = useState(60); // Valor inicial de 60 minutos
     const [textoInstrucoes, setTextoInstrucoes] = useState("");
+    const navigation = useNavigation(); // Obtém o objeto de navegação
 
     return (
         <View style={styles.container}>
 
             <View style={styles.header}>
-                <Button icon="arrow-left" style={styles.button}></Button>
+                <TouchableOpacity onPress={() => navigation.navigate('ScreenNavigation')}>
+                    <Ionicons name="arrow-back" size={24} color="black" />
+                </TouchableOpacity>
                 <Text style={styles.title}>Cadastrar Espaço</Text>
                 <Button icon="view-grid-outline" style={styles.button}></Button>
             </View>
@@ -42,13 +49,15 @@ const CadastroEspacos = () => {
                     />
                 </View>
 
+
                 <View>
                     <Text style={styles.subTitles}>Tempo máximo de reserva (Minutos)</Text>
-                    <TextInput style={styles.textInput}
-                        placeholder="Coloque a tempo máximo de reserva"
+                    <TextInput
+                        style={styles.textInput}
+                        placeholder="Coloque o tempo máximo de reserva (minutos)"
                         placeholderTextColor="#7F7F7F"
-                        value={tempoMaximo}
-                        onChangeText={text => setTempoMaximo(text)}
+                        value={tempoMaximo.toString()} // Mostra o valor como string
+                        onChangeText={text => setTempoMaximo(parseInt(text) || 0)} // Converte para número
                         keyboardType="numeric"
                         underlineColor="transparent"
                     />
@@ -73,6 +82,10 @@ const CadastroEspacos = () => {
                     </Button>
                 </View>
 
+                <Image style={styles.imageLogo}
+                    source={require('../../assets/LogoCondo.2.png')}
+                />
+
             </View>
         </View>
     )
@@ -82,7 +95,7 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        paddingTop: 20,
+        paddingTop: 50,
         alignItems: 'center',
         backgroundColor: '#fff',
     },
@@ -130,6 +143,7 @@ const styles = StyleSheet.create({
 
     buttonSalvar: {
         marginTop: 20,
+        /*marginBottom: 20,*/
         borderRadius: 10,
         backgroundColor: '#06B6DD', // Azul
         width: '100%',
@@ -143,6 +157,16 @@ const styles = StyleSheet.create({
     button: {
         margin: 0, // Remove o espaçamento padrão dos botões
     },
+
+    imageLogo: {
+        position: 'absolute',
+        bottom: -290,
+        left: -10,
+        width: 180,
+        height: 230,
+        resizeMode: 'stretch',
+        opacity: 0.5,
+    }
 
 });
 

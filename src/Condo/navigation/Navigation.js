@@ -32,7 +32,7 @@ export default function Navigation() {
         <Stack.Screen name='ReservarEspacoTwoScreen' component={ReservarEspacoTwoScrenn} options={{ title: 'Reservar Espaço' }}/>
         <Stack.Screen name='LoginCondominio' component={LoginCondominio}/>
         <Stack.Screen name='LoginMorador' component={LoginMorador}/>
-        <Stack.Screen name='CadastroEspacos' component={CadastroEspacos}/>
+        <Stack.Screen name='CadastroEspacos' component={CadastroEspacos} options={{ headerShown: false }} />
         <Stack.Screen name='CadastroApto' component={CadastroApto}/>
         <Stack.Screen name='MeusEspacos' component={MeusEspacos}/>
         <Stack.Screen name='ApartamentosCadastrados' component={ApartamentosCadastrados} options={{ title: 'Apartamentos Cadastrados' }}/>
