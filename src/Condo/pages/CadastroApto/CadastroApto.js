@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { View, StyleSheet } from 'react-native';
-import { Text, TextInput, Button, Picker } from 'react-native-paper';
+import { View, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { Text, TextInput, Button } from 'react-native-paper';
+import { Ionicons } from '@expo/vector-icons'; // Importa Ionicons de @expo/vector-icons
+import { Picker } from '@react-native-picker/picker';
 
 const CadastroApto = () => {
     const [tempoMaximo, setTempoMaximo] = useState("");
@@ -9,7 +11,9 @@ const CadastroApto = () => {
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <Button icon="arrow-left" style={styles.button}></Button>
+                <TouchableOpacity onPress={() => navigation.navigate('ScreenNavigation')}>
+                    <Ionicons name="arrow-back" size={24} color="black" />
+                </TouchableOpacity>
                 <Text style={styles.title}>Cadastrar Apartamentos</Text>
                 <Button icon="view-grid-outline" style={styles.button}></Button>
             </View>
@@ -19,7 +23,7 @@ const CadastroApto = () => {
                     <Text style={styles.subTitles}>Tempo máximo de reserva (Minutos)</Text>
                     <TextInput
                         style={styles.textInput}
-                        placeholder="Coloque o tempo máximo de reserva"
+                        placeholder="Coloque o tempo maximo de reserva"
                         placeholderTextColor="#7F7F7F"
                         value={tempoMaximo}
                         onChangeText={text => setTempoMaximo(text)}
@@ -30,7 +34,15 @@ const CadastroApto = () => {
 
                 <View>
                     <Text style={styles.subTitles}>Outra informação...</Text>
-                    {/* Adicione outros campos aqui conforme necessário */}
+                    <TextInput
+                        style={styles.textInput}
+                        placeholder="Coloque o tempo maximo de reserva"
+                        placeholderTextColor="#7F7F7F"
+                        value={tempoMaximo}
+                        onChangeText={text => setTempoMaximo(text)}
+                        keyboardType="numeric"
+                        underlineColor="transparent"
+                    />
                 </View>
 
                 <View>
@@ -40,12 +52,15 @@ const CadastroApto = () => {
                         onValueChange={(itemValue) => setGenero(itemValue)}
                         style={styles.picker}
                     >
-                        <Picker.Item label="Selecione o gênero" value="" />
                         <Picker.Item label="Masculino" value="Masculino" />
                         <Picker.Item label="Feminino" value="Feminino" />
                         <Picker.Item label="Outro" value="Outro" />
                     </Picker>
                 </View>
+
+                <Image style={styles.imageLogo}
+                    source={require('../../assets/LogoCondo.2.png')}
+                />
             </View>
         </View>
     )
@@ -107,6 +122,16 @@ const styles = StyleSheet.create({
     button: {
         margin: 0,
     },
+
+    imageLogo: {
+        position: 'absolute',
+        bottom: -290,
+        left: -10,
+        width: 180,
+        height: 230,
+        resizeMode: 'stretch',
+        opacity: 0.5,
+    }
 });
 
 export default CadastroApto;
