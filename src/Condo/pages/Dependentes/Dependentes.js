@@ -1,10 +1,31 @@
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import React from "react";
+import { View, Text, StyleSheet } from "react-native";
+import { Divider, Button } from 'react-native-paper';
 
-const Dependentes = () => {
+
+const Dependentes = ({ navigation }) => {
+  const navigateToCadastroDependente = () => {
+    navigation.navigate('CadastroDependente');
+  };
+
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tela de Dependentes</Text>
+      <Button
+        style={styles.button}
+        mode="text"
+        onPress={navigateToCadastroDependente}
+      >
+        <Text>Cadastrar Dependente</Text>
+      </Button>
+      <Divider />
+      <Button
+        style={styles.button}
+        mode="text"
+        onPress={() => console.log("Pressed")}
+      >
+        <Text>Meus Dependentes</Text>
+      </Button>
+      <Divider />
     </View>
   );
 };
@@ -12,15 +33,9 @@ const Dependentes = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#fff',
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 20,
-  },
+    backgroundColor: "#fff",
+    textAlign: 'left'
+  }
 });
 
 export default Dependentes;
