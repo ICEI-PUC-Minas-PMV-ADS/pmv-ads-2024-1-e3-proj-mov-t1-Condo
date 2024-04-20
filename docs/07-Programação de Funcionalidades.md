@@ -10,7 +10,7 @@ A tabela a seguir está sendo preenchida considerando os artefatos desenvolvidos
 |-------|------------------------------------------|-----|-----|
 | RF-001 | O aplicativo deve permitir CRUD do condomínio |  |  |
 | RF-002 | O aplicativo deve ser protegido por autenticação de login e senha. | LoginCondominio.js e LoginMorador.js  | Gabriel Souza |
-| RF-003 | O aplicativo deve permitir o CRUD dos condôminos. | ApartamentosCadastrados.js, LoginMorador.js. e Dependentes.js |Mariane de Oliveira, Gabriel Souza e Evellyn Andrade |
+| RF-003 | O aplicativo deve permitir o CRUD dos condôminos. | ApartamentosCadastrados.js, Bloco001.js, LoginMorador.js. e Dependentes.js |Mariane de Oliveira, Gabriel Souza e Evellyn Andrade |
 | RF-004 | O aplicativo deve permitir a administração optar por quais espaços serão exibidos aos condôminos. | MeusEspacos.js | Davi Haniel |
 | RF-005 | O aplicativo deve disponibilizar CRUD de reserva de piscina aos condôminos | ReservarEspaco.js, ReservarEspacoTwoScreen.js e Reservas.js | Josué Batista|
 | RF-006 | O aplicativo deve disponibilizar CRUD de reserva de salão de festas aos condôminos | ReservarEspaco.js, ReservarEspacoTwoScreen.js e Reservas.js | Josué Batista|
