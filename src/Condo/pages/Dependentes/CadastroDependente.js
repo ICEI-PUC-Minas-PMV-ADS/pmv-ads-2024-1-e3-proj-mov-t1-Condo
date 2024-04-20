@@ -1,6 +1,11 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, TextInput, Button } from 'react-native';
-import { Picker } from '@react-native-picker/picker';
+import React, { useState } from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
 
 const CadastroDependente = () => {
   const [nome, setNome] = useState("");
@@ -8,6 +13,10 @@ const CadastroDependente = () => {
   const [sexo, setSexo] = useState("");
   const [dataNascimento, setDataNascimento] = useState("");
   const [idade, setIdade] = useState("");
+
+  const handleSexoSelecionado = (sexoSelecionado) => {
+    setSexo(sexoSelecionado);
+  };
 
   const handleCadastro = () => {
     console.log("Nome:", nome);
@@ -27,21 +36,42 @@ const CadastroDependente = () => {
         <Text style={styles.label}>CPF:</Text>
         <TextInput style={styles.input} value={cpf} onChangeText={setCpf} />
       </View>
-      <View style={styles.inputContainer}>
+
+      <View style={styles.sexoContainer}>
         <Text style={styles.label}>Sexo:</Text>
-        <View style={styles.pickerContainer}>
-          <Picker
-            style={styles.picker}
-            selectedValue={sexo}
-            onValueChange={(itemValue) => setSexo(itemValue)}
+        <View style={styles.sexoOptions}>
+          <TouchableOpacity
+            style={[
+              styles.sexoOption,
+              sexo === "Masculino" && styles.sexoOptionSelected,
+            ]}
+            onPress={() => handleSexoSelecionado("Masculino")}
           >
-            <Picker.Item label="Masculino" value="masculino" color="black" />
-            <Picker.Item label="Feminino" value="feminino" color="black" />
-          </Picker>
+            <Text style={styles.sexoOptionText}>Masculino</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[
+              styles.sexoOption,
+              sexo === "Feminino" && styles.sexoOptionSelected,
+            ]}
+            onPress={() => handleSexoSelecionado("Feminino")}
+          >
+            <Text style={styles.sexoOptionText}>Feminino</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[
+              styles.sexoOption,
+              sexo === "Outro" && styles.sexoOptionSelected,
+            ]}
+            onPress={() => handleSexoSelecionado("Outro")}
+          >
+            <Text style={styles.sexoOptionText}>Outro</Text>
+          </TouchableOpacity>
         </View>
       </View>
+
       <View style={styles.row}>
-        <View style={[styles.inputContainer, { width: '50%' }]}>
+        <View style={[styles.inputContainer, { width: "50%" }]}>
           <Text style={styles.label}>Data de Nascimento:</Text>
           <TextInput
             style={styles.input}
@@ -49,12 +79,18 @@ const CadastroDependente = () => {
             onChangeText={setDataNascimento}
           />
         </View>
-        <View style={[styles.inputContainer, { width: '50%' }]}>
+        <View style={[styles.inputContainer, { width: "50%" }]}>
           <Text style={styles.label}>Idade:</Text>
-          <TextInput style={styles.input} value={idade} onChangeText={setIdade} />
+          <TextInput
+            style={styles.input}
+            value={idade}
+            onChangeText={setIdade}
+          />
         </View>
       </View>
-      <Button title="Salvar" onPress={handleCadastro} />
+      <TouchableOpacity onPress={handleCadastro} style={styles.button}>
+        <Text style={styles.buttonText}>Salvar</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -65,34 +101,61 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     paddingHorizontal: 20,
-    backgroundColor: 'white',
+    marginBottom: 150,
   },
   inputContainer: {
     marginBottom: 10,
-    width: '100%',
+    width: "100%",
   },
   label: {
     fontSize: 16,
+    color: "#7F7F7F",
   },
   row: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
   input: {
     height: 48,
     borderWidth: 1,
     borderRadius: 10,
     paddingHorizontal: 10,
-    width: '100%',
+    width: "100%",
+    color: "black",
   },
-  pickerContainer: {
-    borderWidth: 1,
-    borderRadius: 10,
-    borderColor: 'black',
-    width: '100%',
+  button: {
+    backgroundColor: "transparent",
+    borderWidth: 0,
+    padding: 10,
   },
-  picker: {
+  buttonText: {
+    fontSize: 20,
+    color: "#4F555A",
+  },
+  sexoContainer: {
+    marginBottom: 10,
+    width: "100%",
+  },
+  sexoOptions: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  sexoOption: {
+    flex: 1,
     height: 48,
+    borderRadius: 10,
+    justifyContent: "center",
+    alignItems: "center",
+    borderWidth: 1,
+    borderColor: "#ccc",
+    marginRight: 5,
+  },
+  sexoOptionSelected: {
+    backgroundColor: "#7F7F7F",
+  },
+  sexoOptionText: {
+    fontSize: 16,
+    color: "#4F555A",
   },
 });
 

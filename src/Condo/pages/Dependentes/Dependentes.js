@@ -7,25 +7,28 @@ const Dependentes = ({ navigation }) => {
   const navigateToCadastroDependente = () => {
     navigation.navigate('CadastroDependente');
   };
+  const navigateToMeusDependentes = () => {
+    navigation.navigate('MeusDependentes');
+  };
 
   return (
     <View style={styles.container}>
       <Button
         style={styles.button}
         mode="text"
-        onPress={navigateToCadastroDependente}
-      >
+        onPress={navigateToCadastroDependente}>
         <Text>Cadastrar Dependente</Text>
       </Button>
       <Divider />
       <Button
         style={styles.button}
         mode="text"
-        onPress={() => console.log("Pressed")}
+        onPress={navigateToMeusDependentes}
       >
         <Text>Meus Dependentes</Text>
       </Button>
       <Divider />
+
     </View>
   );
 };

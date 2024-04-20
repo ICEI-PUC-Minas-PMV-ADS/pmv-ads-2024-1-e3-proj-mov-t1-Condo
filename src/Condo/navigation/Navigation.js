@@ -17,6 +17,7 @@ import ApartamentosCadastrados from '../pages/ApartamentosCadastrados/Apartament
 import Manutencao from '../pages/Manutencao/Manutencao';
 import Instrucoes from '../pages/Instrucoes/Instrucoes';
 import CadastroDependente from '../pages/Dependentes/CadastroDependente';
+import MeusDependentes from '../pages/Dependentes/MeusDependentes';
 
 const Stack = createStackNavigator();
 
@@ -38,7 +39,8 @@ export default function Navigation() {
         <Stack.Screen name='ApartamentosCadastrados' component={ApartamentosCadastrados} options={{ title: 'Apartamentos Cadastrados' }}/>
         <Stack.Screen name='Manutencao' component={Manutencao}/>
         <Stack.Screen name='Instrucoes' component={Instrucoes}/>
-        <Stack.Screen name='CadastroDependente' component={CadastroDependente} options={{ title: 'Cadastro de Dependente' }}/>
+        <Stack.Screen name='CadastroDependente' component={CadastroDependente} options={{ title: 'Novo Dependente' }}/>
+        <Stack.Screen name='MeusDependentes' component={MeusDependentes} options={{ title: 'Meus Dependentes' }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
