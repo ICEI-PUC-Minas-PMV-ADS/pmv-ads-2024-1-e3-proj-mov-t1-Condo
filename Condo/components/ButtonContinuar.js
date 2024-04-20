@@ -1,0 +1,36 @@
+import React from 'react';
+import { StyleSheet, View, TouchableOpacity, Text, Image } from 'react-native';
+import chevrondoubleright from '../assets/chevrondoubleright.svg';
+
+const ButtonContinuar = ({ onPress }) => {
+  return (
+    <TouchableOpacity onPress={onPress} style={styles.botao}>
+      <Text style={styles.textoBotao}>Continuar</Text>
+        <Image
+        source={chevrondoubleright}
+        style={styles.icon}
+      />
+    </TouchableOpacity>
+  );
+};
+
+const styles = StyleSheet.create({
+ botao: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'transparent', 
+    padding: 10,
+    marginTop: 20,
+  },
+  textoBotao: {
+    fontSize: 20,
+  },
+  icon: {
+       alignItems: 'center',
+   justifyContent: 'center',
+  marginTop: 4,
+  }
+});
+
+export default ButtonContinuar;
