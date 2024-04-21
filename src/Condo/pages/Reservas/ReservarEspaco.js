@@ -1,52 +1,58 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, Switch, Picker, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, View, Text, Switch, TouchableOpacity, Image } from 'react-native'; // Importando Picker do 'react-native'
 import { RadioButton } from 'react-native-paper';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Picker } from '@react-native-picker/picker';
+
 import jogging from '../../assets/jogging.svg';
 import check from '../../assets/check.svg';
 import ButtonContinuar from '../../components/ButtonContinuar';
 import chevronDoubleRight from '../../assets/chevrondoubleright.svg';
 
+
 const ReservarEspaco = ({ navigation }) => {
   const [value, setValue] = useState('first');
   const [selectedLanguages, setSelectedLanguages] = useState([]);
-  const [isSwitchOn, setIsSwitchOn] = useState(false);
-  const [showSelect, setShowSelect] = useState(false);
+  const [isEnabled, setIsEnabled] = useState(false);
+
+  const toggleSwitch = () => {
+    setIsEnabled((prevState) => !prevState); 
+  };
 
   const handleSelectChange = (selectedValue) => {
-    console.log('Selected value:', selectedValue);
+    console.log('Selected value:', selectedValue); 
   };
 
-  const onToggleSwitch = () => {
-    setIsSwitchOn(!isSwitchOn);
-    setShowSelect(!isSwitchOn); 
-  };
-
-  const renderPickerItem = (label, value) => (
-   <TouchableOpacity
-  style={styles.pickerItem}
-  onPress={() => handleSelect(value)}>
-  <Text>{label}</Text>
-  {selectedLanguages.includes(value) && (
-    <Image
-      source={check}
-      style={{ width: 15, height: 15 }} 
-    />
-  )}
-</TouchableOpacity>
+ const renderPickerItem = (label, value) => (
+    <TouchableOpacity
+      style={styles.pickerItem}
+      onPress={() => handleSelect(value)}
+    >
+      <Text>{label}</Text>
+      {selectedLanguages.includes(value) && (
+        <Image source={check} style={{ width: 15, height: 15 }} />
+      )}
+    </TouchableOpacity>
   );
+
+const validarAcompanhantes = () => {
+   
+    if (selectedLanguages.length === 0 && isEnabled) {
+      
+      alert("Selecione pelo menos um acompanhante");
+      return false; // Indica falha na validação
+    }
+    return true; 
+  };
+
 
   const handleSelect = (value) => {
     if (selectedLanguages.includes(value)) {
-      setSelectedLanguages(selectedLanguages.filter((item) => item !== value));
+      setSelectedLanguages(selectedLanguages.filter((item) => item !== value)); 
     } else {
-      setSelectedLanguages([...selectedLanguages, value]);
+      setSelectedLanguages([...selectedLanguages, value]); 
     }
   };
 
-  const irParaOutraPagina = () => {
-    navigation.navigate('OutraPagina');
-  };
 
   return (
     <View style={styles.containerReservarEspaco}>
@@ -67,20 +73,27 @@ const ReservarEspaco = ({ navigation }) => {
             </View>
           </View>
         </RadioButton.Group>
-        <select
+        <Picker 
           style={styles.select}
-          onChange={(e) => handleSelectChange(e.target.value)}>
-          <option value="joao_silva">João Silva</option>
-          <option value="maria_santos">Maria Santos</option>
-          <option value="pedro_oliveira">Pedro Oliveira</option>
-          <option value="ana_souza">Ana Souza</option>
-          <option value="jose_lima">José Lima</option>
-        </select>
+          selectedValue={value}
+          onValueChange={(itemValue) => setValue(itemValue)}>
+          <Picker.Item label="João Silva" value="joao_silva" />
+          <Picker.Item label="Maria Santos" value="maria_santos" />
+          <Picker.Item label="Pedro Oliveira" value="pedro_oliveira" />
+          <Picker.Item label="Ana Souza" value="ana_souza" />
+          <Picker.Item label="José Lima" value="jose_lima" />
+        </Picker>
         <View style={styles.container}>
           <Text style={styles.label}>Acompanhantes?</Text>
-          <Switch value={isSwitchOn} onValueChange={onToggleSwitch} />
+          <Switch
+           trackColor={{false: '#767577', true: '#26B3E0'}}
+        thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
+        ios_backgroundColor="#3e3e3e"
+        onValueChange={toggleSwitch}
+        value={isEnabled}
+          />
         </View>
-        {showSelect && (
+        {isEnabled && (
           <View style={[styles.select, { height: 200 }]}>
             {renderPickerItem('João Silva', 'joao_silva')}
             {renderPickerItem('Maria Santos', 'maria_santos')}
@@ -89,35 +102,36 @@ const ReservarEspaco = ({ navigation }) => {
             {renderPickerItem('José Lima', 'jose_lima')}
           </View>
         )}
-       
         <View style={styles.bottomContent}>
           <Text style={styles.label}>Selecione o espaço</Text>
-          <select
+          <Picker 
             style={styles.select}
-            onChange={(e) => handleSelectChange(e.target.value)}>
-            <option value="piscina">Piscina</option>
-            <option value="quadra_esportiva">Quadra Esportiva</option>
-            <option value="academia">Academia</option>
-            <option value="salão_festas">Salão de Festas</option>
-            <option value="churrasqueira">Churrasqueira</option>
-          </select>
+            selectedValue={value}
+            onValueChange={(itemValue) => setValue(itemValue)}>
+            <Picker.Item label="Piscina" value="piscina" />
+            <Picker.Item label="Quadra Esportiva" value="quadra_esportiva" />
+            <Picker.Item label="Academia" value="academia" />
+            <Picker.Item label="Salão de Festas" value="salao_festas" />
+            <Picker.Item label="Churrasqueira" value="churrasqueira" />
+          </Picker>
         </View>
-          <View style={styles.containerImage}>
-    <Image
-        source={jogging}
-        style={styles.image}
-      />
+        <View style={styles.containerImage}>
+          <Image
+            source={jogging}
+            style={styles.image}
+          />
+        </View>
+        <ButtonContinuar
+          onPress={() => navigation.navigate('ReservarEspacoTwoScreen')}
+          icon={'chevrondoubleright'}
+        />
       </View>
-          <ButtonContinuar
-        onPress={() => navigation.navigate('ReservarEspacoTwoScreen')}
-        icon={'chevrondoubleright'}
-      />
-      
-    </View>
-     
     </View>
   );
 };
+
+
+//Componentes CSS
 
 const styles = StyleSheet.create({
   containerReservarEspaco: {
@@ -178,7 +192,7 @@ const styles = StyleSheet.create({
   bottomContent: {
     marginTop: 20,
   },
-    containerImage: {
+  containerImage: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
