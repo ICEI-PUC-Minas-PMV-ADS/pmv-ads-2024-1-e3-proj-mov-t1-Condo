@@ -1,7 +1,7 @@
 
 
 <p align="center">
-  <img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-meucondominio/blob/main/docs/img/Group 237483.png" alt="Logo" style="width: 40%";>
+  <img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-meucondominio/blob/main/docs/img/Group 237483.png" alt="Logo" style="width: 40%;">
 </p>
 
 `Análise e Desenvolvimento de Sistemas`
