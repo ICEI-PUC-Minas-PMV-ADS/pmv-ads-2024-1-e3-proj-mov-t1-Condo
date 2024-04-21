@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { Text, TextInput, Button } from 'react-native-paper';
+import { useNavigation } from '@react-navigation/native'; // Importa o hook useNavigation
 import { Ionicons } from '@expo/vector-icons'; // Importa Ionicons de @expo/vector-icons
 import { Picker } from '@react-native-picker/picker';
 
 const CadastroApto = () => {
-    const [tempoMaximo, setTempoMaximo] = useState("");
+    const [numeroBloco, setNumeroBloco] = useState("");
+    const [numeroApartamento, setNumeroApartamento] = useState("");
+    const [nomeTitular, setNomeTitular] = useState("");
+    const [cpfTitular, setCpfTitular] = useState("");
+    const [tempoReserva, setTempoReserva] = useState("");
     const [genero, setGenero] = useState("Masculino");
+    const navigation = useNavigation(); // Obtém o objeto de navegação
 
     return (
         <View style={styles.container}>
@@ -20,26 +26,67 @@ const CadastroApto = () => {
 
             <View>
                 <View>
-                    <Text style={styles.subTitles}>Tempo máximo de reserva (Minutos)</Text>
+                    <View>
+                        <Text style={styles.subTitles}>N° Bloco (Número)</Text>
+                        <TextInput
+                            style={styles.textInput}
+                            placeholder="Bloco e complemento"
+                            placeholderTextColor="#7F7F7F"
+                            value={numeroBloco}
+                            onChangeText={text => setNumeroBloco(text)}
+                            keyboardType="numeric"
+                            underlineColor="transparent"
+                        />
+                    </View>
+                    <View>
+                        <Text style={styles.subTitles}>N° do Apartamento (Número)</Text>
+                        <TextInput
+                            style={styles.textInput}
+                            placeholder="Somente o número."
+                            placeholderTextColor="#7F7F7F"
+                            value={numeroApartamento}
+                            onChangeText={text => setNumeroApartamento(text)}
+                            keyboardType="numeric"
+                            underlineColor="transparent"
+                        />
+                    </View>
+                </View>
+
+                <View>
+                    <Text style={styles.subTitles}>Nome do Titular</Text>
                     <TextInput
                         style={styles.textInput}
-                        placeholder="Coloque o tempo maximo de reserva"
+                        placeholder="Coloque seu nome Completo."
                         placeholderTextColor="#7F7F7F"
-                        value={tempoMaximo}
-                        onChangeText={text => setTempoMaximo(text)}
+                        value={nomeTitular}
+                        onChangeText={text => setNomeTitular(text)}
+                        keyboardType="numeric"
+                        underlineColor="transparent"
+                    />
+                </View>
+
+
+                <View>
+                    <Text style={styles.subTitles}>CPF</Text>
+                    <TextInput
+                        style={styles.textInput}
+                        placeholder="Coloque somente os números"
+                        placeholderTextColor="#7F7F7F"
+                        value={cpfTitular}
+                        onChangeText={text => setCpfTitular(text)}
                         keyboardType="numeric"
                         underlineColor="transparent"
                     />
                 </View>
 
                 <View>
-                    <Text style={styles.subTitles}>Outra informação...</Text>
+                    <Text style={styles.subTitles}>Tempo Máximo de reserva</Text>
                     <TextInput
                         style={styles.textInput}
                         placeholder="Coloque o tempo maximo de reserva"
                         placeholderTextColor="#7F7F7F"
-                        value={tempoMaximo}
-                        onChangeText={text => setTempoMaximo(text)}
+                        value={tempoReserva}
+                        onChangeText={text => setTempoReserva(text)}
                         keyboardType="numeric"
                         underlineColor="transparent"
                     />
@@ -52,10 +99,16 @@ const CadastroApto = () => {
                         onValueChange={(itemValue) => setGenero(itemValue)}
                         style={styles.picker}
                     >
+                        <Picker.Item label="Outro" value="Outro" />
                         <Picker.Item label="Masculino" value="Masculino" />
                         <Picker.Item label="Feminino" value="Feminino" />
-                        <Picker.Item label="Outro" value="Outro" />
                     </Picker>
+                </View>
+
+                <View>
+                    <Button style={styles.buttonSalvar} onPress={() => console.log('Pressed')}>
+                        <Text style={styles.buttonText}>Salvar</Text>
+                    </Button>
                 </View>
 
                 <Image style={styles.imageLogo}
@@ -69,7 +122,7 @@ const CadastroApto = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingTop: 20,
+        paddingTop: 50,
         alignItems: 'center',
         backgroundColor: '#fff',
     },
@@ -121,6 +174,19 @@ const styles = StyleSheet.create({
 
     button: {
         margin: 0,
+    },
+
+    buttonSalvar: {
+        marginTop: 20,
+        /*marginBottom: 20,*/
+        borderRadius: 10,
+        backgroundColor: '#06B6DD', // Azul
+        width: '100%',
+    },
+
+    buttonText: {
+        color: 'white',
+        fontSize: 16,
     },
 
     imageLogo: {

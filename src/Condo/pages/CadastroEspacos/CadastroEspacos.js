@@ -56,8 +56,8 @@ const CadastroEspacos = () => {
                         style={styles.textInput}
                         placeholder="Coloque o tempo máximo de reserva (minutos)"
                         placeholderTextColor="#7F7F7F"
-                        value={tempoMaximo.toString()} // Mostra o valor como string
-                        onChangeText={text => setTempoMaximo(parseInt(text) || 0)} // Converte para número
+                        value={tempoMaximo.toString()} 
+                        onChangeText={text => setTempoMaximo(parseInt(text) || 0)} 
                         keyboardType="numeric"
                         underlineColor="transparent"
                     />
