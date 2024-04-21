@@ -9,7 +9,7 @@ Identificar possíveis problemas de usabilidade que possam afetar a experiência
 Coletar feedback para orientar melhorias na interface e funcionalidades do sistema.
 Requisitos para Realização dos Testes:
 
-Dispositivos: Celular ou Tablet com sistema Android ou iOS.
+Dispositivos: Celular ou Tablet com sistema Android.
 
 Conectividade: Acesso à internet para utilizar o aplicativo.
 
