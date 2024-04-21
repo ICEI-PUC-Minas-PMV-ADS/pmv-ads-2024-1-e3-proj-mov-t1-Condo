@@ -5,28 +5,28 @@ import { Picker } from '@react-native-picker/picker';
 import { StyleSheet } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 
-const ApartamentosCadastrados = () => {
+const Bloco001 = () => {
     return (
         <View>
             <Button
                 style={styles.button}
                 mode="contained"
                 onPress={() => console.log('Pressed')}>
-                <Text style={styles.buttonText}>Bloco 001</Text>
+                <Text style={styles.buttonText}>Apartamento 101</Text>
             </Button>
 
             <Button
                 style={styles.button}
                 mode="contained"
                 onPress={() => console.log('Pressed')}>
-                <Text style={styles.buttonText}>Bloco 002</Text>
+                <Text style={styles.buttonText}>Apartamento 110</Text>
             </Button>
 
             <Button
                 style={styles.button}
                 mode="contained"
                 onPress={() => console.log('Pressed')}>
-                <Text style={styles.buttonText}>Bloco 003</Text>
+                <Text style={styles.buttonText}>Apartamento 120</Text>
             </Button>
 
             <Image
@@ -66,4 +66,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default ApartamentosCadastrados;
+export default Bloco001;
