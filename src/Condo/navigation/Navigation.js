@@ -10,6 +10,7 @@ import ReservarEspaco from '../pages/Reservas/ReservarEspaco';
 import ReservarEspacoTwoScrenn from '../pages/Reservas/ReservarEspacoTwoScreen';
 import LoginCondominio from '../pages/Login/LoginCondominio';
 import LoginMorador from '../pages/Login/LoginMorador';
+import LoginMorador2 from '../pages/Login/LoginMorador2';
 import CadastroEspacos from '../pages/CadastroEspacos/CadastroEspacos';
 import CadastroApto from '../pages/CadastroApto/CadastroApto';
 import MeusEspacos from '../pages/MeusEspacos/MeusEspacos';
@@ -32,8 +33,9 @@ export default function Navigation() {
         <Stack.Screen name='Reservas' component={Reservas} options={{ title: 'Reservas' }}/>
         <Stack.Screen name='ReservarEspaco' component={ReservarEspaco} options={{ title: 'Reservar Espaço' }} />
         <Stack.Screen name='ReservarEspacoTwoScreen' component={ReservarEspacoTwoScrenn} options={{ title: 'Reservar Espaço' }}/>
-        <Stack.Screen name='LoginCondominio' component={LoginCondominio}/>
-        <Stack.Screen name='LoginMorador' component={LoginMorador}/>
+        <Stack.Screen name='LoginCondominio' component={LoginCondominio} options={{ title: 'Login Condomínio' }}/>
+        <Stack.Screen name='LoginMorador' component={LoginMorador} options={{ title: 'Login Condômino' }}/>
+        <Stack.Screen name='LoginMorador2' component={LoginMorador2} options={{ title: 'Login Condômino' }}/>
         <Stack.Screen name='CadastroEspacos' component={CadastroEspacos}/>
         <Stack.Screen name='CadastroApto' component={CadastroApto}/>
         <Stack.Screen name='MeusEspacos' component={MeusEspacos}/>
