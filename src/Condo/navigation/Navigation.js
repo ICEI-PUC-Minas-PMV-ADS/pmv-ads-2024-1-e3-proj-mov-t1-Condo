@@ -21,7 +21,7 @@ import Instrucoes from '../pages/Instrucoes/Instrucoes';
 import CadastroDependente from '../pages/Dependentes/CadastroDependente';
 import MeusDependentes from '../pages/Dependentes/MeusDependentes';
 import Bloco001 from '../pages/ApartamentosCadastrados/Bloco001';
-import DrawerManutencoes from '../components/DrawerManutencoes';
+import AdicionarManutencao from '../pages/Manutencao/AdicionarManutencao';
 
 const Stack = createStackNavigator();
 
@@ -82,6 +82,12 @@ export default function Navigation() {
           options={{ title: 'Apartamentos Cadastrados' }}
         />
         <Stack.Screen name="Manutencao" component={Manutencao} />
+        <Stack.Screen
+          name="AdicionarManutencao"
+          component={AdicionarManutencao}
+          options={{ title: 'Manutenção',
+            headerRight: () => <AddIconManutencoes />}}
+        />
         <Stack.Screen name="Instrucoes" component={Instrucoes} />
         <Stack.Screen
           name="CadastroDependente"
@@ -104,16 +110,27 @@ export default function Navigation() {
 }
 
 function SettingsIconManutencoes() {
-  const openDrawer = () => {
-
-  };
+  const openDrawer = () => {};
 
   return (
     <IconButton
-      icon='cog'
+      icon="cog"
       size={24}
-      color='black'
+      color="black"
       onPress={openDrawer}
+      style={{ marginRight: 10 }}
+    />
+  );
+}
+
+function AddIconManutencoes() {
+
+  return (
+    <IconButton
+      icon="plus"
+      size={24}
+      color="black"
+      onPress={() => {}}
       style={{ marginRight: 10 }}
     />
   );
