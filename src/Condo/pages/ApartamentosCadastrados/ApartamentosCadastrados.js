@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { Button } from 'react-native-paper';
-import { Picker } from '@react-native-picker/picker';
 import { StyleSheet } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 
@@ -31,7 +30,7 @@ const ApartamentosCadastrados = () => {
 
             <Image
                 style={styles.imageLogo}
-                source={require('../../assets/LogoCondo.2.png')}
+                source={require('../../assets/LogoCondo2.png')}
             />
         </View>
     );

@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, Switch, TouchableOpacity, Image } from 'react-native'; // Importando Picker do 'react-native'
+import { StyleSheet, View, Text, Switch, TouchableOpacity, Image } from 'react-native';
 import { RadioButton } from 'react-native-paper';
-import { Picker } from '@react-native-picker/picker';
-
+import RNPickerSelect from 'react-native-picker-select'; // Importe aquiw
 import jogging from '../../assets/jogging.svg';
 import check from '../../assets/check.svg';
 import ButtonContinuar from '../../components/ButtonContinuar';
 import chevronDoubleRight from '../../assets/chevrondoubleright.svg';
-
 
 const ReservarEspaco = ({ navigation }) => {
   const [value, setValue] = useState('first');
@@ -73,16 +71,17 @@ const validarAcompanhantes = () => {
             </View>
           </View>
         </RadioButton.Group>
-        <Picker 
-          style={styles.select}
-          selectedValue={value}
-          onValueChange={(itemValue) => setValue(itemValue)}>
-          <Picker.Item label="João Silva" value="joao_silva" />
-          <Picker.Item label="Maria Santos" value="maria_santos" />
-          <Picker.Item label="Pedro Oliveira" value="pedro_oliveira" />
-          <Picker.Item label="Ana Souza" value="ana_souza" />
-          <Picker.Item label="José Lima" value="jose_lima" />
-        </Picker>
+        <RNPickerSelect
+  style={styles.select}
+  onValueChange={(itemValue) => setValue(itemValue)}
+  items={[
+    { label: 'João Silva', value: 'joao_silva' },
+    { label: 'Maria Santos', value: 'maria_santos' },
+    { label: 'Pedro Oliveira', value: 'pedro_oliveira' },
+    { label: 'Ana Souza', value: 'ana_souza' },
+    { label: 'José Lima', value: 'jose_lima' },
+  ]}
+/>
         <View style={styles.container}>
           <Text style={styles.label}>Acompanhantes?</Text>
           <Switch
@@ -104,16 +103,18 @@ const validarAcompanhantes = () => {
         )}
         <View style={styles.bottomContent}>
           <Text style={styles.label}>Selecione o espaço</Text>
-          <Picker 
+          {/* RNPickerSelect substitui Picker aqui */}
+          <RNPickerSelect
             style={styles.select}
-            selectedValue={value}
-            onValueChange={(itemValue) => setValue(itemValue)}>
-            <Picker.Item label="Piscina" value="piscina" />
-            <Picker.Item label="Quadra Esportiva" value="quadra_esportiva" />
-            <Picker.Item label="Academia" value="academia" />
-            <Picker.Item label="Salão de Festas" value="salao_festas" />
-            <Picker.Item label="Churrasqueira" value="churrasqueira" />
-          </Picker>
+            onValueChange={(itemValue) => setValue(itemValue)}
+            items={[
+              { label: 'Piscina', value: 'piscina' },
+              { label: 'Quadra Esportiva', value: 'quadra_esportiva' },
+              { label: 'Academia', value: 'academia' },
+              { label: 'Salão de Festas', value: 'salao_festas' },
+              { label: 'Churrasqueira', value: 'churrasqueira' },
+            ]}
+          />
         </View>
         <View style={styles.containerImage}>
           <Image
@@ -122,7 +123,7 @@ const validarAcompanhantes = () => {
           />
         </View>
         <ButtonContinuar
-          onPress={() => navigation.navigate('ReservarEspacoTwoScreen')}
+          onPress={() => navigation.navigate('ReservarEspacoTwo')}
           icon={'chevrondoubleright'}
         />
       </View>

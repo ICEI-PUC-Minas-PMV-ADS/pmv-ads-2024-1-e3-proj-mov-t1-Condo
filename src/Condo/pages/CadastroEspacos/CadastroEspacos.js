@@ -83,7 +83,7 @@ const CadastroEspacos = () => {
                 </View>
 
                 <Image style={styles.imageLogo}
-                    source={require('../../assets/LogoCondo.2.png')}
+                    source={require('../../assets/LogoCondo2.png')}
                 />
 
             </View>

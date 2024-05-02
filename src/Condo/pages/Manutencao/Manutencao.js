@@ -3,9 +3,9 @@ import { View, Text, StyleSheet } from 'react-native';
 
 const Manutencao = () => {
     return (
-        <view>
-            <text> Manutenção</text>
-        </view>
+        <View>
+            <Text> Manutenção</Text>
+        </View>
     )
 }
 

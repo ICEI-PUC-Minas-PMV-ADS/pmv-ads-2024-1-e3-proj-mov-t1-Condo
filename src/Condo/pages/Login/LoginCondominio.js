@@ -31,7 +31,7 @@ const LoginCondominio = () => {
   return (
     <View style={styles.container}>
       <Image
-        source={require('../../assets/LogoCondo.2.png')}
+        source={require('../../assets/LogoCondo2.png')}
         style={styles.logo}
         resizeMode="contain"
       />
