@@ -1,65 +1,65 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Text, Switch, TouchableOpacity, Image } from 'react-native';
 import { RadioButton } from 'react-native-paper';
-import RNPickerSelect from 'react-native-picker-select'; // Importe aquiw
+import RNPickerSelect from 'react-native-picker-select';
 import jogging from '../../assets/jogging.svg';
 import check from '../../assets/check.svg';
 import ButtonContinuar from '../../components/ButtonContinuar';
-import chevronDoubleRight from '../../assets/chevrondoubleright.svg';
+import { espaco, titular, dependente } from '../../services/auth.services';
 
 const ReservarEspaco = ({ navigation }) => {
   const [value, setValue] = useState('first');
   const [selectedLanguages, setSelectedLanguages] = useState([]);
   const [isEnabled, setIsEnabled] = useState(false);
+  const [espacos, setEspacos] = useState([]);
+  const [selectedEspaco, setSelectedEspaco] = useState(null);
+  const [titulares, setTitulares] = useState([]);
+  const [selectedTitular, setSelectedTitular] = useState(null);
+  const [dependentes, setDependentes] = useState([]);
+  const [selectedDependente, setSelectedDependente] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const espacosData = await espaco();
+        const titularesData = await titular();
+        const dependentesData = await dependente();
+        setEspacos(espacosData);
+        setTitulares(titularesData);
+        setDependentes(dependentesData);
+      } catch (error) {
+        console.error('Erro ao buscar dados:', error);
+      }
+    };
+  
+    fetchData();
+  }, []);
 
   const toggleSwitch = () => {
-    setIsEnabled((prevState) => !prevState); 
+    setIsEnabled(prevState => !prevState);
   };
 
-  const handleSelectChange = (selectedValue) => {
-    console.log('Selected value:', selectedValue); 
-  };
-
- const renderPickerItem = (label, value) => (
-    <TouchableOpacity
-      style={styles.pickerItem}
-      onPress={() => handleSelect(value)}
-    >
+  const renderPickerItem = (label, value) => (
+    <TouchableOpacity style={styles.pickerItem} onPress={() => handleSelect(value)}>
       <Text>{label}</Text>
-      {selectedLanguages.includes(value) && (
-        <Image source={check} style={{ width: 15, height: 15 }} />
-      )}
+      {selectedLanguages.includes(value) && <Image source={check} style={{ width: 15, height: 15 }} />}
     </TouchableOpacity>
   );
 
-const validarAcompanhantes = () => {
-   
-    if (selectedLanguages.length === 0 && isEnabled) {
-      
-      alert("Selecione pelo menos um acompanhante");
-      return false; // Indica falha na validação
-    }
-    return true; 
-  };
-
-
-  const handleSelect = (value) => {
+  const handleSelect = value => {
     if (selectedLanguages.includes(value)) {
-      setSelectedLanguages(selectedLanguages.filter((item) => item !== value)); 
+      setSelectedLanguages(selectedLanguages.filter(item => item !== value));
     } else {
-      setSelectedLanguages([...selectedLanguages, value]); 
+      setSelectedLanguages([...selectedLanguages, value]);
     }
   };
-
 
   return (
     <View style={styles.containerReservarEspaco}>
       <Text style={styles.title}>Confirme os dados da reserva</Text>
       <View style={styles.textContainer}>
         <Text style={styles.label}>Para quem é a reserva?</Text>
-        <RadioButton.Group
-          onValueChange={(newValue) => setValue(newValue)}
-          value={value}>
+        <RadioButton.Group onValueChange={newValue => setValue(newValue)} value={value}>
           <View style={styles.radioGroup}>
             <View style={styles.radioButtonContainer}>
               <Text style={styles.radioLabel}>Titular</Text>
@@ -72,67 +72,83 @@ const validarAcompanhantes = () => {
           </View>
         </RadioButton.Group>
         <RNPickerSelect
-  style={styles.select}
-  onValueChange={(itemValue) => setValue(itemValue)}
-  items={[
-    { label: 'João Silva', value: 'joao_silva' },
-    { label: 'Maria Santos', value: 'maria_santos' },
-    { label: 'Pedro Oliveira', value: 'pedro_oliveira' },
-    { label: 'Ana Souza', value: 'ana_souza' },
-    { label: 'José Lima', value: 'jose_lima' },
-  ]}
-/>
-        <View style={styles.container}>
-          <Text style={styles.label}>Acompanhantes?</Text>
-          <Switch
-           trackColor={{false: '#767577', true: '#26B3E0'}}
-        thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
-        ios_backgroundColor="#3e3e3e"
-        onValueChange={toggleSwitch}
-        value={isEnabled}
-          />
-        </View>
-        {isEnabled && (
-          <View style={[styles.select, { height: 200 }]}>
-            {renderPickerItem('João Silva', 'joao_silva')}
-            {renderPickerItem('Maria Santos', 'maria_santos')}
-            {renderPickerItem('Pedro Oliveira', 'pedro_oliveira')}
-            {renderPickerItem('Ana Souza', 'ana_souza')}
-            {renderPickerItem('José Lima', 'jose_lima')}
-          </View>
-        )}
+          style={styles.select}
+          value={value === 'first' ? selectedTitular : selectedDependente}
+          onValueChange={(value) => {
+            if (value === 'first') {
+              setSelectedTitular(value);
+            } else {
+              setSelectedDependente(value);
+            }
+          }}
+          items={value === 'first' ? titulares.map(titular => ({
+            label: titular.nomeTitular,
+            value: titular.id,
+          })) : dependentes.map(dependente => ({
+            label: dependente.nomeDependente,
+            value: dependente.id,
+          }))}
+        />
+     <View style={styles.container}>
+  <Text style={styles.label}>Acompanhantes?</Text>
+  <Switch
+    trackColor={{ false: '#767577', true: '#26B3E0' }}
+    thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
+    ios_backgroundColor="#3e3e3e"
+    onValueChange={toggleSwitch}
+    value={isEnabled}
+  />
+</View>
+{isEnabled && (
+  <View style={[styles.select, { height: 200 }]}>
+    {value === 'first' && selectedTitular && (
+      <View>
+        {/*Renderização dos dependentes do titular selecionado */}
+        {titulares
+          .filter(dependente => dependente.Condomino_Titular_Id === selectedTitular.id)
+          .map(dependente => (
+            renderPickerItem(dependente.nomeDependente, dependente.id)
+          ))
+        }
+      </View>
+    )}
+
+    {value === 'second' && selectedDependente && (
+      <View>
+        {/*Renderização dos dependentes */}
+        {dependentes
+          .filter(dependente => dependente.Condomino_Titular_Id === selectedDependente.Condomino_Titular_Id)
+          .map(dependente => (
+            renderPickerItem(dependente.nomeDependente, dependente.id)
+          ))
+        }
+      </View>
+    )}
+  </View>
+)}
+
+
+
         <View style={styles.bottomContent}>
           <Text style={styles.label}>Selecione o espaço</Text>
-          {/* RNPickerSelect substitui Picker aqui */}
           <RNPickerSelect
             style={styles.select}
-            onValueChange={(itemValue) => setValue(itemValue)}
-            items={[
-              { label: 'Piscina', value: 'piscina' },
-              { label: 'Quadra Esportiva', value: 'quadra_esportiva' },
-              { label: 'Academia', value: 'academia' },
-              { label: 'Salão de Festas', value: 'salao_festas' },
-              { label: 'Churrasqueira', value: 'churrasqueira' },
-            ]}
+            value={selectedEspaco}
+            onValueChange={(value) => setSelectedEspaco(value)}
+            items={espacos.map(espaco => ({
+              label: espaco.nomeEspaco,
+              value: espaco.id,
+            }))}
           />
         </View>
         <View style={styles.containerImage}>
-          <Image
-            source={jogging}
-            style={styles.image}
-          />
+          <Image source={jogging} style={styles.image} />
         </View>
-        <ButtonContinuar
-          onPress={() => navigation.navigate('ReservarEspacoTwo')}
-          icon={'chevrondoubleright'}
-        />
+        <ButtonContinuar onPress={() => navigation.navigate('ReservarEspacoTwo')} icon={'chevrondoubleright'} />
       </View>
     </View>
   );
 };
-
-
-//Componentes CSS
 
 const styles = StyleSheet.create({
   containerReservarEspaco: {
