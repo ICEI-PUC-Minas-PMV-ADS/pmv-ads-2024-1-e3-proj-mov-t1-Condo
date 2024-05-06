@@ -8,12 +8,6 @@ const Instrucoes = () => {
 return (
 
 <View>
-
-      <View>
-          <Appbar.Header>
-          <Appbar.Content title="Instruções" subtitle="" />
-          </Appbar.Header>
-      </View>
       
     <View style={{ marginVertical: 2, backgroundColor: '#F0F0F0' }}>
       <List.AccordionGroup>

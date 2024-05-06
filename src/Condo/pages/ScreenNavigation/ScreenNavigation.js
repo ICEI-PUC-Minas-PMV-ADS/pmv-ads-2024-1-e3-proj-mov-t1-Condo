@@ -3,6 +3,7 @@ import { View, Text, ScrollView } from 'react-native';
 import CustomButton from '../../components/CustomButton';
 import { Divider, Button } from 'react-native-paper';
 import { Appbar } from 'react-native-paper';
+import { StyleSheet } from 'react-native';
 
 
 const NavigationToDo = () => {
@@ -15,9 +16,9 @@ const NavigationToDo = () => {
                 <CustomButton title="Adicionar Manutenção" screen="AdicionarManutencao" />
 
                 <Text style={{ textAlign: 'center' }}>--------------- Login e Cadastro ---------------</Text>
-                <CustomButton title="Login - Condômino 01" screen="LoginMorador" />
+                <CustomButton title="Login - Condômino 01" screen="LoginCondomino" />
 
-                <CustomButton title="Login - Condômino 02" screen="LoginMorador2" />
+                <CustomButton title="Login - Condômino 02" screen="LoginCondominoTwo" />
 
                 <CustomButton title="Login - Condomínio" screen="LoginCondominio" />
 
@@ -36,6 +37,7 @@ const NavigationToDo = () => {
                 <Text style={{ textAlign: 'center' }}>--------------- Reservas ---------------</Text>
                 <CustomButton title="Reservas" screen="Reservas" />
                 <CustomButton title="Reservar Espaço" screen="ReservarEspaco" />
+                <CustomButton title="Reservar Espaço" screen="ReservarEspacoTwo" />
                 <CustomButton title="Minhas Reservas" screen="" />
 
                 <Text style={{ textAlign: 'center' }}>--------------- Dependentes ---------------</Text>
@@ -48,7 +50,7 @@ const NavigationToDo = () => {
                 <CustomButton title="Cadastrar Apartamento" screen="CadastroApto" />
                 <CustomButton title="Meus Espaços" screen="MeusEspacos" />
                 <CustomButton title="Apartamentos Cadastrados" screen="ApartamentosCadastrados" />
-                <CustomButton title="Bloco 001" screen="Bloco001" />
+                <CustomButton title="Blocos" screen="Blocos" />
 
                 <Text style={{ textAlign: 'center' }}>--------------- Manutenção ---------------</Text>
 

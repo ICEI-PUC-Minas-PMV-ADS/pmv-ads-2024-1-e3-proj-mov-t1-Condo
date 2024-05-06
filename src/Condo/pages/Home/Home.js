@@ -2,8 +2,8 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import ButtonDependente from '../../components/ButtonDependente';
 import ButtonReservas from '../../components/ButtonReservas';
-import Vector from '../../assets/Vector.png';
 import CalendarIcon from '../../assets/calendario.svg';
+import Vector from '../../assets/vector.png';
 
 export default function Home({ navigation }) {
   return (

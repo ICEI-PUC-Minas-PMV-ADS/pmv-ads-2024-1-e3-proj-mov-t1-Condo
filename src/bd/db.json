@@ -1,0 +1,157 @@
+{
+    "users":[],
+    "condominio": [
+      {
+        "id": 1,
+        "cnpj": 12345678901234,
+        "razao_social": "Condomínio Exemplo",
+        "email": "condominio@example.com",
+        "senha": "senha123"
+      }
+    ],
+    "espaco": [
+      {
+        "id": 1,
+        "nomeEspaco": "Salão de Festas",
+        "capacidade": 100,
+        "tempo_Reserva": "2 horas",
+        "instrucoes": "Proibido fumar",
+        "CONDOMINIO_ID": 1
+      },
+      {
+        "id": 2,
+        "nomeEspaco": "Sala de Reuniões",
+        "capacidade": 20,
+        "tempo_Reserva": "1 hora",
+        "instrucoes": "Manter o espaço organizado após o uso",
+        "CONDOMINIO_ID": 1
+      },
+      {
+        "id": 3,
+        "nomeEspaco": "Academia",
+        "capacidade": 50,
+        "tempo_Reserva": "1 hora",
+        "instrucoes": "Usar equipamentos com cuidado",
+        "CONDOMINIO_ID": 1
+      },
+      {
+        "id": 4,
+        "nomeEspaco": "Churrasqueira",
+        "capacidade": 30,
+        "tempo_Reserva": "4 horas",
+        "instrucoes": "Limpar a churrasqueira após o uso",
+        "CONDOMINIO_ID": 1
+      },
+      {
+        "id": 5,
+        "nomeEspaco": "Piscina",
+        "capacidade": 50,
+        "tempo_Reserva": "3 horas",
+        "instrucoes": "Tomar banho antes de entrar na piscina",
+        "CONDOMINIO_ID": 1
+      },
+      {
+        "id": 6,
+        "nomeEspaco": "Quadra de Tênis",
+        "capacidade": 4,
+        "tempo_Reserva": "2 horas",
+        "instrucoes": "Manter a quadra limpa",
+        "CONDOMINIO_ID": 1
+      }
+    ],
+    "bloco": [
+      {
+        "id": 1,
+        "apto_id": [1]
+      }
+    ],
+    "apartamento": [
+      {
+        "id": 1,
+        "nomeTitular": "João da Silva",
+        "cpfTitular": 12345678900,
+        "bloco": 1,
+        "apartamento": 101,
+        "Condominio_ID": 1,
+        "bloco_id": 1
+      }
+    ],
+    "titular": [
+      {
+        "id": 1,
+        "nomeTitular": "João da Silva",
+        "cpfTitular": 12345678900,
+        "Data_Nasc": "01/05/2000",
+        "idade": 31,
+        "bloco_id": 1,
+        "apto_id": 1
+      }],
+      "dependente": [
+       {
+        "id": 1,
+        "nomeDependente": "Josué Almeida",
+        "cpfDependente": 12345678900,
+        "data_Nasc": "01/05/2000",
+        "idade": 24,
+        "condomino_Titular_Id": 1
+       },
+       {
+        "id": 2,
+        "nomeDependente": "Mariana Silva",
+        "cpfDependente": 98765432100,
+        "data_Nasc": "10/12/1998",
+        "idade": 26,
+        "condomino_Titular_Id": 1
+      },
+      {
+        "id": 3,
+        "nomeDependente": "Pedro Henrique",
+        "cpfDependente": 23456789012,
+        "data_Nasc": "05/08/2002",
+        "idade": 22,
+        "condomino_Titular_Id": 1
+      },
+      {
+        "id": 4,
+        "nomeDependente": "Ana Carolina",
+        "cpfDependente": 34567890123,
+        "data_Nasc": "15/03/1996",
+        "idade": 28,
+        "condomino_Titular_Id": 1
+      },
+      {
+        "id": 5,
+        "nomeDependente": "Lucas Oliveira",
+        "cpfDependente": 45678901234,
+        "data_Nasc": "20/07/2004",
+        "idade": 19,
+        "condomino_Titular_Id": 1
+      },
+      {
+        "id": 6,
+        "nomeDependente": "Juliana Santos",
+        "cpfDependente": 56789012345,
+        "data_Nasc": "25/11/2001",
+        "idade": 21,
+        "condomino_Titular_Id": 1
+      },
+      {
+        "id": 7,
+        "nomeDependente": "Gabriel Lima",
+        "cpfDependente": 67890123456,
+        "data_Nasc": "30/04/1997",
+        "idade": 25,
+        "condomino_Titular_Id": 1
+      },
+      {
+        "id": 8,
+        "nomeDependente": "Laura Pereira",
+        "cpfDependente": 78901234567,
+        "data_Nasc": "12/09/2003",
+        "idade": 18,
+        "condomino_Titular_Id": 1
+      }
+      
+    ]
+  }
+  

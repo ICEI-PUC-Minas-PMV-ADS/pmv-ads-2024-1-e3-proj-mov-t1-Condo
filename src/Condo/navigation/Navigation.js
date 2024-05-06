@@ -5,24 +5,37 @@ import { IconButton } from 'react-native-paper';
 import { createStackNavigator } from '@react-navigation/stack';
 import ScreenNavigation from '../pages/ScreenNavigation/ScreenNavigation';
 import Home from '../pages/Home/Home';
-import Dependentes from '../pages/Dependentes/Dependentes';
 import Reservas from '../pages/Reservas/Reservas';
 import ReservarEspaco from '../pages/Reservas/ReservarEspaco';
-import ReservarEspacoTwoScrenn from '../pages/Reservas/ReservarEspacoTwoScreen';
-import LoginCondominio from '../pages/Login/LoginCondominio';
-import LoginMorador from '../pages/Login/LoginMorador';
-import LoginMorador2 from '../pages/Login/LoginMorador2';
-import CadastroEspacos from '../pages/CadastroEspacos/CadastroEspacos';
-import CadastroApto from '../pages/CadastroApto/CadastroApto';
+import ReservarEspacoTwo from '../pages/Reservas/ReservarEspacoTwo';
 import MeusEspacos from '../pages/MeusEspacos/MeusEspacos';
-import ApartamentosCadastrados from '../pages/ApartamentosCadastrados/ApartamentoCadastrados';
-import Manutencao from '../pages/Manutencao/Manutencao';
 import Instrucoes from '../pages/Instrucoes/Instrucoes';
+import Manutencao from '../pages/Manutencao/Manutencao';
+import LoginCondominio from '../pages/Login/LoginCondominio';
+import LoginCondomino from '../pages/Login/LoginCondomino';
+import LoginCondominoTwo from '../pages/Login/LoginCondominoTwo';
+import Dependentes from '../pages/Dependentes/Dependentes';
 import CadastroDependente from '../pages/Dependentes/CadastroDependente';
 import MeusDependentes from '../pages/Dependentes/MeusDependentes';
-import Bloco001 from '../pages/ApartamentosCadastrados/Bloco001';
 import AdicionarManutencao from '../pages/Manutencao/AdicionarManutencao';
+import CadastroEspacos from '../pages/CadastroEspacos/CadastroEspacos';
+import CadastroApto from '../pages/CadastroApto/CadastroApto';
+import ApartamentosCadastrados from '../pages/ApartamentosCadastrados/ApartamentosCadastrados';
+import Blocos from '../pages/ApartamentosCadastrados/Blocos';
 
+
+
+
+
+/*import DrawerManutencoes from '../components/DrawerManutencoes'; 
+(Erro: 
+navigation/Navigation.js (24:31)
+Cannot find file '../components/DrawerManutencoes'.
+(Dependencies)
+navigation/Navigation.js (0:1)
+Unable to resolve module 'module://components/DrawerManutencoes.js'
+(Device))
+*/
 const Stack = createStackNavigator();
 
 export default function Navigation() {
@@ -31,11 +44,6 @@ export default function Navigation() {
       <Stack.Navigator initialRouteName="ScreenNavigation">
         <Stack.Screen name="ScreenNavigation" component={ScreenNavigation} />
         <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen
-          name="Dependentes"
-          component={Dependentes}
-          options={{ title: 'Dependentes' }}
-        />
         <Stack.Screen
           name="Reservas"
           component={Reservas}
@@ -47,27 +55,10 @@ export default function Navigation() {
           options={{ title: 'Reservar Espaço' }}
         />
         <Stack.Screen
-          name="ReservarEspacoTwoScreen"
-          component={ReservarEspacoTwoScrenn}
+          name="ReservarEspacoTwo"
+          component={ReservarEspacoTwo}
           options={{ title: 'Reservar Espaço' }}
         />
-        <Stack.Screen
-          name="LoginCondominio"
-          component={LoginCondominio}
-          options={{ title: 'Login Condomínio' }}
-        />
-        <Stack.Screen
-          name="LoginMorador"
-          component={LoginMorador}
-          options={{ title: 'Login Condômino' }}
-        />
-        <Stack.Screen
-          name="LoginMorador2"
-          component={LoginMorador2}
-          options={{ title: 'Login Condômino' }}
-        />
-        <Stack.Screen name="CadastroEspacos" component={CadastroEspacos} />
-        <Stack.Screen name="CadastroApto" component={CadastroApto} />
         <Stack.Screen
           name="MeusEspacos"
           component={MeusEspacos}
@@ -76,10 +67,27 @@ export default function Navigation() {
             headerRight: () => <SettingsIconManutencoes />,
           })}
         />
+        <Stack.Screen name='Instrucoes' component={Instrucoes} options={{ title: 'Instruções' }} />
+        <Stack.Screen name='Manutencao' component={Manutencao} options={{ title: 'Mantenção' }} />
         <Stack.Screen
-          name="ApartamentosCadastrados"
-          component={ApartamentosCadastrados}
-          options={{ title: 'Apartamentos Cadastrados' }}
+          name='LoginCondominio'
+          component={LoginCondominio}
+          options={{ title: 'Login Condomínio' }}
+        />
+        <Stack.Screen
+          name="LoginCondomino"
+          component={LoginCondomino}
+          options={{ title: 'Login Condômino' }}
+        />
+        <Stack.Screen
+          name='LoginCondominoTwo'
+          component={LoginCondominoTwo}
+          options={{ title: 'Login Condômino' }}
+        />
+        <Stack.Screen
+          name="Dependentes"
+          component={Dependentes}
+          options={{ title: 'Dependentes' }}
         />
         <Stack.Screen name="Manutencao" component={Manutencao} />
         <Stack.Screen
@@ -99,15 +107,24 @@ export default function Navigation() {
           component={MeusDependentes}
           options={{ title: 'Meus Dependentes' }}
         />
+        <Stack.Screen name='CadastroEspacos' component={CadastroEspacos} />
+        <Stack.Screen name='CadastroApto' component={CadastroApto} />
         <Stack.Screen
-          name="Bloco001"
-          component={Bloco001}
-          options={{ title: 'Bloco 001' }}
+          name="ApartamentosCadastrados"
+          component={ApartamentosCadastrados}
+          options={{ title: 'Apartamentos Cadastrados' }}
+        />
+        <Stack.Screen
+          name="Blocos"
+          component={Blocos}
+          options={{ title: 'Blocos Cadastrados' }}
         />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
+
+
 
 function SettingsIconManutencoes() {
   const openDrawer = () => {};
