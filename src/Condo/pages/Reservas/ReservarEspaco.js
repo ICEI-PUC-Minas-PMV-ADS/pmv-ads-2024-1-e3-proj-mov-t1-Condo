@@ -12,11 +12,11 @@ const ReservarEspaco = ({ navigation }) => {
   const [selectedLanguages, setSelectedLanguages] = useState([]);
   const [isEnabled, setIsEnabled] = useState(false);
   const [espacos, setEspacos] = useState([]);
-  const [selectedEspaco, setSelectedEspaco] = useState(null);
+  const [selectedEspaco, setSelectedEspaco] = useState([]);
   const [titulares, setTitulares] = useState([]);
-  const [selectedTitular, setSelectedTitular] = useState(null);
+  const [selectedTitular, setSelectedTitular] = useState([]);
   const [dependentes, setDependentes] = useState([]);
-  const [selectedDependente, setSelectedDependente] = useState(null);
+  const [selectedDependente, setSelectedDependente] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -59,37 +59,32 @@ const ReservarEspaco = ({ navigation }) => {
       <Text style={styles.title}>Confirme os dados da reserva</Text>
       <View style={styles.textContainer}>
         <Text style={styles.label}>Para quem é a reserva?</Text>
-        <RadioButton.Group onValueChange={newValue => setValue(newValue)} value={value}>
-          <View style={styles.radioGroup}>
-            <View style={styles.radioButtonContainer}>
-              <Text style={styles.radioLabel}>Titular</Text>
-              <RadioButton value="first" />
-            </View>
-            <View style={styles.radioButtonContainer}>
-              <Text style={styles.radioLabel}>Dependente</Text>
-              <RadioButton value="second" />
-            </View>
-          </View>
-        </RadioButton.Group>
-        <RNPickerSelect
-          style={styles.select}
-          value={value === 'first' ? selectedTitular : selectedDependente}
-          onValueChange={(value) => {
-            if (value === 'first') {
-              setSelectedTitular(value);
-            } else {
-              setSelectedDependente(value);
-            }
-          }}
-          items={value === 'first' ? titulares.map(titular => ({
-            label: titular.nomeTitular,
-            value: titular.id,
-          })) : dependentes.map(dependente => ({
-            label: dependente.nomeDependente,
-            value: dependente.id,
-          }))}
-        />
-     <View style={styles.container}>
+       <RNPickerSelect
+  style={styles.select}
+  value={selectedTitular || selectedDependente}
+  onValueChange={(value) => {
+    if (value === 'first') {  
+      setSelectedTitular(null);
+      setSelectedDependente(value); 
+    } else {
+      setSelectedTitular(value);
+      setSelectedDependente(null);
+    }
+  }}
+  items={[
+    ...titulares.map(titular => ({
+      label: `${titular.nomeTitular}`,
+      value: `${titular.id}`,
+    })),
+    ...dependentes.map(dependente => ({
+      label: `${dependente.nomeDependente}`,
+      value: `${dependente.id}`,
+    }))
+  ]}
+/>
+
+{/* Renderização dos acompanhantes */}
+<View style={styles.container}>
   <Text style={styles.label}>Acompanhantes?</Text>
   <Switch
     trackColor={{ false: '#767577', true: '#26B3E0' }}
@@ -99,35 +94,34 @@ const ReservarEspaco = ({ navigation }) => {
     value={isEnabled}
   />
 </View>
-{isEnabled && (
-  <View style={[styles.select, { height: 200 }]}>
-    {value === 'first' && selectedTitular && (
-      <View>
-        {/*Renderização dos dependentes do titular selecionado */}
-        {titulares
-          .filter(dependente => dependente.Condomino_Titular_Id === selectedTitular.id)
-          .map(dependente => (
-            renderPickerItem(dependente.nomeDependente, dependente.id)
-          ))
-        }
-      </View>
-    )}
 
-    {value === 'second' && selectedDependente && (
-      <View>
-        {/*Renderização dos dependentes */}
-        {dependentes
-          .filter(dependente => dependente.Condomino_Titular_Id === selectedDependente.Condomino_Titular_Id)
-          .map(dependente => (
-            renderPickerItem(dependente.nomeDependente, dependente.id)
-          ))
-        }
-      </View>
-    )}
+{isEnabled && (
+<View style={[styles.select, { height: 200 }]}>
+{value === 'first' && selectedTitular && (
+  <View>
+    {/*Renderização dos dependentes do titular selecionado */}
+    {titulares
+      .filter(dependente => dependente.Condomino_Titular_Id === selectedTitular.id)
+      .map(dependente => (
+        renderPickerItem(dependente.nomeDependente, dependente.id)
+      ))
+    }
   </View>
 )}
 
-
+{value === 'second' && selectedDependente && (
+  <View>
+    {/*Renderização dos dependentes */}
+    {dependentes
+      .filter(dependente => dependente.Condomino_Titular_Id === selectedDependente.Condomino_Titular_Id)
+      .map(dependente => (
+        renderPickerItem(dependente.nomeDependente, dependente.id)
+      ))
+    }
+  </View>
+)}
+</View>
+)}
 
         <View style={styles.bottomContent}>
           <Text style={styles.label}>Selecione o espaço</Text>
@@ -169,20 +163,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginBottom: 5,
     marginRight: 15,
-  },
-  radioGroup: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  radioButtonContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginRight: 20,
-  },
-  radioLabel: {
-    fontSize: 16,
-    marginRight: 10,
   },
   select: {
     height: 40,

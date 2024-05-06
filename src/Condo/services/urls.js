@@ -1,1 +1,1 @@
-export const BASE_URL = 'http://localhost:3000';
+export const BASE_URL = 'https://mock_2b3893e6356b455787c5fb83620b7512.mock.insomnia.rest';
