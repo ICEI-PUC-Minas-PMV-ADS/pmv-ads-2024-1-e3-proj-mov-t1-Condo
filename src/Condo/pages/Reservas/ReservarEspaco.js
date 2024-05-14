@@ -6,34 +6,17 @@ import jogging from '../../assets/jogging.svg';
 import check from '../../assets/check.svg';
 import ButtonContinuar from '../../components/ButtonContinuar';
 import { espaco, titular, dependente } from '../../services/auth.services';
+import { Axios } from "axios";
+import { useAuth } from '../../context/UserContext'; // Importe o hook useAuth
 
 const ReservarEspaco = ({ navigation }) => {
   const [value, setValue] = useState('first');
   const [selectedLanguages, setSelectedLanguages] = useState([]);
   const [isEnabled, setIsEnabled] = useState(false);
-  const [espacos, setEspacos] = useState([]);
   const [selectedEspaco, setSelectedEspaco] = useState([]);
-  const [titulares, setTitulares] = useState([]);
   const [selectedTitular, setSelectedTitular] = useState([]);
-  const [dependentes, setDependentes] = useState([]);
   const [selectedDependente, setSelectedDependente] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const espacosData = await espaco();
-        const titularesData = await titular();
-        const dependentesData = await dependente();
-        setEspacos(espacosData);
-        setTitulares(titularesData);
-        setDependentes(dependentesData);
-      } catch (error) {
-        console.error('Erro ao buscar dados:', error);
-      }
-    };
-  
-    fetchData();
-  }, []);
+  const { espacosData, titularesData, dependentesData } = useAuth();
 
   const toggleSwitch = () => {
     setIsEnabled(prevState => !prevState);
@@ -50,7 +33,7 @@ const ReservarEspaco = ({ navigation }) => {
     if (selectedLanguages.includes(value)) {
       setSelectedLanguages(selectedLanguages.filter(item => item !== value));
     } else {
-      setSelectedLanguages([...selectedLanguages, value]);
+      setSelectedLanguages(selectedLanguages, value);
     }
   };
 
@@ -59,69 +42,66 @@ const ReservarEspaco = ({ navigation }) => {
       <Text style={styles.title}>Confirme os dados da reserva</Text>
       <View style={styles.textContainer}>
         <Text style={styles.label}>Para quem é a reserva?</Text>
-       <RNPickerSelect
-  style={styles.select}
-  value={selectedTitular || selectedDependente}
-  onValueChange={(value) => {
-    if (value === 'first') {  
-      setSelectedTitular(null);
-      setSelectedDependente(value); 
-    } else {
-      setSelectedTitular(value);
-      setSelectedDependente(null);
-    }
-  }}
-  items={[
-    ...titulares.map(titular => ({
-      label: `${titular.nomeTitular}`,
-      value: `${titular.id}`,
-    })),
-    ...dependentes.map(dependente => ({
-      label: `${dependente.nomeDependente}`,
-      value: `${dependente.id}`,
-    }))
-  ]}
-/>
+        {/* Selecionando o Reservante Principal */}
+        <RNPickerSelect
+          style={styles.select}
+          value={selectedTitular || selectedDependente}
+          onValueChange={(value) => {
+            if (value === 'first') {
+              setSelectedTitular(null);
+              setSelectedDependente(value);
+            } else {
+              setSelectedTitular(value);
+              setSelectedDependente(null);
+            }
+          }}
+          items={(titularesData || []).concat(dependentesData || []).map(item => ({
+            label: item.nomeTitular || item.nomeDependente,
+            value: item.id,
+            key: item.id.toString(),
+          }))}
+        />
 
-{/* Renderização dos acompanhantes */}
-<View style={styles.container}>
-  <Text style={styles.label}>Acompanhantes?</Text>
-  <Switch
-    trackColor={{ false: '#767577', true: '#26B3E0' }}
-    thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
-    ios_backgroundColor="#3e3e3e"
-    onValueChange={toggleSwitch}
-    value={isEnabled}
-  />
-</View>
+        {/* Selecione Acompanhantes */}
+        <View style={styles.container}>
+          <Text style={styles.label}>Acompanhantes?</Text>
+          <Switch
+            trackColor={{ false: '#767577', true: '#26B3E0' }}
+            thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
+            ios_backgroundColor="#3e3e3e"
+            onValueChange={toggleSwitch}
+            value={isEnabled}
+          />
+        </View>
 
-{isEnabled && (
-<View style={[styles.select, { height: 200 }]}>
-{value === 'first' && selectedTitular && (
-  <View>
-    {/*Renderização dos dependentes do titular selecionado */}
-    {titulares
-      .filter(dependente => dependente.Condomino_Titular_Id === selectedTitular.id)
-      .map(dependente => (
-        renderPickerItem(dependente.nomeDependente, dependente.id)
-      ))
-    }
-  </View>
-)}
+        {/* Se o Switch for ativado mostre no isEnabled o titular ou dependente exceto aquele que foi selecionado no RNPicker */}
+        {isEnabled && titularesData && dependentesData && (
+          <View style={[styles.select, { height: 200 }]}>
+            {selectedTitular && dependentesData.length > 0 && (
+              <View>
+                {/* Renderização dos dependentes do titular selecionado */}
+                {dependentesData
+                  .filter(dependente => dependente.condomino_Titular_Id === selectedTitular.id)
+                  .map(dependente => (
+                    renderPickerItem(dependente.nomeDependente, dependente.id)
+                  ))
+                }
+              </View>
+            )}
 
-{value === 'second' && selectedDependente && (
-  <View>
-    {/*Renderização dos dependentes */}
-    {dependentes
-      .filter(dependente => dependente.Condomino_Titular_Id === selectedDependente.Condomino_Titular_Id)
-      .map(dependente => (
-        renderPickerItem(dependente.nomeDependente, dependente.id)
-      ))
-    }
-  </View>
-)}
-</View>
-)}
+            {selectedDependente && titularesData.length > 0 && (
+              <View>
+                {/* Renderização dos titulares que não são o dependente selecionado */}
+                {titularesData
+                  .filter(titular => titular.id !== selectedDependente.condomino_Titular_Id)
+                  .map(titular => (
+                    renderPickerItem(titular.nomeTitular, titular.id)
+                  ))
+                }
+              </View>
+            )}
+          </View>
+        )}
 
         <View style={styles.bottomContent}>
           <Text style={styles.label}>Selecione o espaço</Text>
@@ -129,12 +109,14 @@ const ReservarEspaco = ({ navigation }) => {
             style={styles.select}
             value={selectedEspaco}
             onValueChange={(value) => setSelectedEspaco(value)}
-            items={espacos.map(espaco => ({
-              label: espaco.nomeEspaco,
-              value: espaco.id,
-            }))}
+            items={espacosData?.map(espaco => ({
+              label: `${espaco.nomeEspaco}`,
+              value: `${espaco.id}`,
+              key: `${espaco?.id}`,
+            })).flat() || []}
           />
         </View>
+
         <View style={styles.containerImage}>
           <Image source={jogging} style={styles.image} />
         </View>
@@ -143,6 +125,7 @@ const ReservarEspaco = ({ navigation }) => {
     </View>
   );
 };
+
 
 const styles = StyleSheet.create({
   containerReservarEspaco: {

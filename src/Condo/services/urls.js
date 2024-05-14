@@ -1,1 +1,3 @@
-export const BASE_URL = 'https://mock_2b3893e6356b455787c5fb83620b7512.mock.insomnia.rest';
+import axios from "axios";
+
+export const baseURL = 'https://mock_610752d33a2c439aaaaaecda3ae9a7c5.mock.insomnia.rest';
