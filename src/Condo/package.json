@@ -12,6 +12,7 @@
     "@emotion/styled": "^11.11.5",
     "@expo/metro-runtime": "~3.2.1",
     "@mui/material": "^5.15.16",
+    "@react-native-community/datetimepicker": "^8.0.1",
     "@react-navigation/native": "^6.1.17",
     "@react-navigation/stack": "^6.3.29",
     "axios": "^1.6.8",
