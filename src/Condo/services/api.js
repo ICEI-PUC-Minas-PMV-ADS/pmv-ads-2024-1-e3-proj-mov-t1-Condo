@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "https://condo.wiremockapi.cloud"
+    baseURL: 'https://wicked-points-prove.loca.lt'
 })
 
 export default api;

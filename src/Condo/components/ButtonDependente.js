@@ -1,6 +1,6 @@
 import React from 'react';
 import { TouchableOpacity, Image, StyleSheet } from 'react-native';
-import VectorIcon from '../assets/vector.png';
+import VectorIcon from '../assets/Vector.png';
 import EllipseIcon from '../assets/Ellipse4.png';
 
 export default function ButtonDependente({ onPress }) {

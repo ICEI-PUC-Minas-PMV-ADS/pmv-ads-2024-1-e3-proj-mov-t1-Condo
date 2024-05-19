@@ -1,1 +1,1 @@
-export const baseURL = 'https://condo.wiremockapi.cloud';
+export const baseURL = 'https://wicked-points-prove.loca.lt';

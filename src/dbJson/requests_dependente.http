@@ -1,0 +1,38 @@
+### DEPENDENTE
+GET http://localhost:3000/dependente
+
+
+### CREATE
+POST http://localhost:3000/dependente
+content-type: application/json
+
+{
+      
+     "nomeDependente": "Lucas Oliveira",
+      "cpfDependente": 23456789012,
+      "data_Nasc": "05/08/2002",
+      "idade": 22,
+      "condomino_Titular_Id": 1
+
+
+}
+
+### UPDATE
+PUT http://localhost:3000/dependente/1
+content-type: application/json
+
+{
+      "nomeDependente": "Josué Almeida",
+      "cpfDependente": 12345678900,
+      "data_Nasc": "01/05/2000",
+      "idade": 24,
+      "condomino_Titular_Id": 1
+}
+
+
+### GET DEPENDENTE
+GET http://localhost:3000/dependente/1
+
+### DELETE DEPENDENTE
+DELETE http://localhost:3000/dependente/j-pNUwh
+

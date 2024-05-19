@@ -1,0 +1,15 @@
+### CONDOMINIO
+
+GET http://localhost:3000/condominio
+
+
+### CREATE
+POST http://localhost:3000/condominio
+content-type: application/json
+
+{
+        "cnpj": "94.583.479/0001-28",
+        "razaoSocial": "Condomínio Exemplo",
+        "email": "condominio@example.com",
+        "senha": "senha123"
+}

@@ -1,0 +1,37 @@
+### TITULAR
+GET http://localhost:3000/titular
+
+
+### CREATE
+POST http://localhost:3000/titular
+content-type: application/json
+
+{
+      "nomeTitular": "Mariane Oliveira",
+      "cpfTitular": "12345678900",
+      "Data_Nasc": "01/05/2000",
+      "idade": 31,
+      "bloco_id": 1,
+      "apto_id": 1
+}
+
+### UPDATE
+PUT http://localhost:3000/titular/1
+content-type: application/json
+
+{
+      "nomeTitular": "Amanda Silva",
+      "cpfTitular": "12345678900",
+      "Data_Nasc": "01/05/2000",
+      "idade": 31,
+      "bloco_id": 1,
+      "apto_id": 1
+}
+
+
+### GET TITULAR
+GET http://localhost:3000/espaco/1
+
+### DELETE TITULAR
+DELETE http://localhost:3000/espaco/3
+

@@ -1,0 +1,165 @@
+{
+  "users": [
+    {
+      "cnpj": "94.583.479/0001-28",
+      "email": "condominiobelojardim.com.br",
+      "senha": "condo",
+      "id": 1
+    },
+    {
+      "cnpj": "94.583.479/0001-28",
+      "email": "condominiobelojardim.com.br",
+      "password": "condo",
+      "id": 2
+    },
+    {
+      "cnpj": "94.583.479/0001-28",
+      "email": "condominiobelojardim.com.br",
+      "password": "condo",
+      "id": 3
+    },
+    {
+      "cnpj": "94.583.479/0001-28",
+      "email": "condominiobelojardim.com.br",
+      "password": "condo",
+      "id": 4
+    },
+    {
+      "cnpj": "94.583.479/0001-28",
+      "email": "condominiobelojardim.com.br",
+      "password": "condo",
+      "id": 5
+    }
+  ],
+  "condominio": [
+    {
+      "cnpj": "94.583.479/0001-28",
+      "razaoSocial": "Condomínio Exemplo",
+      "email": "condominio@example.com",
+      "senha": "senha123",
+      "id": 1
+    },
+    {
+      "cnpj": "94.583.479/0001-28",
+      "razaoSocial": "Condomínio Exemplo",
+      "email": "condominio@example.com",
+      "senha": "senha123",
+      "id": 2
+    }
+  ],
+  "espaco": [
+    {
+      "nomeEspaco": "Academia",
+      "capacidade": 50,
+      "tempoReserva": "2 horas",
+      "instrucoes": "Beber bastante agua",
+      "CONDOMINIO_ID": 1,
+      "id": 1
+    },
+    {
+      "nomeEspaco": "Churrasqueira",
+      "capacidade": 100,
+      "tempo_Reserva": "1 hora",
+      "instrucoes": "Usar equipamentos com cuidado",
+      "CONDOMINIO_ID": 1,
+      "id": 2
+    }
+  ],
+  "bloco": [
+    {
+      "id": "1",
+      "apto_id": [
+        1
+      ]
+    }
+  ],
+  "apartamento": [
+    {
+      "nomeTitular": "Alvaro Dias",
+      "cpfTitular": "70043856632",
+      "dataNascimento": "05/06/1999",
+      "idade": "24",
+      "genero": "Masculino",
+      "bloco": "05",
+      "numeroApartamento": "128",
+      "Condominio_ID": "",
+      "bloco_id": "",
+      "id": 1
+    },
+    {
+      "nomeTitular": "Mariane Oliveira",
+      "cpfTitular": "02567812345",
+      "dataNascimento": "03/02/1992",
+      "idade": "26",
+      "genero": "Feminino",
+      "bloco": "02",
+      "numeroApartamento": "246",
+      "Condominio_ID": "",
+      "bloco_id": "",
+      "id": 2
+    }
+  ],
+  "titular": [
+    {
+      "nomeTitular": "Amanda Silva",
+      "cpfTitular": "12345678900",
+      "Data_Nasc": "01/05/2000",
+      "idade": 31,
+      "bloco_id": 1,
+      "apto_id": 1,
+      "id": 1
+    },
+    {
+      "nomeTitular": "Mariane Oliveira",
+      "cpfTitular": "12345678900",
+      "Data_Nasc": "01/05/2000",
+      "idade": 31,
+      "bloco_id": 1,
+      "apto_id": 1,
+      "id": 2
+    },
+    {
+      "nomeTitular": "Mariane Oliveira",
+      "cpfTitular": "12345678900",
+      "Data_Nasc": "01/05/2000",
+      "idade": 31,
+      "bloco_id": 1,
+      "apto_id": 1,
+      "id": 3
+    }
+  ],
+  "dependente": [
+    {
+      "nomeDependente": "Josué Almeida",
+      "cpfDependente": 12345678900,
+      "data_Nasc": "01/05/2000",
+      "idade": 24,
+      "condomino_Titular_Id": 1,
+      "id": 1
+    },
+    {
+      "nomeDependente": "Mariana Silva",
+      "cpfDependente": 98765432100,
+      "data_Nasc": "10/12/1998",
+      "idade": 26,
+      "condomino_Titular_Id": 1,
+      "id": 2
+    },
+    {
+      "id": "3",
+      "nomeDependente": "Pedro Henrique",
+      "cpfDependente": 23456789012,
+      "data_Nasc": "05/08/2002",
+      "idade": 22,
+      "condomino_Titular_Id": 1
+    },
+    {
+      "nomeDependente": "Lucas Oliveira",
+      "cpfDependente": 23456789012,
+      "data_Nasc": "05/08/2002",
+      "idade": 22,
+      "condomino_Titular_Id": 1,
+      "id": "N2rijar"
+    }
+  ]
+}

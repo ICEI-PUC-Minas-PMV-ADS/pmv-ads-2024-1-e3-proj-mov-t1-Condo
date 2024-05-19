@@ -1,0 +1,15 @@
+### USERS
+
+GET http://localhost:3000/users HTTP/1.1
+
+
+### REGISTER
+
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "cnpj": "94.583.479/0001-28",
+    "email": "condominiobelojardim.com.br",
+    "password": "condo"
+}

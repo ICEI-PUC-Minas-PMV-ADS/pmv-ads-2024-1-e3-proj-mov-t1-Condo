@@ -3,7 +3,7 @@ import { View, StyleSheet } from 'react-native';
 import ButtonDependente from '../../components/ButtonDependente';
 import ButtonReservas from '../../components/ButtonReservas';
 import CalendarIcon from '../../assets/calendario.svg';
-import Vector from '../../assets/vector.png';
+import Vector from '../../assets/Vector.png';
 
 export default function Home({ navigation }) {
   return (

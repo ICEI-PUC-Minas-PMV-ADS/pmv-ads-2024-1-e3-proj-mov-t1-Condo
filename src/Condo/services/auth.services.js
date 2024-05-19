@@ -30,3 +30,13 @@ export const dependente = async (param) => {
      
     }
 }
+
+export const salvarApartamento = async (param) => {
+    try {
+        const response = await api.post(`${baseURL}/apartamento`, param);
+        return response.data;
+    }catch (error) {
+        console.error("Erro ao buscar dados do dependente:", error)
+     
+    }
+}
