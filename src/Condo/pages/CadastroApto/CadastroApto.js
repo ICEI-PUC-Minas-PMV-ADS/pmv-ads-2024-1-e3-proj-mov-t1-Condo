@@ -6,6 +6,7 @@ import { Ionicons } from '@expo/vector-icons';
 import RNPickerSelect from 'react-native-picker-select';
 import { salvarApartamento } from '../../services/auth.services';
 
+
 const CadastroApto = () => {
     const navigation = useNavigation();
     const [nomeTitular, setNomeTitular] = useState('');

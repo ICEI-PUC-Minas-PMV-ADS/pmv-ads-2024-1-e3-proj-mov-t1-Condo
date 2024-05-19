@@ -1,17 +1,37 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, Image, TouchableOpacity } from 'react-native'; // Importa TouchableOpacity
+import { View, StyleSheet, Image, TouchableOpacity, Alert } from 'react-native'; // Importa TouchableOpacity
 import { Text, TextInput, Button } from 'react-native-paper'; // Importa Button de react-native-paper
 import { useNavigation } from '@react-navigation/native'; // Importa o hook useNavigation
 import { Ionicons } from '@expo/vector-icons'; // Importa Ionicons de @expo/vector-icons
 import ScreenNavigation from '../ScreenNavigation/ScreenNavigation'; // Importa a página de navegação desejada
+import { useAuth } from '../../context/UserContext'; // Importe o hook useAuth
+import { cadastrarEspaco } from '../../services/auth.services';
 
 
 const CadastroEspacos = () => {
-    const [nomeEspaco, setNomeEspaco] = useState("");
-    const [capacidadeMaxima, setCapacidadeMaxima] = useState("");
+    const [nomeEspaco, setNomeEspaco] = useState('');
+    const [capacidadeMaxima, setCapacidadeMaxima] = useState('');
     const [tempoMaximo, setTempoMaximo] = useState(60); // Valor inicial de 60 minutos
-    const [textoInstrucoes, setTextoInstrucoes] = useState("");
+    const [textoInstrucoes, setTextoInstrucoes] = useState('');
     const navigation = useNavigation(); // Obtém o objeto de navegação
+
+    const handleSalvar = async () => {
+        const formData = {
+            nomeEspaco,
+            capacidadeMaxima,
+            tempoMaximo,
+            textoInstrucoes
+        };
+
+        try {
+            const response = await cadastrarEspaco(formData);
+            Alert.alert('Sucesso', 'Espaço cadastrado com sucesso!');
+            navigation.goBack();
+        } catch (error) {
+            console.error('Erro ao salvar espaço:', error);
+            Alert.alert('Erro', 'Erro ao salvar espaço!');
+        }
+    };
 
     return (
         <View style={styles.container}>
@@ -77,7 +97,7 @@ const CadastroEspacos = () => {
                 </View>
 
                 <View>
-                    <Button style={styles.buttonSalvar} onPress={() => console.log('Pressed')}>
+                    <Button style={styles.buttonSalvar} onPress={handleSalvar}>
                         <Text style={styles.buttonText}>Salvar</Text>
                     </Button>
                 </View>

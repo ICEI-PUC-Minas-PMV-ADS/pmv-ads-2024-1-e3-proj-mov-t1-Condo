@@ -1,1 +1,1 @@
-export const baseURL = 'https://wicked-points-prove.loca.lt';
+export const baseURL = 'https://condo.loca.lt';

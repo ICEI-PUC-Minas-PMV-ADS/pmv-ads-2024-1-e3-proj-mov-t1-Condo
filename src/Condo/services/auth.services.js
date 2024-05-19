@@ -40,3 +40,13 @@ export const salvarApartamento = async (param) => {
      
     }
 }
+
+export const cadastrarEspaco = async (param) => {
+    try {
+        const response = await api.post(`${baseURL}/espaco`, param);
+        return response.data;
+    }catch (error) {
+        console.error("Erro ao buscar dados do dependente:", error)
+     
+    }
+}

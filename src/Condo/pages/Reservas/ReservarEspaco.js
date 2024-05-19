@@ -5,9 +5,9 @@ import RNPickerSelect from 'react-native-picker-select';
 import jogging from '../../assets/jogging.svg';
 import check from '../../assets/check.svg';
 import ButtonContinuar from '../../components/ButtonContinuar';
-import { espaco, titular, dependente } from '../../services/auth.services';
 import { Axios } from "axios";
 import { useAuth } from '../../context/UserContext'; // Importe o hook useAuth
+
 
 const ReservarEspaco = ({ navigation }) => {
   const [value, setValue] = useState('first');
