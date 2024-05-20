@@ -38,4 +38,4 @@ content-type: application/json
 GET http://localhost:3000/apartamento/3
 
 ### DELETE APARTAMENTO
-DELETE http://localhost:3000/apartamento/3
+DELETE http://localhost:3000/apartamento/79

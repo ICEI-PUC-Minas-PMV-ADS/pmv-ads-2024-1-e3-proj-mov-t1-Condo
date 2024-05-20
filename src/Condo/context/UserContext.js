@@ -1,16 +1,19 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { espaco, titular, dependente, salvarApartamento, cadastrarEspaco } from '../services/auth.services';
+import { espaco, titular, dependente, salvarApartamento, cadastrarEspaco } from '../services/application.Services';
 
 // Criar o contexto
-const AuthContext = createContext();
+export const UserContext = createContext();
 
 // Provedor do contexto
-export const AuthProvider = ({ children }) => {
+export default function UserProvider({ children }) {
+  const [signed, setSigned] = useState(false);
+  const [name, setName] = useState('');
   const [espacosData, setEspacosData] = useState([]);
   const [titularesData, setTitularesData] = useState([]);
   const [dependentesData, setDependentesData] = useState([]);
   const [salvarApartamentosData, setSalvarApartamentosData] = useState([]);
   const [cadastrarEspacosData, setCadastrarEspacoData] = useState([]);
+ 
 
   useEffect(() => {
     const fetchData = async () => {
@@ -35,7 +38,12 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ 
+    <UserContext.Provider 
+    value={{ 
+      signed,
+      setSigned,
+      name,
+      setName,
       espacosData, 
       titularesData, 
       dependentesData, 
@@ -43,9 +51,21 @@ export const AuthProvider = ({ children }) => {
       cadastrarEspacosData
     }}>
       {children}
-    </AuthContext.Provider>
+    </UserContext.Provider>
   );
 };
 
 // Hook para consumir o contexto
-export const useAuth = () => useContext(AuthContext);
+export function useUser() {
+  const context = useContext(UserContext);
+
+  const {signed, setSigned, name, setName, 
+        espacosData, dependentesData, titularesData,
+        salvarApartamentosData,
+        cadastrarEspacosData } = context;
+  return {signed, setSigned, name, setName, espacosData, 
+    titularesData, 
+    dependentesData, 
+    salvarApartamentosData,
+    cadastrarEspacosData};
+}

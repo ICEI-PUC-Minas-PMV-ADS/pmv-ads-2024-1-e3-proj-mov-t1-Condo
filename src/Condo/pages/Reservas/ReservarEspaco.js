@@ -6,7 +6,7 @@ import jogging from '../../assets/jogging.svg';
 import check from '../../assets/check.svg';
 import ButtonContinuar from '../../components/ButtonContinuar';
 import { Axios } from "axios";
-import { useAuth } from '../../context/UserContext'; // Importe o hook useAuth
+import { useUser } from '../../context/UserContext'; // Importe o hook useUser
 
 
 const ReservarEspaco = ({ navigation }) => {
@@ -16,7 +16,7 @@ const ReservarEspaco = ({ navigation }) => {
   const [selectedEspaco, setSelectedEspaco] = useState([]);
   const [selectedTitular, setSelectedTitular] = useState([]);
   const [selectedDependente, setSelectedDependente] = useState([]);
-  const { espacosData, titularesData, dependentesData } = useAuth();
+  const { espacosData, titularesData, dependentesData } = useUser();
 
   const toggleSwitch = () => {
     setIsEnabled(prevState => !prevState);

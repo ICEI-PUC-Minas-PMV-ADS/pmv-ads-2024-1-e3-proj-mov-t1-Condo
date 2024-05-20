@@ -1,10 +1,18 @@
 import React, { useState } from 'react';
-import { View, Image, TextInput, TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { View, Image, TextInput, TouchableOpacity, Text, StyleSheet, Alert } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
+import { useUser } from '../../context/UserContext';
+import { login } from '../../services/auth.services';
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+
+const Tab = createMaterialBottomTabNavigator();
 
 const LoginCondominio = () => {
-  const [cnpj, setCnpj] = useState('');
-  const [senha, setSenha] = useState('');
+  
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const { setSigned, setName } = useUser();
   const navigation = useNavigation();
 
   const handleForgotPassword = () => {
@@ -14,18 +22,23 @@ const LoginCondominio = () => {
 
   const handleSignUp = () => {
     // Redirecionar para a tela de cadastro
-    navigation.navigate('...');
+    navigation.navigate('RegisterCondominio');
   };
 
   const handleLogin = () => {
-    // Lógica para validar os campos e realizar o login
-    if (cnpj === 'cnpj_correto' && senha === 'senha_correta') {
-     
-      navigation.navigate('Home');
-    } else {
-    
-      alert('CNPJ ou senha incorretos. Por favor, tente novamente.');
-    }
+    login({
+      email: email,
+      password: password
+    }).then(res => {
+      console.log(res);
+      if (res && res.user) {
+        setSigned(true);
+        setName(res.user.name);
+        AsyncStorage.setItem('@TOKEN_KEY', res.accessToken).then();
+      } else {
+        Alert.alert('Atenção', 'Usuário ou senha inválidos!');
+      }
+    });
   };
 
   return (
@@ -37,16 +50,16 @@ const LoginCondominio = () => {
       />
       <TextInput
         style={styles.input}
-        placeholder="CNPJ"
-        value={cnpj}
-        onChangeText={setCnpj}
+        placeholder="Email"
+        value={email}
+        onChangeText={setEmail}
       />
       <TextInput
         style={styles.input}
         placeholder="Senha"
         secureTextEntry
-        value={senha}
-        onChangeText={setSenha}
+        value={password}
+        onChangeText={setPassword}
       />
       <TouchableOpacity onPress={handleForgotPassword}>
         <Text style={styles.forgotPassword}>Esqueceu sua senha?</Text>
@@ -75,32 +88,41 @@ const styles = StyleSheet.create({
   },
   input: {
     width: '80%',
-    height: 40,
-    borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 10,
-    paddingHorizontal: 10,
-    marginBottom: 20,
+        height: 56,
+        borderWidth: 1,
+        borderColor: 'rgba(36, 34, 32, 0.44)',
+        placeholderTextColor: 'rgba(36, 34, 32, 0.44)',
+        borderRadius: 67,
+        textAlign: 'center',
+        marginBottom: 20,
+        fontSize: 16, 
+        fontWeight: '400',
+        color: '#000'
   },
   forgotPassword: {
-    color: 'blue',
+    color: '#06B6DD',
     marginBottom: 20,
   },
   loginButton: {
-    backgroundColor: 'lightblue',
-    paddingVertical: 15,
-    paddingHorizontal: 40,
-    borderRadius: 10,
-    marginBottom: 20,
+    backgroundColor: '#06B6DD',
+      width: '80%',
+      height: 49,
+      justifyContent: 'center',
+      alignItems: 'center',
+      borderRadius: 67,
+      marginBottom: 20,
   },
   loginButtonText: {
     color: 'white',
-    fontSize: 16,
-    textAlign: 'center',
+      fontSize: 16,
+      fontWeight: '400',
+      textAlign: 'center',
   },
   signUp: {
-    color: 'blue',
+    color: '#06B6DD',
   },
 });
+
+
 
 export default LoginCondominio;

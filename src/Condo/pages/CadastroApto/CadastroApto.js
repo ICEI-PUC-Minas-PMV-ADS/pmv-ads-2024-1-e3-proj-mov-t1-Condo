@@ -4,7 +4,7 @@ import { Text, TextInput, Button } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import RNPickerSelect from 'react-native-picker-select';
-import { salvarApartamento } from '../../services/auth.services';
+import { salvarApartamento } from '../../services/application.Services';
 
 
 const CadastroApto = () => {

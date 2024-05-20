@@ -7,7 +7,7 @@ POST http://localhost:3000/espaco
 content-type: application/json
 
 {
-        "nomeEspaco": "Churrasqueira",
+        "nomeEspaco": "Espaço Fit",
         "capacidade": 50,
         "tempoReserva": "2 horas",
         "instrucoes": "Comer Bastante",
@@ -28,7 +28,7 @@ content-type: application/json
 
 
 ### GET ESPAÇO
-GET http://localhost:3000/espaco/1
+GET http://localhost:3000/espaco/22
 
 ### DELETE ESPAÇO
 DELETE http://localhost:3000/espaco/3

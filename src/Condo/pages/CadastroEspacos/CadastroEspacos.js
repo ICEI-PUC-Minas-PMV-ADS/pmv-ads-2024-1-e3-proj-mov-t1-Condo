@@ -4,8 +4,8 @@ import { Text, TextInput, Button } from 'react-native-paper'; // Importa Button 
 import { useNavigation } from '@react-navigation/native'; // Importa o hook useNavigation
 import { Ionicons } from '@expo/vector-icons'; // Importa Ionicons de @expo/vector-icons
 import ScreenNavigation from '../ScreenNavigation/ScreenNavigation'; // Importa a página de navegação desejada
-import { useAuth } from '../../context/UserContext'; // Importe o hook useAuth
-import { cadastrarEspaco } from '../../services/auth.services';
+import { useUser } from '../../context/UserContext'; // Importe o hook useUser
+import { cadastrarEspaco } from '../../services/application.Services';
 
 
 const CadastroEspacos = () => {

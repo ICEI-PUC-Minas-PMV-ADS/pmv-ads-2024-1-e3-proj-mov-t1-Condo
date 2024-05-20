@@ -10,6 +10,6 @@ content-type: application/json
 {
         "cnpj": "94.583.479/0001-28",
         "razaoSocial": "Condomínio Exemplo",
-        "email": "condominio@example.com",
+        "email": "josuepayments@gmail.com",
         "senha": "senha123"
 }

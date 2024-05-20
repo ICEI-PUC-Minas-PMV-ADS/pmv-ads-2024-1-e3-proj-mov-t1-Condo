@@ -1,9 +1,7 @@
-// Navigation.js
 import React from 'react';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 import { IconButton } from 'react-native-paper';
-import { createStackNavigator } from '@react-navigation/stack';
-import ScreenNavigation from '../pages/ScreenNavigation/ScreenNavigation';
 import Home from '../pages/Home/Home';
 import Reservas from '../pages/Reservas/Reservas';
 import ReservarEspaco from '../pages/Reservas/ReservarEspaco';
@@ -12,6 +10,7 @@ import MeusEspacos from '../pages/MeusEspacos/MeusEspacos';
 import Instrucoes from '../pages/Instrucoes/Instrucoes';
 import Manutencao from '../pages/Manutencao/Manutencao';
 import LoginCondominio from '../pages/Login/LoginCondominio';
+import RegisterCondominio from '../pages/Login/RegisterCondominio';
 import LoginCondomino from '../pages/Login/LoginCondomino';
 import LoginCondominoTwo from '../pages/Login/LoginCondominoTwo';
 import Dependentes from '../pages/Dependentes/Dependentes';
@@ -21,29 +20,26 @@ import CadastroEspacos from '../pages/CadastroEspacos/CadastroEspacos';
 import CadastroApto from '../pages/CadastroApto/CadastroApto';
 import ApartamentosCadastrados from '../pages/ApartamentosCadastrados/ApartamentosCadastrados';
 import Blocos from '../pages/ApartamentosCadastrados/Blocos';
+import ScreenNavigation from '../pages/ScreenNavigation/ScreenNavigation'
 
+const Stack = createNativeStackNavigator();
 
-
-
-
-/*import DrawerManutencoes from '../components/DrawerManutencoes'; 
-(Erro: 
-navigation/Navigation.js (24:31)
-Cannot find file '../components/DrawerManutencoes'.
-(Dependencies)
-navigation/Navigation.js (0:1)
-Unable to resolve module 'module://components/DrawerManutencoes.js'
-(Device))
-*/
-const Stack = createStackNavigator();
-
-export default function Navigation() {
+const Main = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="ScreenNavigation">
-        <Stack.Screen name="ScreenNavigation" component={ScreenNavigation} />
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen
+    <Stack.Navigator initialRouteName="ScreenNavigation">
+      <Stack.Screen
+        name="Home"
+        component={Home}
+        options={{
+          header: () => null
+        }}
+      />
+      <Stack.Screen
+      name="ScreenNavigation"
+      component={ScreenNavigation}
+      options={{header: () => null}}
+      />
+       <Stack.Screen
           name="Reservas"
           component={Reservas}
           options={{ title: 'Reservas' }}
@@ -71,7 +67,12 @@ export default function Navigation() {
         <Stack.Screen
           name='LoginCondominio'
           component={LoginCondominio}
-          options={{ title: 'Login Condomínio' }}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+        name='RegisterCondominio'
+        component={RegisterCondominio}
+        options={{header: () => null}}
         />
         <Stack.Screen
           name="LoginCondomino"
@@ -110,26 +111,8 @@ export default function Navigation() {
           component={Blocos}
           options={{ title: 'Blocos Cadastrados' }}
         />
-      </Stack.Navigator>
-    </NavigationContainer>
+    </Stack.Navigator>
   );
-}
+};
 
-
-
-function SettingsIconManutencoes() {
-  const openDrawer = () => {
-
-  };
-
-  return (
-    <IconButton
-      icon='cog'
-      size={24}
-      color='black'
-      onPress={openDrawer}
-      style={{ marginRight: 10 }}
-    />
-  );
-}
-
+export default Main;

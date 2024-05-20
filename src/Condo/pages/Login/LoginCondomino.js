@@ -23,9 +23,6 @@ const LoginCondomino = () => {
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={openDrawer} style={styles.menuButton}>
-        <Text style={styles.menuButtonText}>Menu</Text>
-      </TouchableOpacity>
       <View style={styles.logoContainer}>
         <Image
           source={require('../../assets/LogoCondo2.png')}
@@ -35,7 +32,7 @@ const LoginCondomino = () => {
       </View>
       <TextInput
         style={styles.input}
-        placeholder="ID RESIDENCIAL"
+        placeholder="Condominio"
         value={residentialId}
         onChangeText={setResidentialId}
       />
@@ -67,24 +64,31 @@ const styles = StyleSheet.create({
   },
   input: {
     width: '80%',
-    height: 40,
+    height: 56,
     borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 10,
-    paddingHorizontal: 10,
+    borderColor: 'rgba(36, 34, 32, 0.44)',
+    placeholderTextColor: 'rgba(36, 34, 32, 0.44)',
+    borderRadius: 67,
+    textAlign: 'center',
     marginBottom: 20,
+    fontSize: 16, 
+    fontWeight: '400',
+    color: '#000',
   },
   continueButton: {
-    backgroundColor: 'lightblue',
-    paddingVertical: 15,
-    paddingHorizontal: 40,
-    borderRadius: 10,
+    backgroundColor: '#06B6DD',
+    width: '80%',
+    height: 49,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 67,
     marginBottom: 20,
   },
   continueButtonText: {
     color: 'white',
-    fontSize: 16,
-    textAlign: 'center',
+      fontSize: 16,
+      fontWeight: '400',
+      textAlign: 'center',
   },
   joggingLogo: {
     position: 'absolute',
