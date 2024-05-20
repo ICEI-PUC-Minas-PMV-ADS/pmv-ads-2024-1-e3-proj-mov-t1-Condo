@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, Alert } from "react-native";
-import { dependente, excluirDependente, editarDependente } from '../../services/auth.services';
+import { dependente, excluirDependente, editarDependente } from '../../services/application.Services';
 
 const MeusDependentes = () => {
   const [dependentes, setDependentes] = useState([]);

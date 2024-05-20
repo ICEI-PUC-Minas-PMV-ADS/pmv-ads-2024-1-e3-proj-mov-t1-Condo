@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   Alert,
 } from "react-native";
-import { cadastrarDependente } from "../../services/auth.services";
+import { cadastrarDependente } from "../../services/application.Services";
 
 const CadastroDependente = () => {
   const [nome, setNome] = useState("");
