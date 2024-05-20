@@ -31,6 +31,37 @@ export const dependente = async (param) => {
     }
 }
 
+export const cadastrarDependente = async (param) => {
+    try {
+        const response = await api.post(`${baseURL}/dependente`, param);
+        return response.data;
+    } catch (error) {
+        console.error("Erro ao cadastrar dependente:", error);
+        throw error;
+    }
+}
+
+export const editarDependente = async (id, param) => {
+    try {
+        const response = await api.put(`${baseURL}/dependente/${id}`, param);
+        return response.data;
+    } catch (error) {
+        console.error("Erro ao editar dependente:", error);
+        throw error;
+    }
+}
+
+export const excluirDependente = async (id) => {
+    try {
+      const response = await API.delete(`${baseURL}/dependente/${id}`);
+      return response.data;
+    } catch (error) {
+      console.error("Erro ao excluir dependente:", error);
+      throw error;
+    }
+  };
+  
+
 export const salvarApartamento = async (param) => {
     try {
         const response = await API.post(`${baseURL}/660/apartamento`, param);
