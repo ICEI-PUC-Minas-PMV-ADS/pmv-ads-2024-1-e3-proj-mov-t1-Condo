@@ -1,1 +1,1 @@
-export const BASE_URL = 'https://mock_2b3893e6356b455787c5fb83620b7512.mock.insomnia.rest';
+export const baseURL = 'https://condo.loca.lt';

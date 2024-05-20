@@ -1,0 +1,34 @@
+### ESPACO
+GET http://localhost:3000/espaco
+
+
+### CREATE
+POST http://localhost:3000/espaco
+content-type: application/json
+
+{
+        "nomeEspaco": "Espaço Fit",
+        "capacidade": 50,
+        "tempoReserva": "2 horas",
+        "instrucoes": "Comer Bastante",
+        "CONDOMINIO_ID": 1
+}
+
+### UPDATE
+PUT http://localhost:3000/espaco/2
+content-type: application/json
+
+{
+      "nomeEspaco": "Churrasqueira",
+      "capacidade": 100,
+      "tempo_Reserva": "1 hora",
+      "instrucoes": "Usar equipamentos com cuidado",
+      "CONDOMINIO_ID": 1
+}
+
+
+### GET ESPAÇO
+GET http://localhost:3000/espaco/22
+
+### DELETE ESPAÇO
+DELETE http://localhost:3000/espaco/3

@@ -1,13 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import Navigation from './navigation/Navigation'; // Importe o componente Navigation
+import { NavigationContainer } from '@react-navigation/native';
 import { StyleSheet } from 'react-native';
+import  UserProvider  from './context/UserContext'; // Importe o UserProvider
+import Route from './navigation/Route';
 
-
-export default function App() {
-  return <Navigation />;
+const App = () => {
+  return (
+    <UserProvider>
+       <NavigationContainer>
+        <Route />
+      </NavigationContainer>
+    </UserProvider>
+  );
 }
-
 
 const styles = StyleSheet.create({
   container: {
@@ -17,3 +23,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+export default App;

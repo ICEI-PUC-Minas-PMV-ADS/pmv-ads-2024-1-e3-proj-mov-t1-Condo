@@ -1,0 +1,15 @@
+### USERS
+
+GET http://localhost:3000/users
+
+
+### REGISTER
+
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+    "name": "Josué Almeida",
+    "email": "josuepayments@gmail.com",
+    "password": "12345678"
+}

@@ -1,110 +1,156 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { ScrollView, View, StyleSheet, Image, TouchableOpacity, Alert } from 'react-native';
 import { Text, TextInput, Button } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
-import RNPickerSelect from 'react-native-picker-select'; // Importa RNPickerSelect
+import RNPickerSelect from 'react-native-picker-select';
+import { salvarApartamento } from '../../services/application.Services';
+
 
 const CadastroApto = () => {
-    const [numeroBloco, setNumeroBloco] = useState("");
-    const [numeroApartamento, setNumeroApartamento] = useState("");
-    const [nomeTitular, setNomeTitular] = useState("");
-    const [cpfTitular, setCpfTitular] = useState("");
-    const [tempoReserva, setTempoReserva] = useState("");
-    const [genero, setGenero] = useState("Masculino");
     const navigation = useNavigation();
+    const [nomeTitular, setNomeTitular] = useState('');
+    const [cpfTitular, setCpfTitular] = useState('');
+    const [bloco, setBloco] = useState('');
+    const [numeroApartamento, setNumeroApartamento] = useState('');
+    const [condominioID, setCondominioID] = useState('');
+    const [blocoID, setBlocoID] = useState('');
+    const [dataNascimento, setDataNascimento] = useState('');
+    const [idade, setIdade] = useState('');
+    const [genero, setGenero] = useState('');
 
+    const handleSalvar = async () => {
+        const formData = {
+            nomeTitular,
+            cpfTitular,
+            dataNascimento,
+            idade,
+            genero,
+            bloco,
+            numeroApartamento,
+            Condominio_ID: condominioID,
+            bloco_id: blocoID
+        };
+
+        try {
+            const response = await salvarApartamento(formData);
+            Alert.alert('Sucesso', 'Apartamento cadastrado com sucesso!');
+            navigation.goBack();
+        } catch (error) {
+            console.error('Erro ao salvar apartamento:', error);
+            Alert.alert('Erro', 'Erro ao salvar apartamento!');
+        }
+    };
+    
     return (
-        <View style={styles.container}>
-            <View style={styles.header}>
-                <TouchableOpacity onPress={() => navigation.navigate('ScreenNavigation')}>
-                    <Ionicons name="arrow-back" size={24} color="black" />
-                </TouchableOpacity>
-                <Text style={styles.title}>Cadastrar Apartamentos</Text>
-                <Button icon="view-grid-outline" style={styles.button}></Button>
+    <ScrollView contentContainerStyle={styles.container}>
+        <View style={styles.header}>
+            <TouchableOpacity onPress={() => navigation.navigate('ScreenNavigation')}>
+                <Ionicons name="arrow-back" size={24} color="black" />
+            </TouchableOpacity>
+            <Text style={styles.title}>Cadastrar Apartamentos</Text>
+            <Button icon="view-grid-outline" style={styles.button}></Button>
+        </View>
+
+        <View>
+            <View>
+                <Text style={styles.subTitles}>Nº Bloco (Número)</Text>
+                <TextInput
+                    style={styles.textInput}
+                    placeholder="Bloco e complemento"
+                    placeholderTextColor="#7F7F7F"
+                    value={bloco}
+                    onChangeText={text => setBloco(text)}
+                    keyboardType="numeric"
+                    underlineColor="transparent"
+                />
+            </View>
+            <View>
+                <Text style={styles.subTitles}>Nº do Apartamento (Número)</Text>
+                <TextInput
+                    style={styles.textInput}
+                    placeholder="Somente o número."
+                    placeholderTextColor="#7F7F7F"
+                    value={numeroApartamento}
+                    onChangeText={text => setNumeroApartamento(text)}
+                    keyboardType="numeric"
+                    underlineColor="transparent"
+                />
+            </View>
+            <View>
+                <Text style={styles.subTitles}>Nome do Titular</Text>
+                <TextInput
+                    style={styles.textInput}
+                    placeholder="Coloque seu nome completo."
+                    placeholderTextColor="#7F7F7F"
+                    value={nomeTitular}
+                    onChangeText={text => setNomeTitular(text)}
+                    underlineColor="transparent"
+                />
+            </View>
+            <View>
+                <Text style={styles.subTitles}>CPF</Text>
+                <TextInput
+                    style={styles.textInput}
+                    placeholder="Coloque somente os números"
+                    placeholderTextColor="#7F7F7F"
+                    value={cpfTitular}
+                    onChangeText={text => setCpfTitular(text)}
+                    keyboardType="numeric"
+                    underlineColor="transparent"
+                />
             </View>
 
             <View>
-                <View>
-                    <Text style={styles.subTitles}>Nº Bloco (Número)</Text>
-                    <TextInput
-                        style={styles.textInput}
-                        placeholder="Bloco e complemento"
-                        placeholderTextColor="#7F7F7F"
-                        value={numeroBloco}
-                        onChangeText={text => setNumeroBloco(text)}
-                        keyboardType="numeric"
-                        underlineColor="transparent"
-                    />
-                </View>
-                <View>
-                    <Text style={styles.subTitles}>Nº do Apartamento (Número)</Text>
-                    <TextInput
-                        style={styles.textInput}
-                        placeholder="Somente o número."
-                        placeholderTextColor="#7F7F7F"
-                        value={numeroApartamento}
-                        onChangeText={text => setNumeroApartamento(text)}
-                        keyboardType="numeric"
-                        underlineColor="transparent"
-                    />
-                </View>
-                <View>
-                    <Text style={styles.subTitles}>Nome do Titular</Text>
-                    <TextInput
-                        style={styles.textInput}
-                        placeholder="Coloque seu nome completo."
-                        placeholderTextColor="#7F7F7F"
-                        value={nomeTitular}
-                        onChangeText={text => setNomeTitular(text)}
-                        underlineColor="transparent"
-                    />
-                </View>
-                <View>
-                    <Text style={styles.subTitles}>CPF</Text>
-                    <TextInput
-                        style={styles.textInput}
-                        placeholder="Coloque somente os números"
-                        placeholderTextColor="#7F7F7F"
-                        value={cpfTitular}
-                        onChangeText={text => setCpfTitular(text)}
-                        keyboardType="numeric"
-                        underlineColor="transparent"
-                    />
-                </View>
-                <View>
-                    <Text style={styles.subTitles}>Tempo Máximo de Reserva</Text>
-                    <TextInput
-                        style={styles.textInput}
-                        placeholder="Coloque o tempo máximo de reserva"
-                        placeholderTextColor="#7F7F7F"
-                        value={tempoReserva}
-                        onChangeText={text => setTempoReserva(text)}
-                        keyboardType="numeric"
-                        underlineColor="transparent"
-                    />
-                </View>
-                <View>
-                    <Text style={styles.subTitles}>Gênero</Text>
-                    <RNPickerSelect
-                        onValueChange={(value) => setGenero(value)}
-                        items={[
-                            { label: 'Outro', value: 'Outro' },
-                            { label: 'Masculino', value: 'Masculino' },
-                            { label: 'Feminino', value: 'Feminino' },
-                        ]}
-                        style={pickerSelectStyles}
-                    />
-                </View>
-                <View>
-                    <Button style={styles.buttonSalvar} onPress={() => console.log('Pressed')}>
-                        <Text style={styles.buttonText}>Salvar</Text>
-                    </Button>
-                </View>
-                <Image style={styles.imageLogo} source={require('../../assets/LogoCondo2.png')} />
+                <Text style={styles.subTitles}>Data de Nascimento</Text>
+                <TextInput
+                    style={styles.textInput}
+                    placeholder="DD/MM/AAAA"
+                    placeholderTextColor="#7F7F7F"
+                    value={dataNascimento}
+                    onChangeText={text => setDataNascimento(text)}
+                    keyboardType="numeric"
+                    underlineColor="transparent"
+                />
             </View>
+
+            <View>
+                <Text style={styles.subTitles}>Idade</Text>
+                <TextInput
+                    style={styles.textInput}
+                    placeholder="Digite sua idade"
+                    placeholderTextColor="#7F7F7F"
+                    value={idade}
+                    onChangeText={text => setIdade(text)}
+                    keyboardType="numeric"
+                    underlineColor="transparent"
+                />
+            </View>
+
+            <View>
+                <Text style={styles.subTitles}>Gênero</Text>
+                <RNPickerSelect
+                    style={pickerSelectStyles}
+                    value={genero}
+                    onValueChange={(genero) => setGenero(genero)}
+                    items={[
+                        { label: 'Masculino', value: 'Masculino' },
+                        { label: 'Feminino', value: 'Feminino' },
+                        { label: 'Outro', value: 'Outro' },
+                    ]}
+                />
+            </View>
+
+            <View>
+                <Button style={styles.buttonSalvar} onPress={handleSalvar}>
+                    <Text style={styles.buttonText}>Salvar</Text>
+                </Button>
+            </View>
+
+            <Image style={styles.imageLogo} source={require('../../assets/LogoCondo2.png')} />
         </View>
-    )
+    </ScrollView>
+)
 }
 
 const pickerSelectStyles = StyleSheet.create({
@@ -131,7 +177,7 @@ const pickerSelectStyles = StyleSheet.create({
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        flexGrow: 1,
         paddingTop: 50,
         alignItems: 'center',
         backgroundColor: '#fff',

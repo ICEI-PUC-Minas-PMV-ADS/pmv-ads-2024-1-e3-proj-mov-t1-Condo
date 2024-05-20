@@ -22,7 +22,7 @@ const NavigationToDo = () => {
 
                 <CustomButton title="Login - Condomínio" screen="LoginCondominio" />
 
-                <CustomButton title="Cadastro - Condomínio" screen="" />
+                <CustomButton title="Cadastro - Condomínio" screen="RegisterCondominio" />
 
                 <Text style={{ textAlign: 'center' }}>--------------- Home ---------------</Text>
 

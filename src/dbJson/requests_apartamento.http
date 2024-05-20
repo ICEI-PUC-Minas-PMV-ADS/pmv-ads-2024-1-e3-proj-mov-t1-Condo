@@ -1,0 +1,41 @@
+### APARTAMENTO
+GET http://localhost:3000/apartamento
+
+
+### CREATE
+POST http://localhost:3000/apartamento
+content-type: application/json
+
+{
+  "nomeTitular": "Josué Almeida",
+  "cpfTitular": 12345678900,
+  "dataNascimento": "25/10/1980",
+  "idade": 24,
+  "genero": "Masculino",
+  "bloco": 1,
+  "apartamento": 101,
+  "Condominio_ID": 1,
+  "bloco_id": 1,
+}
+
+### UPDATE
+PUT http://localhost:3000/apartamento/2
+content-type: application/json
+
+{
+  "nomeTitular": "Josué Almeida",
+  "cpfTitular": 12345678900,
+  "dataNascimento": "25/10/1980",
+  "idade": 24,
+  "genero": "Masculino",
+  "bloco": 1,
+  "apartamento": 101,
+  "Condominio_ID": 1,
+  "bloco_id": 1
+}
+
+### GET APARTAMENTO
+GET http://localhost:3000/apartamento/3
+
+### DELETE APARTAMENTO
+DELETE http://localhost:3000/apartamento/79

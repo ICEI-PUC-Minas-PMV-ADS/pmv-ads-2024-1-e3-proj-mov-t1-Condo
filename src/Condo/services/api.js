@@ -1,7 +1,19 @@
-import axios from "axios";
+import axios from 'axios';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const api = axios.create({
-    baseURL: "https://mock_2b3893e6356b455787c5fb83620b7512.mock.insomnia.rest"
-})
+const onRequest = async (config) => {
+  const token = await AsyncStorage.getItem('@TOKEN_KEY');
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+}
 
-export default api;
+const setupInterceptorsTo = (axiosInstance) => {
+  axiosInstance.interceptors.request.use(onRequest);
+  return axiosInstance;
+}
+
+const API = axios.create();
+setupInterceptorsTo(API);
+export default API;
