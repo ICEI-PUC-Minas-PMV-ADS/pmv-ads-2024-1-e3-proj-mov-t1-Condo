@@ -33,7 +33,7 @@ export const dependente = async (param) => {
 
 export const cadastrarDependente = async (param) => {
     try {
-        const response = await api.post(`${baseURL}/dependente`, param);
+        const response = await API.post(`${baseURL}/dependente`, param);
         return response.data;
     } catch (error) {
         console.error("Erro ao cadastrar dependente:", error);
@@ -43,7 +43,7 @@ export const cadastrarDependente = async (param) => {
 
 export const editarDependente = async (id, param) => {
     try {
-        const response = await api.put(`${baseURL}/dependente/${id}`, param);
+        const response = await API.put(`${baseURL}/dependente/${id}`, param);
         return response.data;
     } catch (error) {
         console.error("Erro ao editar dependente:", error);
