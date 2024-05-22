@@ -1,13 +1,26 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, StyleSheet, TouchableOpacity, TextInput, Alert } from "react-native";
-import { dependente, excluirDependente, editarDependente } from '../../services/application.Services';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  TextInput,
+  Alert,
+  ScrollView,
+  Image,
+} from "react-native";
+import {
+  dependente,
+  excluirDependente,
+  editarDependente,
+} from "../../services/application.Services";
 
 const MeusDependentes = () => {
   const [dependentes, setDependentes] = useState([]);
   const [editandoId, setEditandoId] = useState(null);
   const [editandoNome, setEditandoNome] = useState("");
-  const [editandoCPF, setEditandoCPF] = useState("");
   const [editandoDataNasc, setEditandoDataNasc] = useState("");
+  const [expandidoId, setExpandidoId] = useState(null); // Novo estado para controlar a expansão
 
   useEffect(() => {
     const fetchDependentes = async () => {
@@ -27,13 +40,12 @@ const MeusDependentes = () => {
     if (dependenteEditando) {
       setEditandoId(id);
       setEditandoNome(dependenteEditando.nomeDependente);
-      setEditandoCPF(dependenteEditando.cpfDependente);
       setEditandoDataNasc(dependenteEditando.data_Nasc);
     }
   };
 
   const handleSalvarDependente = async () => {
-    if (!editandoNome || !editandoCPF || !editandoDataNasc) {
+    if (!editandoNome || !editandoDataNasc) {
       Alert.alert("Erro", "Por favor, preencha todos os campos");
       return;
     }
@@ -41,7 +53,6 @@ const MeusDependentes = () => {
     try {
       await editarDependente(editandoId, {
         nomeDependente: editandoNome,
-        cpfDependente: editandoCPF,
         data_Nasc: editandoDataNasc,
       });
 
@@ -50,7 +61,6 @@ const MeusDependentes = () => {
 
       setEditandoId(null);
       setEditandoNome("");
-      setEditandoCPF("");
       setEditandoDataNasc("");
     } catch (error) {
       console.error("Erro ao editar dependente:", error);
@@ -67,65 +77,84 @@ const MeusDependentes = () => {
     }
   };
 
+  const toggleExpandido = (id) => {
+    setExpandidoId(expandidoId === id ? null : id);
+  };
+
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <Text style={styles.title}>Meus Dependentes</Text>
       {dependentes.map((dependente, index) => (
         <View key={index} style={styles.dependenteContainer}>
-          {editandoId === dependente.id ? (
+          <TouchableOpacity
+            onPress={() => toggleExpandido(dependente.id)}
+            style={styles.dependenteHeader}
+          >
+            <Text style={styles.dependenteName}>
+              {dependente.nomeDependente}
+            </Text>
+            <Image
+              source={require("../../assets/arrow-circle-down.png")}
+              style={styles.arrow}
+            />
+          </TouchableOpacity>
+          {expandidoId === dependente.id && (
             <View>
-              <TextInput
-                style={styles.input}
-                placeholder="Nome"
-                value={editandoNome}
-                onChangeText={setEditandoNome}
-              />
-              <TextInput
-                style={styles.input}
-                placeholder="CPF"
-                value={editandoCPF}
-                onChangeText={setEditandoCPF}
-              />
-              <TextInput
-                style={styles.input}
-                placeholder="Data de Nascimento"
-                value={editandoDataNasc}
-                onChangeText={setEditandoDataNasc}
-              />
-              <TouchableOpacity style={styles.button} onPress={handleSalvarDependente}>
-                <Text style={styles.buttonText}>Salvar</Text>
-              </TouchableOpacity>
-            </View>
-          ) : (
-            <View>
-              <Text style={styles.dependenteName}>{dependente.nomeDependente}</Text>
-              <Text style={styles.dependenteInfo}>CPF: {dependente.cpfDependente}</Text>
-              <Text style={styles.dependenteInfo}>Data de Nascimento: {dependente.data_Nasc}</Text>
-              <TouchableOpacity
-                style={styles.button}
-                onPress={() => handleEditarDependente(dependente.id)}
-              >
-                <Text style={styles.buttonText}>Editar</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.button}
-                onPress={() => handleExcluirDependente(dependente.id)}
-              >
-                <Text style={styles.buttonText}>Excluir</Text>
-              </TouchableOpacity>
+              {editandoId === dependente.id ? (
+                <View>
+                  <TextInput
+                    style={styles.input}
+                    placeholder="Nome"
+                    value={editandoNome}
+                    onChangeText={setEditandoNome}
+                  />
+                  <TextInput
+                    style={styles.input}
+                    placeholder="Data de Nascimento"
+                    value={editandoDataNasc}
+                    onChangeText={setEditandoDataNasc}
+                  />
+                  <TouchableOpacity
+                    style={styles.button}
+                    onPress={handleSalvarDependente}
+                  >
+                    <Text style={styles.buttonText}>Salvar</Text>
+                  </TouchableOpacity>
+                </View>
+              ) : (
+                <View>
+                  <Text style={styles.dependenteInfo}>
+                    CPF: {dependente.cpfDependente}
+                  </Text>
+                  <Text style={styles.dependenteInfo}>
+                    Data de Nascimento: {dependente.data_Nasc}
+                  </Text>
+                  <TouchableOpacity
+                    style={styles.button}
+                    onPress={() => handleEditarDependente(dependente.id)}
+                  >
+                    <Text style={styles.buttonText}>Editar</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    style={styles.button}
+                    onPress={() => handleExcluirDependente(dependente.id)}
+                  >
+                    <Text style={styles.buttonText}>Excluir</Text>
+                  </TouchableOpacity>
+                </View>
+              )}
             </View>
           )}
-          <View style={styles.separator} />
+          {index < dependentes.length - 1 && <View style={styles.separator} />}
         </View>
       ))}
-    </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
     paddingHorizontal: 20,
     paddingTop: 20,
     backgroundColor: "white",
@@ -134,15 +163,25 @@ const styles = StyleSheet.create({
     fontSize: 22,
     marginBottom: 20,
     fontWeight: "bold",
+    textAlign: "center",
   },
   dependenteContainer: {
     marginBottom: 20,
     width: "100%",
   },
+  dependenteHeader: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
   dependenteName: {
     fontSize: 18,
     fontWeight: "bold",
     marginBottom: 5,
+  },
+  arrow: {
+    width: 20,
+    height: 20,
   },
   dependenteInfo: {
     fontSize: 16,

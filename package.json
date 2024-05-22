@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@react-native-community/datetimepicker": "^8.0.1",
+    "json-server-auth": "^2.1.0",
     "react-native-modal-datetime-picker": "^17.1.0"
   }
 }
