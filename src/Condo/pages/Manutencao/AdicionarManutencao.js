@@ -11,6 +11,10 @@ const AdicionarManutencao = () => {
         <DateInputManutencao titulo="Início" />
         <DateInputManutencao titulo="Fim" />
       </View>
+      <View >
+        <DateInputManutencao titulo="Início" />
+      </View>
+
     </View>
   );
 };

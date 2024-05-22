@@ -7,14 +7,15 @@ import Auth from './Auth';
 
 const Route = () => {
 
-  const {signed} = useUser();
+  //const {signed} = useUser();
 
   return (
     <>
     {
-      signed 
-      ? <Main />
-      : <Auth />
+      <Main />
+     //signed 
+     //? <Main />
+     //: <Auth />
     }
     </>
   )

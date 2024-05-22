@@ -90,7 +90,6 @@ const Main = () => {
         component={Dependentes}
         options={{ title: 'Dependentes' }}
       />
-      <Stack.Screen name="Manutencao" component={Manutencao} />
       <Stack.Screen
         name="AdicionarManutencao"
         component={AdicionarManutencao}
@@ -99,7 +98,6 @@ const Main = () => {
           headerRight: () => <AddIconManutencoes />
         }}
       />
-      <Stack.Screen name="Instrucoes" component={Instrucoes} />
       <Stack.Screen
         name="CadastroDependente"
         component={CadastroDependente}

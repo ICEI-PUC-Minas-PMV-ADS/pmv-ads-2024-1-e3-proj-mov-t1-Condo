@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    borderRadius: 8,
+    borderRadius: 12,
     marginVertical: 8,
     marginHorizontal: 16,
   },

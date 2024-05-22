@@ -12,9 +12,6 @@ const NavigationToDo = () => {
         <ScrollView>
             <View style={{ flex: 1, justifyContent: 'initial' }}>
 
-                <CustomButton title="Manutenção" screen="Manutencao" />
-                <CustomButton title="Adicionar Manutenção" screen="AdicionarManutencao" />
-
                 <Text style={{ textAlign: 'center' }}>--------------- Login e Cadastro ---------------</Text>
                 <CustomButton title="Login - Condômino 01" screen="LoginCondomino" />
 
