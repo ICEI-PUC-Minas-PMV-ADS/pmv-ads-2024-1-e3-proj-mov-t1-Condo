@@ -1,1 +1,1 @@
-export const baseURL = 'https://common-loops-drive.loca.lt';
+export const baseURL = 'https://condo.loca.lt';

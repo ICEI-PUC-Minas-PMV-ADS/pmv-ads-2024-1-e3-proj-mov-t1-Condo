@@ -1,22 +1,21 @@
 import React from 'react';
 
-import {useUser} from '../context/UserContext';
+import { useUser } from '../context/UserContext';
 
 import Main from './Main';
 import Auth from './Auth';
 
 const Route = () => {
 
-  //const {signed} = useUser();
+  const { signed } = useUser();
 
   return (
     <>
-    {
-      <Main />
-     //signed 
-     //? <Main />
-     //: <Auth />
-    }
+      {
+        signed
+          ? <Main />
+          : <Auth />
+      }
     </>
   )
 }

@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
   dropdown: {
     backgroundColor: '#c4e5ed',
     borderRadius: 8,
+    borderColor: '#c4e5ed',
   },
 });
 
