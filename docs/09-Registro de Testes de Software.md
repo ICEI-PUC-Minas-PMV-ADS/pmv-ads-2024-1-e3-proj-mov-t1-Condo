@@ -136,10 +136,26 @@ Objetivo do Teste:
 
 Passos:
 > - Efetuar o login como condômino.
-- Acessar a seção de reservas de espaços de lazer.
+> - Acessar a seção de reservas de espaços de lazer.
+
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/a5c78c09-ea40-4078-84cc-91559fdc3845)
+
+
 > - Selecionar um espaço de lazer disponível.
+> - 
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/30ec4283-33ba-4bb0-b32d-f52764b2f973)
+
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/d5081991-6df2-4d5a-a307-1803f47fa9bd)
+
+
 > - Escolher a data e horário desejados para a reserva.
+
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/3fef7498-8b05-4955-bd9c-3341478506b8)
+
 > - Confirmar a reserva.
+
+
+
 > - Verificar se a reserva é listada corretamente na seção de reservas.
 
 <b>Resultado CT - 06: </b>
@@ -168,7 +184,15 @@ Objetivo do Teste:
 
 Passos:
 > - Efetuar o login como condômino.
+> - 
+![credenciais](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/1b977cea-3f31-4dec-a7c5-8223e93feeed)
+
+
 > - Verificar a lista de espaços de lazer disponíveis para reserva.
+
+![espaco](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/97742ad2-f772-47b1-8214-0afebcd5f792)
+
+
 > - Comparar com os espaços disponíveis definidos pela administração.
 
 <b>Resultado CT - 08: </b>
