@@ -9,6 +9,16 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@expo/vector-icons": "^14.0.0",
+    "react-native-screens": "~3.29.0",
+    "react-native-reanimated": "~3.6.2",
+    "@react-native-picker/picker": "2.4.10",
+    "react-native-gesture-handler": "~2.14.0",
+    "@react-navigation/bottom-tabs": "^6.5.20",
+    "react-native-safe-area-context": "4.8.2",
+    "@react-native-community/masked-view": "^0.1.11",
+    "react-native-dropdown-picker": "*",
+    "react-native-masked-text": "*",
     "@emotion/styled": "^11.11.5",
     "@expo/metro-runtime": "~3.2.1",
     "@mui/material": "^5.15.16",
