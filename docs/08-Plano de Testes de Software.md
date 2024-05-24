@@ -41,7 +41,7 @@ Passos:
 > - Efetuar o login.
 
 Critérios de Êxito:
-> - O sistema deve permitir o login de administrador com sucesso para credenciais válidas.
+> - O sistema deve permitir o login do  usuário com sucesso para credenciais válidas.
 
 ## CT - 03 - CRUD de Condomínio
 Requisitos Associados:
