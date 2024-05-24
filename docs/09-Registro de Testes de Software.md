@@ -50,8 +50,6 @@ Objetivo do Teste:
 > - Garantir que o administrador possa realizar operações CRUD (Create, Read, Update, Delete) relacionadas aos condomínios.
 
 Passos:
-> - Efetuar o login como administrador.
-> - Acessar a seção de gerenciamento de condomínios.
 > - Criar um novo condomínio.
 > - Verificar se o novo condomínio é listado corretamente.
 > - Editar os detalhes de um condomínio existente.
