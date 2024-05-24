@@ -7,31 +7,32 @@ POST http://localhost:3000/titular
 content-type: application/json
 
 {
-      "nomeTitular": "Mariane Oliveira",
+      "nomeTitular": "Josué Almeida",
       "cpfTitular": "12345678900",
       "Data_Nasc": "01/05/2000",
       "idade": 31,
-      "bloco_id": 1,
-      "apto_id": 1
+      "blocoapartamento_id": 1,
+      "condominio_id": 7
+     
 }
 
 ### UPDATE
-PUT http://localhost:3000/titular/1
+PUT http://localhost:3000/titular/7
 content-type: application/json
 
 {
-      "nomeTitular": "Amanda Silva",
+       "nomeTitular": "Josué Almeida",
       "cpfTitular": "12345678900",
       "Data_Nasc": "01/05/2000",
       "idade": 31,
-      "bloco_id": 1,
-      "apto_id": 1
+      "blocoapartamento_id": 1,
+      "condominio_id": 7
 }
 
 
 ### GET TITULAR
-GET http://localhost:3000/espaco/1
+GET http://localhost:3000/titular/1
 
 ### DELETE TITULAR
-DELETE http://localhost:3000/espaco/3
+DELETE http://localhost:3000/titular/11
 

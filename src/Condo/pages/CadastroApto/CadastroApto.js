@@ -4,44 +4,65 @@ import { Text, TextInput, Button } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import RNPickerSelect from 'react-native-picker-select';
-import { salvarApartamento } from '../../services/application.Services';
-
+import { salvarApartamento, salvarTitular } from '../../services/application.Services';
+import { useUser } from '../../context/UserContext';
 
 const CadastroApto = () => {
-    const navigation = useNavigation();
-    const [nomeTitular, setNomeTitular] = useState('');
-    const [cpfTitular, setCpfTitular] = useState('');
-    const [bloco, setBloco] = useState('');
-    const [numeroApartamento, setNumeroApartamento] = useState('');
-    const [condominioID, setCondominioID] = useState('');
-    const [blocoID, setBlocoID] = useState('');
-    const [dataNascimento, setDataNascimento] = useState('');
-    const [idade, setIdade] = useState('');
-    const [genero, setGenero] = useState('');
+  const navigation = useNavigation();
+  const { user } = useUser();
+  const [nomeTitular, setNomeTitular] = useState('Josué Almeida');
+  const [cpfTitular, setCpfTitular] = useState('70043856632');
+  const [bloco, setBloco] = useState('102');
+  const [numeroApartamento, setNumeroApartamento] = useState('205');
+  const [dataNascimento, setDataNascimento] = useState('01/05/2000');
+  const [idade, setIdade] = useState('24');
+  const [genero, setGenero] = useState('Masculino');
 
-    const handleSalvar = async () => {
-        const formData = {
-            nomeTitular,
-            cpfTitular,
-            dataNascimento,
-            idade,
-            genero,
-            bloco,
-            numeroApartamento,
-            Condominio_ID: condominioID,
-            bloco_id: blocoID
-        };
+  console.log('CadastroApto user:', user);
 
-        try {
-            const response = await salvarApartamento(formData);
-            Alert.alert('Sucesso', 'Apartamento cadastrado com sucesso!');
-            navigation.goBack();
-        } catch (error) {
-            console.error('Erro ao salvar apartamento:', error);
-            Alert.alert('Erro', 'Erro ao salvar apartamento!');
-        }
+  const handleSalvar = async () => {
+    if (!user || !user.id) {
+      console.error('ID do condomínio não está definido no objeto do usuário');
+      Alert.alert('Erro', 'ID do condomínio não está definido no objeto do usuário!');
+      return;
+    }
+  
+    // Dados do titular
+    const formDataTitular = {
+      nomeTitular,
+      cpfTitular,
+      dataNascimento,
+      idade,
+      genero,
+      condominio_id: user.id,
     };
-    
+  
+    try {
+      // Salvar titular e obter o id do titular salvo
+      const responseTitular = await salvarTitular(formDataTitular);
+      const titularId = responseTitular.id; // Ajuste conforme necessário para obter o id corretamente
+  
+      // Dados do apartamento
+      const formDataApartamento = {
+        bloco,
+        numeroApartamento,
+        condominio_id: user.id,
+        titular_id: titularId, // Usar o id do titular salvo
+      };
+  
+      // Salvar apartamento
+      const responseApartamento = await salvarApartamento(formDataApartamento);
+  
+      Alert.alert('Sucesso', 'Apartamento e titular cadastrados com sucesso!');
+      navigation.goBack();
+    } catch (error) {
+      console.error('Erro ao salvar apartamento ou titular:', error);
+      Alert.alert('Erro', 'Erro ao salvar apartamento ou titular!');
+    }
+  };
+  
+
+  
     return (
     <ScrollView contentContainerStyle={styles.container}>
         <View style={styles.header}>

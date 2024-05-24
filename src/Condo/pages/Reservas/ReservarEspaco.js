@@ -7,17 +7,38 @@ import check from '../../assets/check.svg';
 import ButtonContinuar from '../../components/ButtonContinuar';
 import { Axios } from "axios";
 import { useUser } from '../../context/UserContext'; // Importe o hook useUser
+import { fetchTitulares, fetchDependentes } from '../../services/application.Services';
 
 
 const ReservarEspaco = ({ navigation }) => {
-  const [value, setValue] = useState('first');
   const [selectedLanguages, setSelectedLanguages] = useState([]);
   const [isEnabled, setIsEnabled] = useState(false);
   const [selectedEspaco, setSelectedEspaco] = useState([]);
-  const [selectedTitular, setSelectedTitular] = useState([]);
-  const [selectedDependente, setSelectedDependente] = useState([]);
-  const { espacosData, titularesData, dependentesData } = useUser();
+  const [selectedTitular, setSelectedTitular] = useState(null);
+  const [selectedDependente, setSelectedDependente] = useState(null);
+  const [titularesData, setTitularesData] = useState([]);
+  const [dependentesData, setDependentesData] = useState([]);
+  const { user, espacosData } = useUser();
 
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      if (user && user.id) {
+        try {
+          const titulares = await fetchTitulares(user.condominio_id);
+          const dependentes = await fetchDependentes(user.condominio_id);
+          setTitularesData(titulares);
+          setDependentesData(dependentes);
+        } catch (error) {
+          console.error('Erro ao buscar dados dos titulares ou dependentes:', error);
+          Alert.alert('Erro', 'Erro ao buscar dados dos titulares ou dependentes!');
+        }
+      }
+    };
+    fetchUserData();
+  }, [user]);
+
+  
   const toggleSwitch = () => {
     setIsEnabled(prevState => !prevState);
   };
@@ -48,11 +69,11 @@ const ReservarEspaco = ({ navigation }) => {
           value={selectedTitular || selectedDependente}
           onValueChange={(value) => {
             if (value === 'first') {
-              setSelectedTitular(null);
+              setSelectedTitular('');
               setSelectedDependente(value);
             } else {
               setSelectedTitular(value);
-              setSelectedDependente(null);
+              setSelectedDependente('');
             }
           }}
           items={(titularesData || []).concat(dependentesData || []).map(item => ({

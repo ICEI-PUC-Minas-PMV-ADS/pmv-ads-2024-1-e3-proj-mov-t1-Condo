@@ -1,6 +1,6 @@
 import API from "./api";
 import { baseURL } from "./urls";
-import { Axios } from "axios";
+import { axios } from "axios";
 
 export const espaco = async (param) => {
     try {
@@ -12,24 +12,41 @@ export const espaco = async (param) => {
     }
 }
 
-export const titular = async (param) => {
+//Buscar Titulares
+export const fetchTitulares = async (condominio_id) => {
     try {
-        const response = await API.get(`${baseURL}/660/titular`, { params: param });
-        return response.data;
+      const response = await API.get(`${baseURL}/660/titular`, {
+        params: { condominio_id },
+      });
+      return response.data;
     } catch (error) {
-        console.error("Erro ao buscar dados do titular:", error)
+      console.error('Erro ao buscar titulares:', error);
+      throw error;
     }
-}
+  };
 
-export const dependente = async (param) => {
+  export const salvarTitular = async (param) => {
     try {
-        const response = await API.get(`${baseURL}/660/dependente`, { params: param });
-        return response.data;
+        const responseTitular = await API.post(`${baseURL}/660/titular`, param);
+        return responseTitular.data;
     }catch (error) {
-        console.error("Erro ao buscar dados do dependente:", error)
+        console.error("Erro ao cadastrar apartamento:", error)
      
     }
 }
+
+  
+
+//Buscar Dependentes
+export const fetchDependentes = async (condominioId) => {
+    try {
+      const response = await API.get(`${baseURL}/660/dependente`, { params: { userId: condominioId } });
+      return response.data;
+    } catch (error) {
+      console.error("Erro ao buscar dados do dependente:", error);
+      return [];
+    }
+  };
 
 export const cadastrarDependente = async (param) => {
     try {
@@ -64,8 +81,8 @@ export const excluirDependente = async (id) => {
 
 export const salvarApartamento = async (param) => {
     try {
-        const response = await API.post(`${baseURL}/660/apartamento`, param);
-        return response.data;
+        const responseApartamento = await API.post(`${baseURL}/660/blocoapartamento`, param);
+        return responseApartamento.data;
     }catch (error) {
         console.error("Erro ao cadastrar apartamento:", error)
      

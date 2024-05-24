@@ -10,9 +10,9 @@ const Tab = createMaterialBottomTabNavigator();
 
 const LoginCondominio = () => {
   
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const { setSigned, setName } = useUser();
+  const [email, setEmail] = useState('josuepayments@gmail.com');
+  const [password, setPassword] = useState('12345678');
+  const { setSigned, setName, setUser } = useUser();
   const navigation = useNavigation();
 
   const handleForgotPassword = () => {
@@ -32,6 +32,7 @@ const LoginCondominio = () => {
     }).then(res => {
       console.log(res);
       if (res && res.user) {
+        setUser(res.user);
         setSigned(true);
         setName(res.user.name);
         AsyncStorage.setItem('@TOKEN_KEY', res.accessToken).then();

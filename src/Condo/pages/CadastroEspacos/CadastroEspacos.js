@@ -9,18 +9,27 @@ import { cadastrarEspaco } from '../../services/application.Services';
 
 
 const CadastroEspacos = () => {
+    const { user } = useUser();
     const [nomeEspaco, setNomeEspaco] = useState('');
     const [capacidadeMaxima, setCapacidadeMaxima] = useState('');
     const [tempoMaximo, setTempoMaximo] = useState(60); // Valor inicial de 60 minutos
     const [textoInstrucoes, setTextoInstrucoes] = useState('');
     const navigation = useNavigation(); // Obtém o objeto de navegação
 
+    console.log('CadastroEspaco user:', user);
+
     const handleSalvar = async () => {
+        if (!user || !user.id) {
+            console.error('ID do condomínio não está definido no objeto do usuário');
+            Alert.alert('Erro', 'ID do condomínio não está definido no objeto do usuário!');
+            return;
+        }
         const formData = {
             nomeEspaco,
             capacidadeMaxima,
             tempoMaximo,
-            textoInstrucoes
+            textoInstrucoes,
+            condominio_id: user.id,
         };
 
         try {

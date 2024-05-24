@@ -1,0 +1,32 @@
+### BLOCO APARTAMENTO
+GET http://localhost:3000/blocoapartamento
+
+
+### CREATE BLOCO APARTAMENTO
+POST http://localhost:3000/blocoapartamento
+content-type: application/json
+
+{
+  "bloco": 1,
+  "apartamento": 101,
+  "condominio_id": 1,
+  "titular_id": 2
+}
+
+### UPDATE BLOCO APARTAMENTO
+PUT http://localhost:3000/blocoapartamento/2
+content-type: application/json
+
+{
+  "bloco": 1,
+  "apartamento": 101,
+  "condominio_id": 1,
+  "titular_id": 2,
+}
+
+### GET BLOCO APARTAMENTO
+GET http://localhost:3000/blocoapartamento/3
+
+### DELETE BLOCO APARTAMENTO
+DELETE http://localhost:3000/blocoapartamento/1
+
