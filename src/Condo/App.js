@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { StyleSheet } from 'react-native';
-import  UserProvider  from './context/UserContext'; // Importe o UserProvider
+import UserProvider from './context/UserContext'; // Importe o UserProvider
 import Route from './navigation/Route';
 
 const App = () => {
