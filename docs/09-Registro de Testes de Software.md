@@ -197,27 +197,7 @@ Passos:
 
 <b>Resultado CT - 08: </b>
 
-## CT - 09 - Reservas Específicas de Espaços de Lazer
-Requisitos Associados:
-> - RF-005 - O aplicativo deve disponibilizar CRUD de reserva de piscina aos condôminos.
-> - RF-006 - O aplicativo deve disponibilizar CRUD de reserva de salão de festas aos condôminos.
-> - RF-007 - O aplicativo deve disponibilizar CRUD de reserva da academia aos condôminos.
-> - RF-008 - O aplicativo deve disponibilizar CRUD de reserva da churrasqueira aos condôminos.
-
-Objetivo do Teste:
-> - Verificar se os condôminos podem realizar reservas específicas de cada tipo de espaço de lazer disponibilizado.
-
-Passos:
-> - Efetuar o login como condômino.
-> - Acessar a seção de reservas de espaços de lazer.
-> - Selecionar o tipo de espaço desejado (piscina, salão de festas, academia, churrasqueira).
-> - Escolher a data e horário desejados para a reserva.
-> - Confirmar a reserva.
-> - Verificar se a reserva é listada corretamente na seção de reservas.
-
-<b>Resultado CT - 09: </b>
-
-## CT - 10 - Funcionalidades de Manutenção e Restrições
+## CT - 09 - Funcionalidades de Manutenção e Restrições
 Requisitos Associados:
 > - RF-011 - O aplicativo deve oferecer funcionalidades de manutenção, gerência de disponibilidade dos espaços e limitações de capacidade de acesso.
 
@@ -231,7 +211,7 @@ Passos:
 > - Definir disponibilidade e capacidade de acesso para um espaço.
 > - Verificar se as configurações são salvas corretamente.
 
-<b>Resultado CT - 10: </b>
+<b>Resultado CT - 09: </b>
 
 > **Links Úteis**:
 > - [Ferramentas de Test para Java Script](https://geekflare.com/javascript-unit-testing/)
