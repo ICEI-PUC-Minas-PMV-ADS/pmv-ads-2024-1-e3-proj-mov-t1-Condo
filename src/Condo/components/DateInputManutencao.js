@@ -11,8 +11,8 @@ const DateInputManutencao = (props) => {
       .getDate()
       .toString()
       .padStart(2, '0')}/${(currentDate.getMonth() + 1)
-      .toString()
-      .padStart(2, '0')}/${currentDate.getFullYear()}`;
+        .toString()
+        .padStart(2, '0')}/${currentDate.getFullYear()}`;
     setDate(formattedDate);
   }, []);
 
@@ -24,7 +24,7 @@ const DateInputManutencao = (props) => {
     <View style={styles.container}>
       <Text style={styles.text}>{props.titulo}</Text>
       <TextInputMask
-        style={styles.card}
+        style={props.edit ? styles.cardEdit : styles.card}
         type={'datetime'}
         options={{
           format: 'DD/MM/YYYY',
@@ -39,12 +39,18 @@ const DateInputManutencao = (props) => {
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: 16,
     paddingBottom: 8,
   },
   card: {
     backgroundColor: '#c4e5ed',
-    padding: 16,
+    padding: 10,
+    borderRadius: 8,
+    marginTop: 8,
+  },
+  cardEdit: {
+    backgroundColor: '#fff',
+    padding: 10, borderColor: '#000',
+    borderWidth: 1,
     borderRadius: 8,
     marginTop: 8,
   },

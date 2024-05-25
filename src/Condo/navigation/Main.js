@@ -64,7 +64,7 @@ const Main = () => {
         })}
       />
       <Stack.Screen name='Instrucoes' component={Instrucoes} options={{ title: 'Instruções' }} />
-      <Stack.Screen name='Manutencao' component={Manutencao} options={{ title: 'Mantenção' }} />
+      <Stack.Screen name='Manutencao' component={Manutencao} options={{ title: 'Em Manutenção' }} />
       <Stack.Screen
         name='LoginCondominio'
         component={LoginCondominio}
