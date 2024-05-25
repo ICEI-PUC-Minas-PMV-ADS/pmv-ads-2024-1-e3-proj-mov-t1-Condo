@@ -65,13 +65,6 @@ const CadastroApto = () => {
   
     return (
     <ScrollView contentContainerStyle={styles.container}>
-        <View style={styles.header}>
-            <TouchableOpacity onPress={() => navigation.navigate('ScreenNavigation')}>
-                <Ionicons name="arrow-back" size={24} color="black" />
-            </TouchableOpacity>
-            <Text style={styles.title}>Cadastrar Apartamentos</Text>
-            <Button icon="view-grid-outline" style={styles.button}></Button>
-        </View>
 
         <View>
             <View>
