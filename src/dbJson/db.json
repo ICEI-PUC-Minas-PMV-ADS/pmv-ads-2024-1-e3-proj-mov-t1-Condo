@@ -61,6 +61,13 @@
       "razaoSocial": "teste 02",
       "cnpj": "4445454484878",
       "id": 10
+    },
+    {
+      "email": "jba@gmail.com",
+      "password": "$2a$10$BXZokrSa./2kmb0oC4wC8ucBl4on4TI8u/jJlJe7vcrk/MEfnPjne",
+      "razaoSocial": "flor de papagaio",
+      "cnpj": "45689712454478",
+      "id": 11
     }
   ],
   "condominio": [
@@ -378,6 +385,18 @@
       "textoInstrucoes": "não pode",
       "condominio_id": 7,
       "id": 150
+    },
+    {
+      "id": 151
+    },
+    {
+      "id": 152
+    },
+    {
+      "id": 153
+    },
+    {
+      "id": 154
     }
   ],
   "bloco": [
@@ -416,6 +435,32 @@
     },
     {
       "id": 8
+    },
+    {
+      "id": 9
+    },
+    {
+      "bloco": "10",
+      "numeroApartamento": "20",
+      "condominio_id": 7,
+      "titular_id": 2,
+      "id": 10
+    },
+    {
+      "id": 11
+    },
+    {
+      "id": 12
+    },
+    {
+      "bloco": "05",
+      "numeroApartamento": "126",
+      "condominio_id": 7,
+      "titular_id": 3,
+      "id": 13
+    },
+    {
+      "id": 14
     }
   ],
   "titular": [
@@ -427,6 +472,24 @@
       "genero": "Masculino",
       "condominio_id": 7,
       "id": 1
+    },
+    {
+      "nomeTitular": "Josué batista",
+      "cpfTitular": "70043856632",
+      "dataNascimento": "01/05/2005",
+      "idade": "20",
+      "genero": "Masculino",
+      "condominio_id": 7,
+      "id": 2
+    },
+    {
+      "nomeTitular": "Lorena Azevedo",
+      "cpfTitular": "70043856632",
+      "dataNascimento": "01/05/2000",
+      "idade": "24",
+      "genero": "Feminino",
+      "condominio_id": 7,
+      "id": 3
     }
   ],
   "dependente": [
@@ -461,13 +524,6 @@
       "idade": 22,
       "condomino_Titular_Id": 1,
       "id": "N2rijar"
-    },
-    {
-      "nome": "eVELLYN Andrade",
-      "cpf": "149.876.543-67",
-      "dataNascimento": "09/02/2004",
-      "idade": "32",
-      "id": "jTp_Fb1"
     }
   ]
 }
