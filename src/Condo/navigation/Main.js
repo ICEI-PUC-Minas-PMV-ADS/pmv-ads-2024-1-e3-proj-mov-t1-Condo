@@ -64,7 +64,7 @@ const Main = () => {
         })}
       />
       <Stack.Screen name='Instrucoes' component={Instrucoes} options={{ title: 'Instruções' }} />
-      <Stack.Screen name='Manutencao' component={Manutencao} options={{ title: 'Mantenção' }} />
+      <Stack.Screen name='Manutencao' component={Manutencao} options={{ title: 'Em Manutenção' }} />
       <Stack.Screen
         name='LoginCondominio'
         component={LoginCondominio}
@@ -108,8 +108,17 @@ const Main = () => {
         component={MeusDependentes}
         options={{ title: 'Meus Dependentes' }}
       />
-      <Stack.Screen name='CadastroEspacos' component={CadastroEspacos} />
-      <Stack.Screen name='CadastroApto' component={CadastroApto} />
+      <Stack.Screen 
+      name='CadastroEspacos' 
+      component={CadastroEspacos} 
+      options={{ title: 'Cadastrar Espaços' }}
+      />
+
+      <Stack.Screen 
+      name='CadastroApto' 
+      component={CadastroApto} 
+      options={{ title: 'Cadastrar Apartamento' }}
+      />
       <Stack.Screen
         name="ApartamentosCadastrados"
         component={ApartamentosCadastrados}

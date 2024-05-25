@@ -41,7 +41,7 @@ Passos:
 > - Efetuar o login.
 
 Critérios de Êxito:
-> - O sistema deve permitir o login de administrador com sucesso para credenciais válidas.
+> - O sistema deve permitir o login do  usuário com sucesso para credenciais válidas.
 
 ## CT - 03 - CRUD de Condomínio
 Requisitos Associados:
@@ -51,8 +51,6 @@ Objetivo do Teste:
 > - Garantir que o administrador possa realizar operações CRUD (Create, Read, Update, Delete) relacionadas aos condomínios.
 
 Passos:
-> - Efetuar o login como administrador.
-> - Acessar a seção de gerenciamento de condomínios.
 > - Criar um novo condomínio.
 > - Verificar se o novo condomínio é listado corretamente.
 > - Editar os detalhes de um condomínio existente.
@@ -154,28 +152,7 @@ Passos:
 Critérios de Êxito:
 > - A lista de espaços de lazer disponíveis para reserva deve coincidir com os espaços definidos pela administração.
 
-## CT - 09 - Reservas Específicas de Espaços de Lazer
-Requisitos Associados:
-> - RF-005 - O aplicativo deve disponibilizar CRUD de reserva de piscina aos condôminos.
-> - RF-006 - O aplicativo deve disponibilizar CRUD de reserva de salão de festas aos condôminos.
-> - RF-007 - O aplicativo deve disponibilizar CRUD de reserva da academia aos condôminos.
-> - RF-008 - O aplicativo deve disponibilizar CRUD de reserva da churrasqueira aos condôminos.
-
-Objetivo do Teste:
-> - Verificar se os condôminos podem realizar reservas específicas de cada tipo de espaço de lazer disponibilizado.
-
-Passos:
-> - Efetuar o login como condômino.
-> - Acessar a seção de reservas de espaços de lazer.
-> - Selecionar o tipo de espaço desejado (piscina, salão de festas, academia, churrasqueira).
-> - Escolher a data e horário desejados para a reserva.
-> - Confirmar a reserva.
-> - Verificar se a reserva é listada corretamente na seção de reservas.
-
-Critérios de Êxito:
-> - Os condôminos devem poder realizar reservas específicas de cada tipo de espaço de lazer disponibilizado pelo condomínio, sem erros ou mensagens de falha.
-
-## CT - 10 - Funcionalidades de Manutenção e Restrições
+## CT - 09 - Funcionalidades de Manutenção e Restrições
 Requisitos Associados:
 > - RF-011 - O aplicativo deve oferecer funcionalidades de manutenção, gerência de disponibilidade dos espaços e limitações de capacidade de acesso.
 

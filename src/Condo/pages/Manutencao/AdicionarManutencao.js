@@ -15,19 +15,19 @@ const AdicionarManutencao = () => {
         <View style={{ flex: 1, backgroundColor: '#fff' }}>
           <View style={styles.view}>
             <DropdownEspacos />
-            <Text style={styles.textWithPadding}>{"Período"}</Text>
-            <View style={styles.inputsContainer}>
-              <DateInputManutencao titulo="Início" />
-              <DateInputManutencao titulo="Fim" />
+            <View>
+              <Text style={styles.textWithPadding}>{"Período"}</Text>
+              <View style={styles.inputsContainer}>
+                <DateInputManutencao titulo="Início" />
+                <DateInputManutencao titulo="Fim" />
+              </View>
             </View>
-            <View style={{ marginHorizontal: 20 }}>
-              <Text style={styles.text}>{"Motivo"}</Text>
-              <TextInput
-                style={styles.card}
-                value={motivo}
-                onChangeText={setMotivo}
-              />
-            </View>
+            <Text style={styles.text}>{"Motivo"}</Text>
+            <TextInput
+              style={styles.card}
+              value={motivo}
+              onChangeText={setMotivo}
+            />
             <View style={{ alignItems: 'center' }}>
               <TouchableOpacity style={styles.button} onPress={() => { }}>
                 <Text style={styles.buttonText}>{"Adicionar a manutenção"}</Text>
@@ -49,6 +49,7 @@ const AdicionarManutencao = () => {
 const styles = StyleSheet.create({
   view: {
     flex: 1,
+    marginHorizontal: 20,
     padding: 20,
   },
   inputsContainer: {
@@ -71,11 +72,10 @@ const styles = StyleSheet.create({
     fontSize: 17,
     color: '#848382',
     fontWeight: '900',
-    paddingHorizontal: 16,
   },
   button: {
     backgroundColor: '#06B6DD',
-    width: '90%',
+    width: '100%',
     height: 49,
     justifyContent: 'center',
     alignItems: 'center',
