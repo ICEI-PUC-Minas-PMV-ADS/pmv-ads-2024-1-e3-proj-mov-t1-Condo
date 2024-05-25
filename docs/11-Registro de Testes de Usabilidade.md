@@ -51,11 +51,11 @@ A análise heurística foi conduzida para avaliar a usabilidade da aplicação d
 | 3.4 | Existe uma funcionalidade para desfazer ações realizadas pelo usuário? | o | x | o | |
 | 3.5 | O usuário pode editar, copiar e colar durante a entrada de dados? | x | o | o | |
 | 3.6 | O usuário pode se mover entre campos e janelas livremente? | x | o | o | |
-| 3.7 | O usuário pode configurar o sistema, a sessão, a tela conforme sua preferência? | x | o | o | É possível alterar para o modo Dark do navegador. |
+| 3.7 | O usuário pode configurar o sistema, a sessão, a tela conforme sua preferência? | o | x | o |  |
 | **4** | **Consistência e padrões** |
-| 4.1 | O sistema evita o uso constante de letras maiúsculas? | x | o | o | |
+| 4.1 | O sistema evita o uso constante de letras maiúsculas? | o | o | x | |
 | 4.2 | Os números são justificados à direita e alinhados quanto aos decimais? | x | o | o | |
-| 4.3 | Os ícones e ilustrações são rotulados? | x | o | o | |
+| 4.3 | Os ícones e ilustrações são rotulados? | o | x | o | |
 | 4.4 | As instruções aparecem de forma consistente sempre no mesmo local? | x | o | o | |
 | 4.5 | Os objetos do sistema são nomeados de maneira consistente em todo o sistema? | x | o | o | A aplicação segue um layout consistente em várias seções. |
 | 4.6 | Os campos obrigatórios e opcionais são corretamente sinalizados? | x | o | o | |
@@ -67,7 +67,31 @@ A análise heurística foi conduzida para avaliar a usabilidade da aplicação d
 | 6.1 | Há distinção clara quando é possível selecionar um item ou vários? | x | o | o | |
 | 6.2 | Os rótulos de campo estão próximos dos campos e separados por pelo menos um espaço? | x | o | o | |
 | 6.3 | Durante a realização de ações, a aplicação fornece feedback visual imediato para indicar o status da operação, auxiliando os usuários no reconhecimento do progresso? | x | o | o | Ícones e rótulos intuitivos ajudam os usuários a reconhecerem a função das ações. |
-| 6.4 | Há alguma diferença vis
+| 6.4 | Há alguma diferença visual para identificar a janela ativa? | o | o | x | |
+| 6.5 | São utilizadas bordas para identificar possíveis grupos de elementos? | x | o | o | |
+| 7 | Flexibilidade e Eficiência do Uso |
+| 7.1 | Existem atalhos para as funções disponíveis no sistema? | o | x | o | Para trocar de tela é necessário acessar o menu. |
+| 7.2 | A aplicação é projetada para se adaptar aos diferentes níveis de habilidade dos usuários, proporcionando uma experiência eficiente tanto para novos usuários quanto para usuários experientes? | x | o | o | |
+| 7.3 | Os fluxos de trabalho são projetados de maneira eficiente, minimizando o número de etapas necessárias para completar tarefas comuns e otimizando a produtividade? | x | o | o | |
+| 8 | Estética e Design Minimalista |
+| 8.1 | Apenas a informação necessária para ação está visível na tela? | x | o | o | |
+| 8.2 | Os ícones e ilustrações estão distintos do seu fundo? | x | o | o | |
+| 8.3 | Existe uma hierarquia clara de informações, destacando elementos importantes e orientando o usuário sobre a organização da página? | x | o | o | |
+| 8.4 | O design da interface é limpo e organizado, evitando poluição visual e proporcionando uma experiência mais agradável ao usuário? | x | o | o | O design é claro e minimamente complexo. |
+| 9 | Ajudar os usuários a reconhecer, diagnosticar e se recuperar de erros |
+| 9.1 | É utilizado um sinal sonoro para alertar erros? | o | x | o | |
+| 9.2 | Os questionamentos são breves e sem ambiguidade? | x | o | o | |
+| 9.3 | Se um erro é detectado, o usuário tem visibilidade sobre qual o local gerador do erro? | o | x | o | |
+| 9.4 | As mensagens de erro identificam a severidade e a causa do erro? | o | x | o | |
+| 9.5 | As mensagens de erro sugerem uma ação para correção? | x | o | o | |
+| 10 | Ajuda e Documentação |
+| 10.1 | As instruções online estão visualmente distintas? | x | o | o | |
+| 10.2 | Existe ajuda online sensível ao contexto? | o | o | x | |
+| 10.3 | É simples o acesso a ajuda do sistema e o retorno ao sistema? | o | o | x | |
+
+Conclusão:
+---
+A análise heurística destaca várias áreas positivas na usabilidade da aplicação de gerenciamento de condomínios. No entanto, há oportunidades para melhorias, especialmente na consistência, visibilidade de feedback e aprimoramento das mensagens de erro. Recomenda-se uma revisão iterativa com base nessas sugestões para aprimorar ainda mais a experiência do usuário.
 
 
 > **Links Úteis**:
