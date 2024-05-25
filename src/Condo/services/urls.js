@@ -1,1 +1,1 @@
-export const baseURL = 'https://legal-chicken-matter.loca.lt';
+export const baseURL = 'https://condo.loca.lt';
