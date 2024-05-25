@@ -20,6 +20,23 @@ const CadastroApto = () => {
 
   console.log('CadastroApto user:', user);
 
+  const formatarData = (data) => {
+    const cleaned = data.replace(/\D/g, "");
+    if (/^\d{0,2}(\d{0,2})?(\d{0,4})?$/.test(cleaned)) {
+      let formatted = cleaned.replace(
+        /^(\d{0,2})(\d{0,2})?(\d{0,4})?$/,
+        (match, p1, p2, p3) => {
+          let result = "";
+          if (p1) result += p1;
+          if (p2) result += `/${p2}`;
+          if (p3) result += `/${p3}`;
+          return result;
+        }
+      );
+      setDataNascimento(formatted);
+    }
+  };
+
   const handleSalvar = async () => {
     if (!user || !user.id) {
       console.error('ID do condomínio não está definido no objeto do usuário');
@@ -61,7 +78,6 @@ const CadastroApto = () => {
     }
   };
   
-
   
     return (
     <ScrollView contentContainerStyle={styles.container}>
@@ -71,6 +87,7 @@ const CadastroApto = () => {
                 <Text style={styles.subTitles}>Nº Bloco (Número)</Text>
                 <TextInput
                     style={styles.textInput}
+                    mode="outlined"
                     placeholder="Bloco e complemento"
                     placeholderTextColor="#7F7F7F"
                     value={bloco}
@@ -82,6 +99,7 @@ const CadastroApto = () => {
             <View>
                 <Text style={styles.subTitles}>Nº do Apartamento (Número)</Text>
                 <TextInput
+                    mode="outlined"
                     style={styles.textInput}
                     placeholder="Somente o número."
                     placeholderTextColor="#7F7F7F"
@@ -94,6 +112,7 @@ const CadastroApto = () => {
             <View>
                 <Text style={styles.subTitles}>Nome do Titular</Text>
                 <TextInput
+                    mode="outlined"
                     style={styles.textInput}
                     placeholder="Coloque seu nome completo."
                     placeholderTextColor="#7F7F7F"
@@ -105,6 +124,7 @@ const CadastroApto = () => {
             <View>
                 <Text style={styles.subTitles}>CPF</Text>
                 <TextInput
+                    mode="outlined"
                     style={styles.textInput}
                     placeholder="Coloque somente os números"
                     placeholderTextColor="#7F7F7F"
@@ -118,11 +138,12 @@ const CadastroApto = () => {
             <View>
                 <Text style={styles.subTitles}>Data de Nascimento</Text>
                 <TextInput
+                    mode="outlined"
                     style={styles.textInput}
                     placeholder="DD/MM/AAAA"
                     placeholderTextColor="#7F7F7F"
                     value={dataNascimento}
-                    onChangeText={text => setDataNascimento(text)}
+                    onChangeText={text => formatarData(text)} // Aplicar formatação de data
                     keyboardType="numeric"
                     underlineColor="transparent"
                 />
@@ -131,6 +152,7 @@ const CadastroApto = () => {
             <View>
                 <Text style={styles.subTitles}>Idade</Text>
                 <TextInput
+                    mode="outlined"
                     style={styles.textInput}
                     placeholder="Digite sua idade"
                     placeholderTextColor="#7F7F7F"
