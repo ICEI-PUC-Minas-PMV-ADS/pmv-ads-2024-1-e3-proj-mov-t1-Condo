@@ -38,7 +38,7 @@ export const fetchTitulares = async (condominio_id) => {
   
 
 //Buscar Dependentes
-export const fetchDependentes = async (condominioId) => {
+export const dependente = async (condominioId) => {
     try {
       const response = await API.get(`${baseURL}/660/dependente`, { params: { userId: condominioId } });
       return response.data;
