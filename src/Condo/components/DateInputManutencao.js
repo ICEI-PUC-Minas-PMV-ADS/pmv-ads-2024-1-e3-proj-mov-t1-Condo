@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
-import { TextInputMask } from 'react-native-masked-text';
+import MaskInput,{ Masks }  from 'react-native-mask-input';
 
 const DateInputManutencao = (props) => {
   const [date, setDate] = useState('');
@@ -23,12 +23,10 @@ const DateInputManutencao = (props) => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>{props.titulo}</Text>
-      <TextInputMask
+      <MaskInput
         style={props.edit ? styles.cardEdit : styles.card}
         type={'datetime'}
-        options={{
-          format: 'DD/MM/YYYY',
-        }}
+        mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
         placeholder="DD/MM/YYYY"
         value={date}
         onChangeText={handleDateChange}

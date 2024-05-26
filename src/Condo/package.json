@@ -34,7 +34,7 @@
     "react-native-dropdown-picker": "^5.4.6",
     "react-native-gesture-handler": "~2.16.1",
     "react-native-linear-gradient": "^2.8.3",
-    "react-native-masked-text": "^1.12.5",
+    "react-native-mask-input": "^1.2.3",
     "react-native-paper": "^5.12.3",
     "react-native-picker-select": "^9.1.3",
     "react-native-reanimated": "~3.10.1",
