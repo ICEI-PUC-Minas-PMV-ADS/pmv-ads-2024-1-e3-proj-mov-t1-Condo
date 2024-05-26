@@ -1101,6 +1101,14 @@
       "textoInstrucoes": "não pode",
       "condominio_id": 7,
       "id": 345
+    },
+    {
+      "nomeEspaco": "Salão de Jogos",
+      "capacidadeMaxima": "10",
+      "tempoMaximo": 60,
+      "textoInstrucoes": "Não é permitido bebidas e comidas no ambiente, assim como a entrada de pets.",
+      "condominio_id": 22,
+      "id": 346
     }
   ],
   "bloco": [
@@ -1976,6 +1984,13 @@
       "idade": 22,
       "condomino_Titular_Id": 1,
       "id": "N2rijar"
+    },
+    {
+      "nome": "Pereira da Silva ",
+      "cpf": "105.098.890-07",
+      "dataNascimento": "25/11/2000",
+      "idade": "23",
+      "id": "LnP_I2h"
     }
   ]
 }

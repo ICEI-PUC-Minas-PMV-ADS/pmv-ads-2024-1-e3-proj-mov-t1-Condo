@@ -3,7 +3,6 @@
 # dependencies
 node_modules/
 
-
 # Expo
 .expo/
 dist/
@@ -34,3 +33,9 @@ yarn-error.*
 
 # typescript
 *.tsbuildinfo
+
+# ignore package-lock.json
+package-lock.json
+
+# ignore db.json
+db.json
