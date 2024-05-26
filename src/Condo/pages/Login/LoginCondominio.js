@@ -10,14 +10,14 @@ const Tab = createMaterialBottomTabNavigator();
 
 const LoginCondominio = () => {
   
-  const [email, setEmail] = useState('josuepayments@gmail.com');
-  const [password, setPassword] = useState('12345678');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const { setSigned, setName, setUser } = useUser();
   const navigation = useNavigation();
 
   const handleForgotPassword = () => {
     // Redirecionar para a tela de recuperação de senha
-    navigation.navigate('...');
+    navigation.navigate('UpdatePassword');
   };
 
   const handleSignUp = () => {
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   input: {
-    width: '80%',
+        width: '80%',
         height: 56,
         borderWidth: 1,
         borderColor: 'rgba(36, 34, 32, 0.44)',

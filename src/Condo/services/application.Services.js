@@ -27,7 +27,7 @@ export const fetchTitulares = async (condominio_id) => {
 
   export const salvarTitular = async (param) => {
     try {
-        const responseTitular = await API.post(`${baseURL}/660/titular`, param);
+        const responseTitular = await API.post(`${baseURL}/660/register/titular`, param);
         return responseTitular.data;
     }catch (error) {
         console.error("Erro ao cadastrar apartamento:", error)

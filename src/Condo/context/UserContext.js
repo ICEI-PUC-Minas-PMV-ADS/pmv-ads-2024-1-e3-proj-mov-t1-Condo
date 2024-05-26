@@ -1,16 +1,16 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { espaco, fetchTitulares, fetchDependentes, salvarApartamento, cadastrarEspaco } from '../services/application.Services';
 
-// Criar o contexto
 export const UserContext = createContext();
 
-// Provedor do contexto
 export default function UserProvider({ children }) {
   const [user, setUser] = useState({ 
-    condominio_id: null, // Definir condominio_id como null por padrão
+    condominio_id: null,
+    cnpj: null // Adicionar o CNPJ ao estado do usuário
   });
   
   const [signed, setSigned] = useState(false);
+  const [signedCondomino, setSignedCondomino] = useState(false);
   const [name, setName] = useState('');
   const [espacosData, setEspacosData] = useState([]);
   const [titularesData, setTitularesData] = useState([]);
@@ -19,11 +19,9 @@ export default function UserProvider({ children }) {
   const [cadastrarEspacosData, setCadastrarEspacoData] = useState([]);
 
   useEffect(() => {
-    console.log('UserProvider useEffect: user', user);
-
     const fetchData = async () => {
-      if (!user || !user.id) {
-        console.error('ID do condomínio não está definido no objeto do usuário');
+      if (!user) {
+        console.error('Usuário não está definido');
         return;
       }
 
@@ -54,6 +52,8 @@ export default function UserProvider({ children }) {
         setUser,
         signed,
         setSigned,
+        signedCondomino,
+        setSignedCondomino,
         name,
         setName,
         espacosData, 
@@ -67,7 +67,6 @@ export default function UserProvider({ children }) {
   );
 }
 
-// Hook para consumir o contexto
 export function useUser() {
   const context = useContext(UserContext);
 
@@ -75,11 +74,11 @@ export function useUser() {
     throw new Error('useUser deve ser usado dentro de um UserProvider');
   }
 
-  const { user, setUser, signed, setSigned, name, setName, 
+  const { user, setUser, signed, setSigned, signedCondomino, setSignedCondomino,  name, setName, 
       espacosData, dependentesData, titularesData,
       salvarApartamentosData,
       cadastrarEspacosData } = context;
-  return { user, setUser, signed, setSigned, name, setName, espacosData, 
+  return { user, setUser, signed, setSigned,signedCondomino,setSignedCondomino,  name, setName, espacosData, 
       titularesData, 
       dependentesData, 
       salvarApartamentosData,

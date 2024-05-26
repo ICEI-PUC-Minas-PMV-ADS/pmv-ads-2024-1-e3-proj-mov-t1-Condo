@@ -4,7 +4,10 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import Icon from 'react-native-vector-icons/FontAwesome';
 import LoginCondominio from '../pages/Login/LoginCondominio';
 import RegisterCondominio from '../pages/Login/RegisterCondominio';
+import UpdatePassword from '../pages/Login/UpdatePassword';
 import LoginCondomino from '../pages/Login/LoginCondomino';
+import LoginCondominoTwo from '../pages/Login/LoginCondominoTwo';
+import AtualizaTitular from '../pages/Login/AtualizaTitular';
 import { Title } from 'react-native-paper';
 
 
@@ -31,6 +34,13 @@ const LoginStack = () => {
           headerShown: false,
         }}
       />
+      <Stack.Screen
+      name='UpdatePassword'
+      component={UpdatePassword}
+      options={{
+        headerShown: false,
+      }}
+      />
     </Stack.Navigator>
   );
 };
@@ -44,6 +54,19 @@ const LoginCondominoStack = () => {
         options={{
           headerShown: false,
         }}
+      />
+      <Stack.Screen
+      name='AtualizaTitular'
+      component={AtualizaTitular}
+      options={{headerShown: false}}
+      />
+      <Stack.Screen
+      name='LoginCondominoTwo'
+      component={LoginCondominoTwo}
+      options={{
+        headerShown: false
+      }}
+
       />
   
     </Stack.Navigator>

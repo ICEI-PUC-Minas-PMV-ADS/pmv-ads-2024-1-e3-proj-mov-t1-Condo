@@ -1,24 +1,33 @@
 import React, { useState } from 'react';
 import { View, Image, TextInput, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { fetchUserByCPF } from '../../services/auth.services'; // Supondo que você tenha uma função para buscar o usuário pelo CPF
 
 const LoginCondomino = () => {
-  const [residentialId, setResidentialId] = useState('');
+  const [cpf, setCpf] = useState('');
   const navigation = useNavigation();
 
-  const handleLogin = () => {
-    // validação de login
-    if (residentialId === 'id_correto') {
-      
-      navigation.navigate('LoginCondominoTwo');
-    } else {
-      
-      alert('ID residencial incorreto. Por favor, tente novamente.');
-    }
-  };
+  const handleLogin = async () => {
+    const emailFicticio = `${cpf}@gmail.com`;
 
-  const openDrawer = () => {
-    navigation.openDrawer();
+    try {
+      const users = await fetchUserByCPF(cpf);
+      if (users.length > 0) {
+        const user = users[0];
+        if (user.email === emailFicticio) {
+          // Email fictício, direciona para atualização cadastral
+          navigation.navigate('AtualizaTitular', { cpf });
+        } else {
+          // Email atualizado, direciona para login
+          navigation.navigate('LoginCondominoTwo', { userData: user });
+        }
+      } else {
+        alert('CPF incorreto. Por favor, tente novamente.');
+      }
+    } catch (error) {
+      console.log(error);
+      alert('Ocorreu um erro. Por favor, tente novamente mais tarde.');
+    }
   };
 
   return (
@@ -32,9 +41,9 @@ const LoginCondomino = () => {
       </View>
       <TextInput
         style={styles.input}
-        placeholder="Condominio"
-        value={residentialId}
-        onChangeText={setResidentialId}
+        placeholder="Digite o CPF"
+        value={cpf}
+        onChangeText={setCpf}
       />
       <TouchableOpacity style={styles.continueButton} onPress={handleLogin}>
         <Text style={styles.continueButtonText}>Continue</Text>
@@ -86,9 +95,9 @@ const styles = StyleSheet.create({
   },
   continueButtonText: {
     color: 'white',
-      fontSize: 16,
-      fontWeight: '400',
-      textAlign: 'center',
+    fontSize: 16,
+    fontWeight: '400',
+    textAlign: 'center',
   },
   joggingLogo: {
     position: 'absolute',

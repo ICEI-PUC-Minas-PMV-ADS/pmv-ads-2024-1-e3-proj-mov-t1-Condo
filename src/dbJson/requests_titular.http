@@ -3,7 +3,7 @@ GET http://localhost:3000/titular
 
 
 ### CREATE
-POST http://localhost:3000/titular
+POST http://localhost:3000/register/titular
 content-type: application/json
 
 {
@@ -12,7 +12,9 @@ content-type: application/json
       "Data_Nasc": "01/05/2000",
       "idade": 31,
       "blocoapartamento_id": 1,
-      "condominio_id": 7
+      "condominio_id": 7,
+      "email": "70043856632@gmail.com",
+      "password": "12345678"
      
 }
 

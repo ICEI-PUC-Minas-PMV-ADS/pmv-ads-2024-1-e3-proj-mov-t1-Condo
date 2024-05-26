@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+/*import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import { TextInputMask } from 'react-native-masked-text';
 
@@ -62,3 +62,4 @@ const styles = StyleSheet.create({
 });
 
 export default DateInputManutencao;
+*/

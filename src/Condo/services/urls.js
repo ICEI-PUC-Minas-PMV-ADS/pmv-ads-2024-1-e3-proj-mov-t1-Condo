@@ -1,1 +1,1 @@
-export const baseURL = 'https://condo.loca.lt';
+export const baseURL = 'https://average-donkey-76.loca.lt';
