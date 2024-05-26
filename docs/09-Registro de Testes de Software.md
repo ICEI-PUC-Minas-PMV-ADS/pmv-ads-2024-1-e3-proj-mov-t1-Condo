@@ -71,15 +71,17 @@ Passos:
 
 > - Cadastrar Informações Condomínio.
 
-![tela de cadastro](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/abc1f020-afca-4516-96f3-869dc7f96fac)
-![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/53895e00-26ea-4922-9ab7-96e3126e89b6)
+![tela cadastro](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/5450f4de-fd25-4e9f-9ff7-41ae15d73069)
+
+![tela cadastro sucesso](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/024a6a1a-6120-4ddb-b892-8e2d0888c72a)
 
 
 > - Verificar se o novo condomínio é autenticado corretamente.
 
-![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/c6e0c31c-0b4c-4738-bbc7-a368e00e083e)
+![login](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/fb644536-d47c-4ea9-b303-1051421831db)
 
-![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/1a42833f-19c4-41c0-adf6-0b603f3f8f55)
+![home](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/e084e86c-29ff-4ce4-a058-d28cd1197e38)
+
 
 > - Editar os detalhes de um condomínio existente.
 > - Confirmar se as alterações são salvas corretamente.
@@ -97,8 +99,22 @@ Objetivo do Teste:
 
 Passos:
 > - Efetuar o login como administrador.
+
+![login](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/fb644536-d47c-4ea9-b303-1051421831db)
+
 > - Acessar a seção de gerenciamento de condôminos.
+
+![home](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/ada6e326-5712-41cb-b611-a92f3838f6eb)
+
+
 > - Criar um novo condômino.
+
+![novo mor](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/5a25bf4b-e2e6-4ef6-a3e5-9afced29ad04)
+
+![novo mor2](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/d30e9cef-6587-4821-949a-943675d6ca3c)
+
+![novo mor suc](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/ea6d4ffa-49a6-49e0-b5ab-e5aaca6fa673)
+
 > - Verificar se o novo condômino é listado corretamente.
 > - Editar os detalhes de um condômino existente.
 > - Confirmar se as alterações são salvas corretamente.

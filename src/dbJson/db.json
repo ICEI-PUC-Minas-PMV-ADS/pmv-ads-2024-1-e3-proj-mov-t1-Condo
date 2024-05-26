@@ -607,6 +607,8 @@
     },
     {
       "id": 182
+<<<<<<< HEAD
+=======
     },
     {
       "id": 183
@@ -1921,6 +1923,88 @@
       "id": 22
     },
     {
+<<<<<<< HEAD
+      "id": 23
+    },
+    {
+      "id": 24
+    },
+    {
+      "id": 25
+    },
+    {
+      "id": 26
+    },
+    {
+      "id": 9
+    },
+    {
+      "bloco": "10",
+      "numeroApartamento": "20",
+      "condominio_id": 7,
+      "titular_id": 2,
+      "id": 10
+    },
+    {
+      "id": 11
+    },
+    {
+      "id": 12
+    },
+    {
+      "bloco": "05",
+      "numeroApartamento": "126",
+      "condominio_id": 7,
+      "titular_id": 3,
+      "id": 13
+    },
+    {
+      "id": 14
+    },
+    {
+      "id": 27
+    },
+    {
+      "id": 28
+    },
+    {
+      "id": 29
+    },
+    {
+      "id": 30
+    },
+    {
+      "id": 31
+    },
+    {
+      "id": 32
+    },
+    {
+      "id": 33
+    },
+    {
+      "id": 34
+    },
+    {
+      "id": 35
+    },
+    {
+      "id": 36
+    },
+    {
+      "id": 37
+    },
+    {
+      "id": 38
+    },
+    {
+      "id": 39
+    }
+  ],
+  "titular": [
+    {
+=======
+>>>>>>> d60721c963d2ba6812e58db6d15e5804fa5a0f39
       "nomeTitular": "Josué Almeida",
       "cpfTitular": "70043856632",
       "dataNascimento": "01/05/2000",
@@ -1954,19 +2038,8 @@
   ],
   "dependente": [
     {
-      "nomeDependente": "Josué Almeida",
-      "cpfDependente": 12345678900,
-      "data_Nasc": "01/05/2000",
-      "idade": 24,
-      "condomino_Titular_Id": 1,
-      "id": 1
-    },
-    {
       "nomeDependente": "Mariana Silva",
-      "cpfDependente": 98765432100,
       "data_Nasc": "10/12/1998",
-      "idade": 26,
-      "condomino_Titular_Id": 1,
       "id": 2
     },
     {
