@@ -10,13 +10,13 @@ import { useUser } from '../../context/UserContext';
 const CadastroApto = () => {
   const navigation = useNavigation();
   const { user } = useUser();
-  const [nomeTitular, setNomeTitular] = useState('Josué Almeida');
-  const [cpfTitular, setCpfTitular] = useState('70043856632');
-  const [bloco, setBloco] = useState('102');
-  const [numeroApartamento, setNumeroApartamento] = useState('205');
-  const [dataNascimento, setDataNascimento] = useState('01/05/2000');
-  const [idade, setIdade] = useState('24');
-  const [genero, setGenero] = useState('Masculino');
+  const [nomeTitular, setNomeTitular] = useState('');
+  const [cpfTitular, setCpfTitular] = useState('');
+  const [bloco, setBloco] = useState('');
+  const [numeroApartamento, setNumeroApartamento] = useState('');
+  const [dataNascimento, setDataNascimento] = useState('');
+  const [idade, setIdade] = useState('');
+  const [genero, setGenero] = useState('');
 
   console.log('CadastroApto user:', user);
 
@@ -35,6 +35,16 @@ const CadastroApto = () => {
       );
       setDataNascimento(formatted);
     }
+  };
+
+  const formatarCPF = (cpf) => {
+    const cleaned = cpf.replace(/\D/g, "");
+    const formatted = cleaned.slice(0, 11);
+    let result = formatted.replace(
+      /(\d{3})(\d{3})(\d{3})(\d{2})/,
+      "$1.$2.$3-$4"
+    );
+    setCpfTitular(result);
   };
 
   const handleSalvar = async () => {
@@ -129,7 +139,7 @@ const CadastroApto = () => {
                     placeholder="Coloque somente os números"
                     placeholderTextColor="#7F7F7F"
                     value={cpfTitular}
-                    onChangeText={text => setCpfTitular(text)}
+                    onChangeText={text => formatarCPF(text)}
                     keyboardType="numeric"
                     underlineColor="transparent"
                 />

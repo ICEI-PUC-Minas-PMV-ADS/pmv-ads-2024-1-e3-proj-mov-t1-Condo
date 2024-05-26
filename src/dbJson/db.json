@@ -461,6 +461,35 @@
     },
     {
       "id": 169
+    },
+    {
+      "id": 170
+    },
+    {
+      "id": 171
+    },
+    {
+      "id": 172
+    },
+    {
+      "id": 173
+    },
+    {
+      "id": 174
+    },
+    {
+      "id": 175
+    },
+    {
+      "nomeEspaco": "Teste 176",
+      "capacidadeMaxima": "21",
+      "tempoMaximo": 60,
+      "textoInstrucoes": "Não pode furtar",
+      "condominio_id": 11,
+      "id": 176
+    },
+    {
+      "id": 177
     }
   ],
   "bloco": [
@@ -582,6 +611,27 @@
     },
     {
       "id": 27
+    },
+    {
+      "id": 28
+    },
+    {
+      "id": 29
+    },
+    {
+      "id": 30
+    },
+    {
+      "id": 31
+    },
+    {
+      "id": 32
+    },
+    {
+      "id": 33
+    },
+    {
+      "id": 34
     }
   ],
   "titular": [

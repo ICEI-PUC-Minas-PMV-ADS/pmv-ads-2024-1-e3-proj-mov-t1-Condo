@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, Image, TouchableOpacity, Alert } from 'react-native'; // Importa TouchableOpacity
-import { Text, TextInput, Button } from 'react-native-paper'; // Importa Button de react-native-paper
-import { useNavigation } from '@react-navigation/native'; // Importa o hook useNavigation
-import { Ionicons } from '@expo/vector-icons'; // Importa Ionicons de @expo/vector-icons
-import ScreenNavigation from '../ScreenNavigation/ScreenNavigation'; // Importa a página de navegação desejada
-import { useUser } from '../../context/UserContext'; // Importe o hook useUser
+import { View, StyleSheet, Image, TouchableOpacity, Alert } from 'react-native'; 
+import { Text, TextInput, Button } from 'react-native-paper'; 
+import { useNavigation } from '@react-navigation/native'; 
+import { Ionicons } from '@expo/vector-icons'; 
+import ScreenNavigation from '../ScreenNavigation/ScreenNavigation'; 
+import { useUser } from '../../context/UserContext'; 
 import { cadastrarEspaco } from '../../services/application.Services';
 
 
@@ -12,9 +12,9 @@ const CadastroEspacos = () => {
     const { user } = useUser();
     const [nomeEspaco, setNomeEspaco] = useState('');
     const [capacidadeMaxima, setCapacidadeMaxima] = useState('');
-    const [tempoMaximo, setTempoMaximo] = useState(60); // Valor inicial de 60 minutos
+    const [tempoMaximo, setTempoMaximo] = useState(''); 
     const [textoInstrucoes, setTextoInstrucoes] = useState('');
-    const navigation = useNavigation(); // Obtém o objeto de navegação
+    const navigation = useNavigation(); 
 
     console.log('CadastroEspaco user:', user);
 
@@ -50,6 +50,7 @@ const CadastroEspacos = () => {
                 <View>
                     <Text style={styles.subTitles}>Nome do Espaço</Text>
                     <TextInput style={styles.textInput}
+                        mode="outlined"
                         placeholder="Adicione um nome do espaço"
                         placeholderTextColor="#7F7F7F"
                         value={nomeEspaco}
@@ -61,6 +62,7 @@ const CadastroEspacos = () => {
                 <View>
                     <Text style={styles.subTitles}>Capacidade máximo de pessoas</Text>
                     <TextInput style={styles.textInput}
+                        mode="outlined"
                         placeholder="Coloque a capacidade máxima do espaço"
                         placeholderTextColor="#7F7F7F"
                         value={capacidadeMaxima}
@@ -74,6 +76,7 @@ const CadastroEspacos = () => {
                 <View>
                     <Text style={styles.subTitles}>Tempo máximo de reserva (Minutos)</Text>
                     <TextInput
+                        mode="outlined"
                         style={styles.textInput}
                         placeholder="Coloque o tempo máximo de reserva (minutos)"
                         placeholderTextColor="#7F7F7F"
@@ -87,12 +90,13 @@ const CadastroEspacos = () => {
                 <View>
                     <Text style={styles.subTitles}>Instruções</Text>
                     <TextInput style={styles.textInput}
+                        mode="outlined"
                         placeholder="Coloque as regras do espaço"
                         placeholderTextColor="#7F7F7F"
                         value={textoInstrucoes}
                         onChangeText={text => setTextoInstrucoes(text)}
                         underlineColor="transparent"
-                        multiline={true} // Habilita a entrada multilinha
+                        multiline={true} 
                         numberOfLines={4} // Define o número inicial de linha
                     />
                 </View>
@@ -127,8 +131,8 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         width: '100%',
         paddingHorizontal: 20,
-        borderBottomWidth: 2, // Ajusta a espessura do divisor
-        borderBottomColor: '#7F7F7F', // Cor do divisor
+        borderBottomWidth: 2, 
+        borderBottomColor: '#7F7F7F', 
         marginBottom: 20,
         paddingBottom: 20,
 
@@ -164,9 +168,8 @@ const styles = StyleSheet.create({
 
     buttonSalvar: {
         marginTop: 20,
-        /*marginBottom: 20,*/
         borderRadius: 10,
-        backgroundColor: '#06B6DD', // Azul
+        backgroundColor: '#06B6DD', 
         width: '100%',
     },
 
@@ -176,7 +179,7 @@ const styles = StyleSheet.create({
     },
 
     button: {
-        margin: 0, // Remove o espaçamento padrão dos botões
+        margin: 0, 
     },
 
     imageLogo: {
