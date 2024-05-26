@@ -99,8 +99,22 @@ Objetivo do Teste:
 
 Passos:
 > - Efetuar o login como administrador.
+
+![login](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/fb644536-d47c-4ea9-b303-1051421831db)
+
 > - Acessar a seção de gerenciamento de condôminos.
+
+![home](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/ada6e326-5712-41cb-b611-a92f3838f6eb)
+
+
 > - Criar um novo condômino.
+
+![novo mor](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/5a25bf4b-e2e6-4ef6-a3e5-9afced29ad04)
+
+![novo mor2](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/d30e9cef-6587-4821-949a-943675d6ca3c)
+
+![novo mor suc](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/ea6d4ffa-49a6-49e0-b5ab-e5aaca6fa673)
+
 > - Verificar se o novo condômino é listado corretamente.
 > - Editar os detalhes de um condômino existente.
 > - Confirmar se as alterações são salvas corretamente.
