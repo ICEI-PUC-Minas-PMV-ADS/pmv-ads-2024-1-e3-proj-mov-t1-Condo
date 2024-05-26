@@ -38,8 +38,7 @@
     },
     {
       "email": "josuepayments@gmail.com",
-      "password": "$2a$10$QVO4nJTIfDhXHr7dIjxbheeVpEtfjDrB3odZRyDcmD6/zHRo5OHgO",
-      "name": "Josué Almeida",
+      "password": "$2a$10$xyXHLn/pb9tGYUhGAYm5G.DxxGP92SexTSF8tQ6bZzcevCML4QhUy",
       "id": 7
     },
     {
@@ -63,18 +62,104 @@
       "id": 10
     },
     {
-      "email": "alvarocondo@gmail.com",
-      "password": "$2a$10$c6tXBirTP3ImGyA.tc950Od0F92n/Pi5/i74rsdqpVxCDfAQH5shO",
-      "razaoSocial": "Alvaro teste ",
-      "cnpj": "11223344000155",
-      "id": 11
-    },
-    {
       "email": "jba@gmail.com",
       "password": "$2a$10$BXZokrSa./2kmb0oC4wC8ucBl4on4TI8u/jJlJe7vcrk/MEfnPjne",
       "razaoSocial": "flor de papagaio",
       "cnpj": "45689712454478",
       "id": 11
+    },
+    {
+      "email": "teste@gmail.com",
+      "password": "$2a$10$xwNoXB8lcF7mRKUVqe54.uxAEwDp4i6VEGBV2FN70NlRrMcH0g2hW",
+      "razaoSocial": "Teste 25/05/2024",
+      "cnpj": "6989898989787978",
+      "id": 12
+    },
+    {
+      "email": "teste01@gmail.com",
+      "password": "$2a$10$qSR5aqQs35q8zCs.WPbF.eZyIvNdB23oO4zu27KzJEQ9XZqjL4C0y",
+      "razaoSocial": "Testando a formatação do Cnpj",
+      "cnpj": "45.544.555/5555-55",
+      "id": 13
+    },
+    {
+      "email": "josuepay@gmail.com",
+      "password": "$2a$10$uQjPVI7HNMUzlbqQWGIGzOOdsHZBzGK7KDb0pxQ8eHIWtzFadZqMi",
+      "name": "Josué Almeida",
+      "id": 14
+    },
+    {
+      "email": "jb@gmail.com",
+      "password": "$2a$10$6hqBoHMDaC2EGshUGHOz2eqfg/Slv10DBpOBu5g5nROcTsnK6XIvK",
+      "nomeTitular": "Josué Almeida",
+      "cpfTitular": "12345678900",
+      "Data_Nasc": "01/05/2000",
+      "idade": 31,
+      "blocoapartamento_id": 1,
+      "condominio_id": 7,
+      "id": 15
+    },
+    {
+      "email": "70043856632@gmail.com",
+      "password": "$2a$10$GI3ajo/Kg9l7hAaQQ9opKeuMX8Et.2uwxxagUdIBX4h67nDrtQ8Tq",
+      "nomeTitular": "Josué Almeida",
+      "cpfTitular": "12345678900",
+      "Data_Nasc": "01/05/2000",
+      "idade": 31,
+      "blocoapartamento_id": 1,
+      "condominio_id": 7,
+      "id": 16
+    },
+    {
+      "email": "guiomarbatista@gmail.com",
+      "password": "$2a$10$e5NfPfjl05TT6YtQiD9yh.aYm7JY6Z.puAgQ4Z/GxCbeny7E4aeky",
+      "nomeTitular": "Guiomar Batista",
+      "cpfTitular": "08030012667",
+      "dataNascimento": "01/05/2000",
+      "idade": "24",
+      "genero": "Feminino",
+      "condominio_id": 7,
+      "id": 17
+    },
+    {
+      "email": "emailcerto@gmail.com",
+      "password": "$2a$10$lQC6w8CKI048gEaqFiIGOOJKF.cxI9CH3Ag.wBtQLGlcytqMldH8m",
+      "nomeTitular": "Teste",
+      "cpfTitular": "98745632",
+      "dataNascimento": "01/05/2000",
+      "idade": "24",
+      "genero": "Masculino",
+      "condominio_id": 7,
+      "id": 18
+    },
+    {
+      "email": "marianeoliveira@gmail.com",
+      "password": "$2a$10$rAVLY.1Q.OZAy9cVAae07eNKMR4SgvZTzqeEuRpbkExNx/jXOTkzu",
+      "nomeTitular": "Mariane Oliveira",
+      "cpfTitular": "12659846332",
+      "dataNascimento": "01/10/1978",
+      "idade": "45",
+      "genero": "Feminino",
+      "condominio_id": 7,
+      "id": 19
+    },
+    {
+      "email": "condominiosaojose@gmail.com",
+      "password": "$2a$10$0rYFgFFzHvVo8.Vhy7yauOZLqA3MDEQ.THWSp8XzD3gxa/MC/r23u",
+      "razaoSocial": "Condomínio residencial São José ",
+      "cnpj": "65.423.167/5894-56",
+      "id": 20
+    },
+    {
+      "email": "josemaria@gmail.com",
+      "password": "$2a$10$9x1tqOJJEbeT.ypvdwXh1u41F1BXeLe4BA4TUz0vZrNbcEnKGO1TS",
+      "nomeTitular": "José Maria Trindade",
+      "cpfTitular": "12345678",
+      "dataNascimento": "01/05/1978",
+      "idade": "46",
+      "genero": "Masculino",
+      "condominio_id": 20,
+      "id": 21
     }
   ],
   "condominio": [
@@ -433,6 +518,11 @@
       "id": 163
     },
     {
+      "nomeEspaco": "Cadastro espaço",
+      "capacidadeMaxima": "150",
+      "tempoMaximo": 60,
+      "textoInstrucoes": "não pode",
+      "condominio_id": 7,
       "id": 164
     },
     {
@@ -446,18 +536,6 @@
     },
     {
       "id": 168
-    },
-    {
-      "id": 151
-    },
-    {
-      "id": 152
-    },
-    {
-      "id": 153
-    },
-    {
-      "id": 154
     },
     {
       "id": 169
@@ -481,11 +559,6 @@
       "id": 175
     },
     {
-      "nomeEspaco": "Teste 176",
-      "capacidadeMaxima": "21",
-      "tempoMaximo": 60,
-      "textoInstrucoes": "Não pode furtar",
-      "condominio_id": 11,
       "id": 176
     },
     {
@@ -505,6 +578,414 @@
     },
     {
       "id": 182
+<<<<<<< HEAD
+=======
+    },
+    {
+      "id": 183
+    },
+    {
+      "id": 184
+    },
+    {
+      "id": 185
+    },
+    {
+      "id": 186
+    },
+    {
+      "id": 187
+    },
+    {
+      "id": 188
+    },
+    {
+      "id": 189
+    },
+    {
+      "id": 190
+    },
+    {
+      "id": 191
+    },
+    {
+      "id": 192
+    },
+    {
+      "id": 193
+    },
+    {
+      "id": 194
+    },
+    {
+      "id": 195
+    },
+    {
+      "id": 196
+    },
+    {
+      "id": 197
+    },
+    {
+      "id": 198
+    },
+    {
+      "id": 199
+    },
+    {
+      "id": 200
+    },
+    {
+      "id": 201
+    },
+    {
+      "id": 202
+    },
+    {
+      "id": 203
+    },
+    {
+      "id": 204
+    },
+    {
+      "id": 205
+    },
+    {
+      "id": 206
+    },
+    {
+      "id": 207
+    },
+    {
+      "id": 208
+    },
+    {
+      "id": 209
+    },
+    {
+      "id": 210
+    },
+    {
+      "id": 211
+    },
+    {
+      "id": 212
+    },
+    {
+      "id": 213
+    },
+    {
+      "id": 214
+    },
+    {
+      "id": 215
+    },
+    {
+      "id": 216
+    },
+    {
+      "id": 217
+    },
+    {
+      "id": 218
+    },
+    {
+      "id": 219
+    },
+    {
+      "id": 220
+    },
+    {
+      "id": 221
+    },
+    {
+      "id": 222
+    },
+    {
+      "id": 223
+    },
+    {
+      "id": 224
+    },
+    {
+      "id": 225
+    },
+    {
+      "id": 226
+    },
+    {
+      "id": 227
+    },
+    {
+      "id": 228
+    },
+    {
+      "id": 229
+    },
+    {
+      "id": 230
+    },
+    {
+      "id": 231
+    },
+    {
+      "id": 232
+    },
+    {
+      "id": 233
+    },
+    {
+      "id": 234
+    },
+    {
+      "id": 235
+    },
+    {
+      "id": 236
+    },
+    {
+      "id": 237
+    },
+    {
+      "id": 238
+    },
+    {
+      "id": 239
+    },
+    {
+      "id": 240
+    },
+    {
+      "id": 241
+    },
+    {
+      "id": 242
+    },
+    {
+      "id": 243
+    },
+    {
+      "id": 244
+    },
+    {
+      "id": 245
+    },
+    {
+      "id": 246
+    },
+    {
+      "id": 247
+    },
+    {
+      "id": 248
+    },
+    {
+      "id": 249
+    },
+    {
+      "id": 250
+    },
+    {
+      "id": 251
+    },
+    {
+      "id": 252
+    },
+    {
+      "id": 253
+    },
+    {
+      "id": 254
+    },
+    {
+      "id": 255
+    },
+    {
+      "id": 256
+    },
+    {
+      "id": 257
+    },
+    {
+      "id": 258
+    },
+    {
+      "id": 259
+    },
+    {
+      "id": 260
+    },
+    {
+      "id": 261
+    },
+    {
+      "id": 262
+    },
+    {
+      "id": 263
+    },
+    {
+      "id": 264
+    },
+    {
+      "id": 265
+    },
+    {
+      "id": 266
+    },
+    {
+      "id": 267
+    },
+    {
+      "id": 268
+    },
+    {
+      "id": 269
+    },
+    {
+      "id": 270
+    },
+    {
+      "id": 271
+    },
+    {
+      "id": 272
+    },
+    {
+      "id": 273
+    },
+    {
+      "id": 274
+    },
+    {
+      "id": 275
+    },
+    {
+      "id": 276
+    },
+    {
+      "id": 277
+    },
+    {
+      "id": 278
+    },
+    {
+      "id": 279
+    },
+    {
+      "id": 280
+    },
+    {
+      "id": 281
+    },
+    {
+      "id": 282
+    },
+    {
+      "id": 283
+    },
+    {
+      "id": 284
+    },
+    {
+      "id": 285
+    },
+    {
+      "id": 286
+    },
+    {
+      "id": 287
+    },
+    {
+      "id": 288
+    },
+    {
+      "id": 289
+    },
+    {
+      "id": 290
+    },
+    {
+      "id": 291
+    },
+    {
+      "id": 292
+    },
+    {
+      "id": 293
+    },
+    {
+      "id": 294
+    },
+    {
+      "id": 295
+    },
+    {
+      "id": 296
+    },
+    {
+      "id": 297
+    },
+    {
+      "id": 298
+    },
+    {
+      "id": 299
+    },
+    {
+      "id": 300
+    },
+    {
+      "id": 301
+    },
+    {
+      "id": 302
+    },
+    {
+      "id": 303
+    },
+    {
+      "id": 304
+    },
+    {
+      "id": 305
+    },
+    {
+      "id": 306
+    },
+    {
+      "id": 307
+    },
+    {
+      "id": 308
+    },
+    {
+      "id": 309
+    },
+    {
+      "id": 310
+    },
+    {
+      "id": 311
+    },
+    {
+      "id": 312
+    },
+    {
+      "id": 313
+    },
+    {
+      "id": 314
+    },
+    {
+      "id": 315
+    },
+    {
+      "id": 316
+    },
+    {
+      "id": 317
+>>>>>>> d60721c963d2ba6812e58db6d15e5804fa5a0f39
     }
   ],
   "bloco": [
@@ -521,6 +1002,635 @@
       "numeroApartamento": "205",
       "condominio_id": 7,
       "titular_id": 1,
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "id": 8
+    },
+    {
+      "id": 9
+    },
+    {
+      "bloco": "10",
+      "numeroApartamento": "20",
+      "condominio_id": 7,
+      "titular_id": 2,
+      "id": 10
+    },
+    {
+      "id": 11
+    },
+    {
+      "id": 12
+    },
+    {
+      "bloco": "05",
+      "numeroApartamento": "126",
+      "condominio_id": 7,
+      "titular_id": 3,
+      "id": 13
+    },
+    {
+      "id": 14
+    },
+    {
+      "id": 15
+    },
+    {
+      "bloco": "10",
+      "numeroApartamento": "220",
+      "condominio_id": 7,
+      "titular_id": 4,
+      "id": 16
+    },
+    {
+      "id": 17
+    },
+    {
+      "id": 18
+    },
+    {
+      "id": 19
+    },
+    {
+      "id": 20
+    },
+    {
+      "id": 21
+    },
+    {
+      "id": 22
+    },
+    {
+      "id": 23
+    },
+    {
+      "id": 24
+    },
+    {
+      "bloco": "102",
+      "numeroApartamento": "205",
+      "condominio_id": 7,
+      "titular_id": 5,
+      "id": 25
+    },
+    {
+      "id": 26
+    },
+    {
+      "id": 27
+    },
+    {
+      "id": 28
+    },
+    {
+      "id": 29
+    },
+    {
+      "id": 30
+    },
+    {
+      "id": 31
+    },
+    {
+      "id": 32
+    },
+    {
+      "id": 33
+    },
+    {
+      "id": 34
+    },
+    {
+      "bloco": "102",
+      "numeroApartamento": "205",
+      "condominio_id": 13,
+      "titular_id": 6,
+      "id": 35
+    },
+    {
+      "id": 36
+    },
+    {
+      "id": 37
+    },
+    {
+      "id": 38
+    },
+    {
+      "id": 39
+    },
+    {
+      "id": 40
+    },
+    {
+      "id": 41
+    },
+    {
+      "id": 42
+    },
+    {
+      "id": 43
+    },
+    {
+      "id": 44
+    },
+    {
+      "id": 45
+    },
+    {
+      "id": 46
+    },
+    {
+      "bloco": "102",
+      "numeroApartamento": "205",
+      "condominio_id": 12,
+      "titular_id": 7,
+      "id": 47
+    },
+    {
+      "id": 48
+    },
+    {
+      "id": 49
+    },
+    {
+      "bloco": "102",
+      "numeroApartamento": "205",
+      "condominio_id": 12,
+      "titular_id": 1,
+      "id": 50
+    },
+    {
+      "id": 51
+    },
+    {
+      "id": 52
+    },
+    {
+      "id": 53
+    },
+    {
+      "id": 54
+    },
+    {
+      "id": 55
+    },
+    {
+      "id": 56
+    },
+    {
+      "id": 57
+    },
+    {
+      "id": 58
+    },
+    {
+      "id": 59
+    },
+    {
+      "id": 60
+    },
+    {
+      "id": 61
+    },
+    {
+      "id": 62
+    },
+    {
+      "id": 63
+    },
+    {
+      "id": 64
+    },
+    {
+      "id": 65
+    },
+    {
+      "id": 66
+    },
+    {
+      "id": 67
+    },
+    {
+      "id": 68
+    },
+    {
+      "id": 69
+    },
+    {
+      "id": 70
+    },
+    {
+      "id": 71
+    },
+    {
+      "id": 72
+    },
+    {
+      "id": 73
+    },
+    {
+      "id": 74
+    },
+    {
+      "id": 75
+    },
+    {
+      "id": 76
+    },
+    {
+      "id": 77
+    },
+    {
+      "id": 78
+    },
+    {
+      "id": 79
+    },
+    {
+      "id": 80
+    },
+    {
+      "id": 81
+    },
+    {
+      "id": 82
+    },
+    {
+      "id": 83
+    },
+    {
+      "id": 84
+    },
+    {
+      "id": 85
+    },
+    {
+      "id": 86
+    },
+    {
+      "id": 87
+    },
+    {
+      "id": 88
+    },
+    {
+      "id": 89
+    },
+    {
+      "id": 90
+    },
+    {
+      "id": 91
+    },
+    {
+      "id": 92
+    },
+    {
+      "id": 93
+    },
+    {
+      "id": 94
+    },
+    {
+      "id": 95
+    },
+    {
+      "id": 96
+    },
+    {
+      "id": 97
+    },
+    {
+      "id": 98
+    },
+    {
+      "id": 99
+    },
+    {
+      "id": 100
+    },
+    {
+      "id": 101
+    },
+    {
+      "id": 102
+    },
+    {
+      "id": 103
+    },
+    {
+      "id": 104
+    },
+    {
+      "id": 105
+    },
+    {
+      "id": 106
+    },
+    {
+      "id": 107
+    },
+    {
+      "id": 108
+    },
+    {
+      "id": 109
+    },
+    {
+      "id": 110
+    },
+    {
+      "id": 111
+    },
+    {
+      "id": 112
+    },
+    {
+      "id": 113
+    },
+    {
+      "id": 114
+    },
+    {
+      "bloco": "102",
+      "numeroApartamento": "205",
+      "condominio_id": 7,
+      "id": 115
+    },
+    {
+      "id": 116
+    },
+    {
+      "id": 117
+    },
+    {
+      "id": 118
+    },
+    {
+      "id": 119
+    },
+    {
+      "id": 120
+    },
+    {
+      "id": 121
+    },
+    {
+      "id": 122
+    },
+    {
+      "id": 123
+    },
+    {
+      "id": 124
+    },
+    {
+      "id": 125
+    },
+    {
+      "id": 126
+    },
+    {
+      "id": 127
+    },
+    {
+      "bloco": "102",
+      "numeroApartamento": "205",
+      "condominio_id": 7,
+      "titular_id": 23,
+      "id": 128
+    },
+    {
+      "id": 129
+    },
+    {
+      "id": 130
+    },
+    {
+      "bloco": "102",
+      "numeroApartamento": "205",
+      "condominio_id": 7,
+      "titular_id": 24,
+      "id": 131
+    },
+    {
+      "id": 132
+    },
+    {
+      "id": 133
+    },
+    {
+      "id": 134
+    },
+    {
+      "id": 135
+    },
+    {
+      "bloco": "102",
+      "numeroApartamento": "205",
+      "id": 136
+    },
+    {
+      "id": 137
+    },
+    {
+      "id": 138
+    },
+    {
+      "bloco": "102",
+      "numeroApartamento": "205",
+      "condominio_id": 7,
+      "titular_id": 25,
+      "id": 139
+    },
+    {
+      "id": 140
+    },
+    {
+      "id": 141
+    },
+    {
+      "bloco": "102",
+      "numeroApartamento": "205",
+      "condominio_id": 7,
+      "id": 142
+    },
+    {
+      "id": 143
+    },
+    {
+      "id": 144
+    },
+    {
+      "id": 145
+    },
+    {
+      "id": 146
+    },
+    {
+      "id": 147
+    },
+    {
+      "id": 148
+    },
+    {
+      "id": 149
+    },
+    {
+      "id": 150
+    },
+    {
+      "id": 151
+    },
+    {
+      "id": 152
+    },
+    {
+      "id": 153
+    },
+    {
+      "id": 154
+    },
+    {
+      "id": 155
+    },
+    {
+      "id": 156
+    },
+    {
+      "id": 157
+    },
+    {
+      "id": 158
+    },
+    {
+      "id": 159
+    },
+    {
+      "id": 160
+    },
+    {
+      "id": 161
+    },
+    {
+      "id": 162
+    },
+    {
+      "id": 163
+    },
+    {
+      "id": 164
+    },
+    {
+      "id": 165
+    },
+    {
+      "id": 166
+    },
+    {
+      "id": 167
+    },
+    {
+      "id": 168
+    },
+    {
+      "id": 169
+    },
+    {
+      "id": 170
+    },
+    {
+      "id": 171
+    },
+    {
+      "id": 172
+    },
+    {
+      "id": 173
+    },
+    {
+      "id": 174
+    },
+    {
+      "id": 175
+    },
+    {
+      "id": 176
+    },
+    {
+      "id": 177
+    },
+    {
+      "id": 178
+    },
+    {
+      "id": 179
+    },
+    {
+      "id": 180
+    },
+    {
+      "id": 181
+    },
+    {
+      "id": 182
+    },
+    {
+      "id": 183
+    },
+    {
+      "id": 184
+    },
+    {
+      "bloco": "10",
+      "numeroApartamento": "130",
+      "condominio_id": 7,
+      "id": 185
+    },
+    {
+      "id": 186
+    },
+    {
+      "id": 187
+    },
+    {
+      "bloco": "02",
+      "numeroApartamento": "36",
+      "condominio_id": 20,
+      "id": 188
+    },
+    {
+      "id": 189
+    }
+  ],
+  "titular": [
+    {
+      "nomeTitular": "Josué Almeida",
+      "cpfTitular": "70043856632",
+      "dataNascimento": "01/05/2000",
+      "idade": "24",
+      "genero": "Masculino",
+      "condominio_id": 12,
       "id": 1
     },
     {
@@ -584,9 +1694,18 @@
       "id": 21
     },
     {
+      "nomeTitular": "Josué Almeida",
+      "cpfTitular": "12345678900",
+      "Data_Nasc": "01/05/2000",
+      "idade": 31,
+      "blocoapartamento_id": 1,
+      "condominio_id": 7,
+      "email": "jb@gmail.com",
+      "password": "12345678",
       "id": 22
     },
     {
+<<<<<<< HEAD
       "id": 23
     },
     {
@@ -666,31 +1785,37 @@
   ],
   "titular": [
     {
+=======
+>>>>>>> d60721c963d2ba6812e58db6d15e5804fa5a0f39
       "nomeTitular": "Josué Almeida",
       "cpfTitular": "70043856632",
       "dataNascimento": "01/05/2000",
       "idade": "24",
       "genero": "Masculino",
       "condominio_id": 7,
-      "id": 1
+      "id": 23
     },
     {
-      "nomeTitular": "Josué batista",
-      "cpfTitular": "70043856632",
-      "dataNascimento": "01/05/2005",
-      "idade": "20",
-      "genero": "Masculino",
-      "condominio_id": 7,
-      "id": 2
-    },
-    {
-      "nomeTitular": "Lorena Azevedo",
-      "cpfTitular": "70043856632",
+      "nomeTitular": "Josué Almeida",
+      "cpfTitular": "08030012667",
       "dataNascimento": "01/05/2000",
       "idade": "24",
-      "genero": "Feminino",
+      "email": "08030012667@gmail.com",
+      "password": "08030012667",
+      "genero": "Masculino",
       "condominio_id": 7,
-      "id": 3
+      "id": 24
+    },
+    {
+      "nomeTitular": "Teste",
+      "cpfTitular": "12345678",
+      "dataNascimento": "01/05/2000",
+      "idade": "24",
+      "email": "12345678@gmail.com",
+      "password": "12345678",
+      "genero": "Masculino",
+      "condominio_id": 7,
+      "id": 25
     }
   ],
   "dependente": [

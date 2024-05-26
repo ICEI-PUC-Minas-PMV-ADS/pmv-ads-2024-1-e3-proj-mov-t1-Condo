@@ -2,7 +2,6 @@ import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 import { IconButton } from 'react-native-paper';
-import Home from '../pages/Home/Home';
 import Reservas from '../pages/Reservas/Reservas';
 import ReservarEspaco from '../pages/Reservas/ReservarEspaco';
 import ReservarEspacoTwo from '../pages/Reservas/ReservarEspacoTwo';
@@ -28,13 +27,6 @@ const Stack = createNativeStackNavigator();
 const Main = () => {
   return (
     <Stack.Navigator initialRouteName="ScreenNavigation">
-      <Stack.Screen
-        name="Home"
-        component={Home}
-        options={{
-          header: () => null
-        }}
-      />
       <Stack.Screen
         name="ScreenNavigation"
         component={ScreenNavigation}

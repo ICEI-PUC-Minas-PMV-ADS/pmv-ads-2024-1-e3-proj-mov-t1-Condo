@@ -1,22 +1,31 @@
 import React, { useState } from 'react';
-import { View, Image, TextInput, TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { View, Image, TextInput, TouchableOpacity, Text, StyleSheet, Alert } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
-import LoginCondomino from './LoginCondomino';
+import { login } from '../../services/auth.services';
+import { useCondomino } from '../../context/CondominoContext';
 
 const LoginCondominoTwo = () => {
-  const [bloco, setBloco] = useState('');
-  const [apto, setApto] = useState('');
-  const [cpf, setCpf] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const { setCondomino, setSignedCondomino } = useCondomino();
   const navigation = useNavigation();
 
-  const handleLogin = () => {
-    // validação de login
-    if (bloco === 'bloco_correto' && apto === 'apto_correto' && cpf === 'cpf_correto') {
-      
-      navigation.navigate('Home'); 
-    } else {
-      
-      alert('Por favor, verifique os campos e tente novamente.');
+  const handleLogin = async () => {
+    try {
+      const res = await login({ email, password });
+      console.log(res);
+      if (res && res.user) {
+        setCondomino(res.user);
+        setSignedCondomino(true);
+        await AsyncStorage.setItem('@TOKEN_KEY', res.accessToken);
+        Alert.alert('Sucesso', 'Login realizado com sucesso!');
+      } else {
+        Alert.alert('Atenção', 'Usuário ou senha inválidos!');
+      }
+    } catch (error) {
+      console.error('Erro ao fazer login:', error);
+      Alert.alert('Erro', 'Erro ao fazer login!');
     }
   };
 
@@ -26,9 +35,6 @@ const LoginCondominoTwo = () => {
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={openDrawer} style={styles.menuButton}>
-        <Text style={styles.menuButtonText}>Menu</Text>
-      </TouchableOpacity>
       <View style={styles.logoContainer}>
         <Image
           source={require('../../assets/LogoCondo2.png')}
@@ -36,28 +42,21 @@ const LoginCondominoTwo = () => {
           resizeMode="contain"
         />
       </View>
-      <View style={styles.inputRow}>
-        <TextInput
-          style={[styles.input, styles.inputHalf]}
-          placeholder="BLOCO"
-          value={bloco}
-          onChangeText={setBloco}
-        />
-        <TextInput
-          style={[styles.input, styles.inputHalf]}
-          placeholder="APTO"
-          value={apto}
-          onChangeText={setApto}
-        />
-      </View>
+      <TextInput
+        style={styles.input}
+        placeholder="Email"
+        value={email}
+        onChangeText={setEmail}
+      />
       <TextInput
         style={styles.input}
         placeholder="CPF"
-        value={cpf}
-        onChangeText={setCpf}
+        value={password}
+        onChangeText={setPassword}
+        secureTextEntry
       />
       <TouchableOpacity style={styles.continueButton} onPress={handleLogin}>
-        <Text style={styles.continueButtonText}>Continue</Text>
+        <Text style={styles.continueButtonText}>Entrar</Text>
       </TouchableOpacity>
       <Image
         source={require('../../assets/jogging.svg')}
@@ -81,30 +80,35 @@ const styles = StyleSheet.create({
   logo: {
     width: 150,
     height: 150,
+    marginBottom: 20,
   },
   input: {
     width: '80%',
-    height: 40,
+    height: 56,
     borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 10,
-    paddingHorizontal: 10,
+    borderColor: 'rgba(36, 34, 32, 0.44)',
+    placeholderTextColor: 'rgba(36, 34, 32, 0.44)',
+    borderRadius: 67,
+    textAlign: 'center',
     marginBottom: 20,
-  },
-  inputHalf: {
-    width: '48%',
+    fontSize: 16, 
+    fontWeight: '400',
+    color: '#000'
   },
   continueButton: {
-    backgroundColor: 'lightblue',
-    paddingVertical: 15,
-    paddingHorizontal: 40,
-    borderRadius: 10,
-    marginBottom: 20,
+    backgroundColor: '#06B6DD',
+      width: '80%',
+      height: 49,
+      justifyContent: 'center',
+      alignItems: 'center',
+      borderRadius: 67,
+      marginBottom: 20,
   },
   continueButtonText: {
     color: 'white',
-    fontSize: 16,
-    textAlign: 'center',
+      fontSize: 16,
+      fontWeight: '400',
+      textAlign: 'center',
   },
   joggingLogo: {
     position: 'absolute',
@@ -112,23 +116,7 @@ const styles = StyleSheet.create({
     left: 20,
     width: 50,
     height: 50,
-  },
-  menuButton: {
-    position: 'absolute',
-    top: 20,
-    left: 10,
-  },
-  menuButtonText: {
-    fontSize: 16,
-    color: 'blue',
-    textDecorationLine: 'underline',
-  },
-  inputRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    width: '80%',
-    marginBottom: 20,
-  },
+  }
 });
 
 export default LoginCondominoTwo;

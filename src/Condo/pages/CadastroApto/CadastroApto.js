@@ -60,6 +60,8 @@ const CadastroApto = () => {
       cpfTitular,
       dataNascimento,
       idade,
+      email: cpfTitular + '@gmail.com',
+      password: cpfTitular,
       genero,
       condominio_id: user.id,
     };

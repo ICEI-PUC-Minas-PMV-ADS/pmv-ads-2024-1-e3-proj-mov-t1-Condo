@@ -10,7 +10,23 @@ Content-Type: application/json
 
 {
     "name": "Josué Almeida",
-    "email": "josue@gmail.com",
-    "password": "12345678"
-    ""
+    "email": "josuepayments@gmail.com",
+    "password": "novasenha123"
+    
 }
+
+### UPDATE
+PUT http://localhost:3000/users/:id
+content-type: application/json
+
+{
+    "name": "Josué Almeida",
+    "email": "josuepayments@gmail.com",
+    "password": "novasenha123"
+    
+}
+
+
+
+### GET USERS
+GET http://localhost:3000/users/12
