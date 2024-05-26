@@ -3,7 +3,7 @@ import { View, StyleSheet, Image, TouchableOpacity, Alert } from 'react-native';
 import { Text, TextInput, Button } from 'react-native-paper'; 
 import { useNavigation } from '@react-navigation/native'; 
 import { Ionicons } from '@expo/vector-icons'; 
-import ScreenNavigation from '../ScreenNavigation/ScreenNavigation'; 
+import ScreenNavigationCondomino from '../ScreenNavigation/ScreenNavigationCondomino'; 
 import { useUser } from '../../context/UserContext'; 
 import { cadastrarEspaco } from '../../services/application.Services';
 

@@ -10,8 +10,8 @@ const Tab = createMaterialBottomTabNavigator();
 
 const LoginCondominio = () => {
   
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('josuepayments@gmail.com');
+  const [password, setPassword] = useState('12345678');
   const { setSigned, setName, setUser } = useUser();
   const navigation = useNavigation();
 

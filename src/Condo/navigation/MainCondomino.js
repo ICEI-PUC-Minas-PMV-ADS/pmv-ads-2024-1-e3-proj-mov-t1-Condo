@@ -10,16 +10,16 @@ import Instrucoes from '../pages/Instrucoes/Instrucoes';
 import Dependentes from '../pages/Dependentes/Dependentes';
 import CadastroDependente from '../pages/Dependentes/CadastroDependente';
 import MeusDependentes from '../pages/Dependentes/MeusDependentes';
-import ScreenNavigation from '../pages/ScreenNavigation/ScreenNavigation';
+import ScreenNavigationCondomino from '../pages/ScreenNavigation/ScreenNavigationCondomino';
 
 const Stack = createNativeStackNavigator();
 
 const MainCondomino = () => {
   return (
-    <Stack.Navigator initialRouteName="ScreenNavigation">
+    <Stack.Navigator initialRouteName="ScreenNavigationCondomino">
       <Stack.Screen
-      name='ScreenNavigation'
-      component={ScreenNavigation}
+      name='ScreenNavigationCondomino'
+      component={ScreenNavigationCondomino}
       options={{
         headerShown: null
       }}

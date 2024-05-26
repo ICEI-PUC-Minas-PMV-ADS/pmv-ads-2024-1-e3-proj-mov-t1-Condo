@@ -20,16 +20,16 @@ import CadastroEspacos from '../pages/CadastroEspacos/CadastroEspacos';
 import CadastroApto from '../pages/CadastroApto/CadastroApto';
 import ApartamentosCadastrados from '../pages/ApartamentosCadastrados/ApartamentosCadastrados';
 import Blocos from '../pages/ApartamentosCadastrados/Blocos';
-import ScreenNavigation from '../pages/ScreenNavigation/ScreenNavigation'
+import ScreenNavigationCondominio from '../pages/ScreenNavigation/ScreenNavigationCondominio'
 
 const Stack = createNativeStackNavigator();
 
 const Main = () => {
   return (
-    <Stack.Navigator initialRouteName="ScreenNavigation">
+    <Stack.Navigator initialRouteName="ScreenNavigationCondominio">
       <Stack.Screen
-        name="ScreenNavigation"
-        component={ScreenNavigation}
+        name="ScreenNavigationCondominio"
+        component={ScreenNavigationCondominio}
         options={{ header: () => null }}
       />
       <Stack.Screen

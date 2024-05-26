@@ -50,7 +50,7 @@ const LoginCondominoTwo = () => {
       />
       <TextInput
         style={styles.input}
-        placeholder="CPF"
+        placeholder="Senha"
         value={password}
         onChangeText={setPassword}
         secureTextEntry
