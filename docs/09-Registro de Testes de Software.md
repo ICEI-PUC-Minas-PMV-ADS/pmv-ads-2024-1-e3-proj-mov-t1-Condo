@@ -43,11 +43,11 @@ Passos:
 
 > - Inserir credenciais de usuário válidas.
 
-![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/c6e0c31c-0b4c-4738-bbc7-a368e00e083e)
+![login](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/fb644536-d47c-4ea9-b303-1051421831db)
 
 > - Efetuar o login.
 
-![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/1a42833f-19c4-41c0-adf6-0b603f3f8f55)
+![home](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/e084e86c-29ff-4ce4-a058-d28cd1197e38)
 
 <b>Resultado CT - 02: </b> O aplicativo conseguiu autenticar as credenciais inseridas e efetuar o login apresentando a página principal.
 
@@ -133,8 +133,23 @@ Objetivo do Teste:
 
 Passos:
 > - Efetuar o login como administrador.
+
+![login](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/fb644536-d47c-4ea9-b303-1051421831db)
+
 > - Acessar a seção de gerenciamento de espaços de lazer.
+
+![home esp](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/cff3cb46-73e2-4ae9-ac55-7b4b75e4c7d1)
+
+
 > - Criar um novo espaço de lazer.
+
+![cads es](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/3f6c7b14-18b4-4e9f-af21-f53950d5ece4)
+
+![esp](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/f9585d3f-426e-47ee-9afe-969cf2d75d1b)
+
+![suc esp](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/b88e3884-8533-48d5-bfa7-a4c005591f5e)
+
+
 > - Verificar se o novo espaço é listado corretamente.
 > - Editar os detalhes de um espaço de lazer existente, incluindo disponibilidade e capacidade de acesso.
 > - Confirmar se as alterações são salvas corretamente.
@@ -152,21 +167,24 @@ Objetivo do Teste:
 
 Passos:
 > - Efetuar o login como condômino.
+
+![login mor](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/7c793a30-4ff8-4d67-9483-1091cfc730c4)
+
 > - Acessar a seção de reservas de espaços de lazer.
 
-![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/a5c78c09-ea40-4078-84cc-91559fdc3845)
+![home res](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/812eaa2f-8bf4-49f4-a14c-9c935c2692d0)
 
+![res](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/e9e71a51-5fe5-4a26-b245-76b5ca6b820c)
 
 > - Selecionar um espaço de lazer disponível.
-> - 
-![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/30ec4283-33ba-4bb0-b32d-f52764b2f973)
 
-![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/d5081991-6df2-4d5a-a307-1803f47fa9bd)
+![res sel](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/657f64ca-e520-4859-84d0-404e4e6225b1)
 
 
 > - Escolher a data e horário desejados para a reserva.
 
-![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/3fef7498-8b05-4955-bd9c-3341478506b8)
+![res pis](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/3309252f-2cda-4069-85c1-47e702bb463c)
+
 
 > - Confirmar a reserva.
 
@@ -200,13 +218,12 @@ Objetivo do Teste:
 
 Passos:
 > - Efetuar o login como condômino.
-> - 
-![credenciais](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/1b977cea-3f31-4dec-a7c5-8223e93feeed)
+
 
 
 > - Verificar a lista de espaços de lazer disponíveis para reserva.
 
-![espaco](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo/assets/130249437/97742ad2-f772-47b1-8214-0afebcd5f792)
+
 
 
 > - Comparar com os espaços disponíveis definidos pela administração.
