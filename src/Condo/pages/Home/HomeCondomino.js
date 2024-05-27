@@ -7,7 +7,7 @@ import ButtonDependente from '../../components/ButtonReservas';
 import CalendarIcon from '../../assets/calendario.svg';
 import Vector from '../../assets/vector.png';
 
-const Home = () => {
+const HomeCondominio = () => {
   const navigation = useNavigation();
   return (
     <View style={styles.containerh}>
@@ -149,5 +149,5 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Home;
+export default HomeCondominio;
 

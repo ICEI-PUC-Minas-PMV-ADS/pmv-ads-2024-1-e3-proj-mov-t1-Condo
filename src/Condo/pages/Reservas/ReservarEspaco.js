@@ -60,7 +60,7 @@ const ReservarEspaco = ({ navigation }) => {
 
   return (
     <View style={styles.containerReservarEspaco}>
-      <Text style={styles.title}>Confirme os dados da reserva</Text>
+      <Text style={styles.title}>Confirme os dados da rese</Text>
       <View style={styles.textContainer}>
         <Text style={styles.label}>Para quem é a reserva?</Text>
         {/* Selecionando o Reservante Principal */}
