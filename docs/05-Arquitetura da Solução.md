@@ -41,9 +41,41 @@ Entregar um arquivo banco.sql contendo os scripts de criação das tabelas do ba
 
 ## Tecnologias Utilizadas
 
-Descreva aqui qual(is) tecnologias você vai usar para resolver o seu problema, ou seja, implementar a sua solução. Liste todas as tecnologias envolvidas, linguagens a serem utilizadas, serviços web, frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas.
+A seguir, destacamos as principais ferramentas essenciais para facilitar nossa comunicação, organização e colaboração durante o desenvolvimento do projeto.
 
-Apresente também uma figura explicando como as tecnologias estão relacionadas ou como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário.
+Editores de Código:
+
+Visual Studio Code Optamos pelo Visual Studio Code como nosso editor principal devido à sua confiabilidade, adaptabilidade e integração perfeita com o Git, simplificando nosso trabalho em equipe e a administração do código-fonte. Sua interface intuitiva e conjunto robusto de recursos o tornam a escolha mais adequada para atender às demandas de nossa equipe.
+Github: Utilizado como repositório central para o código-fonte do projeto. Ele facilita o versionamento e controle de alterações e permite colaboração síncrona e assíncrona entre os membros da equipe.
+Ferramentas de Comunicação:
+
+WhatsApp: Utilizado como forma principal de comunicação da equipe para mensagens rápidas e comunicação informal. Ideal para comunicação imediata e troca de informações urgentes.
+Microsoft Teams: Utilizado para reuniões de equipe e reuniões semanais com o coordenador do projeto.
+Ferramentas de Organização:
+
+Microsoft Office: Utilizado para criar e editar documentos de texto, planilhas e gráficos. Ideal para documentação de requisitos, especificações técnicas e relatórios de progresso.
+GitHub Projects: Utilizado para organizar e separar tarefas do projeto. Permitindo atribuir responsáveis, definir prazos e acompanhar o progresso das tarefas.
+Ferramentas de Desenho de Tela (wireframing):
+
+Figma: Utilizado para desenvolvimento do layout das telas da aplicação. Permite criação de wireframes, protótipos interativos e colaboração em tempo real.
+Ferramenta de diagramação:
+
+Lucidchart: É uma ferramenta de diagramação online que permite colaboração visual na criação, revisão e compartilhamento de gráficos e diagramas. Foi usado pelo grupo para desenvolvimento do Diagrama de Classes, modelo ER e diagramas de processo.
+Ferramenta visual de design de banco de dados:
+
+MySQL Workbench: O grupo optou pelo MySQL Workbench devido à sua capacidade abrangente de design de banco de dados, que integra todas as etapas do processo de desenvolvimento, desde o design até a implementação e manutenção do banco de dados MySQL. Sua interface visual intuitiva simplifica a modelagem de dados, permitindo uma colaboração eficiente e facilitando a comunicação dentro da equipe.(estas sçao minhas ferramentas utilizadas complete com oq falta
+
+Linguagens e Frameworks:
+
+JavaScript: Linguagens principais para o desenvolvimento de aplicativos React Native.
+React Native: Framework para desenvolvimento de aplicativos móveis multiplataforma.
+Expo: Plataforma e conjunto de ferramentas para criar aplicativos React Native de forma rápida e fácil.
+Bibliotecas e Ferramentas:
+
+JSON Server: Uma biblioteca para criar uma API REST falsa a partir de um arquivo JSON, útil para desenvolvimento local e simulação de dados.
+Local Tunnel: Uma ferramenta para tornar seu servidor local acessível remotamente via HTTPS.
+Axios: Uma biblioteca para fazer chamadas de API a partir do aplicativo.
+Visual Studio Code: Uma IDE popular para desenvolvimento React Native.
 
 ## Hospedagem
 
