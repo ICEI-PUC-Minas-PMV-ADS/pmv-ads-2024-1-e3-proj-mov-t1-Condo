@@ -302,3 +302,4 @@ xcuserdata/
 /src/Condo/Condo/.vs/Condo/FileContentIndex/2e0e047c-651f-45f3-8a17-feba4e12ad70.vsidx
 /src/Condo/Condo/.vs/slnx.sqlite
 /src/Condo/Condo/.vs
+src/dbJson/db.json
