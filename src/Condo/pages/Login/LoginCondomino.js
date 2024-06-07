@@ -30,6 +30,16 @@ const LoginCondomino = () => {
     }
   };
 
+  const formatarCPF = (cpf) => {
+    const cleaned = cpf.replace(/\D/g, "");
+    const formatted = cleaned.slice(0, 11);
+    let result = formatted.replace(
+      /(\d{3})(\d{3})(\d{3})(\d{2})/,
+      "$1.$2.$3-$4"
+    );
+    setCpf(result);
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.logoContainer}>
@@ -43,7 +53,8 @@ const LoginCondomino = () => {
         style={styles.input}
         placeholder="Digite o CPF"
         value={cpf}
-        onChangeText={setCpf}
+        onChangeText={text => formatarCPF(text)}
+
       />
       <TouchableOpacity style={styles.continueButton} onPress={handleLogin}>
         <Text style={styles.continueButtonText}>Continue</Text>
