@@ -4,7 +4,8 @@ import { Text, TextInput, Button } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import RNPickerSelect from 'react-native-picker-select';
-import { salvarApartamento, salvarTitular } from '../../services/application.Services';
+import { cadastrarApartamento } from '../../services/application.Services';
+import { register } from '../../services/auth.services';
 import { useUser } from '../../context/UserContext';
 
 const CadastroApto = () => {
@@ -67,20 +68,20 @@ const CadastroApto = () => {
     };
   
     try {
-      // Salvar titular e obter o id do titular salvo
-      const responseTitular = await salvarTitular(formDataTitular);
-      const titularId = responseTitular.id; // Ajuste conforme necessário para obter o id corretamente
+      // Registra o titular e obtem o id do titular registrado
+      const responseTitular = await register(formDataTitular);
+      const titularId = responseTitular.id;
   
       // Dados do apartamento
       const formDataApartamento = {
         bloco,
         numeroApartamento,
         condominio_id: user.id,
-        titular_id: titularId, // Usar o id do titular salvo
+        titular_id: titularId, // Usar o id do titular registrado
       };
   
-      // Salvar apartamento
-      const responseApartamento = await salvarApartamento(formDataApartamento);
+      //Cadastra apartamento
+      const responseApartamento = await cadastrarApartamento(formDataApartamento);
   
       Alert.alert('Sucesso', 'Apartamento e titular cadastrados com sucesso!');
       navigation.goBack();

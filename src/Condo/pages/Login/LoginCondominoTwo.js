@@ -15,12 +15,20 @@ const LoginCondominoTwo = () => {
     try {
       const res = await login({ email, password });
       console.log(res);
-      if (res && res.user) {
-        setCondomino(res.user);
-        setSignedCondomino(true);
-        await AsyncStorage.setItem('@TOKEN_KEY', res.accessToken);
-        Alert.alert('Sucesso', 'Login realizado com sucesso!');
+      if (res && res.user && res.accessToken) {
+        const { user, accessToken } = res;
+        if (user.razaoSocial && user.cnpj) {
+          // Se o usuário tiver razaoSocial e cnpj, não permite o login
+          Alert.alert('Atenção', 'Usuário ou senha inválidos!');
+        } else {
+          // Se o usuário não tiver razaoSocial e cnpj, permite o login
+          setCondomino(user);
+          setSignedCondomino(true);
+          await AsyncStorage.setItem('@TOKEN_KEY', accessToken);
+          Alert.alert('Sucesso', 'Login realizado com sucesso!');
+        }
       } else {
+        // Se res.user, res.accessToken ou ambos não estiverem presentes, exibe uma mensagem de erro
         Alert.alert('Atenção', 'Usuário ou senha inválidos!');
       }
     } catch (error) {

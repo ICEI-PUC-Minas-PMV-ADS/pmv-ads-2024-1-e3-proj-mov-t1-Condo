@@ -27,7 +27,7 @@ const MainCondomino = () => {
      <Stack.Screen
   name="HomeCondomino"
   component={HomeCondomino}
-  options={{ header: () => null }}
+  options={{ header: null }}
 />
 
       <Stack.Screen
