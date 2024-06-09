@@ -1,11 +1,27 @@
-import React from 'react';
-import { View, Text, Image, TouchableOpacity } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, Image, TouchableOpacity, ScrollView, RefreshControl} from 'react-native';
 import { Button } from 'react-native-paper';
 import { StyleSheet } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 
 const ApartamentosCadastrados = () => {
+
+    const [refreshing, setRefreshing] = useState(false);
+
+    const onRefresh = () => {
+      setRefreshing(true);
+      // Adicione aqui a lógica para atualizar os dados.
+      // Simulando uma atualização com um timeout.
+      setTimeout(() => {
+        setRefreshing(false);
+      }, 2000);
+    };
+
     return (
+        <ScrollView
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
+      >
         <View>
             <Button
                 style={styles.button}
@@ -33,6 +49,7 @@ const ApartamentosCadastrados = () => {
                 source={require('../../assets/LogoCondo2.png')}
             />
         </View>
+        </ScrollView>
     );
 };
 

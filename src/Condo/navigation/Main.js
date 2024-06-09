@@ -20,6 +20,7 @@ import CadastroEspacos from '../pages/CadastroEspacos/CadastroEspacos';
 import CadastroApto from '../pages/CadastroApto/CadastroApto';
 import ApartamentosCadastrados from '../pages/ApartamentosCadastrados/ApartamentosCadastrados';
 import Blocos from '../pages/ApartamentosCadastrados/Blocos';
+import HomeCondominio from '../pages/Home/HomeCondomino';
 import ScreenNavigationCondominio from '../pages/ScreenNavigation/ScreenNavigationCondominio'
 
 const Stack = createNativeStackNavigator();
@@ -36,6 +37,11 @@ const Main = () => {
         name="Reservas"
         component={Reservas}
         options={{ title: 'Reservas' }}
+      />
+      <Stack.Screen 
+      name='HomeCondominio'
+      component={HomeCondominio}
+      options={{header: null}}
       />
       <Stack.Screen
         name="ReservarEspaco"

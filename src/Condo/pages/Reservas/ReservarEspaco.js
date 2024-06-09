@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, Text, Switch, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, View, Text, Switch, TouchableOpacity, Image, ScrollView, RefreshControl,} from 'react-native';
 import { RadioButton } from 'react-native-paper';
 import RNPickerSelect from 'react-native-picker-select';
 import jogging from '../../assets/jogging.svg';
@@ -8,6 +8,7 @@ import ButtonContinuar from '../../components/ButtonContinuar';
 import { Axios } from "axios";
 import { useUser } from '../../context/UserContext'; // Importe o hook useUser
 import { fetchTitulares, fetchDependentes } from '../../services/application.Services';
+
 
 
 const ReservarEspaco = ({ navigation }) => {
@@ -19,7 +20,16 @@ const ReservarEspaco = ({ navigation }) => {
   const [titularesData, setTitularesData] = useState([]);
   const [dependentesData, setDependentesData] = useState([]);
   const { user, espacosData } = useUser();
+  const [refreshing, setRefreshing] = useState(false);
 
+  const onRefresh = () => {
+    setRefreshing(true);
+    // Adicione aqui a lógica para atualizar os dados.
+    // Simulando uma atualização com um timeout.
+    setTimeout(() => {
+      setRefreshing(false);
+    }, 2000);
+  };
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -59,6 +69,10 @@ const ReservarEspaco = ({ navigation }) => {
   };
 
   return (
+    <ScrollView
+    refreshControl={
+      <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
+  >
     <View style={styles.containerReservarEspaco}>
       <Text style={styles.title}>Confirme os dados da reservas</Text>
       <View style={styles.textContainer}>
@@ -144,6 +158,7 @@ const ReservarEspaco = ({ navigation }) => {
         <ButtonContinuar onPress={() => navigation.navigate('ReservarEspacoTwo')} icon={'chevrondoubleright'} />
       </View>
     </View>
+    </ScrollView>
   );
 };
 

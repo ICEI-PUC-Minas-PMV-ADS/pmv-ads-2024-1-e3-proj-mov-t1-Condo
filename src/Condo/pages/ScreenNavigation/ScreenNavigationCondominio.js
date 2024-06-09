@@ -19,12 +19,11 @@ const NavigationToDo = () => {
   return (
     <ScrollView
       refreshControl={
-        <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-      }
+        <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
     >
       <View style={{ flex: 1, justifyContent: 'initial' }}>
         <Text style={{ textAlign: 'center' }}>--------------- Home ---------------</Text>
-        <CustomButton title="Home - Condomínio" screen="" />
+        <CustomButton title="Home - Condomínio" screen="HomeCondominio" />
 
         <Text style={{ textAlign: 'center' }}>--------------- Dados Cadastrais ---------------</Text>
 

@@ -1,9 +1,266 @@
 {
-  "users": [],
+  "users": [
+    {
+      "email": "teste01@gmail.com",
+      "password": "$2a$10$I6tZPwhgiZOw8Y90jottNeIMSp62oDaLYNmRmG2rfJQ6RH5kVnbLW",
+      "razaoSocial": "Teste 01",
+      "cnpj": "26.598.946/6145-44",
+      "id": 1
+    },
+    {
+      "email": "guiomabatista@gmail.com",
+      "password": "$2a$10$7eWvpiGjDBisXOWr4ZQD0O8WzTba7wW9JfwnQsenL8.1UcVstxhIG",
+      "nomeTitular": "Guiomar Batista",
+      "cpfTitular": "700.438.566-32",
+      "dataNascimento": "01/05/2000",
+      "idade": "24",
+      "genero": "Masculino",
+      "condominio_id": 1,
+      "id": 2
+    },
+    {
+      "email": "teste10@gmail.com",
+      "password": "$2a$10$tDWNr6KIGsEO.h5mG5Uy7.2djtukTs/uTju8tSlj3yigvpHlkS1/m",
+      "nomeTitular": "JOsué Almeida",
+      "cpfTitular": "080.300.126-67",
+      "dataNascimento": "01/05/2000",
+      "idade": "24",
+      "genero": "Masculino",
+      "condominio_id": 1,
+      "id": 3
+    }
+  ],
   "condominio": [],
-  "espaco": [],
+  "espaco": [
+    {
+      "nomeEspaco": "Academia",
+      "capacidadeMaxima": "100",
+      "tempoMaximo": 60,
+      "textoInstrucoes": "Não pode",
+      "diasDeFuncionamento": [],
+      "condominio_id": 1,
+      "id": 1
+    },
+    {
+      "nomeEspaco": "Churrasqueira",
+      "capacidadeMaxima": "100",
+      "tempoMaximo": 60,
+      "textoInstrucoes": "não pode",
+      "diasDeFuncionamento": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "condominio_id": 1,
+      "id": 2
+    },
+    {
+      "nomeEspaco": "Teste",
+      "capacidadeMaxima": "100",
+      "tempoMaximo": 60,
+      "textoInstrucoes": "Não pode",
+      "diasDeFuncionamento": [
+        "3",
+        "2"
+      ],
+      "condominio_id": 1,
+      "id": 3
+    },
+    {
+      "nomeEspaco": "",
+      "capacidadeMaxima": "",
+      "tempoMaximo": "",
+      "textoInstrucoes": "",
+      "diasDeFuncionamento": [],
+      "horariosDeFuncionamento": {
+        "startTime": "2024-06-09T02:56:20.000Z",
+        "endTime": "2024-06-09T02:38:20.000Z"
+      },
+      "condominio_id": 1,
+      "id": 4
+    },
+    {
+      "nomeEspaco": "Quadra",
+      "capacidadeMaxima": "60",
+      "tempoMaximo": 60,
+      "textoInstrucoes": "Não pode",
+      "diasDeFuncionamento": [
+        "2"
+      ],
+      "condominio_id": 1,
+      "id": 5
+    },
+    {
+      "nomeEspaco": "Teste 05",
+      "capacidadeMaxima": "100",
+      "tempoMaximo": 60,
+      "textoInstrucoes": "não pode",
+      "diasDeFuncionamento": [],
+      "condominio_id": 1,
+      "horarioSelecionado": {
+        "hours": 0,
+        "minutes": 0
+      },
+      "id": 6
+    },
+    {
+      "nomeEspaco": "Hora de Dormir",
+      "capacidadeMaxima": "100",
+      "tempoMaximo": 60,
+      "textoInstrucoes": "não pode",
+      "diasDeFuncionamento": [
+        "2",
+        "3"
+      ],
+      "condominio_id": 1,
+      "horarioSelecionado": {
+        "hours": 0,
+        "minutes": 0
+      },
+      "id": 7
+    },
+    {
+      "nomeEspaco": "Academia",
+      "capacidadeMaxima": "100",
+      "tempoMaximo": 60,
+      "textoInstrucoes": "Não pode",
+      "diasDeFuncionamento": [],
+      "condominio_id": 1,
+      "horarioSelecionado": {
+        "hours": 0,
+        "minutes": 0
+      },
+      "id": 8
+    },
+    {
+      "nomeEspaco": "Churrasqueira",
+      "capacidadeMaxima": "100",
+      "tempoMaximo": 60,
+      "textoInstrucoes": "Não pode",
+      "diasDeFuncionamento": [
+        "3",
+        "4"
+      ],
+      "condominio_id": 1,
+      "horarioSelecionado": {
+        "hours": 0,
+        "minutes": 0
+      },
+      "id": 9
+    },
+    {
+      "nomeEspaco": "Quadra esportiva",
+      "capacidadeMaxima": "100",
+      "tempoMaximo": 60,
+      "textoInstrucoes": "Não pode",
+      "diasDeFuncionamento": [
+        "2",
+        "3",
+        "5"
+      ],
+      "condominio_id": 1,
+      "horarioSelecionado": {
+        "inicio": {
+          "hours": 8,
+          "minutes": 0
+        },
+        "fim": {
+          "hours": 20,
+          "minutes": 0
+        }
+      },
+      "id": 10
+    },
+    {
+      "nomeEspaco": "Piscina",
+      "capacidadeMaxima": "100",
+      "tempoMaximo": 60,
+      "textoInstrucoes": "Não pode viu",
+      "diasDeFuncionamento": [
+        "Segunda",
+        "1",
+        "3",
+        "4",
+        "5",
+        "6",
+        "2"
+      ],
+      "condominio_id": 1,
+      "horarioSelecionado": {
+        "inicio": {
+          "hours": 8,
+          "minutes": 35
+        },
+        "fim": {
+          "hours": 20,
+          "minutes": 25
+        }
+      },
+      "id": 11
+    },
+    {
+      "nomeEspaco": "Deu tudo certo",
+      "capacidadeMaxima": "100",
+      "tempoMaximo": 60,
+      "textoInstrucoes": "Não pode já falei",
+      "diasDeFuncionamento": [
+        "1",
+        "2",
+        "3"
+      ],
+      "condominio_id": 1,
+      "horarioSelecionado": {
+        "inicio": {
+          "hours": 8,
+          "minutes": 0
+        },
+        "fim": {
+          "hours": 20,
+          "minutes": 0
+        }
+      },
+      "id": 12
+    },
+    {
+      "nomeEspaco": "Testando",
+      "capacidadeMaxima": "100",
+      "tempoMaximo": 60,
+      "textoInstrucoes": "nâo pode",
+      "diasDeFuncionamento": [
+        "1",
+        "2",
+        "4"
+      ],
+      "condominio_id": 1,
+      "horarioSelecionado": {
+        "inicio": {
+          "hours": 20,
+          "minutes": 36
+        },
+        "fim": {
+          "hours": 22,
+          "minutes": 50
+        }
+      },
+      "id": 13
+    }
+  ],
   "bloco": [],
-  "blocoapartamento": [],
+  "blocoapartamento": [
+    {
+      "bloco": "001",
+      "numeroApartamento": "120",
+      "condominio_id": 1,
+      "id": 1
+    },
+    {
+      "bloco": "002",
+      "numeroApartamento": "0120",
+      "condominio_id": 1,
+      "id": 2
+    }
+  ],
   "titular": [],
   "dependente": []
 }
