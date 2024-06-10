@@ -2,8 +2,8 @@ import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-import ButtonReservas from '../../components/ButtonReservas';
-import ButtonDependente from '../../components/ButtonReservas';
+import ButtonReservas from '../../components/ReservasComponents/ButtonReservas';
+import ButtonDependente from '../../components/ReservasComponents/ButtonReservas';
 import CalendarIcon from '../../assets/calendario.svg';
 import Vector from '../../assets/vector.png';
 

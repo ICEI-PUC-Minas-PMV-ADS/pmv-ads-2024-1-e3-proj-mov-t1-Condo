@@ -12,11 +12,11 @@ import {
   hourTypes
 } from "./timeUtils"
 import * as React from "react"
-import { useLatest } from "../translations/utils"
+import { useLatest } from "../../translations/utils"
 import AnalogClockHours from "./AnalogClockHours"
 import AnimatedClockSwitcher from "./AnimatedClockSwitcher"
 import AnalogClockMinutes from "./AnalogClockMinutes"
-import { DisplayModeContext } from "../context/DisplayModeContext"
+import { DisplayModeContext } from "../../context/DisplayModeContext"
 function AnalogClock({ hours, minutes, focused, is24Hour, onChange }) {
   const theme = useTheme()
   const { mode } = React.useContext(DisplayModeContext)

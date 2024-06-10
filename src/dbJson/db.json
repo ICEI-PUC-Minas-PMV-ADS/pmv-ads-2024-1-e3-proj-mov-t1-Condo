@@ -244,6 +244,81 @@
         }
       },
       "id": 13
+    },
+    {
+      "nomeEspaco": "Quandra de Tenis",
+      "capacidadeMaxima": "100",
+      "tempoMaximo": 60,
+      "textoInstrucoes": "Não pode",
+      "diasDeFuncionamento": [
+        "1",
+        "2",
+        "3"
+      ],
+      "condominio_id": 1,
+      "horarioSelecionado": {
+        "inicio": {
+          "hours": 8,
+          "minutes": 0
+        },
+        "fim": {
+          "hours": 21,
+          "minutes": 0
+        }
+      },
+      "id": 14
+    },
+    {
+      "nomeEspaco": "Teste",
+      "capacidadeMaxima": "100",
+      "tempoMaximo": 60,
+      "textoInstrucoes": "Não pode",
+      "diasDeFuncionamento": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "condominio_id": 1,
+      "horarioSelecionado": {
+        "inicio": {
+          "hours": 8,
+          "minutes": 0
+        },
+        "fim": {
+          "hours": 8,
+          "minutes": 0
+        }
+      },
+      "id": 15
+    },
+    {
+      "nomeEspaco": "Teste02",
+      "capacidadeMaxima": "100",
+      "tempoMaximo": 60,
+      "textoInstrucoes": "Não pode",
+      "diasDeFuncionamento": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "condominio_id": 1,
+      "horarioSelecionado": {
+        "inicio": {
+          "hours": 8,
+          "minutes": 0
+        },
+        "fim": {
+          "hours": 22,
+          "minutes": 1
+        }
+      },
+      "id": 16
     }
   ],
   "bloco": [],

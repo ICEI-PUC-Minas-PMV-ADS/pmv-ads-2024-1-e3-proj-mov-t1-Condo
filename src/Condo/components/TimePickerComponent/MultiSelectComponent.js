@@ -33,14 +33,15 @@ const MultiSelectComponent = ({ items, onSelectedItemsChange, selectedItems }) =
 
 const styles = StyleSheet.create({
     container: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        alignItems: 'center',
+        flexDirection: 'column',
+        alignItems: 'flex-start'
+   
     },
     checkboxContainer: {
         flexDirection: 'row',
         alignItems: 'center',
         marginRight: 20,
+        marginBottom: 10, 
     },
 });
 

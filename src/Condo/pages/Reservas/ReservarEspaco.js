@@ -4,7 +4,7 @@ import { RadioButton } from 'react-native-paper';
 import RNPickerSelect from 'react-native-picker-select';
 import jogging from '../../assets/jogging.svg';
 import check from '../../assets/check.svg';
-import ButtonContinuar from '../../components/ButtonContinuar';
+import ButtonContinuar from '../../components/ReservasComponents/ButtonContinuar';
 import { Axios } from "axios";
 import { useUser } from '../../context/UserContext'; // Importe o hook useUser
 import { fetchTitulares, fetchDependentes } from '../../services/application.Services';

@@ -109,7 +109,7 @@ const Main = () => {
       <Stack.Screen 
       name='CadastroEspacos' 
       component={CadastroEspacos} 
-      options={{ title: 'Cadastrar Espaços' }}
+      options={{ title: 'Cadastrar Espaço' }}
       />
 
       <Stack.Screen 

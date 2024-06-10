@@ -6,7 +6,7 @@ import { inputTypes, toHourInputFormat, toHourOutputFormat } from "./timeUtils"
 import AnalogClock from "./AnalogClock"
 import { circleSize } from "./timeUtils"
 import TimeInputs from "./TimeInputs"
-import { DisplayModeContext } from "../context/DisplayModeContext"
+import { DisplayModeContext } from "../../context/DisplayModeContext"
 
 function TimePicker({
   hours,

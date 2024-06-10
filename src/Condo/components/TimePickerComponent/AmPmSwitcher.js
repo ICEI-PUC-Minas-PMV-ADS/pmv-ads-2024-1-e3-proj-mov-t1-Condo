@@ -4,7 +4,7 @@ import { Text, TouchableRipple, useTheme } from "react-native-paper"
 import { useMemo } from "react"
 import Color from "color"
 import { inputTypes, useSwitchColors } from "./timeUtils"
-import { DisplayModeContext } from "../context/DisplayModeContext"
+import { DisplayModeContext } from "../../context/DisplayModeContext"
 
 export default function AmPmSwitcher({ onChange, hours, inputType }) {
   const { setMode, mode } = React.useContext(DisplayModeContext)

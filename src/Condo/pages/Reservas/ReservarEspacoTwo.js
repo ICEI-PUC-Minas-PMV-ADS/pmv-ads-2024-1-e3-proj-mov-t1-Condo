@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, ScrollView, RefreshControl } from 'react-native';
-import Calendar from '../../components/Calendar'; // Importando o componente do calendário
+import Calendar from '../../components/ReservasComponents/Calendar'; // Importando o componente do calendário
 import { Picker } from '@react-native-picker/picker';
 
 const ReservarEspacoTwo = ({ navigation }) => {

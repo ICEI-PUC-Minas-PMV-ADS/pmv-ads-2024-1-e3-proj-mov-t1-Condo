@@ -11,7 +11,7 @@
   "dependencies": {
     "@emotion/styled": "^11.11.5",
     "@expo/metro-runtime": "~3.2.1",
-    "@expo/vector-icons": "^14.0.0",
+    "@expo/vector-icons": "^14.0.2",
     "@mui/material": "^5.15.16",
     "@react-native-async-storage/async-storage": "^1.23.1",
     "@react-native-community/datetimepicker": "^8.0.1",

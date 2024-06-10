@@ -1,15 +1,17 @@
 import React, { useState, useCallback, useMemo } from 'react';
-import { View, StyleSheet, Image, Alert } from 'react-native'; 
+import { View, StyleSheet, Image, Alert, Modal, TouchableOpacity } from 'react-native'; 
 import { Text, TextInput, Button } from 'react-native-paper'; 
 import { useNavigation } from '@react-navigation/native'; 
 import { useUser } from '../../context/UserContext'; 
 import { useTheme } from "react-native-paper";
-import { TimePickerModal, registerTranslation, enGB } from "react-native-paper-dates";
+import { IconButton } from 'react-native-paper';
+import { Ionicons } from '@expo/vector-icons';
+import { TimePickerModal, registerTranslation, pt } from "react-native-paper-dates";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { cadastrarEspaco } from '../../services/application.Services';
-import MultiSelectComponent from '../../components/MultiSelectComponent';
+import MultiSelectComponent from '../../components/TimePickerComponent/MultiSelectComponent';
 
-registerTranslation("en-GB", enGB);
+registerTranslation("pt", pt);
 
 const CadastroEspacos = () => {
     const { user } = useUser();
@@ -18,6 +20,7 @@ const CadastroEspacos = () => {
     const [tempoMaximo, setTempoMaximo] = useState(''); 
     const [textoInstrucoes, setTextoInstrucoes] = useState('');
     const [selectedDays, setSelectedDays] = useState([]);
+    const [isModalVisible, setIsModalVisible] = useState(false);
     const navigation = useNavigation(); 
     const maxFontSizeMultiplier = 1.5
 
@@ -126,8 +129,7 @@ const CadastroEspacos = () => {
                     <TextInput style={styles.textInput}
                         mode="outlined"
                         placeholder="capacidade máxima do espaço"
-                        placeholderTextColor="#7F7
-F7F7F"
+                        placeholderTextColor="#7F7F7F"
                         value={capacidadeMaxima}
                         onChangeText={text => setCapacidadeMaxima(text)}
                         keyboardType="numeric"
@@ -161,53 +163,69 @@ F7F7F"
                         numberOfLines={4}
                     />
                 </View>
-                <MultiSelectComponent
-                    items={diasDaSemana}
-                    onSelectedItemsChange={setSelectedDays}
-                    selectedItems={selectedDays}
-                />
-                <View style={[styles.row, styles.marginVerticalEight]}>
-                    <View style={styles.section}>
-                        <Text maxFontSizeMultiplier={maxFontSizeMultiplier} style={styles.bold}>Horário Início</Text>
-                        <Text maxFontSizeMultiplier={maxFontSizeMultiplier} variant="bodySmall">
-                            {startTime && startTime.hours !== undefined && startTime.minutes !== undefined
-                                ? timeFormatter.format(startTimeDate)
-                                : 'Nenhum horário selecionado'}
-                        </Text>
+                <Button style={styles.buttonDiasFuncionamento}onPress={() => setIsModalVisible(true)} mode="contained-tonal">
+                    Dias de funcionamento
+                </Button>
+                <Modal
+                    visible={isModalVisible}
+                    animationType="slide"
+                    transparent={true}
+                    onRequestClose={() => setIsModalVisible(false)}
+                >
+                    <View style={styles.modalBackground}>
+                        <View style={styles.modalContainer}>
+                            <Text style={styles.modalTitle}>Selecione os Dias de Funcionamento</Text>
+                            <MultiSelectComponent
+                                items={diasDaSemana}
+                                onSelectedItemsChange={setSelectedDays}
+                                selectedItems={selectedDays}
+                            />
+                            <Button onPress={() => setIsModalVisible(false)} mode="contained">
+                                Fechar
+                            </Button>
+                        </View>
                     </View>
-                    <Button onPress={() => setStartTimeOpen(true)} uppercase={false} mode="contained-tonal">
-                        Escolher horário
-                    </Button>
-                    <TimePickerModal
-                        locale={locale}
-                        visible={startTimeOpen}
-                        onDismiss={onDismissStartTime}
-                        onConfirm={onConfirmStartTime}
-                        hours={startTime.hours}
-                        minutes={startTime.minutes}
-                    />
-                </View>
+                </Modal>
                 <View style={[styles.row, styles.marginVerticalEight]}>
-                    <View style={styles.section}>
-                        <Text maxFontSizeMultiplier={maxFontSizeMultiplier} style={styles.bold}>Horário Fim</Text>
-                        <Text maxFontSizeMultiplier={maxFontSizeMultiplier} variant="bodySmall">
-                            {endTime && endTime.hours !== undefined && endTime.minutes !== undefined
-                                ? timeFormatter.format(endTimeDate)
-                                : 'Nenhum horário selecionado'}
-                        </Text>
-                    </View>
-                    <Button onPress={() => setEndTimeOpen(true)} uppercase={false} mode="contained-tonal">
-                        Escolher horário
-                    </Button>
-                    <TimePickerModal
-                        locale={locale}
-                        visible={endTimeOpen}
-                        onDismiss={onDismissEndTime}
-                        onConfirm={onConfirmEndTime}
-                        hours={endTime.hours}
-                        minutes={endTime.minutes}
-                    />
-                </View>
+    <View style={styles.section}>
+        <Text maxFontSizeMultiplier={maxFontSizeMultiplier} style={styles.bold}>Abertura ⏰</Text>
+        <TouchableOpacity onPress={() => setStartTimeOpen(true)}>
+            <Text maxFontSizeMultiplier={maxFontSizeMultiplier} variant="bodySmall">
+                {startTime && startTime.hours !== undefined && startTime.minutes !== undefined
+                    ? timeFormatter.format(startTimeDate)
+                    : 'Selecione'}
+            </Text>
+        </TouchableOpacity>
+        <TimePickerModal
+            locale={locale}
+            visible={startTimeOpen}
+            onDismiss={onDismissStartTime}
+            onConfirm={onConfirmStartTime}
+            hours={startTime.hours}
+            minutes={startTime.minutes}
+        />
+    </View>
+    <View style={styles.section}>
+        <Text maxFontSizeMultiplier={maxFontSizeMultiplier} style={styles.bold}>Fechamento ⏰</Text>
+        <TouchableOpacity onPress={() => setEndTimeOpen(true)}>
+            <Text maxFontSizeMultiplier={maxFontSizeMultiplier} variant="bodySmall">
+                {endTime && endTime.hours !== undefined && endTime.minutes !== undefined
+                    ? timeFormatter.format(endTimeDate)
+                    : 'Selecione'}
+            </Text>
+        </TouchableOpacity>
+        <TimePickerModal
+            locale={locale}
+            visible={endTimeOpen}
+            onDismiss={onDismissEndTime}
+            onConfirm={onConfirmEndTime}
+            hours={endTime.hours}
+            minutes={endTime.minutes}
+        />
+    </View>
+</View>
+
+
                 <View>
                     <Button style={styles.buttonSalvar} onPress={handleSalvar}>
                         <Text style={styles.buttonText}>Salvar</Text>
@@ -230,6 +248,7 @@ const styles = StyleSheet.create({
     },
     row: {
         flexDirection: 'row',
+        marginLeft: 10,
     },
     marginVerticalEight: {
         marginVertical: 8,
@@ -241,6 +260,11 @@ const styles = StyleSheet.create({
     },
     bold: {
         fontWeight: 'bold',
+    },
+    buttonDiasFuncionamento: {
+      borderRadius: 10,
+      marginTop: 2,
+      marginBottom: 5,
     },
     subTitles: {
         fontSize: 20,
@@ -278,7 +302,24 @@ const styles = StyleSheet.create({
         height: 230,
         resizeMode: 'stretch',
         opacity: 0.5,
-    }
+    },
+    modalBackground: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    },
+    modalContainer: {
+        width: '80%',
+        padding: 20,
+        backgroundColor: 'white',
+        borderRadius: 10,
+    },
+    modalTitle: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        marginBottom: 10,
+    },
 });
 
 export default CadastroEspacos;

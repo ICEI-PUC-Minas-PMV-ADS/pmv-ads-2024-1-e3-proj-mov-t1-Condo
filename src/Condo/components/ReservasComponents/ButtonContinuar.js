@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, TouchableOpacity, Text, Image } from 'react-native';
-import chevrondoubleright from '../assets/chevrondoubleright.svg';
+import chevrondoubleright from '../../assets/chevrondoubleright.svg';
 
 const ButtonContinuar = ({ onPress }) => {
   return (
