@@ -1,21 +1,29 @@
 import API from "./api";
 import { baseURL } from "./urls";
-import { axios } from "axios";
+import axios from "axios";
 
-export const espaco = async (param) => {
-    try {
-        const response = await API.get(`${baseURL}/660/espaco`, { params: param }); // Usar 'params' para enviar parâmetros na solicitação GET
-        return response.data; // Retornar os dados da resposta
-    } catch (error) {
-        console.error("Erro ao buscar dados do espaço:", error);
 
-    }
-}
 
-//Buscar Titulares
+
+export const fetchEspacos = async (condominio_id) => {
+  try {
+    const response = await API.get(`${baseURL}/660/espaco`, {
+      params: { condominio_id }
+    });
+    
+    return response.data;
+  } catch (error) {
+    console.error('Erro ao buscar espaços:', error);
+    throw error;
+  }
+};
+
+
+
+//Buscar Titulares(Users) Apenas com condominio_id
 export const fetchTitulares = async (condominio_id) => {
     try {
-      const response = await API.get(`${baseURL}/660/titular`, {
+      const response = await API.get(`${baseURL}/660/users`, {
         params: { condominio_id },
       });
       return response.data;
@@ -26,12 +34,14 @@ export const fetchTitulares = async (condominio_id) => {
   };
 
 
+
+
   
 
 //Buscar Dependentes
-export const dependente = async (condominioId) => {
+export const dependente = async (condominio_id) => {
     try {
-      const response = await API.get(`${baseURL}/660/dependente`, { params: { userId: condominioId } });
+      const response = await API.get(`${baseURL}/660/dependente`, { params: { condominio_id } });
       return response.data;
     } catch (error) {
       console.error("Erro ao buscar dados do dependente:", error);

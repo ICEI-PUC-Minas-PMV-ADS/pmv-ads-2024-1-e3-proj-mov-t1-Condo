@@ -59,6 +59,26 @@ const CadastroEspacos = () => {
         [locale]
     );
 
+
+    const formatarNumero = (texto) => {
+        // Remove caracteres não numéricos
+        let numeroFormatado = texto.replace(/[^0-9]/g, '');
+        // Limita o comprimento máximo a 4 dígitos
+        numeroFormatado = numeroFormatado.slice(0, 4);
+        // Se o número for maior que zero, parseie para um número inteiro
+        if (numeroFormatado.length > 0) {
+            numeroFormatado = parseInt(numeroFormatado);
+        }
+        return numeroFormatado;
+    };
+
+
+    const handleChangeText = (texto) => {
+        const numeroFormatado = formatarNumero(texto);
+        setCapacidadeMaxima(numeroFormatado.toString());
+    };
+
+
     let startTimeDate = new Date();
     startTime.hours !== undefined && startTimeDate.setHours(startTime.hours);
     startTime.minutes !== undefined && startTimeDate.setMinutes(startTime.minutes);
@@ -117,7 +137,7 @@ const CadastroEspacos = () => {
                     <Text style={styles.subTitles}>Nome do Espaço</Text>
                     <TextInput style={styles.textInput}
                         mode="outlined"
-                        placeholder="Adicione um nome do espaço"
+                        placeholder="Ex: Piscina"
                         placeholderTextColor="#7F7F7F"
                         value={nomeEspaco}
                         onChangeText={text => setNomeEspaco(text)}
@@ -125,17 +145,18 @@ const CadastroEspacos = () => {
                     />
                 </View>
                 <View>
-                    <Text style={styles.subTitles}>Capacidade máxima/Pessoas</Text>
-                    <TextInput style={styles.textInput}
-                        mode="outlined"
-                        placeholder="capacidade máxima do espaço"
-                        placeholderTextColor="#7F7F7F"
-                        value={capacidadeMaxima}
-                        onChangeText={text => setCapacidadeMaxima(text)}
-                        keyboardType="numeric"
-                        underlineColor="transparent"
-                    />
-                </View>
+            <Text style={styles.subTitles}>Capacidade máxima/Pessoas</Text>
+            <TextInput
+                style={styles.textInput}
+                mode="outlined"
+                placeholder="Somente números"
+                placeholderTextColor="#7F7F7F"
+                value={capacidadeMaxima}
+                onChangeText={handleChangeText}
+                keyboardType="numeric"
+                underlineColor="transparent"
+            />
+        </View>
                 <View>
                     <Text style={styles.subTitles}>Tempo máximo da reserva</Text>
                     <TextInput
@@ -244,7 +265,7 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingTop: 20,
         paddingHorizontal: 20,
-        backgroundColor: '#fff',
+        backgroundColor: '#f0f0f0',
     },
     row: {
         flexDirection: 'row',

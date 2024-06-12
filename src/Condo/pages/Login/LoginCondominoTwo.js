@@ -6,9 +6,10 @@ import { login } from '../../services/auth.services';
 import { useCondomino } from '../../context/CondominoContext';
 
 const LoginCondominoTwo = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const { setCondomino, setSignedCondomino } = useCondomino();
+  const [email, setEmail] = useState('teste10@gmail.com');
+  const [password, setPassword] = useState('12345678');
+  const { setUserCondomino, setSignedCondomino, espacosData } = useCondomino();
+
   const navigation = useNavigation();
 
   const handleLogin = async () => {
@@ -22,7 +23,7 @@ const LoginCondominoTwo = () => {
           Alert.alert('Atenção', 'Usuário ou senha inválidos!');
         } else {
           // Se o usuário não tiver razaoSocial e cnpj, permite o login
-          setCondomino(user);
+          setUserCondomino(user);
           setSignedCondomino(true);
           await AsyncStorage.setItem('@TOKEN_KEY', accessToken);
           Alert.alert('Sucesso', 'Login realizado com sucesso!');

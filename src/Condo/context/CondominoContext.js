@@ -1,10 +1,11 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { fetchTitulares, fetchDependentes } from '../services/application.Services';
+import { fetchTitulares, fetchDependentes, fetchEspacos } from '../services/application.Services';
+// Adicionando importação da função fetchEspacos
 
 export const CondominoContext = createContext();
 
 export default function CondominoProvider({ children }) {
-  const [condomino, setCondomino] = useState({
+  const [userCondomino, setUserCondomino] = useState({
     condominio_id: null,
     cnpj: null,
   });
@@ -16,34 +17,37 @@ export default function CondominoProvider({ children }) {
 
   useEffect(() => {
     const fetchData = async () => {
-      if (!condomino) {
-        console.error('Condomino não está definido');
+      if (!userCondomino) {
+        console.error('Usuario Condomino não está definido');
         return;
       }
 
       try {
-        const titulares = await fetchTitulares(condomino.condominio_id);
-        const dependentes = await fetchDependentes(condomino.condominio_id);
+        const titulares = await fetchTitulares(userCondomino.condominio_id);
+        const dependentes = await fetchDependentes(userCondomino.condominio_id);
+        const espacos = await fetchEspacos(userCondomino.condominio_id); // Chamada para buscar os espaços
 
         setTitularesData(titulares);
         setDependentesData(dependentes);
+        setEspacosData(espacos); // Atualiza os espaços com os dados retornados pela chamada da API
       } catch (error) {
         console.error('Erro ao buscar dados:', error);
       }
     };
 
     fetchData();
-  }, [condomino]);
+  }, [userCondomino]);
 
   return (
     <CondominoContext.Provider
       value={{
-        condomino,
-        setCondomino,
+        userCondomino,
+        setUserCondomino,
         signedCondomino,
         setSignedCondomino,
         titularesData,
         dependentesData,
+        espacosData, // Incluindo os dados dos espaços no contexto
       }}
     >
       {children}
@@ -57,7 +61,6 @@ export function useCondomino() {
   if (!context) {
     throw new Error('useCondomino deve ser usado dentro de um CondominoProvider');
   }
-
-  const { condomino, setCondomino, signedCondomino, setSignedCondomino, dependentesData, titularesData } = context;
-  return { condomino, setCondomino, signedCondomino, setSignedCondomino, titularesData, dependentesData };
+return context;
+ 
 }

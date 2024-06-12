@@ -1,31 +1,29 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, Text, Switch, TouchableOpacity, Image, ScrollView, RefreshControl,} from 'react-native';
-import { RadioButton } from 'react-native-paper';
+import { StyleSheet, View, Text, Switch, TouchableOpacity, Image, ScrollView, RefreshControl, Alert } from 'react-native';
 import RNPickerSelect from 'react-native-picker-select';
 import jogging from '../../assets/jogging.svg';
 import check from '../../assets/check.svg';
 import ButtonContinuar from '../../components/ReservasComponents/ButtonContinuar';
-import { Axios } from "axios";
-import { useUser } from '../../context/UserContext'; // Importe o hook useUser
-import { fetchTitulares, fetchDependentes } from '../../services/application.Services';
-
-
+import { useUser } from '../../context/UserContext';
+import { useCondomino } from '../../context/CondominoContext';
+import { fetchTitulares, fetchDependentes, fetchEspacos } from '../../services/application.Services';
 
 const ReservarEspaco = ({ navigation }) => {
   const [selectedLanguages, setSelectedLanguages] = useState([]);
   const [isEnabled, setIsEnabled] = useState(false);
-  const [selectedEspaco, setSelectedEspaco] = useState([]);
-  const [selectedTitular, setSelectedTitular] = useState(null);
+  const [selectedTitular, setSelectedTitular] = useState([]);
   const [selectedDependente, setSelectedDependente] = useState(null);
-  const [titularesData, setTitularesData] = useState([]);
-  const [dependentesData, setDependentesData] = useState([]);
-  const { user, espacosData } = useUser();
+  const [espacos, setEspacos] = useState([]); // Alterado para armazenar os espaços carregados
+  const [titulares, setTitulares] = useState([]);
+  const [selectedEspaco, setSelectedEspaco] = useState(null); // Alterado para armazenar o espaço selecionado
+
+  const { user } = useUser();
+  const { userCondomino } = useCondomino(); // Aqui corrigimos a desestruturação
+
   const [refreshing, setRefreshing] = useState(false);
 
   const onRefresh = () => {
     setRefreshing(true);
-    // Adicione aqui a lógica para atualizar os dados.
-    // Simulando uma atualização com um timeout.
     setTimeout(() => {
       setRefreshing(false);
     }, 2000);
@@ -33,28 +31,32 @@ const ReservarEspaco = ({ navigation }) => {
 
   useEffect(() => {
     const fetchUserData = async () => {
-      if (user && user.id) {
+      if (userCondomino && userCondomino.condominio_id) {
         try {
-          const titulares = await fetchTitulares(user.condominio_id);
-          const dependentes = await fetchDependentes(user.condominio_id);
-          setTitularesData(titulares);
-          setDependentesData(dependentes);
+          console.log('Buscando dados para condominio_id:', userCondomino.condominio_id);
+          const espacos = await fetchEspacos(userCondomino.condominio_id);
+          const titulares = await fetchTitulares(userCondomino.condominio_id);
+          console.log('Espaços recebidos:', espacos);
+          console.log('Titulares recebidos:', titulares);
+          setEspacos(espacos);
+          setTitulares(titulares);
         } catch (error) {
-          console.error('Erro ao buscar dados dos titulares ou dependentes:', error);
-          Alert.alert('Erro', 'Erro ao buscar dados dos titulares ou dependentes!');
+          console.error('Erro ao buscar dados dos espaços:', error);
+          Alert.alert('Erro', 'Erro ao buscar dados dos espaços!');
         }
+      } else {
+        console.log('Usuário ou condominio_id não disponível', userCondomino);
       }
     };
     fetchUserData();
-  }, [user]);
+  }, [userCondomino]);
 
-  
   const toggleSwitch = () => {
     setIsEnabled(prevState => !prevState);
   };
 
   const renderPickerItem = (label, value) => (
-    <TouchableOpacity style={styles.pickerItem} onPress={() => handleSelect(value)}>
+    <TouchableOpacity style={styles.pickerItem} onPress={() => handleSelect(value)} key={value}>
       <Text>{label}</Text>
       {selectedLanguages.includes(value) && <Image source={check} style={{ width: 15, height: 15 }} />}
     </TouchableOpacity>
@@ -64,104 +66,102 @@ const ReservarEspaco = ({ navigation }) => {
     if (selectedLanguages.includes(value)) {
       setSelectedLanguages(selectedLanguages.filter(item => item !== value));
     } else {
-      setSelectedLanguages(selectedLanguages, value);
+      setSelectedLanguages([...selectedLanguages, value]);
     }
   };
 
   return (
-    <ScrollView
-    refreshControl={
-      <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
-  >
-    <View style={styles.containerReservarEspaco}>
-      <Text style={styles.title}>Confirme os dados da reservas</Text>
-      <View style={styles.textContainer}>
-        <Text style={styles.label}>Para quem é a reserva?</Text>
-        {/* Selecionando o Reservante Principal */}
-        <RNPickerSelect
-          style={styles.select}
-          value={selectedTitular || selectedDependente}
-          onValueChange={(value) => {
-            if (value === 'first') {
-              setSelectedTitular('');
-              setSelectedDependente(value);
-            } else {
-              setSelectedTitular(value);
-              setSelectedDependente('');
-            }
-          }}
-          items={(titularesData || []).concat(dependentesData || []).map(item => ({
-            label: item.nomeTitular || item.nomeDependente,
-            value: item.id,
-            key: item.id.toString(),
-          }))}
-        />
+    <ScrollView refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}>
+      <View style={styles.containerReservarEspaco}>
+        <Text style={styles.title}>Confirme os dados da reserva</Text>
+        <View style={styles.textContainer}>
+          <Text style={styles.label}>Para quem é a reserva?</Text>
 
-        {/* Selecione Acompanhantes */}
-        <View style={styles.container}>
-          <Text style={styles.label}>Acompanhantes?</Text>
-          <Switch
-            trackColor={{ false: '#767577', true: '#26B3E0' }}
-            thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
-            ios_backgroundColor="#3e3e3e"
-            onValueChange={toggleSwitch}
-            value={isEnabled}
-          />
-        </View>
-
-        {/* Se o Switch for ativado mostre no isEnabled o titular ou dependente exceto aquele que foi selecionado no RNPicker */}
-        {isEnabled && titularesData && dependentesData && (
-          <View style={[styles.select, { height: 200 }]}>
-            {selectedTitular && dependentesData.length > 0 && (
-              <View>
-                {/* Renderização dos dependentes do titular selecionado */}
-                {dependentesData
-                  .filter(dependente => dependente.condomino_Titular_Id === selectedTitular.id)
-                  .map(dependente => (
-                    renderPickerItem(dependente.nomeDependente, dependente.id)
-                  ))
-                }
-              </View>
-            )}
-
-            {selectedDependente && titularesData.length > 0 && (
-              <View>
-                {/* Renderização dos titulares que não são o dependente selecionado */}
-                {titularesData
-                  .filter(titular => titular.id !== selectedDependente.condomino_Titular_Id)
-                  .map(titular => (
-                    renderPickerItem(titular.nomeTitular, titular.id)
-                  ))
-                }
-              </View>
-            )}
-          </View>
-        )}
-
-        <View style={styles.bottomContent}>
-          <Text style={styles.label}>Selecione o espaço</Text>
-          <RNPickerSelect
+          {/*<RNPickerSelect
             style={styles.select}
-            value={selectedEspaco}
-            onValueChange={(value) => setSelectedEspaco(value)}
-            items={espacosData?.map(espaco => ({
-              label: `${espaco.nomeEspaco}`,
-              value: `${espaco.id}`,
-              key: `${espaco?.id}`,
-            })).flat() || []}
-          />
-        </View>
+            value={selectedTitular || selectedDependente}
+            onValueChange={(value) => {
+              if (value === 'first') {
+                setSelectedTitular('');
+                setSelectedDependente(value);
+              } else {
+                setSelectedTitular(value);
+                setSelectedDependente('');
+              }
+            }}
+            items={(selectedTitular || []).concat(selectedDependente || []).map(item => ({
+              label: item.nomeTitular || item.nomeDependente,
+              value: item.id,
+              key: item.id.toString(),
+            }))}
+          />*/}
 
-        <View style={styles.containerImage}>
-          <Image source={jogging} style={styles.image} />
+          <RNPickerSelect
+              style={styles.select}
+              value={selectedTitular}
+              onValueChange={(value) => setSelectedTitular(value)}
+              items={titulares.map(titular => ({
+                label: titular.nomeTitular,
+                value: titular.id,
+                key: titular.id.toString(),
+              }))}
+            />
+          </View>
+
+          <View style={styles.container}>
+            <Text style={styles.label}>Acompanhantes?</Text>
+            <Switch
+              trackColor={{ false: '#767577', true: '#26B3E0' }}
+              thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
+              ios_backgroundColor="#3e3e3e"
+              onValueChange={toggleSwitch}
+              value={isEnabled}
+            />
+          </View>
+
+          {isEnabled && selectedTitular && selectedDependente && (
+            <View style={[styles.select, { height: 200 }]}>
+              {selectedTitular && selectedDependente.length > 0 && (
+                <View>
+                  {selectedDependente
+                    .filter(dependente => dependente.condomino_Titular_Id === selectedTitular)
+                    .map(dependente => renderPickerItem(dependente.nomeDependente, dependente.id))}
+                </View>
+              )}
+
+              {selectedDependente && selectedTitular.length > 0 && (
+                <View>
+                  {selectedTitular
+                    .filter(titular => titular.id !== selectedDependente.condomino_Titular_Id)
+                    .map(titular => renderPickerItem(titular.nomeTitular, titular.id))}
+                </View>
+              )}
+            </View>
+          )}
+
+          <View style={styles.bottomContent}>
+            <Text style={styles.label}>Selecione o espaço</Text>
+            <RNPickerSelect
+              style={styles.select}
+              value={selectedEspaco}
+              onValueChange={(value) => setSelectedEspaco(value)}
+              items={espacos.map(espaco => ({
+                label: espaco.nomeEspaco,
+                value: espaco.id,
+                key: espaco.id.toString(),
+              }))}
+            />
+          </View>
+
+          <View style={styles.containerImage}>
+            <Image source={jogging} style={styles.image} />
+          </View>
+          <ButtonContinuar onPress={() => navigation.navigate('ReservarEspacoTwo')} icon={'chevrondoubleright'} />
         </View>
-        <ButtonContinuar onPress={() => navigation.navigate('ReservarEspacoTwo')} icon={'chevrondoubleright'} />
-      </View>
-    </View>
+      
     </ScrollView>
   );
 };
-
 
 const styles = StyleSheet.create({
   containerReservarEspaco: {

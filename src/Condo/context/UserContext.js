@@ -1,12 +1,11 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { espaco, fetchTitulares, fetchDependentes, salvarApartamento, cadastrarEspaco } from '../services/application.Services';
+import { fetchEspacos, fetchTitulares, fetchDependentes, salvarApartamento, cadastrarEspaco } from '../services/application.Services';
 
 export const UserContext = createContext();
 
 export default function UserProvider({ children }) {
   const [user, setUser] = useState({ 
     condominio_id: null,
-    cnpj: null // Adicionar o CNPJ ao estado do usuário
   });
   
   const [signed, setSigned] = useState(false);
@@ -18,15 +17,21 @@ export default function UserProvider({ children }) {
   const [salvarApartamentosData, setSalvarApartamentosData] = useState([]);
   const [cadastrarEspacosData, setCadastrarEspacoData] = useState([]);
 
+  // Função para definir o condominio_id após o usuário fazer login
+  const setCondominioId = (id) => {
+    setUser(prevUser => ({ ...prevUser, condominio_id: id }));
+  };
+
   useEffect(() => {
     const fetchData = async () => {
-      if (!user) {
-        console.error('Usuário não está definido');
+      if (!user || !user.condominio_id) {
+        console.error('Usuário ou condominio_id não está definido', user);
         return;
       }
 
       try {
-        const espacos = await espaco();
+        console.log('Fetching data for condominio_id:', user.condominio_id);
+        const espacos = await fetchEspacos(user.condominio_id);
         const titulares = await fetchTitulares(user.condominio_id);
         const dependentes = await fetchDependentes(user.condominio_id);
         const salvarApartamentos = await salvarApartamento();
@@ -60,7 +65,8 @@ export default function UserProvider({ children }) {
         titularesData, 
         dependentesData, 
         salvarApartamentosData,
-        cadastrarEspacosData
+        cadastrarEspacosData,
+        setCondominioId // Passando a função para o contexto
       }}>
       {children}
     </UserContext.Provider>
@@ -74,13 +80,5 @@ export function useUser() {
     throw new Error('useUser deve ser usado dentro de um UserProvider');
   }
 
-  const { user, setUser, signed, setSigned, signedCondomino, setSignedCondomino,  name, setName, 
-      espacosData, dependentesData, titularesData,
-      salvarApartamentosData,
-      cadastrarEspacosData } = context;
-  return { user, setUser, signed, setSigned,signedCondomino,setSignedCondomino,  name, setName, espacosData, 
-      titularesData, 
-      dependentesData, 
-      salvarApartamentosData,
-      cadastrarEspacosData };
+  return context;
 }
