@@ -18,10 +18,10 @@ const RegisterCondominio = () => {
 
   const handleRegister = async () => {
     if (password === repetirPassword) {
-      const formattedCnpj = formatCNPJ(cnpj); // Formatar o CNPJ antes de enviar para o registro
+      const formattedCNPJ = formatCNPJ(cnpj); // Formatar o CNPJ antes de enviar para o registro
       const params = {
         razaoSocial,
-        cnpj: formattedCnpj,
+        cnpj: formattedCNPJ,
         email,
         password
       };
@@ -45,8 +45,8 @@ const RegisterCondominio = () => {
     // Limita a quantidade de caracteres a 14
     const limitedCnpj = numericCnpj.slice(0, 14);
     // Adiciona a formatação
-    const formattedCnpj = limitedCnpj.replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})$/, '$1.$2.$3/$4-$5');
-    return formattedCnpj;
+    const formattedCNPJ = limitedCnpj.replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})$/, '$1.$2.$3/$4-$5');
+    return formattedCNPJ;
   };
 
   return (
@@ -67,8 +67,8 @@ const RegisterCondominio = () => {
         placeholder="CNPJ"
         value={cnpj}
         onChangeText={(input) => {
-          const formattedCnpj = formatCNPJ(input);
-          setCnpj(formattedCnpj);
+          const formattedCNPJ = formatCNPJ(input);
+          setCnpj(formattedCNPJ);
         }}
         keyboardType="numeric"
       />

@@ -28,6 +28,41 @@
       "genero": "Masculino",
       "condominio_id": 1,
       "id": 3
+    },
+    {
+      "email": "alvarocondo@gmail.com",
+      "password": "$2a$10$ISFzNfL416ap0D8oYeIa.e0EC8/ByBzXqWnV7aZWX2Rn/oTbYEPKu",
+      "razaoSocial": "Alvaro",
+      "cnpj": "12.345.678/9101-23",
+      "id": 4
+    },
+    {
+      "email": "teste25@gmail.com",
+      "password": "$2a$10$gySQAc/UlyWJ705lLyQgEuSfvMBgu9S5xs3G95pvriJmDlvbSTv4e",
+      "razaoSocial": "Teste Cadastro",
+      "cnpj": "26.589.789/7979-79",
+      "id": 5
+    },
+    {
+      "email": "11111111@gmail.com",
+      "password": "$2a$10$ePr0GgVxhCZlsJN80emAA.Z/f0nBPVSprbukIrPWjUiUUhmEMtuJa",
+      "razaoSocial": "evellyn andrad",
+      "cnpj": "11.111.111/1111-11",
+      "id": 6
+    },
+    {
+      "email": "evellynandrade35@gmail.com",
+      "password": "$2a$10$MQ3wdZP2AOWcDzq.cRUx7uUEedyqyQtEsUxIHfLBgJXfRNErqTup6",
+      "razaoSocial": "evellyn",
+      "cnpj": "11.111.111/1111-11",
+      "id": 7
+    },
+    {
+      "email": "TesteAlv@gmail.com",
+      "password": "$2a$10$o5tLs2eJek6iQWvv5qch9Ob0ffluo2EhVUTVQQ9QhkMU5oFmiUHlO",
+      "razaoSocial": "TesteAlv",
+      "cnpj": "45.678.913/4646-31",
+      "id": 8
     }
   ],
   "condominio": [],
@@ -337,5 +372,13 @@
     }
   ],
   "titular": [],
-  "dependente": []
+  "dependente": [
+    {
+      "nome": "Evellyn",
+      "cpf": "222.222.222-22",
+      "dataNascimento": "22/22/2222",
+      "idade": "22",
+      "id": 1
+    }
+  ]
 }
