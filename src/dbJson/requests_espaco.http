@@ -28,7 +28,7 @@ content-type: application/json
 
 
 ### GET ESPAÇO
-GET http://localhost:3000/espaco/22
+GET http://localhost:3000/espaco/1
 
 ### DELETE ESPAÇO
-DELETE http://localhost:3000/espaco/3
+DELETE http://localhost:3000/espaco/15

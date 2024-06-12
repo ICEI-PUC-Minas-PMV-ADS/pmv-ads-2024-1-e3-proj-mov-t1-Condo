@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, Text, Switch, TouchableOpacity, Image, ScrollView, RefreshControl, Alert } from 'react-native';
+import { StyleSheet, View, Text, Switch, Pressable, Image, ScrollView, RefreshControl, Alert } from 'react-native';
 import RNPickerSelect from 'react-native-picker-select';
 import jogging from '../../assets/jogging.svg';
 import check from '../../assets/check.svg';
@@ -56,10 +56,10 @@ const ReservarEspaco = ({ navigation }) => {
   };
 
   const renderPickerItem = (label, value) => (
-    <TouchableOpacity style={styles.pickerItem} onPress={() => handleSelect(value)} key={value}>
+    <Pressable style={styles.pickerItem} onPress={() => handleSelect(value)} key={value}>
       <Text>{label}</Text>
       {selectedLanguages.includes(value) && <Image source={check} style={{ width: 15, height: 15 }} />}
-    </TouchableOpacity>
+    </Pressable>
   );
 
   const handleSelect = value => {
@@ -156,7 +156,9 @@ const ReservarEspaco = ({ navigation }) => {
           <View style={styles.containerImage}>
             <Image source={jogging} style={styles.image} />
           </View>
-          <ButtonContinuar onPress={() => navigation.navigate('ReservarEspacoTwo')} icon={'chevrondoubleright'} />
+          <Pressable onPress={() => navigation.navigate('ReservarEspacoTwo', { espacoId: selectedEspaco, titularId: selectedTitular })} icon={'chevrondoubleright'}>
+          <Text style={styles.continueButton}>Continuar</Text>
+        </Pressable>
         </View>
       
     </ScrollView>

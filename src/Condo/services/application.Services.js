@@ -19,6 +19,20 @@ export const fetchEspacos = async (condominio_id) => {
 };
 
 
+//Busca espaço pelo id
+export const fetchEspacoById = async (id) => {
+  try {
+    const response = await API.get(`${baseURL}/660/espaco/${id}`);
+    
+    return response.data;
+  } catch (error) {
+    console.error('Erro ao buscar dados do espaço:', error);
+    throw error;
+  }
+};
+
+
+
 
 //Buscar Titulares(Users) Apenas com condominio_id
 export const fetchTitulares = async (condominio_id) => {
