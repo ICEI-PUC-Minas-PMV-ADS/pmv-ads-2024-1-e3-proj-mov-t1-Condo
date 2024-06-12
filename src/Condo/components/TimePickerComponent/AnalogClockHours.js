@@ -35,7 +35,7 @@ function AnalogClockHours({ is24Hour, hours }) {
                   : null
               }
               variant="bodyLarge"
-              selectable={false}
+              userSelect={false}
             >
               {is24Hour && i + 1 === 12 ? "00" : i + 1}
             </Text>
@@ -58,7 +58,7 @@ function AnalogClockHours({ is24Hour, hours }) {
               <View style={styles.innerHourInner}>
                 <Text
                   maxFontSizeMultiplier={1.5}
-                  selectable={false}
+                  userSelect={false}
                   style={[
                     i + 13 === hours || (i + 13 === 24 && hours === 12)
                       ? { color }

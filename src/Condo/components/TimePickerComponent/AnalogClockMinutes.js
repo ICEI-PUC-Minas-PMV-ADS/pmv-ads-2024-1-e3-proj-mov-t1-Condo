@@ -33,7 +33,7 @@ function AnalogClockMinutes({ minutes }) {
               <Text
                 maxFontSizeMultiplier={1.5}
                 style={isCurrent ? { color } : undefined}
-                selectable={false}
+                userSelect={false}
                 variant="bodyLarge"
               >
                 {isZero ? "00" : currentMinutes}

@@ -1,18 +1,18 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, ScrollView, Image, } from 'react-native';
+import { View, Text, Pressable, StyleSheet, ScrollView, Image, } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 export default function HomeScreen({ navigation }) {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.openDrawer()}>
+        <Pressable onPress={() => navigation.openDrawer()}>
           <Ionicons name="menu" size={30} color="#000" style={styles.menuIcon} />
-        </TouchableOpacity>
+        </Pressable>
         <Text style={styles.headerText}></Text>
-        <TouchableOpacity onPress={() => alert('Notificações')}>
+        <Pressable onPress={() => alert('Notificações')}>
           <Ionicons name="notifications-outline" size={30} color="#000" style={styles.notificationIcon} />
-        </TouchableOpacity>
+        </Pressable>
       </View>
       <View style={styles.logoContainer}>
           <Image source={require('../../assets/LogoCondo2.png')} style={styles.logo1}/>
@@ -23,26 +23,26 @@ export default function HomeScreen({ navigation }) {
 
       <View style={{ bottom: 35, borderBottomWidth: 1, borderBottomColor: '#CCCCCC' }}  />
 
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('CadastrarEspaco')}>
+      <Pressable style={styles.button} onPress={() => navigation.navigate('CadastrarEspaco')}>
         <Ionicons name="grid" size={20} color="#333" style={styles.icon} />
         <Text style={styles.buttonText}>Cadastrar Espaço</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('CadastrarApartamento')}>
+      </Pressable>
+      <Pressable style={styles.button} onPress={() => navigation.navigate('CadastrarApartamento')}>
         <Ionicons name="business" size={20} color="#333" style={styles.icon2} />
         <Text style={styles.buttonText2}>Cadastrar Apartamento</Text>
-      </TouchableOpacity>
+      </Pressable>
       <View style={styles.gerenciamento}>
         <Text style={styles.ger}>Gerenciamento</Text>
       </View>
       <View style={styles.managementContainer}>
-        <TouchableOpacity style={styles.managementButton} onPress={() => navigation.navigate('')}>
+        <Pressable style={styles.managementButton} onPress={() => navigation.navigate('')}>
           <Ionicons name="time" size={20} color="#7F7F7F" style={styles.icon3}/>
           <Text style={styles.managementButtonText}>Meus Espaços</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.managementButton2} onPress={() => navigation.navigate('')}>
+        </Pressable>
+        <Pressable style={styles.managementButton2} onPress={() => navigation.navigate('')}>
           <Ionicons name="home" size={20} color="#7F7F7F" style={styles.icon3}/>
           <Text style={styles.managementButtonText}>Apartamentos Cadastrados</Text>
-        </TouchableOpacity>
+        </Pressable>
       </View>
 
       <View>

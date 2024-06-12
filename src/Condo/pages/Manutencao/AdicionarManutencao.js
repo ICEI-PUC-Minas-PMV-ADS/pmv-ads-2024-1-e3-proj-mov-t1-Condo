@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, Text, TextInput, TouchableOpacity, Image, ScrollView, KeyboardAvoidingView, Platform } from 'react-native';
+import { View, StyleSheet, Text, TextInput, Pressable, Image, ScrollView, KeyboardAvoidingView, Platform } from 'react-native';
 import DropdownEspacos from '../../components/DropdownEspacos';
 import DateInputManutencao from '../../components/DateInputManutencao';
 
@@ -29,9 +29,9 @@ const AdicionarManutencao = () => {
               onChangeText={setMotivo}
             />
             <View style={{ alignItems: 'center' }}>
-              <TouchableOpacity style={styles.button} onPress={() => { }}>
+              <Pressable style={styles.button} onPress={() => { }}>
                 <Text style={styles.buttonText}>{"Adicionar a manutenção"}</Text>
-              </TouchableOpacity>
+              </Pressable>
             </View>
           </View>
           <View style={styles.imageContainer}>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, Text , TouchableOpacity, TextInput} from 'react-native';
+import { View, StyleSheet, Text , Pressable, TextInput} from 'react-native';
 import { Button, Dialog } from 'react-native-paper';
 import DateInputManutencao from '../../components/DateInputManutencao';
 
@@ -25,9 +25,9 @@ const EditarManutencao = (props) => {
                     onChangeText={setMotivo}
                 />
                 <View style={{ alignItems: 'center' }}>
-                    <TouchableOpacity style={styles.button} onPress={() => { }}>
+                    <Pressable style={styles.button} onPress={() => { }}>
                         <Text style={styles.buttonText}>{"Salvar Alterações"}</Text>
-                    </TouchableOpacity>
+                    </Pressable>
                 </View>
             </Dialog.Content>
         </Dialog>

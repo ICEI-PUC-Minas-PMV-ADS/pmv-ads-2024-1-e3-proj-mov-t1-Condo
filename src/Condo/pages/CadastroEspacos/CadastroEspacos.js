@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useMemo } from 'react';
-import { View, StyleSheet, Image, Alert, Modal, TouchableOpacity } from 'react-native'; 
+import { View, StyleSheet, Image, Alert, Modal, Pressable } from 'react-native'; 
 import { Text, TextInput, Button } from 'react-native-paper'; 
 import { useNavigation } from '@react-navigation/native'; 
 import { useUser } from '../../context/UserContext'; 
@@ -100,7 +100,7 @@ const CadastroEspacos = () => {
             textoInstrucoes,
             diasDeFuncionamento: selectedDays,
             condominio_id: user.id,
-            horarioSelecionado: {
+            horarioFuncionamento: {
                 inicio: startTime,
                 fim: endTime,
             },
@@ -117,13 +117,13 @@ const CadastroEspacos = () => {
     };
 
     const diasDaSemana = [
+        { id: '0', name: 'Domingo' },
         { id: '1', name: 'Segunda-feira' },
         { id: '2', name: 'Terça-feira' },
         { id: '3', name: 'Quarta-feira' },
         { id: '4', name: 'Quinta-feira' },
         { id: '5', name: 'Sexta-feira' },
         { id: '6', name: 'Sábado' },
-        { id: '7', name: 'Domingo' },
     ];
 
     const handleTimeSelected = (time) => {
@@ -210,13 +210,13 @@ const CadastroEspacos = () => {
                 <View style={[styles.row, styles.marginVerticalEight]}>
     <View style={styles.section}>
         <Text maxFontSizeMultiplier={maxFontSizeMultiplier} style={styles.bold}>Abertura ⏰</Text>
-        <TouchableOpacity onPress={() => setStartTimeOpen(true)}>
+        <Pressable onPress={() => setStartTimeOpen(true)}>
             <Text maxFontSizeMultiplier={maxFontSizeMultiplier} variant="bodySmall">
                 {startTime && startTime.hours !== undefined && startTime.minutes !== undefined
                     ? timeFormatter.format(startTimeDate)
                     : 'Selecione'}
             </Text>
-        </TouchableOpacity>
+        </Pressable>
         <TimePickerModal
             locale={locale}
             visible={startTimeOpen}
@@ -228,13 +228,13 @@ const CadastroEspacos = () => {
     </View>
     <View style={styles.section}>
         <Text maxFontSizeMultiplier={maxFontSizeMultiplier} style={styles.bold}>Fechamento ⏰</Text>
-        <TouchableOpacity onPress={() => setEndTimeOpen(true)}>
+        <Pressable onPress={() => setEndTimeOpen(true)}>
             <Text maxFontSizeMultiplier={maxFontSizeMultiplier} variant="bodySmall">
                 {endTime && endTime.hours !== undefined && endTime.minutes !== undefined
                     ? timeFormatter.format(endTimeDate)
                     : 'Selecione'}
             </Text>
-        </TouchableOpacity>
+        </Pressable>
         <TimePickerModal
             locale={locale}
             visible={endTimeOpen}

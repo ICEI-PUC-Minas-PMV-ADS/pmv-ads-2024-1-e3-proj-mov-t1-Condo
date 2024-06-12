@@ -80,14 +80,14 @@ function SwitchButton({ label, onPress, selected, disabled }) {
       accessibilityTraits={disabled ? ["button", "disabled"] : "button"}
       // @ts-ignore old React Native versions
       accessibilityComponentType="button"
-      accessibilityRole="button"
+      role="button"
       accessibilityState={{ disabled }}
       disabled={disabled}
     >
       <View style={[styles.switchButtonInner, { backgroundColor }]}>
         <Text
           maxFontSizeMultiplier={1.5}
-          selectable={false}
+          userSelect={false}
           style={[
             {
               ...textFont,

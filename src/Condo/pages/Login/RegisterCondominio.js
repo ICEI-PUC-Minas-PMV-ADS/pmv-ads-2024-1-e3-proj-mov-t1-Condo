@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Image, TextInput, TouchableOpacity, Text, StyleSheet, Alert } from "react-native";
+import { View, Image, TextInput, Pressable, Text, StyleSheet, Alert } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 import { register } from '../../services/auth.services';  // Importe a função de registro
 
@@ -92,12 +92,12 @@ const RegisterCondominio = () => {
         value={repetirPassword}
         onChangeText={setRepetirPassword}
       />
-      <TouchableOpacity style={styles.loginButton} onPress={handleRegister}>
+      <Pressable style={styles.loginButton} onPress={handleRegister}>
         <Text style={styles.loginButtonText}>Cadastrar</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={handleSignUp}>
+      </Pressable>
+      <Pressable onPress={handleSignUp}>
         <Text style={styles.signUp}>Já tem conta? Faça login</Text>
-      </TouchableOpacity>
+      </Pressable>
     </View>
   );
 };

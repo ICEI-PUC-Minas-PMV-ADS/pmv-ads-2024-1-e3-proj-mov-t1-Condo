@@ -4,7 +4,7 @@ import {
   Text,
   StyleSheet,
   TextInput,
-  TouchableOpacity,
+  Pressable,
   Alert,
 } from "react-native";
 import { cadastrarDependente } from "../../services/application.Services";
@@ -136,9 +136,9 @@ const CadastroDependente = () => {
           }}
         />
       </View>
-      <TouchableOpacity onPress={handleCadastro} style={styles.button}>
+      <Pressable onPress={handleCadastro} style={styles.button}>
         <Text style={styles.buttonText}>Salvar</Text>
-      </TouchableOpacity>
+      </Pressable>
     </View>
   );
 };

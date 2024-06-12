@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Text, Pressable } from 'react-native';
 import {  Dialog } from 'react-native-paper';
 
 const DeletarManutencao = (props) => {
@@ -10,9 +10,9 @@ const DeletarManutencao = (props) => {
                 <Text style={styles.title}>{"Tem certeza disso?"}</Text>
                 <Text style={styles.subtitle}>{"Esta ação não poderá ser desfeita, remover"} {props.title} {"da manutenção?"}</Text>
                 <View style={{ alignItems: 'center' }}>
-                    <TouchableOpacity style={styles.button} onPress={() => { }}>
+                    <Pressable style={styles.button} onPress={() => { }}>
                         <Text style={styles.buttonText}>{"Remover"}</Text>
-                    </TouchableOpacity>
+                    </Pressable>
                 </View>
             </Dialog.Content>
         </Dialog>

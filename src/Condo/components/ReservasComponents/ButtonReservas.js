@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, Image, StyleSheet } from 'react-native';
+import { Pressable, Image, StyleSheet } from 'react-native';
 import CalendarIcon from '../../assets/calendario.svg';
 import EllipseIcon from '../../assets/Ellipse4.png';
 
@@ -8,7 +8,7 @@ import EllipseIcon from '../../assets/Ellipse4.png';
 
 export default function ButtonReservas({ onPress }) {
   return (
-    <TouchableOpacity
+    <Pressable
       onPress={onPress}
       style={styles.button}>
 
@@ -21,7 +21,7 @@ export default function ButtonReservas({ onPress }) {
         source={CalendarIcon}
         style={styles.icon}
       />
-    </TouchableOpacity>
+    </Pressable>
   );
 }
 

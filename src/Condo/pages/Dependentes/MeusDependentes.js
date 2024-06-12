@@ -3,7 +3,7 @@ import {
   View,
   Text,
   StyleSheet,
-  TouchableOpacity,
+  Pressable,
   TextInput,
   Alert,
   ScrollView,
@@ -86,7 +86,7 @@ const MeusDependentes = () => {
       <Text style={styles.title}>Meus Dependentes</Text>
       {dependentes.map((dependente, index) => (
         <View key={index} style={styles.dependenteContainer}>
-          <TouchableOpacity
+          <Pressable
             onPress={() => toggleExpandido(dependente.id)}
             style={styles.dependenteHeader}
           >
@@ -97,7 +97,7 @@ const MeusDependentes = () => {
               source={require("../../assets/arrow-circle-down.png")}
               style={styles.arrow}
             />
-          </TouchableOpacity>
+          </Pressable>
           {expandidoId === dependente.id && (
             <View>
               {editandoId === dependente.id ? (
@@ -114,12 +114,12 @@ const MeusDependentes = () => {
                     value={editandoDataNasc}
                     onChangeText={setEditandoDataNasc}
                   />
-                  <TouchableOpacity
+                  <Pressable
                     style={styles.button}
                     onPress={handleSalvarDependente}
                   >
                     <Text style={styles.buttonText}>Salvar</Text>
-                  </TouchableOpacity>
+                  </Pressable>
                 </View>
               ) : (
                 <View>
@@ -129,18 +129,18 @@ const MeusDependentes = () => {
                   <Text style={styles.dependenteInfo}>
                     Data de Nascimento: {dependente.data_Nasc}
                   </Text>
-                  <TouchableOpacity
+                  <Pressable
                     style={styles.button}
                     onPress={() => handleEditarDependente(dependente.id)}
                   >
                     <Text style={styles.buttonText}>Editar</Text>
-                  </TouchableOpacity>
-                  <TouchableOpacity
+                  </Pressable>
+                  <Pressable
                     style={styles.button}
                     onPress={() => handleExcluirDependente(dependente.id)}
                   >
                     <Text style={styles.buttonText}>Excluir</Text>
-                  </TouchableOpacity>
+                  </Pressable>
                 </View>
               )}
             </View>

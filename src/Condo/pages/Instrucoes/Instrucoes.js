@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image, TouchableOpacity, Button} from 'react-native';
+import {View, Text, StyleSheet, Image, Button} from 'react-native';
 import { Ionicons } from '@expo/vector-icons'; // Importa Ionicons de @expo/vector-icons
 import { Appbar, List } from 'react-native-paper';
 

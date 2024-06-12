@@ -1,16 +1,16 @@
 import React from 'react';
-import { StyleSheet, View, TouchableOpacity, Text, Image } from 'react-native';
+import { StyleSheet, View, Pressable, Text, Image } from 'react-native';
 import chevrondoubleright from '../../assets/chevrondoubleright.svg';
 
 const ButtonContinuar = ({ onPress }) => {
   return (
-    <TouchableOpacity onPress={onPress} style={styles.botao}>
+    <Pressable onPress={onPress} style={styles.botao}>
       <Text style={styles.textoBotao}>Continuar</Text>
         <Image
         source={chevrondoubleright}
         style={styles.icon}
       />
-    </TouchableOpacity>
+    </Pressable>
   );
 };
 

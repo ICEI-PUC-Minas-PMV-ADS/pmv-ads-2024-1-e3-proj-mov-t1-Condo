@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { Pressable, Text, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const CustomButton = ({ title, screen }) => {
@@ -10,9 +10,9 @@ const CustomButton = ({ title, screen }) => {
   };
 
   return (
-    <TouchableOpacity style={styles.button} onPress={navigateToScreen}>
+    <Pressable style={styles.button} onPress={navigateToScreen}>
       <Text style={styles.text}>{title}</Text>
-    </TouchableOpacity>
+    </Pressable>
   );
 };
 

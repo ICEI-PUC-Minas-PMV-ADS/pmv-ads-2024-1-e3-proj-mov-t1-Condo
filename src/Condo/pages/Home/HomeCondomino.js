@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, ScrollView, Image } from 'react-native';
+import { View, Text, Pressable, StyleSheet, ScrollView, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import ButtonReservas from '../../components/ReservasComponents/ButtonReservas';
@@ -13,13 +13,13 @@ const HomeCondominio = () => {
     <View style={styles.containerh}>
       <ScrollView contentContainerStyle={styles.container}>
         <View style={styles.header}>
-          <TouchableOpacity onPress={() => navigation.openDrawer()}>
+          <Pressable onPress={() => navigation.openDrawer()}>
             <Ionicons name="menu" size={30} color="#242220" style={styles.menuIcon} />
-            </TouchableOpacity>
+            </Pressable>
             <Text style={styles.headerText}></Text>
-            <TouchableOpacity onPress={() => alert('Nenhuma notificação!')}>
+            <Pressable onPress={() => alert('Nenhuma notificação!')}>
             <Ionicons name="notifications-outline" size={30} color="#242220" style={styles.notificationIcon} />
-          </TouchableOpacity>
+          </Pressable>
         </View>
           <View style={styles.logoContainer}>
           <Image source={require('../../assets/LogoCondo2.png')} style={styles.logo1} />

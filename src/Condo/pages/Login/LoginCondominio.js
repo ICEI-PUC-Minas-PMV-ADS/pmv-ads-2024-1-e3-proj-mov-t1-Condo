@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Image, TextInput, TouchableOpacity, Text, StyleSheet, Alert } from 'react-native';
+import { View, Image, TextInput, Pressable, Text, StyleSheet, Alert } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 import { useUser } from '../../context/UserContext';
@@ -79,15 +79,15 @@ const LoginCondominio = () => {
         value={password}
         onChangeText={setPassword}
       />
-      <TouchableOpacity onPress={handleForgotPassword}>
+      <Pressable onPress={handleForgotPassword}>
         <Text style={styles.forgotPassword}>Esqueceu sua senha?</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
+      </Pressable>
+      <Pressable style={styles.loginButton} onPress={handleLogin}>
         <Text style={styles.loginButtonText}>Entrar</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={handleSignUp}>
+      </Pressable>
+      <Pressable onPress={handleSignUp}>
         <Text style={styles.signUp}>Não tem conta? Cadastre-se</Text>
-      </TouchableOpacity>
+      </Pressable>
     </View>
   );
 };

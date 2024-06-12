@@ -25,7 +25,6 @@ export default function UserProvider({ children }) {
   useEffect(() => {
     const fetchData = async () => {
       if (!user || !user.condominio_id) {
-        console.error('Usuário ou condominio_id não está definido', user);
         return;
       }
 

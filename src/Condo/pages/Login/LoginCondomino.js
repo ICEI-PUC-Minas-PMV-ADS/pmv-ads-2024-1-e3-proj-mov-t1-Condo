@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Image, TextInput, TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { View, Image, TextInput, Pressable, Text, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { fetchUserByCPF } from '../../services/auth.services'; // Supondo que você tenha uma função para buscar o usuário pelo CPF
 
@@ -56,9 +56,9 @@ const LoginCondomino = () => {
         onChangeText={text => formatarCPF(text)}
 
       />
-      <TouchableOpacity style={styles.continueButton} onPress={handleLogin}>
+      <Pressable style={styles.continueButton} onPress={handleLogin}>
         <Text style={styles.continueButtonText}>Continue</Text>
-      </TouchableOpacity>
+      </Pressable>
       <Image
         source={require('../../assets/jogging.svg')}
         style={styles.joggingLogo}

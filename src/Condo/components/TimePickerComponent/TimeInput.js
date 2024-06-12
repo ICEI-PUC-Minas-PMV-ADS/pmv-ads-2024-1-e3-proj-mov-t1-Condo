@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
   root: { position: "relative", height: 80, width: 96 },
   input: {
     textAlign: "center",
-    textAlignVertical: "center",
+    verticalAlign: "center",
     width: 96
   },
   buttonOverlay: { overflow: "hidden" }

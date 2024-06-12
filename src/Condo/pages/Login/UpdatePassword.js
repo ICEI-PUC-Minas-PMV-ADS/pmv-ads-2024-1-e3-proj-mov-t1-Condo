@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Image, TextInput, TouchableOpacity, Text, StyleSheet, Alert } from "react-native";
+import { View, Image, TextInput, Pressable, Text, StyleSheet, Alert } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 import { updateUserPassword } from '../../services/auth.services';  // Importe a função de registro
 import { getUserByEmail } from '../../services/auth.services';
@@ -74,12 +74,12 @@ const UpdatePassword = () => {
         value={repetirPassword}
         onChangeText={setRepetirPassword}
       />
-      <TouchableOpacity style={styles.loginButton} onPress={handleChangePassword}>
+      <Pressable style={styles.loginButton} onPress={handleChangePassword}>
         <Text style={styles.loginButtonText}>Salvar</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={handleSignUp}>
+      </Pressable>
+      <Pressable onPress={handleSignUp}>
         <Text style={styles.signUp}>Já tem conta? Faça login</Text>
-      </TouchableOpacity>
+      </Pressable>
     </View>
   );
 };

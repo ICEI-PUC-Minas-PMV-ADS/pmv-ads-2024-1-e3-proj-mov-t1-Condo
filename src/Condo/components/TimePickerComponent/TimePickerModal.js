@@ -221,13 +221,13 @@ const styles = StyleSheet.create({
     flex: 1
   },
   modalContent: {
-    shadowColor: "#000",
-    shadowOffset: {
+    ShadowColor: "#000",
+    ShadowOffset: {
       width: 0,
       height: 5
     },
-    shadowOpacity: 0.34,
-    shadowRadius: 6.27,
+    ShadowOpacity: 0.34,
+    ShadowRadius: 6.27,
     elevation: 3,
     minWidth: 287,
     paddingVertical: 8

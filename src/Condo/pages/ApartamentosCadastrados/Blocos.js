@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView, RefreshControl } from 'react-native';
+import { View, Text, Image, Pressable, ScrollView, RefreshControl } from 'react-native';
 import { Button } from 'react-native-paper';
 import { StyleSheet } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';

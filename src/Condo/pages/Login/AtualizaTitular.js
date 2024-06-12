@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, TextInput, TouchableOpacity, Text, StyleSheet , Image} from 'react-native';
+import { View, TextInput, Pressable, Text, StyleSheet , Image} from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { updateUserEmailAndPassword } from '../../services/auth.services';
 
@@ -44,9 +44,9 @@ const AtualizaTitular = () => {
         onChangeText={setNewPassword}
         secureTextEntry
       />
-      <TouchableOpacity style={styles.updateButton} onPress={handleUpdate}>
+      <Pressable style={styles.updateButton} onPress={handleUpdate}>
         <Text style={styles.updateButtonText}>Cofirmar</Text>
-      </TouchableOpacity>
+      </Pressable>
     </View>
   );
 };

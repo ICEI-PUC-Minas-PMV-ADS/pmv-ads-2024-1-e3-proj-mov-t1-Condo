@@ -1,11 +1,11 @@
 import React from 'react';
-import { TouchableOpacity, Image, StyleSheet } from 'react-native';
+import { Pressable, Image, StyleSheet } from 'react-native';
 import VectorIcon from '../assets/vector.png';
 import EllipseIcon from '../assets/Ellipse4.png';
 
 export default function ButtonDependente({ onPress }) {
   return (
-    <TouchableOpacity
+    <Pressable
       onPress={onPress}
       style={styles.button}>
 
@@ -18,7 +18,7 @@ export default function ButtonDependente({ onPress }) {
         source={VectorIcon}
         style={styles.icon}
       />
-    </TouchableOpacity>
+    </Pressable>
   );
 }
 

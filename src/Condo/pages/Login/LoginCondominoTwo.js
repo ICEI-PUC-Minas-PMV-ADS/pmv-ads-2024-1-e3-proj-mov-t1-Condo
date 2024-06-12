@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Image, TextInput, TouchableOpacity, Text, StyleSheet, Alert } from 'react-native';
+import { View, Image, TextInput, Pressable, Text, StyleSheet, Alert } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 import { login } from '../../services/auth.services';
@@ -64,9 +64,9 @@ const LoginCondominoTwo = () => {
         onChangeText={setPassword}
         secureTextEntry
       />
-      <TouchableOpacity style={styles.continueButton} onPress={handleLogin}>
+      <Pressable style={styles.continueButton} onPress={handleLogin}>
         <Text style={styles.continueButtonText}>Entrar</Text>
-      </TouchableOpacity>
+      </Pressable>
       <Image
         source={require('../../assets/jogging.svg')}
         style={styles.joggingLogo}
