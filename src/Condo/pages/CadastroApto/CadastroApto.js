@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { ScrollView, View, StyleSheet, Image, Pressable, Alert } from 'react-native';
 import { Text, TextInput, Button } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
@@ -18,6 +18,8 @@ const CadastroApto = () => {
   const [dataNascimento, setDataNascimento] = useState('');
   const [idade, setIdade] = useState('');
   const [genero, setGenero] = useState('');
+  const [isFormValid, setIsFormValid] = useState(false);
+
 
   console.log('CadastroApto user:', user);
 
@@ -91,6 +93,25 @@ const CadastroApto = () => {
     }
   };
   
+  const validateForm = useCallback(() => {
+    if (
+        nomeTitular.trim() !== '' &&
+        cpfTitular.trim() !== '' &&
+        bloco.trim() !== '' &&
+        numeroApartamento.trim() !== '' &&
+        dataNascimento.trim() !== '' &&
+        idade.trim() !== '' &&
+        genero.trim() !== ''
+    ) {
+        setIsFormValid(true);
+    } else {
+        setIsFormValid(false);
+    }
+}, [nomeTitular, cpfTitular, bloco, numeroApartamento, dataNascimento, idade, genero]);
+
+    useEffect(() => {
+     validateForm();
+         }, [validateForm]);
   
     return (
     <ScrollView contentContainerStyle={styles.container}>
@@ -190,10 +211,16 @@ const CadastroApto = () => {
                 />
             </View>
 
-            <View>
-                <Button style={styles.buttonSalvar} onPress={handleSalvar}>
-                    <Text style={styles.buttonText}>Salvar</Text>
-                </Button>
+            <View style={styles.buttonContainer}>
+            <Button
+            style={[styles.buttonSalvar, { backgroundColor: isFormValid ? '#06B6DD' : '#999'}]}
+            onPress={handleSalvar}
+            disabled={!isFormValid}
+          >
+            <Text style={styles.buttonText}>Salvar</Text>
+          </Button>
+          <Text style={styles.buttonDetail}>Preencha todos os campos.</Text>
+
             </View>
 
             <Image style={styles.imageLogo} source={require('../../assets/LogoCondo2.png')} />
@@ -268,6 +295,10 @@ const styles = StyleSheet.create({
     button: {
         margin: 0,
     },
+    buttonContainer:{
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
     buttonSalvar: {
         marginTop: 20,
         borderRadius: 10,
@@ -277,6 +308,11 @@ const styles = StyleSheet.create({
     buttonText: {
         color: 'white',
         fontSize: 16,
+    },
+    buttonDetail:{
+        color: 'gray',
+        fontSize: 12,
+        paddingTop: 5,
     },
     imageLogo: {
         position: 'absolute',

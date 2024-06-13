@@ -278,7 +278,7 @@ const CadastroEspacos = () => {
                 >
                      <Text style={styles.buttonText}>Salvar</Text>
                     </Button>
-                    <Text style={styles.buttonDetail}>Preencha todos os campos para habilitar o botão.</Text>
+                    <Text style={styles.buttonDetail}>Preencha todos os campos.</Text>
 
                 </View>
                 <Image style={styles.imageLogo}
