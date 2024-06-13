@@ -1,1 +1,1 @@
-export const baseURL = 'https://nervous-bird-41.loca.lt';
+export const baseURL = 'https://condo.loca.lt';

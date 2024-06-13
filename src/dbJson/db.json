@@ -39,6 +39,24 @@
       "genero": "Masculino",
       "condominio_id": 1,
       "id": 4
+    },
+    {
+      "email": "alvarogr@gmail.com",
+      "password": "$2a$10$MgdMXVyagjPjCiAspjGkMuDeONhQSzAb3ThREEHri5pMwLU1F5W.K",
+      "razaoSocial": "Condominium Vai dar Bom",
+      "cnpj": "12.635.410/0012-15",
+      "id": 5
+    },
+    {
+      "email": "alvarouser@gmail.com",
+      "password": "$2a$10$Gyvxc3MHNUwoQuh/DeFMyeJS54NKrEtoikgAoNSf/TmqFxWD5P0OW",
+      "nomeTitular": "Alvaro",
+      "cpfTitular": "145.236.745-84",
+      "dataNascimento": "14/02/1998",
+      "idade": "26",
+      "genero": "Masculino",
+      "condominio_id": 5,
+      "id": 6
     }
   ],
   "condominio": [],
@@ -120,6 +138,29 @@
         }
       },
       "id": 18
+    },
+    {
+      "nomeEspaco": "Tatame de Luta",
+      "capacidadeMaxima": "9",
+      "tempoMaximo": 120,
+      "textoInstrucoes": "Não matando está valendo; \nTambém não é permitido golpes característicos de faltas esportivas e éticas;",
+      "diasDeFuncionamento": [
+        "2",
+        "4",
+        "5"
+      ],
+      "condominio_id": 5,
+      "horarioFuncionamento": {
+        "inicio": {
+          "hours": 17,
+          "minutes": 0
+        },
+        "fim": {
+          "hours": 22,
+          "minutes": 0
+        }
+      },
+      "id": 19
     }
   ],
   "bloco": [],
@@ -141,6 +182,12 @@
       "numeroApartamento": "120",
       "condominio_id": 1,
       "id": 3
+    },
+    {
+      "bloco": "01",
+      "numeroApartamento": "10",
+      "condominio_id": 5,
+      "id": 4
     }
   ],
   "titular": [],
