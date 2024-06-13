@@ -270,7 +270,7 @@ const CadastroEspacos = () => {
 </View>
 
 
-                <View>
+                <View style={styles.buttonContainer}>
                 <Button
                   style={[styles.buttonSalvar, { backgroundColor: isFormValid ? '#06B6DD' : '#999' }]}
                     onPress={handleSalvar}
@@ -278,6 +278,8 @@ const CadastroEspacos = () => {
                 >
                      <Text style={styles.buttonText}>Salvar</Text>
                     </Button>
+                    <Text style={styles.buttonDetail}>Preencha todos os campos para habilitar o botão.</Text>
+
                 </View>
                 <Image style={styles.imageLogo}
                     source={require('../../assets/LogoCondo2.png')}
@@ -331,6 +333,10 @@ const styles = StyleSheet.create({
         width: '100%',
         minHeight: 50,
     },
+    buttonContainer:{
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
     buttonSalvar: {
         marginTop: 20,
         borderRadius: 10,
@@ -341,6 +347,11 @@ const styles = StyleSheet.create({
     buttonText: {
         color: 'white',
         fontSize: 16,
+    },
+    buttonDetail:{
+        color: 'gray',
+        fontSize: 12,
+        paddingTop: 5,
     },
     imageLogo: {
         position: 'absolute',
