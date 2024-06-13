@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useMemo } from 'react';
+import React, { useState, useCallback, useMemo, useEffect  } from 'react';
 import { View, StyleSheet, Image, Alert, Modal, Pressable } from 'react-native'; 
 import { Text, TextInput, Button } from 'react-native-paper'; 
 import { useNavigation } from '@react-navigation/native'; 
@@ -21,9 +21,9 @@ const CadastroEspacos = () => {
     const [textoInstrucoes, setTextoInstrucoes] = useState('');
     const [selectedDays, setSelectedDays] = useState([]);
     const [isModalVisible, setIsModalVisible] = useState(false);
+    const [isFormValid, setIsFormValid] = useState(false); // Estado para validar o formulário
     const navigation = useNavigation(); 
     const maxFontSizeMultiplier = 1.5
-
     const theme = useTheme();
     const [startTime, setStartTime] = useState({ hours: undefined, minutes: undefined });
     const [endTime, setEndTime] = useState({ hours: undefined, minutes: undefined });
@@ -58,6 +58,29 @@ const CadastroEspacos = () => {
             }),
         [locale]
     );
+
+     // Função para validar o formulário
+     const validateForm = () => {
+        if (
+            nomeEspaco &&
+            capacidadeMaxima &&
+            tempoMaximo &&
+            textoInstrucoes &&
+            selectedDays.length > 0 &&
+            startTime.hours !== undefined &&
+            startTime.minutes !== undefined &&
+            endTime.hours !== undefined &&
+            endTime.minutes !== undefined
+        ) {
+            setIsFormValid(true);
+        } else {
+            setIsFormValid(false);
+        }
+    };
+
+    useEffect(() => {
+        validateForm();
+    }, [nomeEspaco, capacidadeMaxima, tempoMaximo, textoInstrucoes, selectedDays, startTime, endTime]);
 
 
     const formatarNumero = (texto) => {
@@ -248,8 +271,12 @@ const CadastroEspacos = () => {
 
 
                 <View>
-                    <Button style={styles.buttonSalvar} onPress={handleSalvar}>
-                        <Text style={styles.buttonText}>Salvar</Text>
+                <Button
+                  style={[styles.buttonSalvar, { backgroundColor: isFormValid ? '#06B6DD' : '#999' }]}
+                    onPress={handleSalvar}
+                    disabled={!isFormValid}
+                >
+                     <Text style={styles.buttonText}>Salvar</Text>
                     </Button>
                 </View>
                 <Image style={styles.imageLogo}
