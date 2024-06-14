@@ -20,6 +20,7 @@ const MeusDependentes = () => {
   const [editandoId, setEditandoId] = useState(null);
   const [editandoNome, setEditandoNome] = useState("");
   const [editandoDataNasc, setEditandoDataNasc] = useState("");
+  const [editandoCPF, setEditandoCPF] = useState(""); // Novo estado para CPF
   const [expandidoId, setExpandidoId] = useState(null); // Novo estado para controlar a expansão
 
   useEffect(() => {
@@ -41,11 +42,12 @@ const MeusDependentes = () => {
       setEditandoId(id);
       setEditandoNome(dependenteEditando.nomeDependente);
       setEditandoDataNasc(dependenteEditando.data_Nasc);
+      setEditandoCPF(dependenteEditando.cpfDependente); // Definindo o CPF para edição
     }
   };
 
   const handleSalvarDependente = async () => {
-    if (!editandoNome || !editandoDataNasc) {
+    if (!editandoNome || !editandoDataNasc || !editandoCPF) {
       Alert.alert("Erro", "Por favor, preencha todos os campos");
       return;
     }
@@ -54,6 +56,7 @@ const MeusDependentes = () => {
       await editarDependente(editandoId, {
         nomeDependente: editandoNome,
         data_Nasc: editandoDataNasc,
+        cpfDependente: editandoCPF, // Salvando o CPF
       });
 
       const dependentesData = await dependente();
@@ -62,6 +65,7 @@ const MeusDependentes = () => {
       setEditandoId(null);
       setEditandoNome("");
       setEditandoDataNasc("");
+      setEditandoCPF(""); // Resetando o estado do CPF
     } catch (error) {
       console.error("Erro ao editar dependente:", error);
     }
@@ -114,6 +118,12 @@ const MeusDependentes = () => {
                     value={editandoDataNasc}
                     onChangeText={setEditandoDataNasc}
                   />
+                  <TextInput
+                    style={styles.input}
+                    placeholder="CPF"
+                    value={editandoCPF}
+                    onChangeText={setEditandoCPF} // Adicionando o campo para CPF
+                  />
                   <Pressable
                     style={styles.button}
                     onPress={handleSalvarDependente}
@@ -145,7 +155,7 @@ const MeusDependentes = () => {
               )}
             </View>
           )}
-          {index < dependentes.length - 1 && <View style={styles.separator} />}
+          {index < dependentes.length - 1 && <View style={styles.separator} />} {/* Linha separadora */}
         </View>
       ))}
     </ScrollView>

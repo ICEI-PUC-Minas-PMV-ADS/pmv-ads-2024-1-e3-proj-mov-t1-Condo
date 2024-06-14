@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import ButtonReservas from '../../components/ReservasComponents/ButtonReservas';
 import ButtonDependente from '../../components/ReservasComponents/ButtonReservas';
 import CalendarIcon from '../../assets/calendario.svg';
-import Vector from '../../assets/vector.png';
+import Vector from '../../assets/Vector.png';
 
 const HomeCondominio = () => {
   const navigation = useNavigation();
