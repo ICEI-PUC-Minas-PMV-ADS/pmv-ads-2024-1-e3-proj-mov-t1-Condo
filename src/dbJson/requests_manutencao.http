@@ -1,0 +1,35 @@
+### MANUTENCAO
+GET http://localhost:3000/manutencao
+
+
+### CREATE
+POST http://localhost:3000/manutencao/create
+content-type: application/json
+
+{
+      "id": 2,
+      "tempoDuracao": "04:30:59",
+      "motivo": "Motivo 10",
+      "espaco_id": 1,
+      "espaco_condominio_id": 1
+}
+
+### UPDATE
+PUT http://localhost:3000/manutencao/update
+content-type: application/json
+
+{
+      "id": 1,
+      "tempoDuracao": "02:00:59",
+      "motivo": "Motivo 0",
+      "espaco_id": 1,
+      "espaco_condominio_id": 1
+}
+
+
+### GET MANUTENCAO
+GET http://localhost:3000/manutencao/2
+
+### DELETE MANUTENCAO
+DELETE http://localhost:3000/manutencao/1
+

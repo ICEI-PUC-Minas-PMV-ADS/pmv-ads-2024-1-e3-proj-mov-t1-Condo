@@ -67,6 +67,22 @@
     }
   ],
   "condominio": [],
+  "manutencao": [
+    {
+      "id": 1,
+      "tempoDuracao": "24:59:59",
+      "motivo": "Motivo 0",
+      "espaco_id": 1,
+      "espaco_condominio_id": 1
+    },
+    {
+      "id": 2,
+      "tempoDuracao": "04:30:59",
+      "motivo": "Motivo 10",
+      "espaco_id": 1,
+      "espaco_condominio_id": 1
+    }
+  ],
   "espaco": [
     {
       "nomeEspaco": "Teste02",

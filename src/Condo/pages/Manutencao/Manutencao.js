@@ -1,10 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, StyleSheet, Image } from 'react-native';;
 import CardManutencao from '../../components/CardManutencao';
 import EditarManutencao from './EditarManutencao'
 import DeletarManutencao from './DeletarManutencao'
+import { getManutencao } from '../../services/application.Services'
 
 const Manutencao = () => {
+
+    const [manutencoes, setManutencos] = useState([]);
+
+    useEffect(() => {
+        const fetchManutencao = async () => {
+            try {
+                console.log('Buscando manutencao');
+                const data = await getManutencao();
+                console.log(data);
+                setManutencos(data);
+            } catch (e) {
+                console.error('Erro ao buscar dados da manutenção:', error);
+                Alert.alert('Erro', 'Erro ao buscar dados de manutenção!');
+            }
+        };
+        fetchManutencao();
+    }, []);
 
     const [dialogEdit, setDialogEdit] = React.useState(false);
     const [dialogDelete, setDialogDelete] = React.useState(false);
