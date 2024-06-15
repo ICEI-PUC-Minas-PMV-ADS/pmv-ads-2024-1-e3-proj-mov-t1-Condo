@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import { ScrollView, View, StyleSheet, Image, Alert } from 'react-native';
+import { ScrollView, View, StyleSheet, Image, Pressable, Alert } from 'react-native';
 import { Text, TextInput, Button } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 import RNPickerSelect from 'react-native-picker-select';
@@ -18,6 +18,7 @@ const CadastroApto = () => {
   const [idade, setIdade] = useState('');
   const [genero, setGenero] = useState('');
   const [isFormValid, setIsFormValid] = useState(false);
+
 
   // Função para formatar a data de nascimento (DD/MM/AAAA -> YYYY-MM-DD)
   const formatarData = (data) => {
@@ -47,24 +48,6 @@ const CadastroApto = () => {
     );
     setCpfTitular(result);
   };
-
-  // Validação do formulário
-  const validateForm = useCallback(() => {
-    setIsFormValid(
-      nomeTitular.trim() !== '' &&
-      cpfTitular.trim() !== '' &&
-      bloco.trim() !== '' &&
-      numeroApartamento.trim() !== '' &&
-      dataNascimento.trim() !== '' &&
-      idade.trim() !== '' &&
-      genero.trim() !== ''
-    );
-  }, [nomeTitular, cpfTitular, bloco, numeroApartamento, dataNascimento, idade, genero]);
-
-  // Efeito para validar o formulário sempre que houver mudanças nos campos
-  useEffect(() => {
-    validateForm();
-  }, [validateForm]);
 
   // Função para lidar com o salvamento do apartamento e titular
   const handleSalvar = async () => {
@@ -123,101 +106,127 @@ const CadastroApto = () => {
   };
 
   return (
+  
+  const validateForm = useCallback(() => {
+    if (
+        nomeTitular.trim() !== '' &&
+        cpfTitular.trim() !== '' &&
+        bloco.trim() !== '' &&
+        numeroApartamento.trim() !== '' &&
+        dataNascimento.trim() !== '' &&
+        idade.trim() !== '' &&
+        genero.trim() !== ''
+    ) {
+        setIsFormValid(true);
+    } else {
+        setIsFormValid(false);
+    }
+}, [nomeTitular, cpfTitular, bloco, numeroApartamento, dataNascimento, idade, genero]);
+
+    useEffect(() => {
+     validateForm();
+         }, [validateForm]);
+  
+    return (
     <ScrollView contentContainerStyle={styles.container}>
-      <View>
+
         <View>
-          <Text style={styles.subTitles}>Nº Bloco (Número)</Text>
-          <TextInput
-            style={styles.textInput}
-            mode="outlined"
-            placeholder="Bloco e complemento"
-            placeholderTextColor="#7F7F7F"
-            value={bloco}
-            onChangeText={text => setBloco(text)}
-            keyboardType="numeric"
-            underlineColor="transparent"
-          />
-        </View>
-        <View>
-          <Text style={styles.subTitles}>Nº do Apartamento (Número)</Text>
-          <TextInput
-            mode="outlined"
-            style={styles.textInput}
-            placeholder="Somente o número."
-            placeholderTextColor="#7F7F7F"
-            value={numeroApartamento}
-            onChangeText={text => setNumeroApartamento(text)}
-            keyboardType="numeric"
-            underlineColor="transparent"
-          />
-        </View>
-        <View>
-          <Text style={styles.subTitles}>Nome do Titular</Text>
-          <TextInput
-            mode="outlined"
-            style={styles.textInput}
-            placeholder="Coloque seu nome completo."
-            placeholderTextColor="#7F7F7F"
-            value={nomeTitular}
-            onChangeText={text => setNomeTitular(text)}
-            underlineColor="transparent"
-          />
-        </View>
-        <View>
-          <Text style={styles.subTitles}>CPF</Text>
-          <TextInput
-            mode="outlined"
-            style={styles.textInput}
-            placeholder="Coloque somente os números"
-            placeholderTextColor="#7F7F7F"
-            value={cpfTitular}
-            onChangeText={text => formatarCPF(text)}
-            keyboardType="numeric"
-            underlineColor="transparent"
-          />
-        </View>
-        <View>
-          <Text style={styles.subTitles}>Data de Nascimento</Text>
-          <TextInput
-            mode="outlined"
-            style={styles.textInput}
-            placeholder="DD/MM/AAAA"
-            placeholderTextColor="#7F7F7F"
-            value={dataNascimento}
-            onChangeText={text => formatarData(text)} // Aplicar formatação de data
-            keyboardType="numeric"
-            underlineColor="transparent"
-          />
-        </View>
-        <View>
-          <Text style={styles.subTitles}>Idade</Text>
-          <TextInput
-            mode="outlined"
-            style={styles.textInput}
-            placeholder="Digite sua idade"
-            placeholderTextColor="#7F7F7F"
-            value={idade}
-            onChangeText={text => setIdade(text)}
-            keyboardType="numeric"
-            underlineColor="transparent"
-          />
-        </View>
-        <View>
-          <Text style={styles.subTitles}>Gênero</Text>
-          <RNPickerSelect
-            style={pickerSelectStyles}
-            value={genero}
-            onValueChange={(genero) => setGenero(genero)}
-            items={[
-              { label: 'Masculino', value: 'Masculino' },
-              { label: 'Feminino', value: 'Feminino' },
-              { label: 'Outro', value: 'Outro' },
-            ]}
-          />
-        </View>
-       
-        <View style={styles.buttonContainer}>
-          <Button
+            <View>
+                <Text style={styles.subTitles}>Nº Bloco (Número)</Text>
+                <TextInput
+                    style={styles.textInput}
+                    mode="outlined"
+                    placeholder="Bloco e complemento"
+                    placeholderTextColor="#7F7F7F"
+                    value={bloco}
+                    onChangeText={text => setBloco(text)}
+                    keyboardType="numeric"
+                    underlineColor="transparent"
+                />
+            </View>
+            <View>
+                <Text style={styles.subTitles}>Nº do Apartamento (Número)</Text>
+                <TextInput
+                    mode="outlined"
+                    style={styles.textInput}
+                    placeholder="Somente o número."
+                    placeholderTextColor="#7F7F7F"
+                    value={numeroApartamento}
+                    onChangeText={text => setNumeroApartamento(text)}
+                    keyboardType="numeric"
+                    underlineColor="transparent"
+                />
+            </View>
+            <View>
+                <Text style={styles.subTitles}>Nome do Titular</Text>
+                <TextInput
+                    mode="outlined"
+                    style={styles.textInput}
+                    placeholder="Coloque seu nome completo."
+                    placeholderTextColor="#7F7F7F"
+                    value={nomeTitular}
+                    onChangeText={text => setNomeTitular(text)}
+                    underlineColor="transparent"
+                />
+            </View>
+            <View>
+                <Text style={styles.subTitles}>CPF</Text>
+                <TextInput
+                    mode="outlined"
+                    style={styles.textInput}
+                    placeholder="Coloque somente os números"
+                    placeholderTextColor="#7F7F7F"
+                    value={cpfTitular}
+                    onChangeText={text => formatarCPF(text)}
+                    keyboardType="numeric"
+                    underlineColor="transparent"
+                />
+            </View>
+
+            <View>
+                <Text style={styles.subTitles}>Data de Nascimento</Text>
+                <TextInput
+                    mode="outlined"
+                    style={styles.textInput}
+                    placeholder="DD/MM/AAAA"
+                    placeholderTextColor="#7F7F7F"
+                    value={dataNascimento}
+                    onChangeText={text => formatarData(text)} // Aplicar formatação de data
+                    keyboardType="numeric"
+                    underlineColor="transparent"
+                />
+            </View>
+
+            <View>
+                <Text style={styles.subTitles}>Idade</Text>
+                <TextInput
+                    mode="outlined"
+                    style={styles.textInput}
+                    placeholder="Digite sua idade"
+                    placeholderTextColor="#7F7F7F"
+                    value={idade}
+                    onChangeText={text => setIdade(text)}
+                    keyboardType="numeric"
+                    underlineColor="transparent"
+                />
+            </View>
+
+            <View>
+                <Text style={styles.subTitles}>Gênero</Text>
+                <RNPickerSelect
+                    style={pickerSelectStyles}
+                    value={genero}
+                    onValueChange={(genero) => setGenero(genero)}
+                    items={[
+                        { label: 'Masculino', value: 'Masculino' },
+                        { label: 'Feminino', value: 'Feminino' },
+                        { label: 'Outro', value: 'Outro' },
+                    ]}
+                />
+            </View>
+
+            <View style={styles.buttonContainer}>
+            <Button
             style={[styles.buttonSalvar, { backgroundColor: isFormValid ? '#06B6DD' : '#999'}]}
             onPress={handleSalvar}
             disabled={!isFormValid}
@@ -225,9 +234,11 @@ const CadastroApto = () => {
             <Text style={styles.buttonText}>Salvar</Text>
           </Button>
           <Text style={styles.buttonDetail}>Preencha todos os campos.</Text>
+
+            </View>
+
+            <Image style={styles.imageLogo} source={require('../../assets/LogoCondo2.png')} />
         </View>
-        <Image style={styles.imageLogo} source={require('../../assets/LogoCondo2.png')} />
-      </View>
     </ScrollView>
   );
 };

@@ -10,17 +10,17 @@ import {
 import { cadastrarDependente } from "../../services/application.Services";
 
 const CadastroDependente = () => {
-  const [nome, setNome] = useState("");
-  const [cpf, setCpf] = useState("");
-  const [dataNascimento, setDataNascimento] = useState("");
+  const [nomeDependente, setNome] = useState("");
+  const [cpfDependente, setCpf] = useState("");
+  const [data_Nasc, setDataNascimento] = useState("");
   const [idade, setIdade] = useState("");
 
   const handleCadastro = async () => {
-    if (nome.length > 100) {
+    if (nomeDependente.length > 100) {
       Alert.alert("Erro", "O nome deve ter no máximo 100 caracteres.");
       return;
     }
-    if (!/^[a-zA-Z\s]*$/.test(nome)) {
+    if (!/^[a-zA-Z\s]*$/.test(nomeDependente)) {
       Alert.alert("Erro", "O nome deve conter apenas letras.");
       return;
     }
@@ -33,9 +33,9 @@ const CadastroDependente = () => {
     }
 
     const novoDependente = {
-      nome,
-      cpf,
-      dataNascimento,
+      nomeDependente,
+      cpfDependente,
+      data_Nasc,
       idade,
     };
 
@@ -84,7 +84,7 @@ const CadastroDependente = () => {
         <Text style={styles.label}>Nome:</Text>
         <TextInput
           style={styles.input}
-          value={nome}
+          value={nomeDependente}
           onChangeText={(text) => {
             if (/^[a-zA-Z\s]*$/.test(text) || text === "") {
               setNome(text.slice(0, 100)); // Limita o nome a 100 caracteres
@@ -98,7 +98,7 @@ const CadastroDependente = () => {
         <Text style={styles.label}>CPF:</Text>
         <TextInput
           style={styles.input}
-          value={cpf}
+          value={cpfDependente}
           onChangeText={(text) => {
             if (/^[\d.-]*$/.test(text)) {
               formatarCPF(text);
@@ -115,7 +115,7 @@ const CadastroDependente = () => {
         <Text style={styles.label}>Data de Nascimento:</Text>
         <TextInput
           style={styles.input}
-          value={dataNascimento}
+          value={data_Nasc}
           onChangeText={(text) => formatarData(text)}
         />
       </View>
