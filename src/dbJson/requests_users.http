@@ -29,4 +29,9 @@ content-type: application/json
 
 
 ### GET USERS
-GET http://localhost:3000/users/12
+GET http://localhost:3000/users/2
+
+
+### DELETE USERS
+
+DELETE  http://localhost:3000/users/31

@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import ButtonReservas from '../../components/ReservasComponents/ButtonReservas';
 import ButtonDependente from '../../components/ReservasComponents/ButtonReservas';
 import CalendarIcon from '../../assets/calendario.svg';
-import Vector from '../../assets/Vector.png';
+import Vector from '../../assets/vector.png';
 
 const ReservaCard = ({ data, atividade, nome, pessoas, checkOut }) => {
   return (
