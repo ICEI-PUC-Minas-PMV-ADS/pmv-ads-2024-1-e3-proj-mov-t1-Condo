@@ -17,6 +17,35 @@
       "genero": "Masculino",
       "condominio_id": 1,
       "id": 2
+    },
+    {
+      "email": "condominiobelavista@gmail.com",
+      "password": "$2a$10$HUdV89.0uyWtFk73RlkBhOW0rAvF5/VsTohaw9VvRmD2GqtUSAXRq",
+      "razaoSocial": "Condomínio Bela Vista",
+      "cnpj": "26.487.846/1365-55",
+      "id": 3
+    },
+    {
+      "email": "aclecia@gmail.com",
+      "password": "$2a$10$Lmw/DGgOtbUcOFhDRBVM.uhWuG0M.Wh/1ydPVN/pHxAWnGL6H9dey",
+      "nomeTitular": "Aclecia Batista",
+      "cpfTitular": "080.300.126-67",
+      "dataNascimento": "2000-05-01",
+      "idade": "24",
+      "genero": "Feminino",
+      "condominio_id": 3,
+      "id": 4
+    },
+    {
+      "email": "898.956.565-65@gmail.com",
+      "password": "$2a$10$ldpUMlk3fj4/O5L7oBEAJOoh9ClbcZwiPAbVGhkrcRe1o.ixEaFAm",
+      "nomeTitular": "Guiomar Batista",
+      "cpfTitular": "898.956.565-65",
+      "dataNascimento": "2000-05-01",
+      "idade": "24",
+      "genero": "Feminino",
+      "condominio_id": 1,
+      "id": 5
     }
   ],
   "condominio": [],
@@ -157,6 +186,31 @@
         }
       },
       "id": 21
+    },
+    {
+      "nomeEspaco": "Quadra Esportiva",
+      "capacidadeMaxima": "100",
+      "tempoMaximo": 120,
+      "textoInstrucoes": "Não pode",
+      "diasDeFuncionamento": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "condominio_id": 3,
+      "horarioFuncionamento": {
+        "inicio": {
+          "hours": 8,
+          "minutes": 0
+        },
+        "fim": {
+          "hours": 20,
+          "minutes": 0
+        }
+      },
+      "id": 22
     }
   ],
   "bloco": [],
@@ -247,6 +301,20 @@
       "condominio_id": 1,
       "titular_id": 2,
       "id": 14
+    },
+    {
+      "bloco": "01",
+      "numeroApartamento": "101",
+      "condominio_id": 3,
+      "titular_id": 4,
+      "id": 15
+    },
+    {
+      "bloco": "02",
+      "numeroApartamento": "130",
+      "condominio_id": 1,
+      "titular_id": 5,
+      "id": 16
     }
   ],
   "titular": [
@@ -339,6 +407,22 @@
       "condominio_id": 1,
       "titular_id": 2,
       "id": 8
+    },
+    {
+      "data": "2024-06-15",
+      "horario": "17:00",
+      "espaco_id": 18,
+      "condominio_id": 1,
+      "titular_id": 2,
+      "id": 9
+    },
+    {
+      "data": "2024-06-17",
+      "horario": "09:00",
+      "espaco_id": 17,
+      "condominio_id": 1,
+      "titular_id": 2,
+      "id": 10
     }
   ]
 }

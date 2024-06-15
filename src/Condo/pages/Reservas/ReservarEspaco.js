@@ -17,7 +17,6 @@ const ReservarEspaco = ({ navigation }) => {
   const [titulares, setTitulares] = useState([]);
   const [selectedEspaco, setSelectedEspaco] = useState(null); // Alterado para armazenar o espaço selecionado
 
-  const { user } = useUser();
   const { userCondomino } = useCondomino(); // Aqui corrigimos a desestruturação
 
   const [refreshing, setRefreshing] = useState(false);
@@ -35,9 +34,9 @@ const ReservarEspaco = ({ navigation }) => {
         try {
           console.log('Buscando dados para condominio_id:', userCondomino.condominio_id);
           const espacos = await fetchEspacos(userCondomino.condominio_id);
-          const titulares = await fetchTitulares(userCondomino.condominio_id);
-          console.log('Espaços recebidos:', espacos);
-          console.log('Titulares recebidos:', titulares);
+          const titulares = userCondomino; //usa o titular logado como definição
+          console.log('Titulares recebidos:', titulares); //Log de teste
+          console.log('Espaços recebidos:', espacos); //Log de teste
           setEspacos(espacos);
           setTitulares(titulares);
         } catch (error) {
@@ -96,16 +95,17 @@ const ReservarEspaco = ({ navigation }) => {
             }))}
           />*/}
 
-          <RNPickerSelect
-              style={styles.select}
-              value={selectedTitular}
-              onValueChange={(value) => setSelectedTitular(value)}
-              items={titulares.map(titular => ({
-                label: titular.nomeTitular,
-                value: titular.id,
-                key: titular.id.toString(),
-              }))}
-            />
+           <RNPickerSelect
+            style={styles.select}
+            value={selectedTitular}
+            onValueChange={(value) => setSelectedTitular(value)}
+           items={[{
+           label: titulares.nomeTitular,
+           value: titulares.id,
+           key: titulares.id,
+          }]}
+          />
+
           </View>
 
           <View style={styles.container}>
