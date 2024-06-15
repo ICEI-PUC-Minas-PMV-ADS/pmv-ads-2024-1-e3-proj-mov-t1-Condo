@@ -2,9 +2,6 @@ import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 import { IconButton } from 'react-native-paper';
-import Reservas from '../pages/Reservas/Reservas';
-import ReservarEspaco from '../pages/Reservas/ReservarEspaco';
-import ReservarEspacoTwo from '../pages/Reservas/ReservarEspacoTwo';
 import MeusEspacos from '../pages/MeusEspacos/MeusEspacos';
 import Instrucoes from '../pages/Instrucoes/Instrucoes';
 import Manutencao from '../pages/Manutencao/Manutencao';
@@ -12,9 +9,6 @@ import LoginCondominio from '../pages/Login/LoginCondominio';
 import RegisterCondominio from '../pages/Login/RegisterCondominio';
 import LoginCondomino from '../pages/Login/LoginCondomino';
 import LoginCondominoTwo from '../pages/Login/LoginCondominoTwo';
-import Dependentes from '../pages/Dependentes/Dependentes';
-import CadastroDependente from '../pages/Dependentes/CadastroDependente';
-import MeusDependentes from '../pages/Dependentes/MeusDependentes';
 import AdicionarManutencao from '../pages/Manutencao/AdicionarManutencao';
 import CadastroEspacos from '../pages/CadastroEspacos/CadastroEspacos';
 import CadastroApto from '../pages/CadastroApto/CadastroApto';
@@ -33,25 +27,10 @@ const Main = () => {
         component={ScreenNavigationCondominio}
         options={{ header: () => null }}
       />
-      <Stack.Screen
-        name="Reservas"
-        component={Reservas}
-        options={{ title: 'Reservas' }}
-      />
       <Stack.Screen 
       name='HomeCondominio'
       component={HomeCondominio}
       options={{header: null}}
-      />
-      <Stack.Screen
-        name="ReservarEspaco"
-        component={ReservarEspaco}
-        options={{ title: 'Reservar Espaço' }}
-      />
-      <Stack.Screen
-        name="ReservarEspacoTwo"
-        component={ReservarEspacoTwo}
-        options={{ title: 'Reservar Espaço' }}
       />
       <Stack.Screen
         name="MeusEspacos"
@@ -84,27 +63,12 @@ const Main = () => {
         options={{ title: 'Login Condômino' }}
       />
       <Stack.Screen
-        name="Dependentes"
-        component={Dependentes}
-        options={{ title: 'Dependentes' }}
-      />
-      <Stack.Screen
         name="AdicionarManutencao"
         component={AdicionarManutencao}
         options={{
           title: 'Manutenção',
           headerRight: () => <AddIconManutencoes />
         }}
-      />
-      <Stack.Screen
-        name="CadastroDependente"
-        component={CadastroDependente}
-        options={{ title: 'Novo Dependente' }}
-      />
-      <Stack.Screen
-        name="MeusDependentes"
-        component={MeusDependentes}
-        options={{ title: 'Meus Dependentes' }}
       />
       <Stack.Screen 
       name='CadastroEspacos' 

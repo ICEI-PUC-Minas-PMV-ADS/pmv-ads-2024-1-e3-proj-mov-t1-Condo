@@ -6,6 +6,17 @@
       "razaoSocial": "Teste 01",
       "cnpj": "26.598.946/6145-44",
       "id": 1
+    },
+    {
+      "email": "jbalmeida@gmail.com",
+      "password": "$2a$10$6oVXD4/9BL5nAKaOqmMqiuOJlyjUEmIoHtdMh7pvhU2YOQg3DcxdC",
+      "nomeTitular": "Josué Almeida",
+      "cpfTitular": "700.438.566-32",
+      "dataNascimento": "2000-05-01",
+      "idade": "24",
+      "genero": "Masculino",
+      "condominio_id": 1,
+      "id": 2
     }
   ],
   "condominio": [],
@@ -229,6 +240,13 @@
       "condominio_id": 1,
       "titular_id": 30,
       "id": 13
+    },
+    {
+      "bloco": "11",
+      "numeroApartamento": "224",
+      "condominio_id": 1,
+      "titular_id": 2,
+      "id": 14
     }
   ],
   "titular": [
@@ -313,6 +331,14 @@
       "condominio_id": 1,
       "titular_id": 4,
       "id": 7
+    },
+    {
+      "data": "2024-06-17",
+      "horario": "11:00",
+      "espaco_id": 18,
+      "condominio_id": 1,
+      "titular_id": 2,
+      "id": 8
     }
   ]
 }
