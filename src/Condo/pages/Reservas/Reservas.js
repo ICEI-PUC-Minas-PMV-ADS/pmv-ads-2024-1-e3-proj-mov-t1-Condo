@@ -30,9 +30,7 @@ const Reservas = () => {
 
            <CustomButton title="Reservar Espaço" screen="ReservarEspaco" />
             <Divider />
-            <Button mode="Text" onPress={() => console.log('Pressed')}>
-                Minhas Reservas
-            </Button>
+            <CustomButton title="Minhas reservas" screen="MinhasReservas"/>
             <Divider />
 
         </View>

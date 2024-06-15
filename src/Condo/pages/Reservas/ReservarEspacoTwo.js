@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Text, Pressable, ScrollView, RefreshControl, Alert } from 'react-native';
 import Calendar from '../../components/ReservasComponents/Calendar';
-import { Picker } from '@react-native-picker/picker';
+import RNPickerSelect from 'react-native-picker-select';
 import { fetchEspacoById } from '../../services/application.Services';
+import { postReservas } from '../../services/application.Services'; // Importar função de cadastro
 import moment from 'moment'; 
+import { useCondomino } from '../../context/CondominoContext';
 
 const ReservarEspacoTwo = ({ navigation, route }) => {
   const [refreshing, setRefreshing] = useState(false);
@@ -11,7 +13,8 @@ const ReservarEspacoTwo = ({ navigation, route }) => {
   const [availableTimes, setAvailableTimes] = useState([]);
   const [selectedDate, setSelectedDate] = useState('');
   const [espaco, setEspaco] = useState(null);
-  const { espacoId } = route.params;
+  const { espacoId, titularId } = route.params; // Receber o titularId e espacoId das params
+  const { userCondomino } = useCondomino(); 
 
   useEffect(() => {
     const fetchEspacoData = async () => {
@@ -19,6 +22,7 @@ const ReservarEspacoTwo = ({ navigation, route }) => {
         const espacoData = await fetchEspacoById(espacoId);
         console.log('Buscando dados para o espaço ID:', espacoId);
         console.log('Dados do espaço recebidos:', espacoData);
+        console.log('Buscando Dados de quem foi selecionado:', titularId);
         setEspaco(espacoData);
       } catch (error) {
         console.error('Erro ao buscar dados do espaço:', error);
@@ -26,53 +30,79 @@ const ReservarEspacoTwo = ({ navigation, route }) => {
       }
     };
     fetchEspacoData();
-  }, [espacoId]);
+  }, [espacoId, titularId]);
 
   useEffect(() => {
     if (espaco) {
-      const times = calculateAvailableTimes(espaco);
-      setAvailableTimes(times);
+      calculateAvailableTimes(selectedDate);
     }
-  }, [espaco]);
+  }, [espaco, selectedDate]);
 
-  const onDaySelect = (selectedDay) => {
-    const selectedDayOfWeek = selectedDay.day(); // Retorna o dia da semana (0 para domingo, 1 para segunda, etc.)
+  const onDaySelect = (day) => {
+    const selectedDay = day.dateString;
+    setSelectedDate(selectedDay);
+  };
+
+  const calculateAvailableTimes = (selectedDate) => {
+    if (!selectedDate) {
+      setAvailableTimes([]);
+      return;
+    }
+
+    const selectedDayOfWeek = moment(selectedDate).day();
     const isDayOpen = espaco.diasDeFuncionamento.includes(selectedDayOfWeek.toString());
-    
-    if (isDayOpen) {
-      const availableTimes = calculateAvailableTimes(selectedDay);
-      setAvailableTimes(availableTimes);
-    } else {
-      setAvailableTimes([]); // Limpa os horários disponíveis se o dia não estiver aberto
-    }
-  };
-  
-  
 
-  const calculateAvailableTimes = () => {
-    const { inicio, fim } = espaco.horarioFuncionamento;
-    const timeSlots = [];
-    let currentTime = moment(inicio); // Começa com o horário de início de funcionamento
-  
-    // Enquanto o horário atual for antes do horário de fechamento
-    while (currentTime.isBefore(fim)) {
-      // Adiciona o horário atual à lista de horários disponíveis
-      timeSlots.push(currentTime.format('HH:mm'));
-      // Adiciona o tempo máximo de reserva ao horário atual
-      currentTime.add(espaco.tempoMaximo, 'minutes');
+    if (isDayOpen) {
+      const { inicio, fim } = espaco.horarioFuncionamento;
+      const timeSlots = [];
+      let currentTime = moment(inicio);
+
+      while (currentTime.isBefore(fim)) {
+        timeSlots.push(currentTime.format('HH:mm'));
+        currentTime.add(espaco.tempoMaximo, 'minutes');
+      }
+
+      setAvailableTimes(timeSlots);
+    } else {
+      setAvailableTimes([]);
     }
-  
-    return timeSlots;
   };
-  
-  
-  
 
   const onRefresh = () => {
     setRefreshing(true);
     setTimeout(() => {
       setRefreshing(false);
     }, 2000);
+  };
+
+  const handleSalvar = async () => {
+    if (!userCondomino || !userCondomino.condominio_id) {
+      console.error('ID do condomínio não está definido no objeto do usuário');
+      Alert.alert('Erro', 'ID do condomínio não está definido no objeto do usuário!');
+      return;
+    }
+
+    if (!selectedDate || !selectedTime) {
+      Alert.alert('Erro', 'Data e horário devem ser selecionados!');
+      return;
+    }
+
+    const formData = {
+      data: selectedDate,
+      horario: selectedTime,
+      espaco_id: espacoId,
+      condominio_id: userCondomino.condominio_id,
+      titular_id: titularId, // Usar titularId das params
+    };
+
+    try {
+      const response = await postReservas(formData);
+      Alert.alert('Sucesso', 'Reserva realizada com sucesso!');
+      navigation.goBack();
+    } catch (error) {
+      console.error('Erro ao realizar reserva:', error);
+      Alert.alert('Erro', 'Erro ao salvar espaço!');
+    }
   };
 
   return (
@@ -84,17 +114,20 @@ const ReservarEspacoTwo = ({ navigation, route }) => {
           <>
             <Text style={styles.title}>{espaco.nomeEspaco}</Text>
             <Calendar onDayPress={onDaySelect} />
-            <Picker
-              selectedValue={selectedTime}
-              onValueChange={(itemValue) => setSelectedTime(itemValue)}
-            >
-              <Picker.Item label="Selecione o horário" value={null} />
-              {availableTimes.map((time, index) => (
-                <Picker.Item key={index} label={time} value={time} />
-              ))}
-            </Picker>
-            <Pressable onPress={() => navigation.navigate('ReservarEspacoTwo')}>
-              <Text style={styles.continueButton}>Continuar</Text>
+            {selectedDate && availableTimes.length > 0 ? (
+              <RNPickerSelect
+                onValueChange={(value) => setSelectedTime(value)}
+                items={availableTimes.map((time) => ({
+                  label: time,
+                  value: time
+                }))}
+                placeholder={{ label: "Selecione o horário", value: null }}
+              />
+            ) : (
+              <Text style={styles.messageText}>Nenhum horário disponível.</Text>
+            )}
+            <Pressable onPress={handleSalvar}>
+              <Text style={styles.continueButton}>Finalizar Reserva</Text>
             </Pressable>
           </>
         )}
@@ -114,6 +147,11 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 22,
     marginBottom: 10,
+  },
+  messageText: {
+    fontSize: 16,
+    marginTop: 10,
+    color: 'gray',
   },
   continueButton: {
     fontSize: 18,

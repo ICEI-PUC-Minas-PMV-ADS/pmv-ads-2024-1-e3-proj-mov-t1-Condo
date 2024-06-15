@@ -96,13 +96,26 @@ export const excluirDependente = async (id) => {
 
 export const cadastrarApartamento = async (param) => {
     try {
-        const responseApartamento = await API.post(`${baseURL}/660/blocoapartamento`, param);
+        const responseApartamento = await API.post(`${baseURL}/blocoapartamento`, param);
         return responseApartamento.data;
     }catch (error) {
         console.error("Erro ao cadastrar apartamento:", error)
      
     }
 }
+
+
+export const registerTitular = async (param) => {
+  try {
+    const response = await API.post(`${baseURL}/users`, param);
+    return response.data; // Retorna diretamente os dados da resposta
+  } catch (error) {
+    console.error("Erro ao registrar titular:", error);
+    throw error; // Lança o erro para ser capturado na chamada da função
+  }
+};
+
+
 
 export const cadastrarEspaco = async (param) => {
     try {
@@ -112,5 +125,14 @@ export const cadastrarEspaco = async (param) => {
         console.error("Erro ao cadastrar espaço:", error)
      
     }
+}
+
+export const postReservas = async (param) => {
+  try {
+    const response = await API.post(`${baseURL}/660/reservas`, param);
+    return response.data;
+  }catch (error) {
+    console.error("Erro ao cadastrar reserva:", error)
+  }
 }
 

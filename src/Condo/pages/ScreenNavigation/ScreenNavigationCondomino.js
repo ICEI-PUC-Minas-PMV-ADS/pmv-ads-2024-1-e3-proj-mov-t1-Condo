@@ -33,7 +33,7 @@ const NavigationToDo = () => {
         <CustomButton title="Reservas" screen="Reservas" />
         <CustomButton title="Reservar Espaço" screen="ReservarEspaco" />
         <CustomButton title="Reservar Espaço" screen="ReservarEspacoTwo" />
-        <CustomButton title="Minhas Reservas" screen="" />
+        <CustomButton title="Minhas Reservas" screen="MinhasReservas" />
 
         <Text style={{ textAlign: 'center' }}>--------------- Dependentes ---------------</Text>
         <CustomButton title="Dependentes" screen="Dependentes" />

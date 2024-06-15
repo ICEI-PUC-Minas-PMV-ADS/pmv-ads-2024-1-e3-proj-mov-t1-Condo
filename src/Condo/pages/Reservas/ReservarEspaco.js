@@ -157,7 +157,7 @@ const ReservarEspaco = ({ navigation }) => {
             <Image source={jogging} style={styles.image} />
           </View>
           <Pressable onPress={() => navigation.navigate('ReservarEspacoTwo', { espacoId: selectedEspaco, titularId: selectedTitular })} icon={'chevrondoubleright'}>
-          <Text style={styles.continueButton}>Continuar</Text>
+          <Text style={styles.continueButton}>Continue</Text>
         </Pressable>
         </View>
       

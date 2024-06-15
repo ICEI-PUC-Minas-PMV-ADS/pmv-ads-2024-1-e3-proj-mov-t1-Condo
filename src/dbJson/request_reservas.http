@@ -1,0 +1,37 @@
+### RESERVAS    
+GET http://localhost:3000/reservas
+
+
+### CREATE
+POST http://localhost:3000/reservas
+content-type: application/json
+
+{
+     "data": "14/06/2024",
+     "horario": "10:00",
+     "espaco_id": "1",
+     "condominio_id": "1",
+     "titular_id": "2"
+     
+}
+
+### UPDATE RESERVAS ID
+PUT http://localhost:3000/reservas/1
+content-type: application/json
+
+{
+       "nomeTitular": "Josué Almeida",
+      "cpfTitular": "12345678900",
+      "Data_Nasc": "01/05/2000",
+      "idade": 31,
+      "blocoapartamento_id": 1,
+      "condominio_id": 7
+}
+
+
+### GET RESERVAS ID
+GET http://localhost:3000/reservas/1
+
+### DELETE RESERVAS ID
+DELETE http://localhost:3000/titular/11
+
