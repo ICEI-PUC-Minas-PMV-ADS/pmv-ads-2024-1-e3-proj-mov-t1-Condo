@@ -6,9 +6,9 @@ import { getUserByEmail } from '../../services/auth.services';
 
 const UpdatePassword = () => {
   const navigation = useNavigation();
-  const [email, setEmail] = useState('josuepayments@gmail.com');
-  const [password, setPassword] = useState('12345678');
-  const [repetirPassword, setRepetirPassword] = useState('12345678');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [repetirPassword, setRepetirPassword] = useState('');
 
   const handleSignUp = () => {
     //Redirecionar para a tela de Login

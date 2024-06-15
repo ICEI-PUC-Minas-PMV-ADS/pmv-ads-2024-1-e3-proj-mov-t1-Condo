@@ -6,8 +6,8 @@ import { login } from '../../services/auth.services';
 import { useCondomino } from '../../context/CondominoContext';
 
 const LoginCondominoTwo = () => {
-  const [email, setEmail] = useState('teste10@gmail.com');
-  const [password, setPassword] = useState('12345678');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const { setUserCondomino, setSignedCondomino, espacosData } = useCondomino();
 
   const navigation = useNavigation();
