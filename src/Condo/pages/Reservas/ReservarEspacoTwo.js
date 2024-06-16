@@ -3,8 +3,8 @@ import { StyleSheet, View, Text, Pressable, ScrollView, RefreshControl, Alert } 
 import Calendar from '../../components/ReservasComponents/Calendar';
 import RNPickerSelect from 'react-native-picker-select';
 import { fetchEspacoById } from '../../services/application.Services';
-import { postReservas } from '../../services/application.Services'; // Importar função de cadastro
-import moment from 'moment'; 
+import { postReservas } from '../../services/application.Services';
+import moment from 'moment';
 import { useCondomino } from '../../context/CondominoContext';
 import { useNavigation } from '@react-navigation/native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
@@ -15,18 +15,15 @@ const ReservarEspacoTwo = ({ navigation, route }) => {
   const [availableTimes, setAvailableTimes] = useState([]);
   const [selectedDate, setSelectedDate] = useState('');
   const [espaco, setEspaco] = useState(null);
-  const [errors, setErrors] = useState({}); // Estado para armazenar mensagens de erro
-  const { espacoId, titularId } = route.params; // Receber o titularId e espacoId das params
-  const { userCondomino } = useCondomino(); 
-  const { navigate } = useNavigation(); 
+  const [errors, setErrors] = useState({});
+  const { espacoId, titularId } = route.params;
+  const { userCondomino } = useCondomino();
+  const { navigate } = useNavigation();
 
   useEffect(() => {
     const fetchEspacoData = async () => {
       try {
         const espacoData = await fetchEspacoById(espacoId);
-        console.log('Buscando dados para o espaço ID:', espacoId);
-        console.log('Dados do espaço recebidos:', espacoData);
-        console.log('Buscando Dados de quem foi selecionado:', titularId);
         setEspaco(espacoData);
       } catch (error) {
         console.error('Erro ao buscar dados do espaço:', error);
@@ -44,8 +41,17 @@ const ReservarEspacoTwo = ({ navigation, route }) => {
 
   const onDaySelect = (day) => {
     const selectedDay = day.dateString;
-    setSelectedDate(selectedDay);
-    setErrors((prevErrors) => ({ ...prevErrors, selectedDate: null })); // Limpa o erro se uma data for selecionada
+
+    // Validar se a data selecionada é maior ou igual à data atual
+    if (moment(selectedDay).isSameOrAfter(moment().format('YYYY-MM-DD'))) {
+      setSelectedDate(selectedDay);
+      setErrors((prevErrors) => ({ ...prevErrors, selectedDate: null }));
+    } else {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        selectedDate: 'Não é possível selecionar uma data anterior à atual!',
+      }));
+    }
   };
 
   const calculateAvailableTimes = (selectedDate) => {
@@ -109,13 +115,13 @@ const ReservarEspacoTwo = ({ navigation, route }) => {
       nomeEspaco: espaco.nomeEspaco,
       nomeTitular: userCondomino.nomeTitular,
       condominio_id: userCondomino.condominio_id,
-      titular_id: titularId, // Usar titularId das params
+      titular_id: titularId,
     };
 
     try {
       const response = await postReservas(formData);
       Alert.alert('Sucesso', 'Reserva realizada com sucesso!');
-      navigate('MinhasReservas'); 
+      navigate('MinhasReservas');
     } catch (error) {
       console.error('Erro ao realizar reserva:', error);
       Alert.alert('Erro', 'Erro ao salvar espaço!');
@@ -129,42 +135,44 @@ const ReservarEspacoTwo = ({ navigation, route }) => {
       <View style={styles.containerReservarEspaco}>
         {espaco && (
           <>
-          <View style={styles.pickerContent}>
-            <Text style={styles.title}>{espaco.nomeEspaco}</Text>
+            <View style={styles.pickerContent}>
+              <Text style={styles.title}>{espaco.nomeEspaco}</Text>
             </View>
             <Calendar onDayPress={onDaySelect} />
+            {errors.selectedDate && <Text style={styles.errorText}>{errors.selectedDate}</Text>}
             {selectedDate && availableTimes.length > 0 ? (
-               <View style={styles.pickerContent}>
+              <View style={styles.pickerContent}>
                 <Text style={styles.label}>Horário</Text>
-              <RNPickerSelect
-                style={pickerSelectStyles}
-                onValueChange={(value) => {
-                  setSelectedTime(value);
-                  setErrors((prevErrors) => ({ ...prevErrors, selectedTime: null })); // Limpa o erro se um horário for selecionado
-                }}
-                items={availableTimes.map((time) => ({
-                  label: time,
-                  value: time
-                }))}
-                placeholder={{ label: "Selecione", value: null }}
-                useNativeAndroidPickerStyle={false}
-                Icon={() => (
-                  <View style={styles.iconContainer}>
-                    <FontAwesome name="chevron-down" size={16} color="#7F7F7F" />
-                  </View>
-                      )}
-              />
-              {errors.selectedTime && <Text style={styles.errorText}>{errors.selectedTime}</Text>}
-            </View>
+                <RNPickerSelect
+                  style={pickerSelectStyles}
+                  onValueChange={(value) => {
+                    setSelectedTime(value);
+                    setErrors((prevErrors) => ({ ...prevErrors, selectedTime: null }));
+                  }}
+                  items={availableTimes.map((time) => ({
+                    label: time,
+                    value: time,
+                  }))}
+                  placeholder={{ label: 'Selecione', value: null }}
+                  useNativeAndroidPickerStyle={false}
+                  Icon={() => (
+                    <View style={styles.iconContainer}>
+                      <FontAwesome name="chevron-down" size={16} color="#7F7F7F" />
+                    </View>
+                  )}
+                />
+                {errors.selectedTime && <Text style={styles.errorText}>{errors.selectedTime}</Text>}
+              </View>
             ) : (
               <Text style={styles.messageText}>Nenhum horário disponível.</Text>
             )}
             <Pressable onPress={handleSalvar}>
-              <Text style={styles.continueButton}>Finalizar Reserva <FontAwesome name="angle-double-right" size={19} color="#4F555A" /></Text>
+              <Text style={styles.continueButton}>
+                Finalizar Reserva <FontAwesome name="angle-double-right" size={19} color="#4F555A" />
+              </Text>
             </Pressable>
           </>
         )}
-        {errors.selectedDate && <Text style={styles.errorText}>{errors.selectedDate}</Text>}
       </View>
     </ScrollView>
   );
@@ -176,11 +184,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 20,
     marginTop: 12,
-    height: '100%',
   },
   title: {
     fontSize: 20,
-    color: "#7F7F7F",
+    color: '#7F7F7F',
     marginRight: 15,
     marginBottom: 10,
   },
@@ -192,12 +199,12 @@ const styles = StyleSheet.create({
   pickerContent: {
     marginTop: 20,
     borderRadius: 13,
-    borderColor: '7F7F7F',
-    width: "90%",
+    borderColor: '#7F7F7F',
+    width: '90%',
   },
   iconContainer: {
-    backgroundColor: 'none', // Cor do fundo do círculo
-    borderRadius: 20, // Metade da altura do ícone
+    backgroundColor: 'none',
+    borderRadius: 20,
     borderColor: '#7F7F7F',
     borderWidth: 1.5,
     padding: 2,
@@ -205,20 +212,20 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 20,
-    color: "#7F7F7F",
+    color: '#7F7F7F',
     marginBottom: 5,
     marginRight: 15,
   },
   continueButton: {
-    color: "#4F555A",
+    color: '#4F555A',
     fontSize: 19,
     fontWeight: '700',
     marginBottom: 50,
   },
   errorText: {
-    color: '7F7F7F',
+    color: '#7F7F7F',
     marginBottom: 10,
-  }
+  },
 });
 
 const pickerSelectStyles = StyleSheet.create({
@@ -230,7 +237,7 @@ const pickerSelectStyles = StyleSheet.create({
     borderColor: 'gray',
     borderRadius: 4,
     color: 'black',
-    paddingRight: 30, // para garantir que o texto não sobreponha o ícone
+    paddingRight: 30,
     backgroundColor: '#f0f0f0',
     marginBottom: 16,
     width: '100%',
@@ -242,10 +249,11 @@ const pickerSelectStyles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'gray',
     borderRadius: 10,
-    color: "#7F7F7F",
-    paddingRight: 30, // para garantir que o texto não sobreponha o ícone
+    color: '#7F7F7F',
+    paddingRight: 30,
     backgroundColor: '#f0f0f0',
-    marginBottom: 16,
+    marginBottom: 
+    16,
     width: '100%',
   },
   iconContainer: {

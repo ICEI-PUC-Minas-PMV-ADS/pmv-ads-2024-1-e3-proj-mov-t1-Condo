@@ -405,14 +405,84 @@
       "id": 10
     },
     {
-      "data": "2024-06-14",
-      "horario": "12:00",
+      "data": "2024-06-22",
+      "horario": "15:00",
+      "espaco_id": 21,
+      "nomeEspaco": "Tenis",
+      "nomeTitular": "Josué Almeida",
+      "condominio_id": 1,
+      "titular_id": 2,
+      "id": 14
+    },
+    {
+      "data": "2024-06-22",
+      "horario": "15:00",
+      "espaco_id": 21,
+      "nomeEspaco": "Tenis",
+      "nomeTitular": "Josué Almeida",
+      "condominio_id": 1,
+      "titular_id": 2,
+      "id": 15
+    },
+    {
+      "data": "2024-06-18",
+      "horario": "09:00",
+      "espaco_id": 21,
+      "nomeEspaco": "Tenis",
+      "nomeTitular": "Josué Almeida",
+      "condominio_id": 1,
+      "titular_id": 2,
+      "id": 16
+    },
+    {
+      "data": "2024-06-18",
+      "horario": "09:00",
+      "espaco_id": 21,
+      "nomeEspaco": "Tenis",
+      "nomeTitular": "Josué Almeida",
+      "condominio_id": 1,
+      "titular_id": 2,
+      "id": 17
+    },
+    {
+      "data": "2024-06-18",
+      "horario": "09:00",
+      "espaco_id": 21,
+      "nomeEspaco": "Tenis",
+      "nomeTitular": "Josué Almeida",
+      "condominio_id": 1,
+      "titular_id": 2,
+      "id": 18
+    },
+    {
+      "data": "2024-06-18",
+      "horario": "17:00",
+      "espaco_id": 18,
+      "nomeEspaco": "Piscina",
+      "nomeTitular": "Josué Almeida",
+      "condominio_id": 1,
+      "titular_id": 2,
+      "id": 19
+    },
+    {
+      "data": "2024-06-17",
+      "horario": "09:00",
       "espaco_id": 17,
       "nomeEspaco": "Quadra Esportiva",
       "nomeTitular": "Josué Almeida",
       "condominio_id": 1,
       "titular_id": 2,
-      "id": 11
+      "id": 20
+    },
+    {
+      "data": "2024-06-17",
+      "horario": "11:00",
+      "espaco_id": 18,
+      "nomeEspaco": "Piscina",
+      "nomeTitular": "Josué Almeida",
+      "condominio_id": 1,
+      "titular_id": 2,
+      "id": 21
     }
   ]
 }

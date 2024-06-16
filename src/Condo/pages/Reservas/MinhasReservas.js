@@ -24,17 +24,26 @@ const MinhasReservas = ({ navigation }) => {
         const loadReservas = async () => {
             try {
                 if (!userCondomino) return;
-
-                const reservasData = await fetchReservas(userCondomino.id);
+    
+                let reservasData = await fetchReservas(userCondomino.id);
+                
+                // Ordenar as reservas pela data e horário mais próximos
+                reservasData.sort((a, b) => {
+                    const dateA = parseISO(`${a.data}T${a.horario}`);
+                    const dateB = parseISO(`${b.data}T${b.horario}`);
+                    return dateA - dateB;
+                });
+    
                 setReservas(reservasData);
             } catch (error) {
                 console.error('Erro ao carregar as reservas:', error);
                 // Trate o erro conforme necessário, como exibir uma mensagem ao usuário
             }
         };
-
+    
         loadReservas();
     }, [userCondomino]);
+    
 
     // Função para capitalizar a primeira letra
     const capitalizeFirstLetter = (string) => {
@@ -171,6 +180,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         color: "#7F7F7F",
         fontWeight: 'bold',
+        marginLeft: -5,
         marginBottom: 8,
     },
     reservaAtividade: {
