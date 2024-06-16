@@ -9,14 +9,13 @@ import { useCondomino } from '../../context/CondominoContext';
 import { useNavigation } from '@react-navigation/native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
-
-
 const ReservarEspacoTwo = ({ navigation, route }) => {
   const [refreshing, setRefreshing] = useState(false);
   const [selectedTime, setSelectedTime] = useState(null);
   const [availableTimes, setAvailableTimes] = useState([]);
   const [selectedDate, setSelectedDate] = useState('');
   const [espaco, setEspaco] = useState(null);
+  const [errors, setErrors] = useState({}); // Estado para armazenar mensagens de erro
   const { espacoId, titularId } = route.params; // Receber o titularId e espacoId das params
   const { userCondomino } = useCondomino(); 
   const { navigate } = useNavigation(); 
@@ -46,6 +45,7 @@ const ReservarEspacoTwo = ({ navigation, route }) => {
   const onDaySelect = (day) => {
     const selectedDay = day.dateString;
     setSelectedDate(selectedDay);
+    setErrors((prevErrors) => ({ ...prevErrors, selectedDate: null })); // Limpa o erro se uma data for selecionada
   };
 
   const calculateAvailableTimes = (selectedDate) => {
@@ -81,14 +81,24 @@ const ReservarEspacoTwo = ({ navigation, route }) => {
   };
 
   const handleSalvar = async () => {
-    if (!userCondomino || !userCondomino.condominio_id) {
-      console.error('ID do condomínio não está definido no objeto do usuário');
-      Alert.alert('Erro', 'ID do condomínio não está definido no objeto do usuário!');
+    const newErrors = {};
+
+    if (!selectedDate) {
+      newErrors.selectedDate = 'Data é obrigatória!';
+    }
+
+    if (!selectedTime) {
+      newErrors.selectedTime = 'Horário é obrigatório!';
+    }
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
       return;
     }
 
-    if (!selectedDate || !selectedTime) {
-      Alert.alert('Erro', 'Data e horário devem ser selecionados!');
+    if (!userCondomino || !userCondomino.condominio_id) {
+      console.error('ID do condomínio não está definido no objeto do usuário');
+      Alert.alert('Erro', 'ID do condomínio não está definido no objeto do usuário!');
       return;
     }
 
@@ -128,7 +138,10 @@ const ReservarEspacoTwo = ({ navigation, route }) => {
                 <Text style={styles.label}>Horário</Text>
               <RNPickerSelect
                 style={pickerSelectStyles}
-                onValueChange={(value) => setSelectedTime(value)}
+                onValueChange={(value) => {
+                  setSelectedTime(value);
+                  setErrors((prevErrors) => ({ ...prevErrors, selectedTime: null })); // Limpa o erro se um horário for selecionado
+                }}
                 items={availableTimes.map((time) => ({
                   label: time,
                   value: time
@@ -141,6 +154,7 @@ const ReservarEspacoTwo = ({ navigation, route }) => {
                   </View>
                       )}
               />
+              {errors.selectedTime && <Text style={styles.errorText}>{errors.selectedTime}</Text>}
             </View>
             ) : (
               <Text style={styles.messageText}>Nenhum horário disponível.</Text>
@@ -150,6 +164,7 @@ const ReservarEspacoTwo = ({ navigation, route }) => {
             </Pressable>
           </>
         )}
+        {errors.selectedDate && <Text style={styles.errorText}>{errors.selectedDate}</Text>}
       </View>
     </ScrollView>
   );
@@ -199,6 +214,10 @@ const styles = StyleSheet.create({
     fontSize: 19,
     fontWeight: '700',
     marginBottom: 50,
+  },
+  errorText: {
+    color: '7F7F7F',
+    marginBottom: 10,
   }
 });
 
