@@ -136,3 +136,29 @@ export const postReservas = async (param) => {
   }
 }
 
+
+
+export const fetchReservas = async (titular_id) => {
+  try {
+    const response = await API.get(`${baseURL}/660/reservas`, {
+      params: { titular_id }
+    });
+    
+    return response.data;
+  } catch (error) {
+    console.error('Erro ao buscar espaços:', error);
+    throw error;
+  }
+};
+
+
+export const excluirReserva = async (id) => {
+  try {
+    const response = await API.delete(`${baseURL}/660/reservas/${id}`);
+    return response.data;
+  } catch (error) {
+    console.error("Erro ao excluir dependente:", error);
+    throw error;
+  }
+};
+

@@ -6,6 +6,8 @@ import { fetchEspacoById } from '../../services/application.Services';
 import { postReservas } from '../../services/application.Services'; // Importar função de cadastro
 import moment from 'moment'; 
 import { useCondomino } from '../../context/CondominoContext';
+import { useNavigation } from '@react-navigation/native';
+
 
 const ReservarEspacoTwo = ({ navigation, route }) => {
   const [refreshing, setRefreshing] = useState(false);
@@ -15,6 +17,7 @@ const ReservarEspacoTwo = ({ navigation, route }) => {
   const [espaco, setEspaco] = useState(null);
   const { espacoId, titularId } = route.params; // Receber o titularId e espacoId das params
   const { userCondomino } = useCondomino(); 
+  const { navigate } = useNavigation(); 
 
   useEffect(() => {
     const fetchEspacoData = async () => {
@@ -91,6 +94,8 @@ const ReservarEspacoTwo = ({ navigation, route }) => {
       data: selectedDate,
       horario: selectedTime,
       espaco_id: espacoId,
+      nomeEspaco: espaco.nomeEspaco,
+      nomeTitular: userCondomino.nomeTitular,
       condominio_id: userCondomino.condominio_id,
       titular_id: titularId, // Usar titularId das params
     };
@@ -98,7 +103,7 @@ const ReservarEspacoTwo = ({ navigation, route }) => {
     try {
       const response = await postReservas(formData);
       Alert.alert('Sucesso', 'Reserva realizada com sucesso!');
-      navigation.goBack();
+      navigate('MinhasReservas'); 
     } catch (error) {
       console.error('Erro ao realizar reserva:', error);
       Alert.alert('Erro', 'Erro ao salvar espaço!');

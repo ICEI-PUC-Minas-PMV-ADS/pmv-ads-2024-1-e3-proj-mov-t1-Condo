@@ -345,84 +345,24 @@
   ],
   "reservas": [
     {
-      "data": "14/06/2024",
-      "horario": "10:00",
-      "espaco_id": "1",
-      "condominio_id": "1",
-      "titular_id": "2",
-      "id": 1
-    },
-    {
-      "data": "2024-06-15",
-      "horario": "09:00",
-      "espaco_id": 18,
-      "condominio_id": 1,
-      "titular_id": 3,
-      "id": 2
-    },
-    {
-      "data": "2024-06-15",
-      "horario": "11:00",
-      "espaco_id": 18,
-      "condominio_id": 1,
-      "titular_id": 3,
-      "id": 3
-    },
-    {
-      "data": "2024-06-15",
+      "data": "2024-06-26",
       "horario": "13:00",
       "espaco_id": 18,
+      "nomeEspaco": "Piscina",
+      "nomeTitular": "Josué Almeida",
       "condominio_id": 1,
-      "titular_id": 3,
+      "titular_id": 2,
       "id": 4
     },
     {
-      "data": "2024-06-15",
-      "horario": "18:00",
+      "data": "2024-06-28",
+      "horario": "15:00",
       "espaco_id": 17,
+      "nomeEspaco": "Quadra Esportiva",
+      "nomeTitular": "Josué Almeida",
       "condominio_id": 1,
       "titular_id": 2,
       "id": 5
-    },
-    {
-      "data": "2024-06-15",
-      "horario": "15:00",
-      "espaco_id": 17,
-      "condominio_id": 1,
-      "titular_id": 2,
-      "id": 6
-    },
-    {
-      "data": "2024-06-18",
-      "horario": "18:00",
-      "espaco_id": 17,
-      "condominio_id": 1,
-      "titular_id": 4,
-      "id": 7
-    },
-    {
-      "data": "2024-06-17",
-      "horario": "11:00",
-      "espaco_id": 18,
-      "condominio_id": 1,
-      "titular_id": 2,
-      "id": 8
-    },
-    {
-      "data": "2024-06-15",
-      "horario": "17:00",
-      "espaco_id": 18,
-      "condominio_id": 1,
-      "titular_id": 2,
-      "id": 9
-    },
-    {
-      "data": "2024-06-17",
-      "horario": "09:00",
-      "espaco_id": 17,
-      "condominio_id": 1,
-      "titular_id": 2,
-      "id": 10
     }
   ]
 }
