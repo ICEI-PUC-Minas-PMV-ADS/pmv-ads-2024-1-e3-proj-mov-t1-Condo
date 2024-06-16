@@ -71,6 +71,14 @@ const ReservarEspaco = ({ navigation }) => {
     }
   };
 
+  const handleContinue = () => {
+    if (selectedTitular && selectedEspaco) {
+      navigation.navigate('ReservarEspacoTwo', { espacoId: selectedEspaco, titularId: selectedTitular });
+    } else {
+      Alert.alert('Campos Obrigatórios', 'Selecione um titular e um espaço antes de continuar.');
+    }
+  };
+
   return (
     <ScrollView refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}>
       <View style={styles.containerReservarEspaco}>
@@ -153,7 +161,7 @@ const ReservarEspaco = ({ navigation }) => {
           <Image source={jogging} style={styles.image} />
         </View>
         <Button>
-        <Pressable onPress={() => navigation.navigate('ReservarEspacoTwo', { espacoId: selectedEspaco, titularId: selectedTitular })}>
+        <Pressable onPress={handleContinue}>
   <Text style={styles.continueButton}>Continue  <FontAwesome name="angle-double-right" size={19} color="#4F555A" /></Text>
  
 </Pressable>
