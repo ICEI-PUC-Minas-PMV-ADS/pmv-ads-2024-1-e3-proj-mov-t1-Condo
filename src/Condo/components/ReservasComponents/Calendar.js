@@ -30,7 +30,8 @@ const Calendario = ({ selectedDate, onDayPress }) => {
       style={{
         borderRadius: 12,
         justifyContent: 'center',
-        width: 300,
+        width: '90%',
+        minWidth: '90%',
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.25,

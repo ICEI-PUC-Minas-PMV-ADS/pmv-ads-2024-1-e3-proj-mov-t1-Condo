@@ -403,6 +403,16 @@
       "condominio_id": 1,
       "titular_id": 2,
       "id": 10
+    },
+    {
+      "data": "2024-06-14",
+      "horario": "12:00",
+      "espaco_id": 17,
+      "nomeEspaco": "Quadra Esportiva",
+      "nomeTitular": "Josué Almeida",
+      "condominio_id": 1,
+      "titular_id": 2,
+      "id": 11
     }
   ]
 }
