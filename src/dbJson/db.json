@@ -345,16 +345,6 @@
   ],
   "reservas": [
     {
-      "data": "2024-06-26",
-      "horario": "13:00",
-      "espaco_id": 18,
-      "nomeEspaco": "Piscina",
-      "nomeTitular": "Josué Almeida",
-      "condominio_id": 1,
-      "titular_id": 2,
-      "id": 4
-    },
-    {
       "data": "2024-06-28",
       "horario": "15:00",
       "espaco_id": 17,
@@ -373,6 +363,16 @@
       "condominio_id": 1,
       "titular_id": 2,
       "id": 6
+    },
+    {
+      "data": "2024-06-21",
+      "horario": "17:00",
+      "espaco_id": 18,
+      "nomeEspaco": "Piscina",
+      "nomeTitular": "Josué Almeida",
+      "condominio_id": 1,
+      "titular_id": 2,
+      "id": 7
     }
   ]
 }

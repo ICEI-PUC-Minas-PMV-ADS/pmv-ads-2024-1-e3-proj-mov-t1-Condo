@@ -28,7 +28,14 @@ const Calendario = ({ selectedDate, onDayPress }) => {
         [selectedDate]: { selected: true, marked: true, selectedColor: 'blue' }
       }}
       style={{
-        borderWidth: 1,
+        borderRadius: 12,
+        justifyContent: 'center',
+        width: 300,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5,
         borderColor: 'gray',
         height: 366
       }}
@@ -42,8 +49,7 @@ export default Calendario;
 <Calendar
   // Customize the appearance of the calendar
   style={{
-    borderWidth: 1,
-    borderColor: 'gray',
+    borderRadius: 20,
     height: 366,
   }}
   // Specify the current date

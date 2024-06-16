@@ -7,6 +7,8 @@ import { postReservas } from '../../services/application.Services'; // Importar 
 import moment from 'moment'; 
 import { useCondomino } from '../../context/CondominoContext';
 import { useNavigation } from '@react-navigation/native';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+
 
 
 const ReservarEspacoTwo = ({ navigation, route }) => {
@@ -117,22 +119,34 @@ const ReservarEspacoTwo = ({ navigation, route }) => {
       <View style={styles.containerReservarEspaco}>
         {espaco && (
           <>
+          <View style={styles.pickerContent}>
             <Text style={styles.title}>{espaco.nomeEspaco}</Text>
+            </View>
             <Calendar onDayPress={onDaySelect} />
             {selectedDate && availableTimes.length > 0 ? (
+               <View style={styles.pickerContent}>
+                <Text style={styles.label}>Horário</Text>
               <RNPickerSelect
+                style={pickerSelectStyles}
                 onValueChange={(value) => setSelectedTime(value)}
                 items={availableTimes.map((time) => ({
                   label: time,
                   value: time
                 }))}
-                placeholder={{ label: "Selecione o horário", value: null }}
+                placeholder={{ label: "Selecione", value: null }}
+                useNativeAndroidPickerStyle={false}
+                Icon={() => (
+                  <View style={styles.iconContainer}>
+                    <FontAwesome name="chevron-down" size={16} color="#7F7F7F" />
+                  </View>
+                      )}
               />
+            </View>
             ) : (
               <Text style={styles.messageText}>Nenhum horário disponível.</Text>
             )}
             <Pressable onPress={handleSalvar}>
-              <Text style={styles.continueButton}>Finalizar Reserva</Text>
+              <Text style={styles.continueButton}>Finalizar Reserva <FontAwesome name="angle-double-right" size={19} color="#4F555A" /></Text>
             </Pressable>
           </>
         )}
@@ -150,7 +164,9 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   title: {
-    fontSize: 22,
+    fontSize: 20,
+    color: "#7F7F7F",
+    marginRight: 15,
     marginBottom: 10,
   },
   messageText: {
@@ -158,10 +174,64 @@ const styles = StyleSheet.create({
     marginTop: 10,
     color: 'gray',
   },
-  continueButton: {
-    fontSize: 18,
-    color: 'blue',
+  pickerContent: {
     marginTop: 20,
+    borderRadius: 13,
+    borderColor: '7F7F7F',
+    width: "90%",
+  },
+  iconContainer: {
+    backgroundColor: 'none', // Cor do fundo do círculo
+    borderRadius: 20, // Metade da altura do ícone
+    borderColor: '#7F7F7F',
+    borderWidth: 1.5,
+    padding: 2,
+    marginRight: 5,
+  },
+  label: {
+    fontSize: 20,
+    color: "#7F7F7F",
+    marginBottom: 5,
+    marginRight: 15,
+  },
+  continueButton: {
+    color: "#4F555A",
+    fontSize: 19,
+    fontWeight: '700',
+    marginBottom: 50,
+  }
+});
+
+const pickerSelectStyles = StyleSheet.create({
+  inputIOS: {
+    fontSize: 16,
+    paddingVertical: 12,
+    paddingHorizontal: 10,
+    borderWidth: 1,
+    borderColor: 'gray',
+    borderRadius: 4,
+    color: 'black',
+    paddingRight: 30, // para garantir que o texto não sobreponha o ícone
+    backgroundColor: '#f0f0f0',
+    marginBottom: 16,
+    width: '100%',
+  },
+  inputAndroid: {
+    fontSize: 16,
+    paddingVertical: 8,
+    paddingHorizontal: 10,
+    borderWidth: 1,
+    borderColor: 'gray',
+    borderRadius: 10,
+    color: "#7F7F7F",
+    paddingRight: 30, // para garantir que o texto não sobreponha o ícone
+    backgroundColor: '#f0f0f0',
+    marginBottom: 16,
+    width: '100%',
+  },
+  iconContainer: {
+    top: 10,
+    right: 12,
   },
 });
 
