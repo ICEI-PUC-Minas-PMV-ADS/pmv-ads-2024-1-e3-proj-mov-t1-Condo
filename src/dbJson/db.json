@@ -393,6 +393,16 @@
       "condominio_id": 1,
       "titular_id": 2,
       "id": 9
+    },
+    {
+      "data": "2024-07-25",
+      "horario": "15:00",
+      "espaco_id": 18,
+      "nomeEspaco": "Piscina",
+      "nomeTitular": "Josué Almeida",
+      "condominio_id": 1,
+      "titular_id": 2,
+      "id": 10
     }
   ]
 }

@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Text, ScrollView, Pressable, RefreshControl, Alert } from 'react-native';
 import { format, parseISO, isValid } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
+import { Divider } from 'react-native-paper';
 import { Modal, Button } from 'react-native-paper';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import { useUser } from '../../context/UserContext';
 import { useCondomino } from '../../context/CondominoContext';
 import { fetchReservas, excluirReserva } from '../../services/application.Services';
@@ -90,7 +92,8 @@ const MinhasReservas = ({ navigation }) => {
                         {reservas.map(reserva => (
                             <View key={reserva.id}>
                                 <View style={styles.reservaCard}>
-                                    <Text style={styles.reservaData}>{formatDateTime(reserva.data, reserva.horario)}</Text>
+                                    <Text style={styles.reservaData}> <Icon name="calendar" size={16} color="#7F7F7F" /> {formatDateTime(reserva.data, reserva.horario)}</Text>
+                                    <Divider style={styles.divider} />
                                     <Text style={styles.reservaAtividade}>{reserva.nomeEspaco}</Text>
                                     <Text style={styles.reservaInfo}>{reserva.nomeTitular} | Número de pessoas</Text>
                                     <Text style={styles.reservaCheckOut}>Check-Out</Text>
@@ -143,6 +146,11 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         paddingVertical: 20,
     },
+    divider : {
+       height: 1.5,
+       borderRadius: 3,
+       marginBottom: 5,
+    },
     title: {
         fontSize: 22,
         marginBottom: 10,
@@ -161,18 +169,20 @@ const styles = StyleSheet.create({
     },
     reservaData: {
         fontSize: 16,
+        color: "#7F7F7F",
         fontWeight: 'bold',
         marginBottom: 8,
     },
     reservaAtividade: {
-        fontSize: 14,
-        color: '#555',
-        marginBottom: 8,
+        fontSize: 15,
+        fontWeight: '700',
+        color: '#4F555A',
+        marginBottom: 5,
     },
     reservaInfo: {
         fontSize: 14,
         color: '#555',
-        marginBottom: 8,
+        marginBottom: 5,
     },
     reservaCheckOut: {
         fontSize: 14,
