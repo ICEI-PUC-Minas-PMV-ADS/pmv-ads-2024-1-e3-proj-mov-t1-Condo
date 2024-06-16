@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: '#FEFFC6',
   },
   logoContainer: {
     marginBottom: 20,
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
   },
   input: {
     width: '80%',
-    height: 56,
+    height: 50,
     borderWidth: 1,
     borderColor: 'rgba(36, 34, 32, 0.44)',
     placeholderTextColor: 'rgba(36, 34, 32, 0.44)',
@@ -93,7 +93,8 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     fontSize: 16, 
     fontWeight: '400',
-    color: '#000',
+    backgroundColor: '#fff',
+    color: '#7F7F7F',
   },
   continueButton: {
     backgroundColor: '#06B6DD',

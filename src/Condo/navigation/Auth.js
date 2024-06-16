@@ -81,7 +81,7 @@ const Main = () => {
         component={LoginStack}
         options={{
           tabBarIcon: ({ focused }) => (
-           <Icon name="building-o" size={20}   color={focused ? '#FEB902' : 'rgba(36, 34, 32, 0.56)'} />
+           <Icon name="building-o" size={20}   color={focused ? 'rgba(36, 34, 32, 0.56)' : 'rgba(36, 34, 32, 0.56)'} />
           ),
         }}
       />
@@ -90,7 +90,7 @@ const Main = () => {
         component={LoginCondominoStack}
         options={{
           tabBarIcon: ({ focused }) => (
-            <Icon name="user" size={20} color={focused ? '#FEB902' : 'rgba(36, 34, 32, 0.56)'} />
+            <Icon name="user" size={20} color={focused ? 'rgba(36, 34, 32, 0.56)' : 'rgba(36, 34, 32, 0.56)'} />
           ),
         }}
       />

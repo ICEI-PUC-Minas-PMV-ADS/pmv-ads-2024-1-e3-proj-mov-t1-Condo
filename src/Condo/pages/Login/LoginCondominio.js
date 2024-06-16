@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: '#FEFFC6',
   },
   logo: {
     width: 150,
@@ -106,16 +106,17 @@ const styles = StyleSheet.create({
   },
   input: {
         width: '80%',
-        height: 56,
+        height: 50,
         borderWidth: 1,
         borderColor: 'rgba(36, 34, 32, 0.44)',
+        backgroundColor: '#fff',
         placeholderTextColor: 'rgba(36, 34, 32, 0.44)',
         borderRadius: 67,
         textAlign: 'center',
         marginBottom: 20,
         fontSize: 16, 
         fontWeight: '400',
-        color: '#000'
+        color: '#7F7F7F'
   },
   forgotPassword: {
     color: '#06B6DD',
@@ -124,7 +125,7 @@ const styles = StyleSheet.create({
   loginButton: {
     backgroundColor: '#06B6DD',
       width: '80%',
-      height: 49,
+      height: 50,
       justifyContent: 'center',
       alignItems: 'center',
       borderRadius: 67,

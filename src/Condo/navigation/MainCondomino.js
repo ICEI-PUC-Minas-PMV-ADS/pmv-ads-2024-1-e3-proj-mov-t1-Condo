@@ -2,6 +2,8 @@ import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 import { IconButton } from 'react-native-paper';
+import Icon from 'react-native-vector-icons/Ionicons';
+import {StyleSheet} from 'react-native';
 import HomeCondomino from '../pages/Home/HomeCondomino';
 import Reservas from '../pages/Reservas/Reservas';
 import ReservarEspaco from '../pages/Reservas/ReservarEspaco';
@@ -17,7 +19,16 @@ const Stack = createNativeStackNavigator();
 
 const MainCondomino = () => {
   return (
-    <Stack.Navigator initialRouteName="ScreenNavigationCondomino">
+    <Stack.Navigator initialRouteName="ScreenNavigationCondomino"
+    screenOptions={{
+      headerStyle: {
+        backgroundColor: '#ffffff', //Cor de fundo do cabeçalho
+      },
+      headerTitleStyle: {
+        color: '#7F7F7F', //Cor do título do cabeçalho
+      },
+      headerTintColor: '#7F7F7F', //Cor das setas de navegação
+    }}>
       <Stack.Screen
       name='ScreenNavigationCondomino'
       component={ScreenNavigationCondomino}
@@ -34,34 +45,90 @@ const MainCondomino = () => {
       <Stack.Screen
         name="Reservas"
         component={Reservas}
-        options={{ title: 'Reservas' }}
+        options={({ navigation }) => ({
+          title: 'Reservas',
+          headerRight: () => (
+            <IconButton
+                icon={() => <Icon name="home" size={22} color="#7F7F7F" />}
+                onPress={() => navigation.navigate('HomeCondomino')}
+            />
+          ),
+        })}
       />
       <Stack.Screen
         name="ReservarEspaco"
         component={ReservarEspaco}
-        options={{ title: 'Reservar Espaço' }}
+        options={({ navigation }) => ({
+          title: 'Reservar Espaço',
+          headerRight: () => (
+            <IconButton
+                icon={() => <Icon name="home" size={22} color="#7F7F7F" />}
+                onPress={() => navigation.navigate('HomeCondomino')}
+            />
+          ),
+        })}
       />
       <Stack.Screen
         name="ReservarEspacoTwo"
         component={ReservarEspacoTwo}
-        options={{ title: 'Reservar Espaço' }}
+        options={({ navigation }) => ({
+          title: 'Reservar Espaço',
+          headerRight: () => (
+            <IconButton
+                icon={() => <Icon name="home" size={22} color="#7F7F7F" />}
+                onPress={() => navigation.navigate('HomeCondomino')}
+            />
+          ),
+        })}
       />
       <Stack.Screen
        name='MinhasReservas'
        component={MinhasReservas}
-       options={{title: 'Minhas Reservas'}}
+       options={({ navigation }) => ({
+        title: 'Minhas Reservas',
+        headerRight: () => (
+          <IconButton
+              icon={() => <Icon name="home" size={22} color="#7F7F7F" />}
+              onPress={() => navigation.navigate('HomeCondomino')}
+          />
+        ),
+      })}
        />
-      <Stack.Screen name='Instrucoes' component={Instrucoes} options={{ title: 'Instruções' }} />
+      <Stack.Screen name='Instrucoes' component={Instrucoes} options={({ navigation }) => ({
+          title: 'Instruções',
+          headerRight: () => (
+            <IconButton
+                icon={() => <Icon name="home" size={22} color="#7F7F7F" />}
+                onPress={() => navigation.navigate('HomeCondomino')}
+            />
+          ),
+        })} />
       
       <Stack.Screen
         name="Dependentes"
         component={Dependentes}
-        options={{ title: 'Dependentes' }}
+        options={({ navigation }) => ({
+          title: 'Dependentes',
+          headerRight: () => (
+            <IconButton
+                icon={() => <Icon name="home" size={22} color="#7F7F7F" />}
+                onPress={() => navigation.navigate('HomeCondomino')}
+            />
+          ),
+        })}
       />
       <Stack.Screen
         name="CadastroDependente"
         component={CadastroDependente}
-        options={{ title: 'Novo Dependente' }}
+        options={({ navigation }) => ({
+          title: 'Novo Dependente',
+          headerRight: () => (
+            <IconButton
+                icon={() => <Icon name="home" size={22} color="#7F7F7F" />}
+                onPress={() => navigation.navigate('HomeCondomino')}
+            />
+          ),
+        })}
       />
       <Stack.Screen
         name="MeusDependentes"
@@ -73,5 +140,11 @@ const MainCondomino = () => {
   );
 
 }
+
+const styles = StyleSheet.create({
+  Stack: {
+    color: "#7F7F7F",
+  }
+});
 
 export default MainCondomino;
