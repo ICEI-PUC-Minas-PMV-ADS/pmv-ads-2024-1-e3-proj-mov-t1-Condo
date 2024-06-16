@@ -363,6 +363,16 @@
       "condominio_id": 1,
       "titular_id": 2,
       "id": 5
+    },
+    {
+      "data": "2024-06-27",
+      "horario": "21:00",
+      "espaco_id": 21,
+      "nomeEspaco": "Tenis",
+      "nomeTitular": "Josué Almeida",
+      "condominio_id": 1,
+      "titular_id": 2,
+      "id": 6
     }
   ]
 }
