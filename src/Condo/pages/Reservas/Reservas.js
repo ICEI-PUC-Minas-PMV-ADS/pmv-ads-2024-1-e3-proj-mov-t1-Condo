@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { View, Text, ScrollView, RefreshControl, } from 'react-native';
+import { View, Text, ScrollView, RefreshControl, Image, StyleSheet } from 'react-native';
 import CustomButton from '../../components/CustomButton';
+import jogging from '../../assets/jogging.png';
+
 import { Divider, Button } from 'react-native-paper';
 import { Appbar } from 'react-native-paper';
 
@@ -33,10 +35,30 @@ const Reservas = () => {
             <CustomButton title="Minhas reservas" screen="MinhasReservas"/>
             <Divider />
 
+            <View style={styles.containerImage}>
+          <Image source={jogging} style={styles.image} />
+        </View>
+
         </View>
         </ScrollView>
     );
 
 }
+
+const styles = StyleSheet.create({ 
+
+  containerImage: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  image: {
+    marginTop: 20,
+    width: 350,
+    height: 350,
+    resizeMode: 'contain',
+  },
+});
 
 export default Reservas;
