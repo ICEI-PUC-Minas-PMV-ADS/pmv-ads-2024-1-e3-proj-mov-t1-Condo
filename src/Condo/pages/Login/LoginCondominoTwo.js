@@ -6,7 +6,7 @@ import { login } from '../../services/auth.services';
 import { useCondomino } from '../../context/CondominoContext';
 
 const LoginCondominoTwo = () => {
-  const [email, setEmail] = useState('teste10@gmail.com');
+  const [email, setEmail] = useState('jbalmeida@gmail.com');
   const [password, setPassword] = useState('12345678');
   const { setUserCondomino, setSignedCondomino, espacosData } = useCondomino();
 
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: '#ffffff',
   },
   logoContainer: {
     marginBottom: 20,
@@ -93,8 +93,9 @@ const styles = StyleSheet.create({
   },
   input: {
     width: '80%',
-    height: 56,
+    height: 50,
     borderWidth: 1,
+    backgroundColor: '#fff',
     borderColor: 'rgba(36, 34, 32, 0.44)',
     placeholderTextColor: 'rgba(36, 34, 32, 0.44)',
     borderRadius: 67,
@@ -102,12 +103,12 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     fontSize: 16, 
     fontWeight: '400',
-    color: '#000'
+    color: '#7F7F7F'
   },
   continueButton: {
     backgroundColor: '#06B6DD',
       width: '80%',
-      height: 49,
+      height: 50,
       justifyContent: 'center',
       alignItems: 'center',
       borderRadius: 67,

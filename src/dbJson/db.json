@@ -8,61 +8,61 @@
       "id": 1
     },
     {
-      "email": "guiomabatista@gmail.com",
-      "password": "$2a$10$7eWvpiGjDBisXOWr4ZQD0O8WzTba7wW9JfwnQsenL8.1UcVstxhIG",
-      "nomeTitular": "Guiomar Batista",
+      "email": "jbalmeida@gmail.com",
+      "password": "$2a$10$6oVXD4/9BL5nAKaOqmMqiuOJlyjUEmIoHtdMh7pvhU2YOQg3DcxdC",
+      "nomeTitular": "Josué Almeida",
       "cpfTitular": "700.438.566-32",
-      "dataNascimento": "01/05/2000",
+      "dataNascimento": "2000-05-01",
       "idade": "24",
       "genero": "Masculino",
       "condominio_id": 1,
       "id": 2
     },
     {
-      "email": "teste10@gmail.com",
-      "password": "$2a$10$tDWNr6KIGsEO.h5mG5Uy7.2djtukTs/uTju8tSlj3yigvpHlkS1/m",
-      "nomeTitular": "JOsué Almeida",
-      "cpfTitular": "080.300.126-67",
-      "dataNascimento": "01/05/2000",
-      "idade": "24",
-      "genero": "Masculino",
-      "condominio_id": 1,
+      "email": "condominiobelavista@gmail.com",
+      "password": "$2a$10$HUdV89.0uyWtFk73RlkBhOW0rAvF5/VsTohaw9VvRmD2GqtUSAXRq",
+      "razaoSocial": "Condomínio Bela Vista",
+      "cnpj": "26.487.846/1365-55",
       "id": 3
     },
     {
-      "email": "456.597.894-64@gmail.com",
-      "password": "$2a$10$8yFardlrwU6uk.50h8O6reDJLdn7hOSRsZRYNkUVCKs0NaPb23xRS",
-      "nomeTitular": "jjBatista",
-      "cpfTitular": "456.597.894-64",
-      "dataNascimento": "01/05/2000",
+      "email": "aclecia@gmail.com",
+      "password": "$2a$10$Lmw/DGgOtbUcOFhDRBVM.uhWuG0M.Wh/1ydPVN/pHxAWnGL6H9dey",
+      "nomeTitular": "Aclecia Batista",
+      "cpfTitular": "080.300.126-67",
+      "dataNascimento": "2000-05-01",
       "idade": "24",
-      "genero": "Masculino",
-      "condominio_id": 1,
+      "genero": "Feminino",
+      "condominio_id": 3,
       "id": 4
     },
     {
-      "email": "alvarogr@gmail.com",
-      "password": "$2a$10$MgdMXVyagjPjCiAspjGkMuDeONhQSzAb3ThREEHri5pMwLU1F5W.K",
-      "razaoSocial": "Condominium Vai dar Bom",
-      "cnpj": "12.635.410/0012-15",
+      "email": "898.956.565-65@gmail.com",
+      "password": "$2a$10$ldpUMlk3fj4/O5L7oBEAJOoh9ClbcZwiPAbVGhkrcRe1o.ixEaFAm",
+      "nomeTitular": "Guiomar Batista",
+      "cpfTitular": "898.956.565-65",
+      "dataNascimento": "2000-05-01",
+      "idade": "24",
+      "genero": "Feminino",
+      "condominio_id": 1,
       "id": 5
     },
     {
-      "email": "alvarouser@gmail.com",
-      "password": "$2a$10$Gyvxc3MHNUwoQuh/DeFMyeJS54NKrEtoikgAoNSf/TmqFxWD5P0OW",
-      "nomeTitular": "Alvaro",
-      "cpfTitular": "145.236.745-84",
-      "dataNascimento": "14/02/1998",
-      "idade": "26",
-      "genero": "Masculino",
-      "condominio_id": 5,
+      "email": "teste@gmail.com",
+      "password": "$2a$10$5FJV.7zk.VhQSLJRWxls3.rwlwCZNbVB8JNSaQ62/3TOS1.f0DhtK",
+      "razaoSocial": "Condominio Teste",
+      "cnpj": "12.345.698/7543-43",
       "id": 6
     },
     {
-      "email": "evellynandrade35@gmail.com",
-      "password": "$2a$10$oY8M8zgN2K/ukYnM3gH.2esYZEtuFuVWZU71G4FFC0NRS6RtzGm8C",
-      "razaoSocial": "wwwwwwwwwwww",
-      "cnpj": "11.111.111/1111-11",
+      "email": "543.486.137-34@gmail.com",
+      "password": "$2a$10$2fOObiZ7i7pLck68L7tHsunIwaYfj0bGAsKXLW96RAO6Si5nxkfBC",
+      "nomeTitular": "Teresa",
+      "cpfTitular": "543.486.137-34",
+      "dataNascimento": "1988-03-25",
+      "idade": "36",
+      "genero": "Feminino",
+      "condominio_id": 6,
       "id": 7
     }
   ],
@@ -163,19 +163,55 @@
       "id": 18
     },
     {
-      "nomeEspaco": "Tatame de Luta",
-      "capacidadeMaxima": "9",
+      "nomeEspaco": "Teste Validação de campo",
+      "capacidadeMaxima": "",
       "tempoMaximo": 120,
-      "textoInstrucoes": "Não matando está valendo; \nTambém não é permitido golpes característicos de faltas esportivas e éticas;",
+      "textoInstrucoes": "asdad",
+      "diasDeFuncionamento": [],
+      "condominio_id": 7,
+      "horarioFuncionamento": {
+        "inicio": {},
+        "fim": {}
+      },
+      "id": 19
+    },
+    {
+      "nomeEspaco": "Teste 2",
+      "capacidadeMaxima": "12",
+      "tempoMaximo": 120,
+      "textoInstrucoes": "X",
       "diasDeFuncionamento": [
-        "2",
-        "4",
-        "5"
+        "6"
       ],
-      "condominio_id": 5,
+      "condominio_id": 7,
       "horarioFuncionamento": {
         "inicio": {
-          "hours": 17,
+          "hours": 8,
+          "minutes": 30
+        },
+        "fim": {
+          "hours": 21,
+          "minutes": 30
+        }
+      },
+      "id": 20
+    },
+    {
+      "nomeEspaco": "Tenis",
+      "capacidadeMaxima": "20",
+      "tempoMaximo": 180,
+      "textoInstrucoes": "Não pode",
+      "diasDeFuncionamento": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "condominio_id": 1,
+      "horarioFuncionamento": {
+        "inicio": {
+          "hours": 9,
           "minutes": 0
         },
         "fim": {
@@ -183,7 +219,58 @@
           "minutes": 0
         }
       },
-      "id": 19
+      "id": 21
+    },
+    {
+      "nomeEspaco": "Quadra Esportiva",
+      "capacidadeMaxima": "100",
+      "tempoMaximo": 120,
+      "textoInstrucoes": "Não pode",
+      "diasDeFuncionamento": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "condominio_id": 3,
+      "horarioFuncionamento": {
+        "inicio": {
+          "hours": 8,
+          "minutes": 0
+        },
+        "fim": {
+          "hours": 20,
+          "minutes": 0
+        }
+      },
+      "id": 22
+    },
+    {
+      "nomeEspaco": "Testando Limitação Reservas",
+      "capacidadeMaxima": "1",
+      "tempoMaximo": 60,
+      "textoInstrucoes": "Não pode",
+      "diasDeFuncionamento": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "condominio_id": 1,
+      "horarioFuncionamento": {
+        "inicio": {
+          "hours": 8,
+          "minutes": 0
+        },
+        "fim": {
+          "hours": 20,
+          "minutes": 0
+        }
+      },
+      "id": 23
     }
   ],
   "bloco": [],
@@ -207,13 +294,107 @@
       "id": 3
     },
     {
-      "bloco": "01",
-      "numeroApartamento": "10",
-      "condominio_id": 5,
+      "bloco": "002",
+      "numeroApartamento": "325",
+      "condominio_id": 1,
       "id": 4
+    },
+    {
+      "bloco": "025",
+      "numeroApartamento": "126",
+      "condominio_id": 1,
+      "id": 5
+    },
+    {
+      "bloco": "005",
+      "numeroApartamento": "647",
+      "condominio_id": 1,
+      "titular_id": 1,
+      "id": 6
+    },
+    {
+      "bloco": "202",
+      "numeroApartamento": "25",
+      "condominio_id": 1,
+      "id": 7
+    },
+    {
+      "bloco": "01",
+      "numeroApartamento": "222",
+      "condominio_id": 1,
+      "id": 8
+    },
+    {
+      "bloco": "01",
+      "numeroApartamento": "255",
+      "condominio_id": 1,
+      "id": 9
+    },
+    {
+      "bloco": "01",
+      "numeroApartamento": "120",
+      "condominio_id": 1,
+      "id": 10
+    },
+    {
+      "bloco": "05",
+      "numeroApartamento": "120",
+      "condominio_id": 1,
+      "id": 11
+    },
+    {
+      "bloco": "20",
+      "numeroApartamento": "564",
+      "condominio_id": 1,
+      "id": 12
+    },
+    {
+      "bloco": "03",
+      "numeroApartamento": "120",
+      "condominio_id": 1,
+      "titular_id": 30,
+      "id": 13
+    },
+    {
+      "bloco": "11",
+      "numeroApartamento": "224",
+      "condominio_id": 1,
+      "titular_id": 2,
+      "id": 14
+    },
+    {
+      "bloco": "01",
+      "numeroApartamento": "101",
+      "condominio_id": 3,
+      "titular_id": 4,
+      "id": 15
+    },
+    {
+      "bloco": "02",
+      "numeroApartamento": "130",
+      "condominio_id": 1,
+      "titular_id": 5,
+      "id": 16
+    },
+    {
+      "bloco": "014",
+      "numeroApartamento": "12",
+      "condominio_id": 6,
+      "titular_id": 7,
+      "id": 17
     }
   ],
-  "titular": [],
+  "titular": [
+    {
+      "nomeTitular": "Almeida",
+      "cpfTitular": "065.659.894-64",
+      "dataNascimento": "01/05/2000",
+      "idade": "24",
+      "genero": "Masculino",
+      "condominio_id": 1,
+      "id": 1
+    }
+  ],
   "dependente": [
     {
       "nomeDependente": "Evellyn Andrade Alves",
@@ -227,6 +408,188 @@
       "data_Nasc": "22/22/2222",
       "idade": "22",
       "id": 2
+    }
+  ],
+  "reservas": [
+    {
+      "data": "2024-06-28",
+      "horario": "15:00",
+      "espaco_id": 17,
+      "nomeEspaco": "Quadra Esportiva",
+      "nomeTitular": "Josué Almeida",
+      "condominio_id": 1,
+      "titular_id": 2,
+      "id": 5
+    },
+    {
+      "data": "2024-06-27",
+      "horario": "21:00",
+      "espaco_id": 21,
+      "nomeEspaco": "Tenis",
+      "nomeTitular": "Josué Almeida",
+      "condominio_id": 1,
+      "titular_id": 2,
+      "id": 6
+    },
+    {
+      "data": "2024-06-21",
+      "horario": "17:00",
+      "espaco_id": 18,
+      "nomeEspaco": "Piscina",
+      "nomeTitular": "Josué Almeida",
+      "condominio_id": 1,
+      "titular_id": 2,
+      "id": 7
+    },
+    {
+      "data": "2024-06-20",
+      "horario": "09:00",
+      "espaco_id": 18,
+      "nomeEspaco": "Piscina",
+      "nomeTitular": "Josué Almeida",
+      "condominio_id": 1,
+      "titular_id": 2,
+      "id": 8
+    },
+    {
+      "data": "2024-06-19",
+      "horario": "18:00",
+      "espaco_id": 17,
+      "nomeEspaco": "Quadra Esportiva",
+      "nomeTitular": "Josué Almeida",
+      "condominio_id": 1,
+      "titular_id": 2,
+      "id": 9
+    },
+    {
+      "data": "2024-07-25",
+      "horario": "15:00",
+      "espaco_id": 18,
+      "nomeEspaco": "Piscina",
+      "nomeTitular": "Josué Almeida",
+      "condominio_id": 1,
+      "titular_id": 2,
+      "id": 10
+    },
+    {
+      "data": "2024-06-22",
+      "horario": "15:00",
+      "espaco_id": 21,
+      "nomeEspaco": "Tenis",
+      "nomeTitular": "Josué Almeida",
+      "condominio_id": 1,
+      "titular_id": 2,
+      "id": 14
+    },
+    {
+      "data": "2024-06-22",
+      "horario": "15:00",
+      "espaco_id": 21,
+      "nomeEspaco": "Tenis",
+      "nomeTitular": "Josué Almeida",
+      "condominio_id": 1,
+      "titular_id": 2,
+      "id": 15
+    },
+    {
+      "data": "2024-06-18",
+      "horario": "09:00",
+      "espaco_id": 21,
+      "nomeEspaco": "Tenis",
+      "nomeTitular": "Josué Almeida",
+      "condominio_id": 1,
+      "titular_id": 2,
+      "id": 16
+    },
+    {
+      "data": "2024-06-18",
+      "horario": "09:00",
+      "espaco_id": 21,
+      "nomeEspaco": "Tenis",
+      "nomeTitular": "Josué Almeida",
+      "condominio_id": 1,
+      "titular_id": 2,
+      "id": 17
+    },
+    {
+      "data": "2024-06-18",
+      "horario": "09:00",
+      "espaco_id": 21,
+      "nomeEspaco": "Tenis",
+      "nomeTitular": "Josué Almeida",
+      "condominio_id": 1,
+      "titular_id": 2,
+      "id": 18
+    },
+    {
+      "data": "2024-06-18",
+      "horario": "17:00",
+      "espaco_id": 18,
+      "nomeEspaco": "Piscina",
+      "nomeTitular": "Josué Almeida",
+      "condominio_id": 1,
+      "titular_id": 2,
+      "id": 19
+    },
+    {
+      "data": "2024-06-17",
+      "horario": "09:00",
+      "espaco_id": 17,
+      "nomeEspaco": "Quadra Esportiva",
+      "nomeTitular": "Josué Almeida",
+      "condominio_id": 1,
+      "titular_id": 2,
+      "id": 20
+    },
+    {
+      "data": "2024-06-17",
+      "horario": "11:00",
+      "espaco_id": 18,
+      "nomeEspaco": "Piscina",
+      "nomeTitular": "Josué Almeida",
+      "condominio_id": 1,
+      "titular_id": 2,
+      "id": 21
+    },
+    {
+      "data": "2024-06-18",
+      "horario": "08:00",
+      "espaco_id": 23,
+      "nomeEspaco": "Testando Limitação Reservas",
+      "nomeTitular": "Josué Almeida",
+      "condominio_id": 1,
+      "titular_id": 2,
+      "id": 22
+    },
+    {
+      "data": "2024-06-18",
+      "horario": "08:00",
+      "espaco_id": 23,
+      "nomeEspaco": "Testando Limitação Reservas",
+      "nomeTitular": "Josué Almeida",
+      "condominio_id": 1,
+      "titular_id": 2,
+      "id": 23
+    },
+    {
+      "data": "2024-06-17",
+      "horario": "15:00",
+      "espaco_id": 17,
+      "nomeEspaco": "Quadra Esportiva",
+      "nomeTitular": "Josué Almeida",
+      "condominio_id": 1,
+      "titular_id": 2,
+      "id": 24
+    },
+    {
+      "data": "2024-06-26",
+      "horario": "09:00",
+      "espaco_id": 18,
+      "nomeEspaco": "Piscina",
+      "nomeTitular": "Josué Almeida",
+      "condominio_id": 1,
+      "titular_id": 2,
+      "id": 25
     }
   ]
 }

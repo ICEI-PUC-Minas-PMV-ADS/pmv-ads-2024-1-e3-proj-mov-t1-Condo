@@ -1,74 +1,44 @@
-/*import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-// Importe MobileDatePicker ao invés de DatePicker
-import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker';
-
-export default function BasicDatePicker() {
-  return (
-    <LocalizationProvider dateAdapter={AdapterDayjs}>
-      {Use MobileDatePicker em vez de DatePicker }
-      <MobileDatePicker label="Basic date picker" />
-    </LocalizationProvider>
-  );
-}
-*/
-
-import React, {useState} from 'react';
-import {Calendar, LocaleConfig} from 'react-native-calendars';
-
+import React, { useState } from 'react';
+import { Calendar, LocaleConfig } from 'react-native-calendars';
 
 LocaleConfig.locales['pt-br'] = {
-    monthNames: [
-      'Janeiro',
-      'Fevereiro',
-      'Março',
-      'Abril',
-      'Maio',
-      'Junho',
-      'Julho',
-      'Agosto',
-      'Setembro',
-      'Outubro',
-      'Novembro',
-      'Dezembro'
-    ],
-    monthNamesShort: [
-      'Jan',
-      'Fev',
-      'Mar',
-      'Abr',
-      'Mai',
-      'Jun',
-      'Jul',
-      'Ago',
-      'Set',
-      'Out',
-      'Nov',
-      'Dez'
-    ],
-    dayNames: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'],
-    dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'],
-    today: 'Hoje'
-  };
-  
+  monthNames: [
+    'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',
+    'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'
+  ],
+  monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+  dayNames: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'],
+  dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'],
+  today: 'Hoje'
+};
+
 LocaleConfig.defaultLocale = 'pt-br';
 
-const Calendario = () => {
-  const [selected, setSelected] = useState('');
-
-  const handleDateChange = (date) => {
-    setSelectedDate(date);
-  };
+const Calendario = ({ selectedDate, onDayPress }) => {
+  const [selectedDay, setSelectedDay] = useState('');
 
   return (
-    
     <Calendar
-      onDayPress={day => {
-        setSelected(day.dateString);
+      onDayPress={(day) => {
+        setSelectedDay(day.dateString); // Atualiza o dia selecionado
+        onDayPress(day); // Chama a função onDayPress passada como prop
       }}
       markedDates={{
-        [selected]: {selected: true, disableTouchEvent: true, selectedDotColor: 'orange'}
+        [selectedDay]: { selected: true, disableTouchEvent: true, selectedDotColor: 'orange' },
+        [selectedDate]: { selected: true, marked: true, selectedColor: 'blue' }
+      }}
+      style={{
+        borderRadius: 12,
+        justifyContent: 'center',
+        width: '90%',
+        minWidth: '90%',
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5,
+        borderColor: 'gray',
+        height: 366
       }}
     />
   );
@@ -76,12 +46,12 @@ const Calendario = () => {
 
 export default Calendario;
 
+
 <Calendar
   // Customize the appearance of the calendar
   style={{
-    borderWidth: 1,
-    borderColor: 'gray',
-    height: 350
+    borderRadius: 20,
+    height: 366,
   }}
   // Specify the current date
   current={'2012-03-01'}

@@ -6,9 +6,9 @@ import { getUserByEmail } from '../../services/auth.services';
 
 const UpdatePassword = () => {
   const navigation = useNavigation();
-  const [email, setEmail] = useState('josuepayments@gmail.com');
-  const [password, setPassword] = useState('12345678');
-  const [repetirPassword, setRepetirPassword] = useState('12345678');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [repetirPassword, setRepetirPassword] = useState('');
 
   const handleSignUp = () => {
     //Redirecionar para a tela de Login
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: '#e8f8ff',
   },
   logo: {
     width: 150,
@@ -98,21 +98,22 @@ const styles = StyleSheet.create({
   },
   input: {
     width: '80%',
-    height: 56,
+    height: 50,
     borderWidth: 1,
     borderColor: 'rgba(36, 34, 32, 0.44)',
+    backgroundColor: '#fff',
     placeholderTextColor: 'rgba(36, 34, 32, 0.44)',
     borderRadius: 67,
     textAlign: 'center',
     marginBottom: 20,
     fontSize: 16,
     fontWeight: '400',
-    color: '#000',
+    color: '#7F7F7F',
   },
   loginButton: {
     backgroundColor: '#06B6DD',
     width: '80%',
-    height: 49,
+    height: 50,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 67,

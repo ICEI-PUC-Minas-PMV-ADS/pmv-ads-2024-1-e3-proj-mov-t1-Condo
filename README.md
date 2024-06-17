@@ -17,7 +17,6 @@ O projeto em desenvolvimento visa abordar a falta de controle e gerenciamento do
 * Álvaro Gonçalves Rodrigues
 * Davi Haniel Reis Silva
 * Evellyn Andrade Alves da Silva
-* Gabriel de Costa Souza
 * Josué Batista de Almeida
 * Leonardo Guerra Melgaço
 * Mariane de Oliveira Duarte

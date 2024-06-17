@@ -100,9 +100,21 @@ export const cadastrarApartamento = async (param) => {
     return responseApartamento.data;
   } catch (error) {
     console.error("Erro ao cadastrar apartamento:", error)
-
   }
 }
+
+
+export const registerTitular = async (param) => {
+  try {
+    const response = await API.post(`${baseURL}/users`, param);
+    return response.data; // Retorna diretamente os dados da resposta
+  } catch (error) {
+    console.error("Erro ao registrar titular:", error);
+    throw error; // Lança o erro para ser capturado na chamada da função
+  }
+};
+
+
 
 export const cadastrarEspaco = async (param) => {
   try {
@@ -123,6 +135,29 @@ export const fetchManutencao = async () => {
     return response.data;
   } catch (error) {
     console.error('Erro ao buscar lista de manutencao:', error);
+  }
+
+}
+export const postReservas = async (param) => {
+  try {
+    const response = await API.post(`${baseURL}/660/reservas`, param);
+    return response.data;
+  } catch (error) {
+    console.error("Erro ao cadastrar reserva:", error)
+  }
+}
+
+
+
+export const fetchReservas = async (titular_id) => {
+  try {
+    const response = await API.get(`${baseURL}/660/reservas`, {
+      params: { titular_id }
+    });
+
+    return response.data;
+  } catch (error) {
+    console.error('Erro ao buscar espaços:', error);
     throw error;
   }
 };
@@ -135,6 +170,16 @@ export const insertManutencao = async (param) => {
     return response.data;
   } catch (error) {
     console.error('Erro ao buscar lista de manutencao:', error);
+
+  };
+};
+
+export const excluirReserva = async (id) => {
+  try {
+    const response = await API.delete(`${baseURL}/660/reservas/${id}`);
+    return response.data;
+  } catch (error) {
+    console.error("Erro ao excluir dependente:", error);
     throw error;
   }
 };
