@@ -64,6 +64,13 @@
       "genero": "Feminino",
       "condominio_id": 6,
       "id": 7
+    },
+    {
+      "email": "teste@teste.com",
+      "password": "$2a$10$PcCvMmU4gqYr0bQZzjrKveLDtFgrqjRBpceVj/Jro.gLSkwzFNKzS",
+      "razaoSocial": "Teste",
+      "cnpj": "120568060",
+      "id": 8
     }
   ],
   "condominio": [],
@@ -72,15 +79,29 @@
       "id": 1,
       "tempoDuracao": "24:59:59",
       "motivo": "Motivo 0",
-      "espaco_id": 1,
-      "espaco_condominio_id": 1
+      "espaco_id": 16,
+      "condominio_id": 1
     },
     {
       "id": 2,
       "tempoDuracao": "04:30:59",
-      "motivo": "Motivo 10",
-      "espaco_id": 1,
-      "espaco_condominio_id": 1
+      "motivo": "Motivo 1",
+      "espaco_id": 17,
+      "condominio_id": 1
+    },
+    {
+      "id": 3,
+      "tempoDuracao": "04:30:59",
+      "motivo": "Motivo 2",
+      "espaco_id": 18,
+      "condominio_id": 8
+    },
+    {
+      "id": 4,
+      "tempoDuracao": "04:30:59",
+      "motivo": "Motivo 3",
+      "espaco_id": 19,
+      "condominio_id": 8
     }
   ],
   "espaco": [

@@ -25,6 +25,7 @@
     "@react-navigation/stack": "^6.3.29",
     "axios": "^1.7.2",
     "date-fns": "^3.6.0",
+    "drawer": "^0.0.2",
     "expo": "~51.0.13",
     "expo-calendar": "~13.0.5",
     "expo-status-bar": "~1.12.1",

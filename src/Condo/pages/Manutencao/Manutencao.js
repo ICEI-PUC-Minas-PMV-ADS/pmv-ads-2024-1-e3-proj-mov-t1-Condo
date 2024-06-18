@@ -1,49 +1,92 @@
 import React, { useEffect, useState } from 'react';
-import { View, StyleSheet, Image } from 'react-native';;
+import { View, Text, FlatList, Image, StyleSheet } from 'react-native';
 import CardManutencao from '../../components/CardManutencao';
-import EditarManutencao from './EditarManutencao'
-import DeletarManutencao from './DeletarManutencao'
-import { getManutencao } from '../../services/application.Services'
+import { ActivityIndicator } from 'react-native-paper';
+import EditarManutencao from './EditarManutencao';
+import DeletarManutencao from './DeletarManutencao';
+import { fetchManutencao, deleteManutencao } from '../../services/application.Services';
+import { useUser } from '../../context/UserContext';
+
 
 const Manutencao = () => {
 
-    const [manutencoes, setManutencos] = useState([]);
+    const [manutencaoList, setManutencaoList] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const { user } = useUser();
 
     useEffect(() => {
-        const fetchManutencao = async () => {
-            try {
-                console.log('Buscando manutencao');
-                const data = await getManutencao();
-                console.log(data);
-                setManutencos(data);
-            } catch (e) {
-                console.error('Erro ao buscar dados da manutenção:', error);
-                Alert.alert('Erro', 'Erro ao buscar dados de manutenção!');
+        const fetchData = async () => {
+            if (user && user.id) {
+                setLoading(true);
+                try {
+                    const data = await fetchManutencao(user.id);
+                    setManutencaoList(data);
+                } catch (error) {
+                    console.error('Erro ao buscar dados da manutenção:', error);
+                    Alert.alert('Erro', 'Erro ao buscar dados de manutenção!');
+                } finally {
+                    setLoading(false);
+                }
+            } else {
+                console.log('Condomínio ou id não disponível', user);
             }
         };
-        fetchManutencao();
-    }, []);
+        fetchData();
+
+    }, [user]);
+
+    const handleDelete = async (id) => {
+        setLoading(true);
+        const success = await deleteManutencao(id);
+        if (success) {
+            setManutencaoList(manutencaoList.filter(item => item.id !== id));
+        }
+        setLoading(false);
+    };
 
     const [dialogEdit, setDialogEdit] = React.useState(false);
     const [dialogDelete, setDialogDelete] = React.useState(false);
-    const [title, setTitle] = React.useState('Quadra Esportiva');
+    const [title, setTitle] = useState('');
 
     const showDialogEdit = () => setDialogEdit(true);
     const hideDialogEdit = () => setDialogEdit(false);
     const showDialogDelete = () => setDialogDelete(true);
     const hideDialogDelete = () => setDialogDelete(false);
     const changeTitle = (edit) => setTitle(edit);
+    const [selectedId, setSelectedId] = useState(null);
+
+    const renderManutencao = ({ item }) => (
+        <CardManutencao
+            titulo={item.espaco.nomeEspaco}
+            onPressEdit={() => { showDialogEdit(); changeTitle(item.espaco.nomeEspaco); }}
+            onPressDelete={() => { setSelectedId(item.id); changeTitle(item.espaco.nomeEspaco); showDialogDelete(); }}
+        />
+    );
+    if (loading) {
+        return (
+            <View style={styles.centeredView}>
+                <ActivityIndicator animating={true} size="large" color="#c4e5ed" />
+                <Text>Carregando...</Text>
+            </View>
+        );
+    }
     return (
         <View style={{
             flex: 1,
             backgroundColor: '#fff',
         }}>
             <View style={styles.view}>
-                <CardManutencao titulo="Quadra Esportiva" onPressEdit={() => { showDialogEdit(), changeTitle('Quadra Esportiva') }} onPressDelete={() => { showDialogDelete(), changeTitle('Quadra Esportiva') }} />
-                <CardManutencao titulo="Piscina" onPressEdit={() => { showDialogEdit(), changeTitle('Piscina') }} onPressDelete={() => { showDialogDelete(), changeTitle('Piscina') }} />
-                <CardManutencao titulo="Salão de Festas" onPressEdit={() => { showDialogEdit(), changeTitle('Salão de Festas') }} onPressDelete={() => { showDialogDelete(), changeTitle('Salão de Festas') }} />
-                <CardManutencao titulo="Academia" onPressEdit={() => { showDialogEdit(), changeTitle('Academia') }} onPressDelete={() => { showDialogDelete(), changeTitle('Academia') }} />
-                <CardManutencao titulo="Churrasqueira" onPressEdit={() => { showDialogEdit(), changeTitle('Churrasqueira') }} onPressDelete={() => { showDialogDelete(), changeTitle('Churrasqueira') }} />
+                {manutencaoList.length === 0 ? (
+                    <View style={styles.centeredView}>
+                        <Text style={styles.emptyMessage}>Nenhuma manutenção encontrada.</Text>
+                    </View>
+                ) : (
+                    <FlatList
+                        data={manutencaoList}
+                        renderItem={renderManutencao}
+                        keyExtractor={(item, index) => index.toString()}
+                    />
+                )}
             </View>
             <View style={styles.imageContainer}>
                 <Image
@@ -53,7 +96,11 @@ const Manutencao = () => {
             </View>
 
             <EditarManutencao visible={dialogEdit} hideDialog={hideDialogEdit} title={title} />
-            <DeletarManutencao visible={dialogDelete} hideDialog={hideDialogDelete} title={title} />
+            <DeletarManutencao visible={dialogDelete}
+                hideDialog={hideDialogDelete}
+                title={title}
+                id={selectedId}
+                onDelete={handleDelete} />
         </View>)
 };
 
@@ -70,6 +117,15 @@ const styles = StyleSheet.create({
         width: 200,
         height: 200,
         resizeMode: 'contain',
+    },
+    emptyMessage: {
+        fontSize: 18,
+        color: '#888',
+    },
+    centeredView: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
 });
 

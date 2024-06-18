@@ -32,8 +32,6 @@ export const fetchEspacoById = async (id) => {
 };
 
 
-
-
 //Buscar Titulares(Users) Apenas com condominio_id
 export const fetchTitulares = async (condominio_id) => {
   try {
@@ -46,11 +44,6 @@ export const fetchTitulares = async (condominio_id) => {
     throw error;
   }
 };
-
-
-
-
-
 
 //Buscar Dependentes
 export const dependente = async (condominio_id) => {
@@ -127,14 +120,40 @@ export const cadastrarEspaco = async (param) => {
 }
 
 /// Função para pegar a lista de manutenção
-export const fetchManutencao = async () => {
+export const fetchManutencao = async (condominio_id) => {
   try {
-    console.log('pasou aqui');
-    const response = await API.get(`${baseURL}/manutencao`);
-    console.log(response);
-    return response.data;
+    const response = await API.get(`${baseURL}/660/manutencao`, { params: { condominio_id } });
+
+    // Verifica se os dados foram obtidos corretamente
+    if (!response.data) {
+      throw new Error('A resposta da API não contém dados.');
+    }
+    const manutencoes = response.data;
+    // Se a lista de manutenção está vazia, retorna um array vazio
+    if (!Array.isArray(manutencoes) || manutencoes.length === 0) {
+      console.warn('Nenhum dado de manutenção encontrado.');
+      return [];
+    }
+
+    const itemManutencao = await Promise.all(manutencoes.map(async (manutencao) => {
+      try {
+        const espacoResponse = await API.get(`${baseURL}/660/espaco/${manutencao.espaco_id}`);
+        const espacoData = espacoResponse.data;
+        // Combinar os dados de manutencao com os dados de espaco
+        return {
+          ...manutencao,
+          espaco: espacoData
+        };
+      } catch (error) {
+        // Retorna o objeto de manutencao original se houver um erro
+        console.error(`Erro ao buscar detalhes do espaço com espaco_id: ${manutencao.espaco_id}`, error);
+        return manutencao;
+      }
+    }));
+    return itemManutencao;
   } catch (error) {
-    console.error('Erro ao buscar lista de manutencao:', error);
+    console.error('Erro ao buscar lista de manutenção:', error);
+    return []; // Retorna um array vazio em caso de erro
   }
 
 }
@@ -184,14 +203,13 @@ export const excluirReserva = async (id) => {
   }
 };
 
-/// Função para deletar a manutenção
-export const deleteManutencao = async (param) => {
+/// Função para deletar a manutenção pelo ID
+export const deleteManutencao = async (id) => {
   try {
-    const response = await API.delete(`${baseURL}/manutencao/${id}`);
-
-    return response.data;
+    await API.delete(`${baseURL}/660/manutencao/${id}`);
+    return true; // Exclusão funcionou
   } catch (error) {
-    console.error('Erro ao deletar manutencao:', error);
-    throw error;
+    console.error('Erro ao deletar manutenção:', error);
+    return false; // Erro ao deletar
   }
-};
+}

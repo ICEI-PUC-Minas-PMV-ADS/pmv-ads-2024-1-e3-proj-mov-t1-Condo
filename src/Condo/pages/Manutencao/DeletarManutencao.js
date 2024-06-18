@@ -1,16 +1,20 @@
 import React from 'react';
 import { View, StyleSheet, Text, Pressable } from 'react-native';
-import {  Dialog } from 'react-native-paper';
+import { Dialog } from 'react-native-paper';
 
 const DeletarManutencao = (props) => {
-
     return (
         <Dialog visible={props.visible} onDismiss={props.hideDialog} style={styles.dialogContent}>
             <Dialog.Content>
                 <Text style={styles.title}>{"Tem certeza disso?"}</Text>
                 <Text style={styles.subtitle}>{"Esta ação não poderá ser desfeita, remover"} {props.title} {"da manutenção?"}</Text>
                 <View style={{ alignItems: 'center' }}>
-                    <Pressable style={styles.button} onPress={() => { }}>
+                    <Pressable
+                        style={styles.button}
+                        onPress={() => {
+                            props.onDelete(props.id);
+                            props.hideDialog();
+                        }}>
                         <Text style={styles.buttonText}>{"Remover"}</Text>
                     </Pressable>
                 </View>
@@ -27,7 +31,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     title: {
-        fontSize: 22,
+        fontSize: 20,
         fontWeight: 'bold',
         textAlign: 'center',
     },
