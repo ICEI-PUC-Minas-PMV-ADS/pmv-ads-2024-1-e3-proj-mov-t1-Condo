@@ -1,7 +1,27 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { View,  StyleSheet, Image } from 'react-native';
-import CardEspacos from '../../components/CardEspacos';
+import EspacosControl from '../../components/EspacosControl';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
+
+function MeusEspacos(){
+  return(
+    
+    <div className="MeusEspacos">
+      <EspacosControl></EspacosControl>
+    </div>
+  );
+}
+
+export default MeusEspacos;
+
+
+
+{/*
+  import CardEspacos from '../../components/CardEspacos';
+ 
 const MeusEspacos = () => {
   return (
     <View style={{
@@ -42,4 +62,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MeusEspacos;
+export default MeusEspacos; */}

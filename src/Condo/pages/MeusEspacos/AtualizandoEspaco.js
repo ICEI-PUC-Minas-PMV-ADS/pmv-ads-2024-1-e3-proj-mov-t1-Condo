@@ -6,8 +6,7 @@ import { useUser } from '../../context/UserContext';
 import { useTheme } from "react-native-paper";
 import { IconButton } from 'react-native-paper';
 import { Ionicons } from '@expo/vector-icons';
-import { TimePickerModal, registerTranslation, pt } from "react-native-paper-dates";
-import { SafeAreaProvider } from "react-native-safe-area-context";
+import { registerTranslation, pt } from "react-native-paper-dates";
 import { cadastrarEspaco } from '../../services/application.Services';
 import MultiSelectComponent from '../../components/TimePickerComponent/MultiSelectComponent';
 
@@ -25,39 +24,8 @@ const CadastroEspacos = () => {
     const navigation = useNavigation(); 
     const maxFontSizeMultiplier = 1.5
     const theme = useTheme();
-    const [startTime, setStartTime] = useState({ hours: undefined, minutes: undefined });
-    const [endTime, setEndTime] = useState({ hours: undefined, minutes: undefined });
-    const [startTimeOpen, setStartTimeOpen] = useState(false);
-    const [endTimeOpen, setEndTimeOpen] = useState(false);
     const locale = "pt";
 
-    const onConfirmStartTime = useCallback(({ hours, minutes }) => {
-        setStartTimeOpen(false);
-        setStartTime({ hours, minutes });
-    }, []);
-
-    const onDismissStartTime = useCallback(() => {
-        setStartTimeOpen(false);
-    }, []);
-
-    const onConfirmEndTime = useCallback(({ hours, minutes }) => {
-        setEndTimeOpen(false);
-        setEndTime({ hours, minutes });
-    }, []);
-
-    const onDismissEndTime = useCallback(() => {
-        setEndTimeOpen(false);
-    }, []);
-
-    const timeFormatter = useMemo(
-        () =>
-            new Intl.DateTimeFormat(locale, {
-                hour: "2-digit",
-                minute: "2-digit",
-                hour12: false
-            }),
-        [locale]
-    );
 
      // Função para validar o formulário
      const validateForm = () => {
@@ -66,11 +34,7 @@ const CadastroEspacos = () => {
             capacidadeMaxima &&
             tempoMaximo &&
             textoInstrucoes &&
-            selectedDays.length > 0 &&
-            startTime.hours !== undefined &&
-            startTime.minutes !== undefined &&
-            endTime.hours !== undefined &&
-            endTime.minutes !== undefined
+            selectedDays.length > 0 
         ) {
             setIsFormValid(true);
         } else {
@@ -80,7 +44,7 @@ const CadastroEspacos = () => {
 
     useEffect(() => {
         validateForm();
-    }, [nomeEspaco, capacidadeMaxima, tempoMaximo, textoInstrucoes, selectedDays, startTime, endTime]);
+    }, [nomeEspaco, capacidadeMaxima, tempoMaximo, textoInstrucoes, selectedDays]);
 
 
     const formatarNumero = (texto) => {
@@ -102,14 +66,6 @@ const CadastroEspacos = () => {
     };
 
 
-    let startTimeDate = new Date();
-    startTime.hours !== undefined && startTimeDate.setHours(startTime.hours);
-    startTime.minutes !== undefined && startTimeDate.setMinutes(startTime.minutes);
-
-    let endTimeDate = new Date();
-    endTime.hours !== undefined && endTimeDate.setHours(endTime.hours);
-    endTime.minutes !== undefined && endTimeDate.setMinutes(endTime.minutes);
-
     const handleSalvar = async () => {
         if (!user || !user.id) {
             console.error('ID do condomínio não está definido no objeto do usuário');
@@ -123,10 +79,7 @@ const CadastroEspacos = () => {
             textoInstrucoes,
             diasDeFuncionamento: selectedDays,
             condominio_id: user.id,
-            horarioFuncionamento: {
-                inicio: startTime,
-                fim: endTime,
-            },
+           
         };
 
         try {
@@ -149,9 +102,6 @@ const CadastroEspacos = () => {
         { id: '6', name: 'Sábado' },
     ];
 
-    const handleTimeSelected = (time) => {
-        setHorarioSelecionado(time);
-    };
 
     return (
         <View style={styles.container}>
@@ -230,44 +180,6 @@ const CadastroEspacos = () => {
                         </View>
                     </View>
                 </Modal>
-                <View style={[styles.row, styles.marginVerticalEight]}>
-    <View style={styles.section}>
-        <Text maxFontSizeMultiplier={maxFontSizeMultiplier} style={styles.bold}>Abertura ⏰</Text>
-        <Pressable onPress={() => setStartTimeOpen(true)}>
-            <Text maxFontSizeMultiplier={maxFontSizeMultiplier} variant="bodySmall">
-                {startTime && startTime.hours !== undefined && startTime.minutes !== undefined
-                    ? timeFormatter.format(startTimeDate)
-                    : 'Selecione'}
-            </Text>
-        </Pressable>
-        <TimePickerModal
-            locale={locale}
-            visible={startTimeOpen}
-            onDismiss={onDismissStartTime}
-            onConfirm={onConfirmStartTime}
-            hours={startTime.hours}
-            minutes={startTime.minutes}
-        />
-    </View>
-    <View style={styles.section}>
-        <Text maxFontSizeMultiplier={maxFontSizeMultiplier} style={styles.bold}>Fechamento ⏰</Text>
-        <Pressable onPress={() => setEndTimeOpen(true)}>
-            <Text maxFontSizeMultiplier={maxFontSizeMultiplier} variant="bodySmall">
-                {endTime && endTime.hours !== undefined && endTime.minutes !== undefined
-                    ? timeFormatter.format(endTimeDate)
-                    : 'Selecione'}
-            </Text>
-        </Pressable>
-        <TimePickerModal
-            locale={locale}
-            visible={endTimeOpen}
-            onDismiss={onDismissEndTime}
-            onConfirm={onConfirmEndTime}
-            hours={endTime.hours}
-            minutes={endTime.minutes}
-        />
-    </View>
-</View>
 
 
                 <View style={styles.buttonContainer}>
@@ -276,7 +188,7 @@ const CadastroEspacos = () => {
                     onPress={handleSalvar}
                     disabled={!isFormValid}
                 >
-                     <Text style={styles.buttonText}>Salvar</Text>
+                     <Text style={styles.buttonText}>Atualizar</Text>
                     </Button>
                     <Text style={styles.buttonDetail}>Preencha todos os campos.</Text>
 

@@ -111,6 +111,9 @@ const CadastroApto = () => {
     }
   };
 
+
+
+
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View>
@@ -204,11 +207,19 @@ const CadastroApto = () => {
             ]}
           />
         </View>
-        <View>
-          <Button style={styles.buttonSalvar} onPress={handleSalvar}>
+
+        <View style={styles.buttonContainer}>
+            <Button
+            style={[styles.buttonSalvar, { backgroundColor: isFormValid ? '#06B6DD' : '#999'}]}
+            onPress={handleSalvar}
+            disabled={!isFormValid}
+          >
             <Text style={styles.buttonText}>Salvar</Text>
           </Button>
-        </View>
+          <Text style={styles.buttonDetail}>Preencha todos os campos.</Text>
+
+          </View>
+
         <Image style={styles.imageLogo} source={require('../../assets/LogoCondo2.png')} />
       </View>
     </ScrollView>
