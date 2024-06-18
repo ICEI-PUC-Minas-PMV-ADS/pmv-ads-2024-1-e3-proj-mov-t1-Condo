@@ -253,7 +253,7 @@ const pickerSelectStyles = StyleSheet.create({
     paddingRight: 30,
     backgroundColor: '#f0f0f0',
     marginBottom: 
-    16,
+16,
     width: '100%',
   },
   iconContainer: {

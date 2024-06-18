@@ -1,215 +1,282 @@
-import React from 'react';
-import { View, Text, Pressable, StyleSheet, ScrollView, Image, Button } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import React, { useState, useEffect } from 'react';
+import { View, Text, StyleSheet, ScrollView, RefreshControl, Pressable} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import ButtonReservas from '../../components/ReservasComponents/ButtonReservas';
-import ButtonDependente from '../../components/ReservasComponents/ButtonReservas';
-import CalendarIcon from '../../assets/calendario.svg';
-import Vector from '../../assets/vector.png';
+import ButtonReservas from '../../components/ReservasComponents/ButtonItemNavigation';
+import ButtonDependente from '../../components/ReservasComponents/ButtonItemNavigation';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import { Divider, Modal, Button } from 'react-native-paper';
+import { ptBR } from 'date-fns/locale';
+import { format, parseISO, isValid } from 'date-fns';
+import { useCondomino } from '../../context/CondominoContext';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
-const ReservaCard = ({ data, atividade, nome, pessoas, checkOut }) => {
-  return (
-    <View style={styles.reservaCard}>
-      <Text style={styles.reservaData}>{data}</Text>
-      <Text style={styles.reservaAtividade}>{atividade}</Text>
-      <Text style={styles.reservaInfo}>{nome} | {pessoas}</Text>
-      <Text style={styles.reservaCheckOut}>Check-Out - {checkOut}</Text>
-      <View style={styles.reservaButtons}>
-      <Pressable style={[styles.button1, { backgroundColor: '#BEBEBE' }]} onPress={() => {}}>
-        <Text style={styles.buttonText}>Não posso ir</Text>
-      </Pressable>
-      <Pressable style={[styles.button1, { backgroundColor: '#06B6DD' }]} onPress={() => {}}>
-        <Text style={styles.buttonText}>Detalhes</Text>
-      </Pressable>
-      </View>
-    </View>
-  );
+import { fetchReservas, excluirReserva } from '../../services/application.Services';
+
+const HomeCondomino = () => {
+  const navigation = useNavigation();
+  const [refreshing, setRefreshing] = useState(false);
+  const { userCondomino } = useCondomino();
+  const [reservas, setReservas] = useState([]);
+  const [modalVisible, setModalVisible] = useState(false);
+  const [modalData, setModalData] = useState({});
+  const [scrollEnabled, setScrollEnabled] = useState(true);
+
+
+  const onRefresh = () => {
+    setRefreshing(true);
+    setTimeout(() => {
+      setRefreshing(false);
+    }, 2000);
+  };
+
+  useEffect(() => {
+    const loadReservas = async () => {
+        try {
+            if (!userCondomino) return;
+
+            let reservasData = await fetchReservas(userCondomino.id);
+            
+            // Ordenar as reservas pela data e horário mais próximos
+            reservasData.sort((a, b) => {
+                const dateA = parseISO(`${a.data}T${a.horario}`);
+                const dateB = parseISO(`${b.data}T${b.horario}`);
+                return dateA - dateB;
+            });
+
+            // Limitar as reservas a no máximo 5
+            const reservasLimitadas = reservasData.slice(0, 5);
+
+            setReservas(reservasLimitadas);
+        } catch (error) {
+            console.error('Erro ao carregar as reservas:', error);
+            // Trate o erro conforme necessário, como exibir uma mensagem ao usuário
+        }
+    };
+
+    loadReservas();
+}, [userCondomino]);
+
+
+    // Função para capitalizar a primeira letra
+    const capitalizeFirstLetter = (string) => {
+      return string.charAt(0).toUpperCase() + string.slice(1);
+  };
+
+  // Função para formatar a data e o horário
+  const formatDateTime = (data, horario) => {
+      const date = parseISO(data);
+      if (!isValid(date)) {
+          console.error(`Data inválida: ${data}`);
+          return 'Data inválida';
+      }
+      const formattedDate = format(date, "EEEE - dd/MM/yyyy", { locale: ptBR });
+      return `${capitalizeFirstLetter(formattedDate)} às ${horario}`;
+
+  };
+
+
+  const showDialog = (data) => {
+    setModalData(data);
+    setModalVisible(true);
+    setScrollEnabled(false); // Desabilita o ScrollView quando o modal está aberto
 };
 
-const HomeCondominio = () => {
-  const navigation = useNavigation();
+const hideDialog = () => {
+    setModalVisible(false);
+    setModalData({});
+    setScrollEnabled(true); // Habilita o ScrollView quando o modal é fechado
+};
+
+const handleDelete = async () => {
+    try {
+        await excluirReserva(modalData.id);
+        setReservas(prevReservas => prevReservas.filter(reserva => reserva.id !== modalData.id));
+        hideDialog();
+        Alert.alert('Sucesso', 'Reserva cancelada com sucesso.');
+    } catch (error) {
+        console.error('Erro ao cancelar a reserva:', error);
+        Alert.alert('Erro', 'Não foi possível cancelar a reserva.');
+    }
+};
+
+
   return (
-    <View style={styles.containerh}>
-      <ScrollView contentContainerStyle={styles.container}>
-        <View style={styles.header}>
-          <Pressable onPress={() => navigation.openDrawer()}>
-          <Ionicons name="menu" size={30} color="#242220" style={styles.menuIcon} />
-          </Pressable>
-          <Text style={styles.headerText}></Text>
-          <Pressable onPress={() => alert('Nenhuma notificação!')}>
-            <Ionicons name="notifications-outline" size={30} color="#242220" style={styles.notificationIcon} />
-          </Pressable>
+    <View style={styles.container}>
+      <View style={styles.headerContainer}>
+        <Text style={styles.parque2}>Parque das Orquídeas</Text>
+      </View>
+      <View style={styles.menuContainer}>
+        <View style={styles.buttonWrapper}>
+          <ButtonReservas onPress={() => navigation.navigate('Reservas')} icon={<Ionicons name="calendar-outline" size={46} color="#787879" />} />
+          <Text style={styles.menuLabel}>Reservas</Text>
         </View>
-        <View style={styles.logoContainer}>
-          <Image source={require('../../assets/LogoCondo2.png')} style={styles.logo1} />
+        <View style={styles.buttonWrapper}>
+          <ButtonDependente onPress={() => navigation.navigate('Dependentes')} icon={<Ionicons name="people-outline" size={46} color="#787879" />} />
+          <Text style={styles.menuLabel}>Dependentes</Text>
         </View>
-        <View style={styles.parque}>
-          <Text style={styles.parque2}>Parque das Orquedeas</Text>
+        <View style={styles.buttonWrapper}>
+          <ButtonReservas onPress={() => navigation.navigate('Instrucoes')} icon={<Ionicons name="book-outline" size={46} color="#787879" />} />
+          <Text style={styles.menuLabel}>Instruções</Text>
+        </View>
+      </View>
+      <ScrollView
+        contentContainerStyle={styles.scrollViewContent}
+        refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
+      >
+        <View style={styles.reservasContainer}>
+          <Text style={styles.reservasproximas}>Reservas Próximas</Text>
+          {reservas.length > 0 ? (
+                    <View>
+                        {reservas.map(reserva => (
+                            <View key={reserva.id}>
+                                <View style={styles.reservaCard}>
+                                    <Text style={styles.reservaData}> <Icon name="calendar" size={16} color="#7F7F7F" /> {formatDateTime(reserva.data, reserva.horario)}</Text>
+                                    <Divider style={styles.divider} />
+                                    <Text style={styles.reservaAtividade}>{reserva.nomeEspaco}</Text>
+                                    <Text style={styles.reservaInfo}>{reserva.nomeTitular} | Número de pessoas</Text>
+                                    <Text style={styles.reservaCheckOut}>Check-Out</Text>
+                                    <View style={styles.reservaButtons}>
+                                        <Pressable style={[styles.button, { backgroundColor: '#BEBEBE' }]} onPress={() => showDialog(reserva)}>
+                                            <Text style={styles.buttonText}>Não posso ir</Text>
+                                        </Pressable>
+                                        <Pressable style={[styles.button, { backgroundColor: '#06B6DD' }]} onPress={() => {}}>
+                                            <Text style={styles.buttonText}>Detalhes</Text>
+                                        </Pressable>
+                                    </View>
+                                </View>
+                            </View>
+                        ))}
+                    </View>
+                ) : (
+                    <Text>Nenhuma reserva encontrada.</Text>
+                )}
         </View>
       </ScrollView>
-      
-      <View style={styles.menu}>
-        <ButtonReservas onPress={() => navigation.navigate('Reservas')} />
-      </View>
-      <View style={styles.menu2}>
-        <ButtonDependente onPress={() => navigation.navigate('Dependentes')} icon={Vector} />
-      </View>
-      <View style={styles.menu3}>
-        <ButtonReservas onPress={() => navigation.navigate('Reservas')} icon={CalendarIcon}/>
-      </View>
-      <View>
-        <Text style={styles.reservas}>Reservas</Text>
-      </View>
-      <View>
-        <Text style={styles.dependentes}>Dependentes</Text>
-      </View>
-      <View>
-        <Text style={styles.instrucoes}>Instruções</Text>
-      </View>
 
-      <View>
-        <Text style={styles.reservasproximas}>Reservas Proximas</Text>
-        <ReservaCard 
-          data="Quinta-Feira - 20/06/2024 às 10:20"
-          atividade="Piscina"
-          nome="Josué Batista de Almeida"
-          pessoas="3"
-          checkOut="12:20"
-        />
-        <ReservaCard 
-          data="Sexta-Feira - 21/06/2024 às 16:00"
-          atividade="Quadra esportiva"
-          nome="Mariane Oliveira Duarte"
-          pessoas="5"
-          checkOut="19:00"
-        />
-      </View>
+       {/* Modal */}
+       <Modal visible={modalVisible} onDismiss={hideDialog} contentContainerStyle={styles.modalContainer}>
+                <View style={styles.modalContent}>
+                    <Text style={styles.modalTitle}>Cancelar Reserva</Text>
+                    <Text style={styles.modalText}>Tem certeza que deseja cancelar a reserva?</Text>
+                    <View style={styles.modalActions}>
+                        <Button  onPress={hideDialog}>
+                            Cancelar
+                        </Button>
+                        <Button onPress={handleDelete}>
+                            Confirmar
+                        </Button>
+                    </View>
+                </View>
+            </Modal>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  containerh: {
+  container: {
     flex: 1,
-   backgroundColor: '#fff',
+    backgroundColor: '#FFFFFF',
   },
-  container: {  
-  padding: 20,
-  top: 30,
-  },
-  header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+  headerContainer: {
+    paddingHorizontal: 20,
+    marginTop: 20,
     marginBottom: 20,
   },
-  headerText: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: '#009FE3',
-  },
-  logoContainer: {
-    alignItems: 'center',
-    marginBottom: 40,
-  },
-   logo1: {
-    bottom: 18,
-    width: 124,
-    height: 105,
-   },
-  logoText: {
-    fontSize: 40,
-    fontWeight: 'bold',
-    color: '#009FE3',
-  },
-  parque: {
-    bottom: 38,
-    left: 12,
-    fontSize: 20,
-   },
-   parque2: {
+  parque2: {
     fontSize: 26,
     color: '#06B6DD',
     fontFamily: 'sans-serif-medium',
-   },
-
-  reservasproximas: {
-     bottom: 35,
-     left: 36,
-     fontSize: 22,
-     color: '#4F5957',
-  },  
-  menu: {
-    bottom: 210,
-    right: 28,
+    textAlign: 'initial',
   },
-  menu2: {
-    bottom: 210,
-    left: 100,
-  },
-  menu3: {
-    bottom: 210,
-    left: 220,
-  },
-  reservas: {
-    color: '#4F555A',
-    bottom: 10,
-    left: 40,
-    fontSize: 17,
-  },
-  dependentes: {
-    color: '#4F555A',
-    bottom: 35,
-    left: 145,
-    fontSize: 17,
-  },
-  instrucoes: {
-    color: '#4F555A',
-    bottom: 60,
-    left: 280,
-    fontSize: 17,
-  },
-  reservaCard: {
-    backgroundColor: '#fff',
-    borderRadius: 10, 
-    padding: 10,
-    marginBottom: 10,
-    width: '85%',
-    alignSelf: 'center',
-    bottom: 20,
-    borderWidth: 1,  
-    borderColor: '#7F7F7F',  
-  },
-  reservaData: {
-    fontSize: 14, 
-    fontWeight: 'bold',
-    marginBottom: 4,
-  },
-  reservaAtividade: {
-    fontSize: 12, 
-    marginBottom: 4,
-  },
-  reservaInfo: {
-    fontSize: 12, 
-    color: '#7F7F7F',
-    marginBottom: 4,
-  },
-  reservaCheckOut: {
-    fontSize: 12, 
-    color: '#7F7F7F',
-    marginBottom: 6,
-  },
-  reservaButtons: {
+  menuContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginTop: 10,
+    justifyContent: 'space-around',
+    alignItems: 'center', // Alinha os itens verticalmente
+    marginBottom: 20,
   },
+  buttonWrapper: {
+    alignItems: 'center',
+  },
+  menuLabel: {
+    color: '#4F555A',
+    fontSize: 17,
+    marginTop: 5,
+  },
+  scrollViewContent: {
+    paddingBottom: 20,
+  },
+  reservasContainer: {
+    paddingHorizontal: 20,
+  },
+  reservasproximas: {
+    fontSize: 22,
+    color: '#4F5957',
+    marginBottom: 10,
+  },
+  divider : {
+    height: 1.5,
+    borderRadius: 3,
+    marginBottom: 5,
+ },
+ title: {
+     fontSize: 22,
+     marginBottom: 10,
+ },
+ reservaCard: {
+     backgroundColor: '#fff',
+     borderRadius: 10,
+     padding: 16,
+     marginBottom: 16,
+     shadowColor: '#000',
+     shadowOffset: { width: 0, height: 2 },
+     shadowOpacity: 0.25,
+     shadowRadius: 3.84,
+     elevation: 5,
+     width: '100%',
+ },
+ reservaData: {
+     fontSize: 16,
+     color: "#7F7F7F",
+     fontWeight: 'bold',
+     marginLeft: -5,
+     marginBottom: 8,
+ },
+ reservaAtividade: {
+     fontSize: 15,
+     fontWeight: '700',
+     color: '#4F555A',
+     marginBottom: 5,
+ },
+ reservaInfo: {
+     fontSize: 14,
+     color: '#555',
+     marginBottom: 5,
+ },
+ reservaCheckOut: {
+     fontSize: 14,
+     color: '#555',
+     marginBottom: 8,
+ },
+ reservaButtons: {
+     flexDirection: 'row',
+     justifyContent: 'space-between',
+     marginTop: 8,
+ },
+ buttonText: {
+  color: '#fff',
+  textAlign: 'center',
+  fontSize: 14,
+},
+button: {
+  paddingVertical: 10,
+  paddingHorizontal: 16,
+  borderRadius: 5,
+},
   button1: {
-    backgroundColor: '#ccc',
     borderRadius: 20,
     paddingVertical: 8,
     paddingHorizontal: 16,
-    minWidth: 80, 
+    minWidth: 80,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -218,5 +285,40 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 12,
   },
+  modalContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+},
+modalContent: {
+    backgroundColor: '#FFFFFF',
+    padding: 20,
+    borderRadius: 10,
+    width: '80%',
+    alignItems: 'center',
+},
+modalTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 10,
+    textAlign: 'center',
+},
+modalText: {
+    fontSize: 16,
+    marginBottom: 20,
+    textAlign: 'center',
+},
+modalActions: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    width: '100%',
+    marginTop: 10,
+},
+modalButton: {
+    marginHorizontal: 10,
+},
 });
-export default HomeCondominio;
+
+export default HomeCondomino;
+

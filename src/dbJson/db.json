@@ -46,9 +46,64 @@
       "genero": "Feminino",
       "condominio_id": 1,
       "id": 5
+    },
+    {
+      "email": "teste@gmail.com",
+      "password": "$2a$10$5FJV.7zk.VhQSLJRWxls3.rwlwCZNbVB8JNSaQ62/3TOS1.f0DhtK",
+      "razaoSocial": "Condominio Teste",
+      "cnpj": "12.345.698/7543-43",
+      "id": 6
+    },
+    {
+      "email": "543.486.137-34@gmail.com",
+      "password": "$2a$10$2fOObiZ7i7pLck68L7tHsunIwaYfj0bGAsKXLW96RAO6Si5nxkfBC",
+      "nomeTitular": "Teresa",
+      "cpfTitular": "543.486.137-34",
+      "dataNascimento": "1988-03-25",
+      "idade": "36",
+      "genero": "Feminino",
+      "condominio_id": 6,
+      "id": 7
+    },
+    {
+      "email": "teste@teste.com",
+      "password": "$2a$10$PcCvMmU4gqYr0bQZzjrKveLDtFgrqjRBpceVj/Jro.gLSkwzFNKzS",
+      "razaoSocial": "Teste",
+      "cnpj": "120568060",
+      "id": 8
     }
   ],
   "condominio": [],
+  "manutencao": [
+    {
+      "id": 1,
+      "tempoDuracao": "24:59:59",
+      "motivo": "Motivo 0",
+      "espaco_id": 16,
+      "condominio_id": 1
+    },
+    {
+      "id": 2,
+      "tempoDuracao": "04:30:59",
+      "motivo": "Motivo 1",
+      "espaco_id": 17,
+      "condominio_id": 1
+    },
+    {
+      "id": 3,
+      "tempoDuracao": "04:30:59",
+      "motivo": "Motivo 2",
+      "espaco_id": 18,
+      "condominio_id": 8
+    },
+    {
+      "id": 4,
+      "tempoDuracao": "04:30:59",
+      "motivo": "Motivo 3",
+      "espaco_id": 19,
+      "condominio_id": 8
+    }
+  ],
   "espaco": [
     {
       "nomeEspaco": "Teste02",
@@ -211,6 +266,32 @@
         }
       },
       "id": 22
+    },
+    {
+      "nomeEspaco": "Testando Limitação Reservas",
+      "capacidadeMaxima": "1",
+      "tempoMaximo": 60,
+      "textoInstrucoes": "Não pode",
+      "diasDeFuncionamento": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "condominio_id": 1,
+      "horarioFuncionamento": {
+        "inicio": {
+          "hours": 8,
+          "minutes": 0
+        },
+        "fim": {
+          "hours": 20,
+          "minutes": 0
+        }
+      },
+      "id": 23
     }
   ],
   "bloco": [],
@@ -315,6 +396,13 @@
       "condominio_id": 1,
       "titular_id": 5,
       "id": 16
+    },
+    {
+      "bloco": "014",
+      "numeroApartamento": "12",
+      "condominio_id": 6,
+      "titular_id": 7,
+      "id": 17
     }
   ],
   "titular": [
@@ -483,6 +571,46 @@
       "condominio_id": 1,
       "titular_id": 2,
       "id": 21
+    },
+    {
+      "data": "2024-06-18",
+      "horario": "08:00",
+      "espaco_id": 23,
+      "nomeEspaco": "Testando Limitação Reservas",
+      "nomeTitular": "Josué Almeida",
+      "condominio_id": 1,
+      "titular_id": 2,
+      "id": 22
+    },
+    {
+      "data": "2024-06-18",
+      "horario": "08:00",
+      "espaco_id": 23,
+      "nomeEspaco": "Testando Limitação Reservas",
+      "nomeTitular": "Josué Almeida",
+      "condominio_id": 1,
+      "titular_id": 2,
+      "id": 23
+    },
+    {
+      "data": "2024-06-17",
+      "horario": "15:00",
+      "espaco_id": 17,
+      "nomeEspaco": "Quadra Esportiva",
+      "nomeTitular": "Josué Almeida",
+      "condominio_id": 1,
+      "titular_id": 2,
+      "id": 24
+    },
+    {
+      "data": "2024-06-26",
+      "horario": "09:00",
+      "espaco_id": 18,
+      "nomeEspaco": "Piscina",
+      "nomeTitular": "Josué Almeida",
+      "condominio_id": 1,
+      "titular_id": 2,
+      "id": 25
     }
   ]
 }

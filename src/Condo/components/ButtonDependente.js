@@ -1,6 +1,6 @@
 import React from 'react';
 import { Pressable, Image, StyleSheet } from 'react-native';
-import VectorIcon from '../assets/Vector.png';
+import VectorIcon from '../assets/vector.png';
 import EllipseIcon from '../assets/Ellipse4.png';
 
 export default function ButtonDependente({ onPress }) {
@@ -22,8 +22,6 @@ export default function ButtonDependente({ onPress }) {
   );
 }
 
-
-
 const styles = StyleSheet.create({
   button: {
     width: 90,
@@ -31,10 +29,6 @@ const styles = StyleSheet.create({
     borderRadius: 45,
     alignItems: 'center',
     justifyContent: 'center',
-    position: 'absolute',
-    top: 100,
-    left: 160,
-    
   },
   background: {
     width: '100%',
@@ -44,8 +38,5 @@ const styles = StyleSheet.create({
   icon: {
     width: 46,
     height: 36,
-    position: 'absolute',
-    top: 27,
-    left: 22,
   },
 });

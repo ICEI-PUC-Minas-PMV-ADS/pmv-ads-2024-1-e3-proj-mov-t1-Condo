@@ -1,9 +1,16 @@
 {
   "dependencies": {
+    "@expo/metro-runtime": "~3.2.1",
     "@react-native-community/datetimepicker": "^8.0.1",
     "axios": "^1.7.2",
+    "expo": "^51.0.14",
+    "express": "^4.19.2",
     "json-server": "^0.17.4",
     "json-server-auth": "^2.1.0",
-    "react-native-modal-datetime-picker": "^17.1.0"
+    "localtunnel": "^2.0.2",
+    "node": "^22.3.0",
+    "react-dom": "18.2.0",
+    "react-native-modal-datetime-picker": "^17.1.0",
+    "react-native-web": "~0.19.10"
   }
 }
