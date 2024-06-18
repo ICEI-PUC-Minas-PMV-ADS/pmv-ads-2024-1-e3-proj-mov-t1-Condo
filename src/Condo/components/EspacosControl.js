@@ -164,7 +164,9 @@ class EspacosControl extends React.Component {
 
     render(){
         return (
-            <div>
+            <div style={{ height: '90vh', overflow: 'auto' }}>
+                <div className="table-responsive">
+     
             <Table striped bordered hover>
               <thead>
                 <tr>
@@ -243,6 +245,7 @@ class EspacosControl extends React.Component {
 
           </Form>
             )}
+             </div>
           </div>
         )
       }
