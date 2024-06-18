@@ -1,8 +1,9 @@
 import React from "react";
 import { Button, Table, Form } from "react-bootstrap";
 
-class EspacosControl extends React.Component {
 
+class EspacosControl extends React.Component {
+    
     constructor(props){
         super(props);
 
@@ -13,22 +14,29 @@ class EspacosControl extends React.Component {
             tempoMaximo: '',
             textoInstrucoes: '',
             diasDeFuncionamento: '',
-            espacos : []
+            espacos : [],
+            showForm: false //visibilidade do formulário
         }
     }
 
     componentDidMount(){
         this.buscarEspaco();
         }
-    
 
-    buscarEspaco = () => {
-        fetch("https://condo.loca.lt/espaco")
-        .then(resposta => resposta.json())
-        .then(dados => {
-            this.setState({espacos: dados})
-        })
-    }
+
+        buscarEspaco = () => {
+    
+            fetch("https://condo.loca.lt/espaco")
+                .then(resposta => resposta.json())
+                .then(dados => {                   
+                this.setState({espacos: dados});
+
+                })
+                .catch(error => {
+                    console.error('Erro ao buscar espaços:', error);
+                });
+        }
+        
 
     deletarEspaco = (id) => {
         fetch("https://condo.loca.lt/espaco/"+id, {method: 'DELETE'})
@@ -49,7 +57,8 @@ class EspacosControl extends React.Component {
                 capacidadeMaxima:espaco.capacidadeMaxima,
                 tempoMaximo:espaco.tempoMaximo,
                 textoInstrucoes:espaco.textoInstrucoes,
-                diasDeFuncionamento: espaco.diasDeFuncionamento
+                diasDeFuncionamento: espaco.diasDeFuncionamento,
+                showForm: true // Mostrar o formulário ao carregar um espaço
             })
         })
     }     
@@ -63,6 +72,7 @@ class EspacosControl extends React.Component {
         .then(resposta => {
             if (resposta.ok){
                 this.buscarEspaco();
+                this.setState({ showForm: false }); // Esconder o formulário após cadastrar
             } else {
                 alert('Não foi possivel adicionar espaco')
             }
@@ -78,6 +88,7 @@ class EspacosControl extends React.Component {
         .then(resposta => {
             if (resposta.ok){
                 this.buscarEspaco();
+                this.setState({ showForm: false }); // Esconder o formulário após atualizar
             } else {
                 alert('Não foi possivel atualizar espaco')
             }
@@ -145,7 +156,8 @@ class EspacosControl extends React.Component {
                 capacidadeMaxima:'',
                 tempoMaximo: '',
                 textoInstrucoes: '',
-                diasDeFuncionamento: ''
+                diasDeFuncionamento: '',
+                showForm: false // Esconder o formulário ao resetar
             }
         )
     }
@@ -185,6 +197,9 @@ class EspacosControl extends React.Component {
 
                 </tbody> 
             </Table>
+
+            {this.state.showForm && (
+
             <Form>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                           <Form.Label>id</Form.Label>
@@ -227,7 +242,7 @@ class EspacosControl extends React.Component {
             </Button>       
 
           </Form>
-
+            )}
           </div>
         )
       }

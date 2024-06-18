@@ -71,6 +71,17 @@
       "razaoSocial": "Teste",
       "cnpj": "120568060",
       "id": 8
+    },
+    {
+      "email": "amaral@gmail.com",
+      "password": "$2a$10$Or6VntoDHF/8UBWQnq21qewTW52hq28vrdEcoeY3HKY0B27Vh/D/S",
+      "nomeTitular": "Amaral",
+      "cpfTitular": "321.654.987-32",
+      "dataNascimento": "2000-11-14",
+      "idade": "23",
+      "genero": "Masculino",
+      "condominio_id": 6,
+      "id": 9
     }
   ],
   "condominio": [],
@@ -106,192 +117,27 @@
   ],
   "espaco": [
     {
-      "nomeEspaco": "Teste02",
-      "capacidadeMaxima": "100",
-      "tempoMaximo": 60,
-      "textoInstrucoes": "Não pode",
-      "diasDeFuncionamento": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6"
-      ],
-      "condominio_id": 1,
-      "horarioSelecionado": {
-        "inicio": {
-          "hours": 8,
-          "minutes": 0
-        },
-        "fim": {
-          "hours": 22,
-          "minutes": 1
-        }
-      },
-      "id": 16
-    },
-    {
-      "nomeEspaco": "Quadra Esportiva",
-      "capacidadeMaxima": "24",
-      "tempoMaximo": 180,
-      "textoInstrucoes": "Não pode beber",
-      "diasDeFuncionamento": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6"
-      ],
-      "condominio_id": 1,
-      "horarioFuncionamento": {
-        "inicio": {
-          "hours": 9,
-          "minutes": 0
-        },
-        "fim": {
-          "hours": 21,
-          "minutes": 0
-        }
-      },
-      "id": 17
-    },
-    {
       "nomeEspaco": "Piscina",
-      "capacidadeMaxima": "20",
-      "tempoMaximo": 120,
-      "textoInstrucoes": "Não pode beber",
-      "diasDeFuncionamento": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6"
-      ],
-      "condominio_id": 1,
-      "horarioFuncionamento": {
-        "inicio": {
-          "hours": 9,
-          "minutes": 0
-        },
-        "fim": {
-          "hours": 21,
-          "minutes": 0
-        }
-      },
-      "id": 18
-    },
-    {
-      "nomeEspaco": "Teste Validação de campo",
-      "capacidadeMaxima": "",
-      "tempoMaximo": 120,
-      "textoInstrucoes": "asdad",
-      "diasDeFuncionamento": [],
-      "condominio_id": 7,
-      "horarioFuncionamento": {
-        "inicio": {},
-        "fim": {}
-      },
-      "id": 19
-    },
-    {
-      "nomeEspaco": "Teste 2",
       "capacidadeMaxima": "12",
       "tempoMaximo": 120,
-      "textoInstrucoes": "X",
+      "textoInstrucoes": "Regras Padrão",
       "diasDeFuncionamento": [
-        "6"
-      ],
-      "condominio_id": 7,
-      "horarioFuncionamento": {
-        "inicio": {
-          "hours": 8,
-          "minutes": 30
-        },
-        "fim": {
-          "hours": 21,
-          "minutes": 30
-        }
-      },
-      "id": 20
-    },
-    {
-      "nomeEspaco": "Tenis",
-      "capacidadeMaxima": "20",
-      "tempoMaximo": 180,
-      "textoInstrucoes": "Não pode",
-      "diasDeFuncionamento": [
-        "2",
-        "3",
-        "4",
+        "6",
         "5",
-        "6"
+        "0"
       ],
-      "condominio_id": 1,
+      "condominio_id": 6,
       "horarioFuncionamento": {
         "inicio": {
-          "hours": 9,
+          "hours": 11,
           "minutes": 0
         },
         "fim": {
-          "hours": 22,
+          "hours": 19,
           "minutes": 0
         }
       },
-      "id": 21
-    },
-    {
-      "nomeEspaco": "Quadra Esportiva",
-      "capacidadeMaxima": "100",
-      "tempoMaximo": 120,
-      "textoInstrucoes": "Não pode",
-      "diasDeFuncionamento": [
-        "2",
-        "3",
-        "4",
-        "5",
-        "6"
-      ],
-      "condominio_id": 3,
-      "horarioFuncionamento": {
-        "inicio": {
-          "hours": 8,
-          "minutes": 0
-        },
-        "fim": {
-          "hours": 20,
-          "minutes": 0
-        }
-      },
-      "id": 22
-    },
-    {
-      "nomeEspaco": "Testando Limitação Reservas",
-      "capacidadeMaxima": "1",
-      "tempoMaximo": 60,
-      "textoInstrucoes": "Não pode",
-      "diasDeFuncionamento": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6"
-      ],
-      "condominio_id": 1,
-      "horarioFuncionamento": {
-        "inicio": {
-          "hours": 8,
-          "minutes": 0
-        },
-        "fim": {
-          "hours": 20,
-          "minutes": 0
-        }
-      },
-      "id": 23
+      "id": 1
     }
   ],
   "bloco": [],
@@ -403,6 +249,13 @@
       "condominio_id": 6,
       "titular_id": 7,
       "id": 17
+    },
+    {
+      "bloco": "05",
+      "numeroApartamento": "14",
+      "condominio_id": 6,
+      "titular_id": 9,
+      "id": 18
     }
   ],
   "titular": [
@@ -429,6 +282,13 @@
       "data_Nasc": "22/22/2222",
       "idade": "22",
       "id": 2
+    },
+    {
+      "nomeDependente": "Primeiro filho",
+      "cpfDependente": "123.456.789-99",
+      "data_Nasc": "19/11/2010",
+      "idade": "13",
+      "id": 3
     }
   ],
   "reservas": [
