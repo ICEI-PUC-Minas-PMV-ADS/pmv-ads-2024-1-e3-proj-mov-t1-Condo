@@ -155,8 +155,18 @@ export const fetchManutencao = async (condominio_id) => {
     console.error('Erro ao buscar lista de manutenção:', error);
     return []; // Retorna um array vazio em caso de erro
   }
-
 }
+
+/// Função para editar manutenção
+export const updateManutencao = async (param) => {
+  try {
+    const response = await API.put(`${baseURL}/660/manutencao/${param.id}`, param);
+    return response.data;
+  } catch (error) {
+    console.error("Erro ao atualizar manutencao:", error)
+  }
+}
+
 export const postReservas = async (param) => {
   try {
     const response = await API.post(`${baseURL}/660/reservas`, param);
@@ -188,7 +198,7 @@ export const insertManutencao = async (param) => {
 
     return response.data;
   } catch (error) {
-    console.error('Erro ao buscar lista de manutencao:', error);
+    console.error('Erro ao inserir manutencao:', error);
 
   };
 };
