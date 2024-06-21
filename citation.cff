@@ -1,0 +1,26 @@
+message: Please cite this software using these metadata.
+title: Condo Espaços de Lazer
+authors:
+  - family-names: Gonçalves Rodrigues
+    given-names: Álvaro 
+  - family-names: Haniel Reis Silva
+    given-names: Davi 
+  - family-names: Andrade Alves da Silva
+    given-names: Evellyn 
+  - family-names: Batista de Almeida
+    given-names: Josué 
+  - family-names: Guerra Melgaço
+    given-names: Leonardo 
+  - family-names: de Oliveira Duarte
+    given-names: Mariane 
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Ricardo dos Santos Machado
+    given-names: Will 
+keywords:
+  - Gestão
+  - Condominios
+  - Controle
+repository-code: https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t1-Condo
+version: 1.0.0
+date-released: 2024-06-23
