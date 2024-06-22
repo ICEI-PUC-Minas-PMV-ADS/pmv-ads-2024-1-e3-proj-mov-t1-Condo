@@ -88,30 +88,26 @@
   "manutencao": [
     {
       "id": 1,
-      "tempoDuracao": "24:59:59",
+      "tempoDuracaoInicio": "2024-06-18T23:57:53.254Z",
+      "tempoDuracaoFim": "2024-06-18T23:57:53.254Z",
       "motivo": "Motivo 0",
-      "espaco_id": 16,
+      "espaco_id": 1,
       "condominio_id": 1
     },
     {
       "id": 2,
-      "tempoDuracao": "04:30:59",
+      "tempoDuracaoInicio": "2024-06-18T23:57:53.254Z",
+      "tempoDuracaoFim": "2024-06-18T23:57:53.254Z",
       "motivo": "Motivo 1",
-      "espaco_id": 17,
+      "espaco_id": 1,
       "condominio_id": 1
     },
     {
       "id": 3,
-      "tempoDuracao": "04:30:59",
-      "motivo": "Motivo 2",
-      "espaco_id": 18,
-      "condominio_id": 8
-    },
-    {
-      "id": 4,
-      "tempoDuracao": "04:30:59",
-      "motivo": "Motivo 3",
-      "espaco_id": 19,
+      "tempoDuracaoInicio": "2024-06-18T23:57:53.254Z",
+      "tempoDuracaoFim": "2024-06-18T23:57:53.254Z",
+      "motivo": "Motivo 5",
+      "espaco_id": 1,
       "condominio_id": 8
     }
   ],

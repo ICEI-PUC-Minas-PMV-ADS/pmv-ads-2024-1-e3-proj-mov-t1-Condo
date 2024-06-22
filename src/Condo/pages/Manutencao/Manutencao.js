@@ -46,22 +46,24 @@ const Manutencao = () => {
 
     const [dialogEdit, setDialogEdit] = React.useState(false);
     const [dialogDelete, setDialogDelete] = React.useState(false);
-    const [title, setTitle] = useState('');
+    const [manutencao, setManutencao] = useState('');
 
     const showDialogEdit = () => setDialogEdit(true);
     const hideDialogEdit = () => setDialogEdit(false);
     const showDialogDelete = () => setDialogDelete(true);
     const hideDialogDelete = () => setDialogDelete(false);
-    const changeTitle = (edit) => setTitle(edit);
+    const changeManutencao = (manutencao) => setManutencao(manutencao);
     const [selectedId, setSelectedId] = useState(null);
 
-    const renderManutencao = ({ item }) => (
-        <CardManutencao
-            titulo={item.espaco.nomeEspaco}
-            onPressEdit={() => { showDialogEdit(); changeTitle(item.espaco.nomeEspaco); }}
-            onPressDelete={() => { setSelectedId(item.id); changeTitle(item.espaco.nomeEspaco); showDialogDelete(); }}
-        />
-    );
+    const renderManutencao = ({ item }) => {
+        
+        return (
+            <CardManutencao
+                titulo={item.espaco.nomeEspaco}
+                onPressEdit={() => { showDialogEdit(); changeManutencao(item); } }
+                onPressDelete={() => { setSelectedId(item.id); changeManutencao(item); showDialogDelete(); } } />
+        );
+    };
     if (loading) {
         return (
             <View style={styles.centeredView}>
@@ -95,10 +97,10 @@ const Manutencao = () => {
                 />
             </View>
 
-            <EditarManutencao visible={dialogEdit} hideDialog={hideDialogEdit} title={title} />
+            <EditarManutencao visible={dialogEdit} hideDialog={hideDialogEdit} manutencao={manutencao} />
             <DeletarManutencao visible={dialogDelete}
                 hideDialog={hideDialogDelete}
-                title={title}
+                manutencao={manutencao}
                 id={selectedId}
                 onDelete={handleDelete} />
         </View>)
