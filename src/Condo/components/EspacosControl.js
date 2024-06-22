@@ -58,6 +58,7 @@ class EspacosControl extends React.Component {
                 tempoMaximo:espaco.tempoMaximo,
                 textoInstrucoes:espaco.textoInstrucoes,
                 diasDeFuncionamento: espaco.diasDeFuncionamento,
+                horarioFuncionamento: espaco.horarioFuncionamento, 
                 showForm: true // Mostrar o formulário ao carregar um espaço
             })
         })
@@ -125,6 +126,32 @@ class EspacosControl extends React.Component {
         })
     }
 
+    atualizarHorarioInicio = (e) => {
+        const { name, value } = e.target;
+        const horarioFuncionamento = {
+            ...this.state.horarioFuncionamento,
+            inicio: {
+                ...this.state.horarioFuncionamento.inicio,
+                [name]: value
+            }
+        };
+        this.setState({ horarioFuncionamento });
+    }
+    
+    atualizarHorarioFim = (e) => {
+        const { name, value } = e.target;
+        const horarioFuncionamento = {
+            ...this.state.horarioFuncionamento,
+            fim: {
+                ...this.state.horarioFuncionamento.fim,
+                [name]: value
+            }
+        };
+        this.setState({ horarioFuncionamento });
+    }
+    
+    
+
     submit = () => {
         if(this.state.id == 0){
             const espaco = {
@@ -132,7 +159,8 @@ class EspacosControl extends React.Component {
                 capacidadeMaxima: this.state.capacidadeMaxima,
                 tempoMaximo: this.state.tempoMaximo,
                 textoInstrucoes: this.state.textoInstrucoes,               
-                diasDeFuncionamento: this.state.diasDeFuncionamento
+                diasDeFuncionamento: this.state.diasDeFuncionamento,
+                horarioFuncionamento: this.state.horarioFuncionamento
             }
             this.cadastraEspaco(espaco);
         } else {
@@ -142,7 +170,8 @@ class EspacosControl extends React.Component {
                 capacidadeMaxima: this.state.capacidadeMaxima,
                 tempoMaximo: this.state.tempoMaximo,
                 textoInstrucoes: this.state.textoInstrucoes,               
-                diasDeFuncionamento: this.state.diasDeFuncionamento
+                diasDeFuncionamento: this.state.diasDeFuncionamento,
+                horarioFuncionamento: this.state.horarioFuncionamento
             }
             this.atualizarEspaco(espaco);
         }
@@ -157,6 +186,16 @@ class EspacosControl extends React.Component {
                 tempoMaximo: '',
                 textoInstrucoes: '',
                 diasDeFuncionamento: '',
+                horarioFuncionamento: {
+                    inicio: {
+                        hours: '',
+                        minutes: ''
+                    },
+                    fim: {
+                        hours: '',
+                        minutes: ''
+                    }
+                },
                 showForm: false // Esconder o formulário ao resetar
             }
         )
@@ -175,29 +214,27 @@ class EspacosControl extends React.Component {
                     <th>Tempo Máxima</th>
                     <th>Instruções</th>
                     <th>Funcionamento</th>
+                    <th>Horário</th>
                     <th>Opções</th>
                 </tr>
                 </thead>  
 
                 <tbody>
-
-                    {
-                        this.state.espacos.map((espacos) =>
-                    <tr>
-                        <td>{espacos.nomeEspaco}</td>
-                        <td>{espacos.capacidadeMaxima}</td>
-                        <td>{espacos.tempoMaximo}</td>
-                        <td>{espacos.textoInstrucoes}</td>
-                        <td>{espacos.diasDeFuncionamento}</td>
+                {this.state.espacos.map((espaco) => (
+                    <tr key={espaco.id}>
+                        <td>{espaco.nomeEspaco}</td>
+                        <td>{espaco.capacidadeMaxima}</td>
+                        <td>{espaco.tempoMaximo}</td>
+                        <td>{espaco.textoInstrucoes}</td>
+                        <td>{espaco.diasDeFuncionamento}</td>
+                        <td>{`${espaco.horarioFuncionamento.inicio.hours}:${espaco.horarioFuncionamento.inicio.minutes} - ${espaco.horarioFuncionamento.fim.hours}:${espaco.horarioFuncionamento.fim.minutes}`}</td>
                         <td> 
-                        <Button variant="secondary" onClick={() => this.carregarEspaco(espacos.id)}>Atualizar </Button>
-                            <Button variant="danger" onClick={() => this.deletarEspaco(espacos.id)}>Excluir</Button>
-                            </td>
+                            <Button variant="secondary" onClick={() => this.carregarEspaco(espaco.id)}>Atualizar</Button>
+                            <Button variant="danger" onClick={() => this.deletarEspaco(espaco.id)}>Excluir</Button>
+                        </td>   
                     </tr>
-                    )
-                    }
-
-                </tbody> 
+                ))}
+            </tbody>
             </Table>
 
             {this.state.showForm && (
@@ -234,6 +271,21 @@ class EspacosControl extends React.Component {
                              value={this.state.diasDeFuncionamento} 
                             onChange={this.atualizarDiasDeFuncionamento} />
                     </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="formHorarioInicio">
+                    <Form.Label>Horário de Início</Form.Label>
+                    <Form.Control type="number" placeholder="Horas" name="hours" value={this.state.horarioFuncionamento.inicio.hours} onChange={this.atualizarHorarioInicio} />
+                    <Form.Control type="number" placeholder="Minutos" name="minutes" value={this.state.horarioFuncionamento.inicio.minutes} onChange={this.atualizarHorarioInicio} />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formHorarioFim">
+                    <Form.Label>Horário de Fim</Form.Label>
+                    <Form.Control type="number" placeholder="Horas" name="hours" value={this.state.horarioFuncionamento.fim.hours} onChange={this.atualizarHorarioFim} />
+                    <Form.Control type="number" placeholder="Minutos" name="minutes" value={this.state.horarioFuncionamento.fim.minutes} onChange={this.atualizarHorarioFim} />
+                </Form.Group>
+
+
+
 
             <Button variant="primary" onClick={this.submit}>
               Atualizar

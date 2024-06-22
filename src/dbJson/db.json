@@ -117,27 +117,22 @@
   ],
   "espaco": [
     {
-      "nomeEspaco": "Piscina",
-      "capacidadeMaxima": "12",
-      "tempoMaximo": 120,
-      "textoInstrucoes": "Regras Padrão",
-      "diasDeFuncionamento": [
-        "6",
-        "5",
-        "0"
-      ],
-      "condominio_id": 6,
+      "id": 1,
+      "nomeEspaco": "Piscina Principal",
+      "capacidadeMaxima": "15",
+      "tempoMaximo": "180",
+      "textoInstrucoes": "Regras Padrão Definidas",
+      "diasDeFuncionamento": "6,5",
       "horarioFuncionamento": {
         "inicio": {
           "hours": 11,
-          "minutes": 0
+          "minutes": "30"
         },
         "fim": {
           "hours": 19,
-          "minutes": 0
+          "minutes": "30"
         }
-      },
-      "id": 1
+      }
     }
   ],
   "bloco": [],
