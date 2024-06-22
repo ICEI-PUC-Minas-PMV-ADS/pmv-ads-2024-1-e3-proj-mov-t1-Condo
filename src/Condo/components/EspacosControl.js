@@ -298,6 +298,7 @@ class EspacosControl extends React.Component {
           </Form>
             )}
              </div>
+             <Button variant="info">Marcar Manutenção</Button>
           </div>
         )
       }
