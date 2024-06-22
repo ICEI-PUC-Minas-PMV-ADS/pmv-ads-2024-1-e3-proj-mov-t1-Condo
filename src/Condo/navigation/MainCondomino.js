@@ -139,31 +139,6 @@ const DrawerNavigator = () => {
           drawerItemStyle: { display: 'none' }, // Oculta o item no menu lateral
         }}
       />
-<Drawer.Screen
-        name='DadosMorador'
-        component={DadosMorador}
-        options={{
-          title: 'Dados Cadastrais - Condômino',
-          headerLeft: () => {
-            const navigation = useNavigation();
-            return (
-              <IconButton
-                icon={() => <Icon name="arrow-back" size={30} color="#7F7F7F" />}
-                onPress={() => navigation.navigate('Reservas')}
-              />
-            );
-          },
-          headerRight: () => {
-            const navigation = useNavigation();
-            return (
-            <IconButton
-              icon={() => <Icon name="home-outline" size={24} color="#7F7F7F" />}
-              onPress={() => navigation.goBack()}
-            />
-          );},
-          drawerItemStyle: { display: 'none' }, // Oculta o item no menu lateral
-        }}
-      />
 
       <Drawer.Screen
         name="Dependentes"
@@ -257,9 +232,38 @@ const DrawerNavigator = () => {
         }}
       />
 
+<Drawer.Screen
+        name='DadosMorador'
+        component={DadosMorador}
+        options={{
+          title: 'Dados Cadastrais',
+          drawerIcon: ({ color, size }) => (
+            <Icon name="settings-outline" color={color} size={size} />
+          ),
+          headerLeft: () => {
+            const navigation = useNavigation();
+            return (
+              <IconButton
+                icon={() => <Icon name="arrow-back" size={30} color="#7F7F7F" />}
+                onPress={() => navigation.navigate('Reservas')}
+              />
+            );
+          },
+          headerRight: () => {
+            const navigation = useNavigation();
+            return (
+            <IconButton
+              icon={() => <Icon name="home-outline" size={24} color="#7F7F7F" />}
+              onPress={() => navigation.goBack()}
+            />
+          );},
+        }}
+      />
+
     </Drawer.Navigator>
         
   );
 };
 
 export default DrawerNavigator;
+
