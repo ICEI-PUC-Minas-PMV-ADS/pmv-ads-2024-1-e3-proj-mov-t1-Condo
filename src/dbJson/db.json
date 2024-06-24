@@ -109,26 +109,128 @@
       "motivo": "Motivo 5",
       "espaco_id": 1,
       "condominio_id": 8
+    },
+    {
+      "tempoDuracaoInicio": "2024-06-28T02:59:59.000Z",
+      "tempoDuracaoFim": "2024-06-29T02:59:59.000Z",
+      "motivo": "Teste",
+      "espaco_id": 3,
+      "condominio_id": 8,
+      "id": 4
     }
   ],
   "espaco": [
     {
-      "id": 1,
-      "nomeEspaco": "Piscina Principal",
-      "capacidadeMaxima": "15",
-      "tempoMaximo": "180",
-      "textoInstrucoes": "Regras Padrão Definidas",
-      "diasDeFuncionamento": "6,5",
+      "nomeEspaco": "Piscina",
+      "capacidadeMaxima": "12",
+      "tempoMaximo": 120,
+      "textoInstrucoes": "Regras Padrão",
+      "diasDeFuncionamento": [
+        "6",
+        "5",
+        "0"
+      ],
+      "condominio_id": 6,
       "horarioFuncionamento": {
         "inicio": {
           "hours": 11,
-          "minutes": "30"
+          "minutes": 0
         },
         "fim": {
           "hours": 19,
-          "minutes": "30"
+          "minutes": 0
         }
-      }
+      },
+      "id": 1
+    },
+    {
+      "nomeEspaco": "Piscina 2",
+      "capacidadeMaxima": "12",
+      "tempoMaximo": 120,
+      "textoInstrucoes": "Regras Padrão",
+      "diasDeFuncionamento": [
+        "6",
+        "5",
+        "0"
+      ],
+      "condominio_id": 6,
+      "horarioFuncionamento": {
+        "inicio": {
+          "hours": 11,
+          "minutes": 0
+        },
+        "fim": {
+          "hours": 19,
+          "minutes": 0
+        }
+      },
+      "id": 2
+    },
+    {
+      "nomeEspaco": "Salão de festas",
+      "capacidadeMaxima": "12",
+      "tempoMaximo": 180,
+      "textoInstrucoes": "Instrução 1",
+      "diasDeFuncionamento": [
+        "0",
+        "6"
+      ],
+      "condominio_id": 8,
+      "horarioFuncionamento": {
+        "inicio": {
+          "hours": 19,
+          "minutes": 0
+        },
+        "fim": {
+          "hours": 23,
+          "minutes": 0
+        }
+      },
+      "id": 3
+    },
+    {
+      "nomeEspaco": "teste",
+      "capacidadeMaxima": "12",
+      "tempoMaximo": 25,
+      "textoInstrucoes": "teste",
+      "diasDeFuncionamento": [
+        "6",
+        "0"
+      ],
+      "condominio_id": 8,
+      "horarioFuncionamento": {
+        "inicio": {
+          "hours": 14,
+          "minutes": 58
+        },
+        "fim": {
+          "hours": 18,
+          "minutes": 58
+        }
+      },
+      "id": 4
+    },
+    {
+      "nomeEspaco": "teste2",
+      "capacidadeMaxima": "25",
+      "tempoMaximo": 23,
+      "textoInstrucoes": "teste",
+      "diasDeFuncionamento": [
+        "3",
+        "1"
+      ],
+      "condominio_id": 8,
+      "horarioFuncionamento": {
+        "inicio": {
+          "hours": 15,
+          "minutes": 1
+        },
+        "fim": {
+          "hours": 19,
+          "minutes": 1
+        }
+      },
+      "id": 5
     }
   ],
   "bloco": [],
@@ -432,16 +534,6 @@
       "condominio_id": 1,
       "titular_id": 2,
       "id": 22
-    },
-    {
-      "data": "2024-06-18",
-      "horario": "08:00",
-      "espaco_id": 23,
-      "nomeEspaco": "Testando Limitação Reservas",
-      "nomeTitular": "Josué Almeida",
-      "condominio_id": 1,
-      "titular_id": 2,
-      "id": 23
     },
     {
       "data": "2024-06-17",

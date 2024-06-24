@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import { fetchUserByCPF } from '../../services/auth.services'; // Supondo que você tenha uma função para buscar o usuário pelo CPF
 
 const LoginCondomino = () => {
-  const [cpf, setCpf] = useState('700.438.566-32');
+  const [cpf, setCpf] = useState('');
   const navigation = useNavigation();
 
   const handleLogin = async () => {
